@@ -154,7 +154,7 @@ int main()
             cout << Current << "occurs" << cnt << "times" << endl;
             Current = input;
             cnt = 1;
-         }
+         } //d
       }
    }
 
