@@ -142,7 +142,7 @@ int main()
    Sales_item item1, item2, item3;
    cin >> item1 >> item2 >> item3;
    cout << item1.isbn() << item1.bookNo() << endl;
-*/
+
    Sales_item Current, input;
    if (cin >> Current) {
       int cnt = 1;
@@ -156,7 +156,29 @@ int main()
             cnt = 1;
          } 
       }
+   } //E1.23 E1.24
+*/
+
+   Sales_item total;
+   if (cin >> total) {
+      Sales_item trans;
+      while (cin >> trans) {
+         if (total.isbn() == trans.isbn())
+         total += trans;
+         else{
+            cout << total << endl;
+            total = trans;
+         }
+      }
+      cout << total << endl;
    }
+   else {
+      cerr << "no data?!" << endl;
+      return -1;
+   }
+
+
+
 
 
 
