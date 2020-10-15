@@ -157,7 +157,6 @@ int main()
          } 
       }
    } //E1.23 E1.24
-*/
 
    Sales_item total;
    if (cin >> total) {
@@ -176,14 +175,12 @@ int main()
       cerr << "no data?!" << endl;
       return -1;
    }  //E1.25
-
+*/
 
 
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
-
-
    
 }
 
