@@ -175,10 +175,7 @@ int main()
    else {
       cerr << "no data?!" << endl;
       return -1;
-   }
-
-
-
+   }  //E1.25
 
 
 
