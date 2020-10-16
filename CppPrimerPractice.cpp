@@ -212,11 +212,13 @@ while (cin >> u >> u2) {
 cout << "hi""there" << endl;
 cout << "hi" "there" << endl;
 cout << "hi"   "there" << endl;  //concatenate into a single literal
-
 */
-
 cout << '\n' << endl;
-cout << "\" double quote \" \n" "\a" "\' single quote\'\n" << endl;
+cout << "\" double quote \" \n" "\a" "\' single quote\'\n"  "\a \? \t \v" << endl; //escape sequences
+cout << "\7 \n" "\115 \12"  "\x4d \n" << endl;
+cout << "Who goes with F\145rgus?\012"  "3.14e1L "  "1024f" " 3.14L" << endl;
+cout << "2M \n" "2 \12 \115 2 \t \x4d" << endl;
+cout << "\062" << endl;
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
