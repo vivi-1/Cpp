@@ -175,10 +175,19 @@ int main()
       cerr << "no data?!" << endl;
       return -1;
    }  //E1.25
-*/
 
-// short <= int <= long <= long long; unsigned >=0  signed can be negative or positive; float is shown in one word (32bits, 4 bytes), double in two words (64bits, 8bytes)
-//   
+
+// E2.1 short <= int <= long <= long long; unsigned >=0  signed can be negative or positive; float is shown in one word (32bits, 4 bytes), double in two words (64bits, 8bytes)
+// E2.2 double or long double, which has more precision instead of float
+
+unsigned u = 10;
+int i = -42;
+cout << i+i << endl;
+cout << u+i << endl;  // u is unsigned, i is signed, i will be converted into unsigned.
+*/
+ for (unsigned u =10; u >=0; --u)
+ cout << u << endl;
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
