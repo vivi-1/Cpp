@@ -195,7 +195,6 @@ cout << u+i << endl;  // u is unsigned, i is signed, i will be converted into un
 unsigned i=-32;
 cout << i << endl;
 //32; 4294967264, 32, -32, 0,0 E2.3
-*/
 
 unsigned u, u2;
 while (cin >> u >> u2) {
@@ -205,10 +204,19 @@ while (cin >> u >> u2) {
       cout << "wrong" << endl;
    } 
 } //E2.4
- 
 
- 
 
+ cout << "hi"
+ "there" << endl;
+
+cout << "hi""there" << endl;
+cout << "hi" "there" << endl;
+cout << "hi"   "there" << endl;  //concatenate into a single literal
+
+*/
+
+cout << '\n' << endl;
+cout << "\" double quote \" \n" "\a" "\' single quote\'\n" << endl;
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
