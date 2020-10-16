@@ -184,9 +184,30 @@ unsigned u = 10;
 int i = -42;
 cout << i+i << endl;
 cout << u+i << endl;  // u is unsigned, i is signed, i will be converted into unsigned.
+
+ unsigned u = 11;
+ while (u > 0) {
+    --u;
+    cout << u << endl;
+ }
+
+
+unsigned i=-32;
+cout << i << endl;
+//32; 4294967264, 32, -32, 0,0 E2.3
 */
- for (unsigned u =10; u >=0; --u)
- cout << u << endl;
+
+unsigned u, u2;
+while (cin >> u >> u2) {
+   if (u2-u == 32) {
+      cout << "correct" << endl;
+   } else {
+      cout << "wrong" << endl;
+   } 
+} //E2.4
+ 
+
+ 
 
 
 return 0; //return EXIT_SUCCESS
