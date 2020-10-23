@@ -227,8 +227,8 @@ E2.11d definition, definition, declaration,
 // int double = 3.14; invalid
 int _; //valid
 // int catch-22; invalid
-int 1_or_2 = 1; //may not contain two consecutive underscores;
-
+// int 1_or_2 = 1;  invalid, can only start with an underscore or a letter not a number
+double Double = 3.14;  // Capitalized sensitive
 
 
 return 0; //return EXIT_SUCCESS
