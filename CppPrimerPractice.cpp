@@ -221,14 +221,16 @@ cout << "2M \n" "2 \12 \115 2 \t \x4d" << endl;
 cout << "\062" << endl;
 
 E2.11d definition, definition, declaration,
-*/
-
 
 // int double = 3.14; invalid
 int _; //valid
 // int catch-22; invalid
 // int 1_or_2 = 1;  invalid, can only start with an underscore or a letter not a number
 double Double = 3.14;  // Capitalized sensitive
+
+E2.13 j=100
+E2.14 i=100 sum=45
+*/
 
 
 return 0; //return EXIT_SUCCESS

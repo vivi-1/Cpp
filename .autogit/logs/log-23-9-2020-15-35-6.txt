@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Fri Oct 23 2020 15:35:06 GMT-0400 (Eastern Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* CppPrimerPractice.cpp
+
+
+Created files:
+* .autogit/logs/log-23-9-2020-15-4-55.txt
+
+
+Deleted files:
+
+
+Renamed files:
