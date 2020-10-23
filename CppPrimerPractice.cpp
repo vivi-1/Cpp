@@ -219,8 +219,15 @@ cout << "\7 \n" "\115 \12"  "\x4d \n" << endl;
 cout << "Who goes with F\145rgus?\012"  "3.14e1L "  "1024f" " 3.14L" << endl;
 cout << "2M \n" "2 \12 \115 2 \t \x4d" << endl;
 cout << "\062" << endl;
+
+E2.11d definition, definition, declaration,
 */
 
+
+// int double = 3.14; invalid
+int _; //valid
+// int catch-22; invalid
+int 1_or_2 = 1; //may not contain two consecutive underscores;
 
 
 
