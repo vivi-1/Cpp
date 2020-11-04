@@ -243,12 +243,14 @@ pointer vs references:
 (2) pointer is an boject while reference is just an address;
 (3) pointer are not limited to one object while reference has to be limited to one;
 
-*/
 int i = 42;
 int *p1 = &i;
 *p1 = *p1 * *p1;
 cout << *p1 << endl;
 cout << i << endl;
+*/
+
+
 
 
 // the value of a pointer, the value of the object the pointer points
