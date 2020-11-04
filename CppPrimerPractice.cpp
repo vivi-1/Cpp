@@ -230,9 +230,26 @@ double Double = 3.14;  // Capitalized sensitive
 
 E2.13 j=100
 E2.14 i=100 sum=45
-*/
+
 int val;
-void *p = &val;
+int *p = &val;
+cin >> *p;
+cout << *p <<endl;
+cin >> val;
+cout << val<<endl; //E2.18
+
+pointer vs references: 
+(1)pointer doesn't need to be initialized when its defined;
+(2) pointer is an boject while reference is just an address;
+(3) pointer are not limited to one object while reference has to be limited to one;
+
+*/
+int i = 42;
+int *p1 = &i;
+*p1 = *p1 * *p1;
+cout << *p1 << endl;
+cout << i << endl;
+
 
 // the value of a pointer, the value of the object the pointer points
 
