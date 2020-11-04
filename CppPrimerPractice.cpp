@@ -231,6 +231,10 @@ double Double = 3.14;  // Capitalized sensitive
 E2.13 j=100
 E2.14 i=100 sum=45
 */
+int val;
+void *p = &val;
+
+// the value of a pointer, the value of the object the pointer points
 
 
 return 0; //return EXIT_SUCCESS
