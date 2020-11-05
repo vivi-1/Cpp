@@ -273,8 +273,26 @@ E2.25
      r: a ref to i
 (b) i: int;  ip is a valid null pointer;
 (c) ip: pointer points to an int, ip2 is an int;
-*/
 
+E2.26
+(a) illegal: needs to be initialized
+(b) legal
+(c) legal
+(d) ++cnt is legal, ++sz is illgegal cuz constant can't be changed
+
+int i = 42;
+int &r1 = i;
+const int &r2 = i;
+r1 = 0;
+cout << r1 << " " << r2 << endl;
+
+E2.27
+(a) int i=-1 is legal, &r=0 is illegal cuz it has to refer to an object;
+(b) it is legal
+(c) 1st is legal, 2nd is illegal as (a)
+(d) 
+
+*/
 
 
 return 0; //return EXIT_SUCCESS
