@@ -289,9 +289,26 @@ cout << r1 << " " << r2 << endl;
 E2.27
 (a) int i=-1 is legal, &r=0 is illegal cuz it has to refer to an object;
 (b) it is legal
-(c) 1st is legal, 2nd is illegal as (a)
-(d) 
+(c) 1st is legal
+(d) if i2 is constant its legal
+(e) if i2 is constant its legal
+(f) illegal, cuz reference doesn'e have this grammer
+(g) if i is constant too,its legal
 
+E2.28
+(a) illegal: *const cp must be initialized
+(b) illegal: *const p2 must be initialized
+(c) ic must be initialized
+(d) must be initialized
+(e) ok
+
+E2.29
+(a) 
+(b) 
+(c) 
+(d) 
+(e) 
+(f) 
 */
 
 
