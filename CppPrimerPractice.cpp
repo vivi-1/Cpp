@@ -252,10 +252,6 @@ cout << i << endl;
 
 if (p) means if the pointer p is not null.
 if (*p) means if the object pointed by the pointer is not false (which means the object is not null or zero etc.).
-*/
-
-
-
 
 // the value of a pointer, the value of the object the pointer points
 
@@ -268,7 +264,17 @@ int k = 3;
 cout << i <<" " << *j << endl;
 
 *j = k;
-cout << *j << endl; //Kevin answer
+cout << *j << endl; //E2.18 Kevin answer
+
+
+E2.25
+(a) ip: a pointer to an int
+     i: an int
+     r: a ref to i
+(b) i: int;  ip is a valid null pointer;
+(c) ip: pointer points to an int, ip2 is an int;
+*/
+
 
 
 return 0; //return EXIT_SUCCESS
