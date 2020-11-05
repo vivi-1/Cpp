@@ -236,7 +236,7 @@ int *p = &val;
 cin >> *p;
 cout << *p <<endl;
 cin >> val;
-cout << val<<endl; //E2.18
+cout << val << " " << *p <<endl; //E2.18
 
 pointer vs references: 
 (1)pointer doesn't need to be initialized when its defined;
@@ -258,6 +258,17 @@ if (*p) means if the object pointed by the pointer is not false (which means the
 
 
 // the value of a pointer, the value of the object the pointer points
+
+
+
+int i =10;
+int *j = &i;
+int k = 3;
+*j = 20;
+cout << i <<" " << *j << endl;
+
+*j = k;
+cout << *j << endl; //Kevin answer
 
 
 return 0; //return EXIT_SUCCESS
