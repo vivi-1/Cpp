@@ -248,6 +248,10 @@ int *p1 = &i;
 *p1 = *p1 * *p1;
 cout << *p1 << endl;
 cout << i << endl;
+
+
+if (p) means if the pointer p is not null.
+if (*p) means if the object pointed by the pointer is not false (which means the object is not null or zero etc.).
 */
 
 
