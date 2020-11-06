@@ -303,12 +303,16 @@ E2.28
 (e) ok
 
 E2.29
-(a) 
-(b) 
-(c) 
-(d) 
-(e) 
-(f) 
+(a) legal int equals to a constent int
+(b) illegal if p3 is initialized, assign a const pointer to int p1
+(c) p1=&ic illegal, p1 is int while ic is const int. 
+(d) illegal: can't re-initialize 
+(e) can't re-initialize const pointer
+(f) legal if its inside of the declaration, ilegal if its outside of initialization
+
+
+
+
 */
 
 
