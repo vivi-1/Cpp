@@ -310,7 +310,18 @@ E2.29
 (e) can't re-initialize const pointer
 (f) legal if its inside of the declaration, ilegal if its outside of initialization
 
+E2.30
+v2 top-level const   v1 has no const
+p1, v1, r1no const
+p2 low level, p3 both low and top, r2 is a reference only low
 
+
+E2.31
+legal, when copied into r1 which is a int, the v2 doesn't change
+   illegal, low level const doesn't match
+legal, can convert int to const int
+    illegal:  p3 has a low-level const but p1 doesn't.
+legal
 
 
 */
