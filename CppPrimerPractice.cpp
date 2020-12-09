@@ -312,7 +312,7 @@ E2.29
 
 E2.30
 v2 top-level const   v1 has no const
-p1, v1, r1no const
+p1, v1, r1 no const
 p2 low level, p3 both low and top, r2 is a reference only low
 
 
@@ -325,6 +325,57 @@ legal
 
 
 */
+
+
+int val=10, val1=30;
+
+int *pi = &val;
+int **ppi = &pi;
+cout << ppi <<"   " << **ppi <<"   " << pi <<"   " << *pi <<"   " << val << endl;
+int &r = *pi;
+int *&r2 = pi;
+val = 20;
+r=5;
+pi = &val1;
+cout << r <<"   " <<"   " << r2 <<"   " << *r2 << "   " << val << endl;
+
+/*E3.2
+string line;
+while (getline (cin, line))
+   cout << line << endl;
+
+
+string word;
+while (cin >> word)
+   cout << word << endl;
+
+
+string s1,s2;
+cin >> s1;
+cin >> s2;
+if (s1=s2) {
+   cout << "two strings are equal" << endl;
+}
+else {
+
+}
+
+string s3,s4;
+cin >> s3;
+cin >> s4;
+if (s3 > s4) {
+   cout << s3 << endl;
+}
+
+if (s3 < s4) {
+   cout << s4 << endl;
+} 
+if (s3=s4) {
+   cout << "two strings are equal" << endl;
+}
+*/
+
+
 
 
 return 0; //return EXIT_SUCCESS
