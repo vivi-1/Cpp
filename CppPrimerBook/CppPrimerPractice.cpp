@@ -373,8 +373,15 @@ if (s3 < s4) {
 if (s3=s4) {
    cout << "two strings are equal" << endl;
 }
+
+
+//E3.6
+std::string str5= "Kevin";
+for (auto &c : str5) cout << "enter your new characters" << endl && cin >> c;
+cout << str5 << endl;
 */
 
+//E3.7
 
 
 return 0; //return EXIT_SUCCESS
