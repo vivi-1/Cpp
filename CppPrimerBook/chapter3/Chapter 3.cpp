@@ -15,7 +15,6 @@ string word;
 while (cin >> word)
    cout << word << endl;
 
-
 string s1,s2;
 cin >> s1;
 cin >> s2;
