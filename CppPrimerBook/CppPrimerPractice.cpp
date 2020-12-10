@@ -377,12 +377,14 @@ if (s3=s4) {
 
 //E3.6
 std::string str5= "Kevin";
-for (auto &c : str5) cout << "enter your new characters" << endl && cin >> c;
-cout << str5 << endl;
+for (auto &c : str5) cout << "now our str is " << str5 << " please enter your new characters one by one" << endl && cin >> c;
+cout << "now our string is " << str5 << endl;
 */
 
 //E3.7
-
+std::string str5= "Kevin";
+for (char &c : str5) cout << "now our str is " << str5 << " please enter your new character one by one" << endl && cin >> c;
+cout << "now our string is " << str5 << endl;
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
