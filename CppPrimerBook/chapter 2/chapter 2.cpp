@@ -1,6 +1,8 @@
 /*
 This is CppPrimerPractice for the C++ primer 5th edition
+git config --global user.email wwei6@vt.edu 
 */
+
 #include<iostream>
 using namespace std;
 
