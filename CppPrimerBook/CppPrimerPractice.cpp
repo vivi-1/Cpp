@@ -436,10 +436,11 @@ for (int n=0; n < phrase.size(); n++){
 }
 	cout << phrase << ":is phrase" << endl << newPhrase << ": is newphrase" <<endl;
 	
-   //E3.11
-   The range for loop is legal (note that the statement in {} is commented. If it was not commented we need to think of cases that c value was changed in the statement.)
-   c is a reference to a constant character
-   */
+//E3.11
+The range for loop is legal (note that the statement in {} is commented. If it was not commented we need to think of cases that c value was changed in the statement.)
+c is a reference to a constant character
+   
+*/
 
 
 
