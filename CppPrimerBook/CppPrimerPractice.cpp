@@ -6,6 +6,8 @@ This is CppPrimerPractice for the C++ primer 5th edition
 
 using namespace std;
 
+// Mac sucks
+
 int main() 
 {
 
