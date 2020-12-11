@@ -1,5 +1,5 @@
 /*
-This is CppPrimerPractice for the C++ primer 5th edition
+This is CppPrimerPractice for the C++ primer 5th ed ition
 git config --global user.email wwei6@vt.edu 
 */
 #include<iostream>
