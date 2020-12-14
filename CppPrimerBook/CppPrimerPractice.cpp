@@ -442,9 +442,22 @@ for (int n=0; n < phrase.size(); n++){
 The range for loop is legal (note that the statement in {} is commented. If it was not commented we need to think of cases that c value was changed in the statement.)
 c is a reference to a constant character
    
+
+//E2.12
+// (a) legal (b) ilegal, type doesnt match (c)legal
+
+//E3.13
+/* (a) no element, no value;
+   (b) 10 elements, their values are all 0;
+   (c) 10 elements, their values are all 42s;
+   (d) 1 element, value is 10;
+   (e) 2 elements, values are 10 and 42;
+   (f) 10 elements, values are empty strings;
+   (g) 10 elemtns, values are all "hi"; 
+
+
+
 */
-
-
 
 
 return 0; //return EXIT_SUCCESS
