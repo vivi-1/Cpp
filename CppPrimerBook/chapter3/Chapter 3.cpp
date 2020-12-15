@@ -4,6 +4,7 @@ git config --global user.email wwei6@vt.edu
 */
 #include<iostream>
 using namespace std;
+#include <vector>
 
 
 int main() 
@@ -111,20 +112,17 @@ c is a reference to a constant character
 // (a) legal (b) ilegal, type doesnt match (c)legal
 
 //E3.13
-/* (a) no element, no value;
+ (a) no element, no value;
    (b) 10 elements, their values are all 0;
    (c) 10 elements, their values are all 42s;
    (d) 1 element, value is 10;
    (e) 2 elements, values are 10 and 42;
    (f) 10 elements, values are empty strings;
    (g) 10 elemtns, values are all "hi"; 
-
-
-
-
-
-   
 */
+
+
+
 
 
 return 0; //return EXIT_SUCCESS

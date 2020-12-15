@@ -3,7 +3,7 @@ This is CppPrimerPractice for the C++ primer 5th edition
 */
 #include<iostream>
 #include "Sales_item.h"
-
+#include<vector>
 using namespace std;
 
 // Mac sucks
@@ -447,7 +447,7 @@ c is a reference to a constant character
 // (a) legal (b) ilegal, type doesnt match (c)legal
 
 //E3.13
-/* (a) no element, no value;
+ (a) no element, no value;
    (b) 10 elements, their values are all 0;
    (c) 10 elements, their values are all 42s;
    (d) 1 element, value is 10;
@@ -458,6 +458,19 @@ c is a reference to a constant character
 
 
 */
+//E3.14
+vector <int> ivec;
+int num;
+while (cin >> num) {
+   if (num == -1) {
+      break;
+   }
+   ivec.push_back(num);
+}
+for (auto i : ivec) {
+	cout << i << endl;
+}
+
 
 
 return 0; //return EXIT_SUCCESS
