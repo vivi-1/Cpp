@@ -470,16 +470,21 @@ for (auto i : ivec) {
 }
 
 */
-string istring;
-getline(cin, istring);
-vector <char> svec2;
+
+vector <string> svec2;
 //while (cin >> istring) {
  //  svec.push_back(istring);
 //}
- for (auto j : istring) {
-    svec2.push_back(j);
-    cout << j << endl;
- }
+for (string istring; cin>>istring; svec2.push_back(istring)){
+   if (istring == "stop") {
+      break;
+   }
+}
+
+for (auto j : svec2) {
+   cout << j << endl;
+}
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
