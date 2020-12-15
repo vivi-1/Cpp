@@ -447,13 +447,13 @@ c is a reference to a constant character
 // (a) legal (b) ilegal, type doesnt match (c)legal
 
 //E3.13
- (a) no element, no value;
-   (b) 10 elements, their values are all 0;
-   (c) 10 elements, their values are all 42s;
-   (d) 1 element, value is 10;
-   (e) 2 elements, values are 10 and 42;
-   (f) 10 elements, values are empty strings;
-   (g) 10 elemtns, values are all "hi"; 
+   (a) vector <int> v1; no element, no value;
+   (b) vector <int> v2(10);10 elements, their values are all 0;
+   (c) vector<int> v3(10, 42); 10 elements, their values are all 42s;
+   (d) vector<int> v4{10}; 1 element, value is 10;
+   (e) vector<int> v5{10, 42}; 2 elements, values are 10 and 42;
+   (f) vector<string> v6{10}; 10 elements, values are empty strings;
+   (g) vector<string> v6{10, "hi"}; 10 elemtns, values are all "hi"; 
 
 //E3.14
 vector <int> ivec;
@@ -469,7 +469,6 @@ for (auto i : ivec) {
 	cout << i << endl;
 }
 
-*/
 
 vector <string> svec2;
 //while (cin >> istring) {
@@ -484,6 +483,25 @@ for (string istring; cin>>istring; svec2.push_back(istring)){
 for (auto j : svec2) {
    cout << j << endl;
 }
+
+*/
+// E3.16
+vector <int> v1; 
+vector <int> v2(10);
+vector<int> v3(10, 42);
+vector<int> v4{10};
+vector<int> v5{10, 42};
+vector<string> v6{10};
+vector<string> v7{10, "hi"};
+
+vector <vector <int> > vi_total{v1,v2,v3,v4,v5};
+vector <vector <string> > vs_total{v6,v7};
+vector <int> :: size_type sz_i;
+vector <string> :: size_type sz_s;
+for (auto i : vi_total) {
+   
+}
+
 
 
 return 0; //return EXIT_SUCCESS
