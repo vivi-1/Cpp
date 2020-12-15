@@ -455,12 +455,10 @@ c is a reference to a constant character
    (f) 10 elements, values are empty strings;
    (g) 10 elemtns, values are all "hi"; 
 
-
-
-*/
 //E3.14
 vector <int> ivec;
 int num;
+vector <string> svec;
 while (cin >> num) {
    if (num == -1) {
       break;
@@ -471,7 +469,17 @@ for (auto i : ivec) {
 	cout << i << endl;
 }
 
-
+*/
+string istring;
+getline(cin, istring);
+vector <char> svec2;
+//while (cin >> istring) {
+ //  svec.push_back(istring);
+//}
+ for (auto j : istring) {
+    svec2.push_back(j);
+    cout << j << endl;
+ }
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
