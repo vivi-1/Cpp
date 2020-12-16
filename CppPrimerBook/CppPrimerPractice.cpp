@@ -453,7 +453,7 @@ c is a reference to a constant character
    (d) vector<int> v4{10}; 1 element, value is 10;
    (e) vector<int> v5{10, 42}; 2 elements, values are 10 and 42;
    (f) vector<string> v6{10}; 10 elements, values are empty strings;
-   (g) vector<string> v6{10, "hi"}; 10 elemtns, values are all "hi"; 
+   (g) vector<string> v7{10, "hi"}; 10 elemtns, values are all "hi"; 
 
 //E3.14
 vector <int> ivec;
@@ -494,12 +494,20 @@ vector<int> v5{10, 42};
 vector<string> v6{10};
 vector<string> v7{10, "hi"};
 
-vector <vector <int> > vi_total{v1,v2,v3,v4,v5};
-vector <vector <string> > vs_total{v6,v7};
+vector <vector <int>> vi_total{v1,v2,v3,v4,v5};
+vector <vector <string>> vs_total{v6,v7};
+vector <int> vs;
 vector <int> :: size_type sz_i;
 vector <string> :: size_type sz_s;
 for (auto i : vi_total) {
-   
+   sz_i = i.size();
+   vs.push_back(sz_i);
+   //for (auto j : i) {
+      //cout << j << "is in this vector" << endl;
+   //}
+}
+for (auto i : vs) {
+   cout << i <<endl;
 }
 
 
