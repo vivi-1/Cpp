@@ -1,12 +1,12 @@
 /*
 This is CppPrimerPractice for the C++ primer 5th edition
+http://mirrors.concertpass.com/gcc/releases/ to check release of new C++ versions;
+..It opens slow..
 */
 #include<iostream>
 #include "Sales_item.h"
 #include<vector>
 using namespace std;
-
-// Mac sucks
 
 int main() 
 {
@@ -486,19 +486,22 @@ for (auto j : svec2) {
 
 */
 // E3.16
-vector <int> v1; 
-vector <int> v2(10);
-vector<int> v3(10, 42);
-vector<int> v4{10};
+vector<int> v1; 
+vector<int> v2 (10);
+vector<int> v3 (10, 42);
+//vector<int> v4 {10};
+vector<int> v4 (1,10);
 vector<int> v5{10, 42};
-vector<string> v6{10};
-vector<string> v7{10, "hi"};
+vector<string> v6 {10};
+vector<string> v7 {10, "hi"};
 
-vector <vector <int>> vi_total{v1,v2,v3,v4,v5};
-vector <vector <string>> vs_total{v6,v7};
-vector <int> vs;
-vector <int> :: size_type sz_i;
-vector <string> :: size_type sz_s;
+vector<vector <int> > vi_total{v1,v2,v3,v4,v5};
+vector<vector <string> > vs_total{v6,v7};
+vector<int> vs;
+vector<int> :: size_type sz_i;
+vector<string> :: size_type sz_s;
+cout << vi_total.size() << endl;
+/*
 for (auto i : vi_total) {
    sz_i = i.size();
    vs.push_back(sz_i);
@@ -506,10 +509,11 @@ for (auto i : vi_total) {
       //cout << j << "is in this vector" << endl;
    //}
 }
+show(vs);
 for (auto i : vs) {
    cout << i <<endl;
 }
-
+*/
 
 
 return 0; //return EXIT_SUCCESS
