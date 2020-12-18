@@ -8,7 +8,7 @@ http://mirrors.concertpass.com/gcc/releases/ to check release of new C++ version
 #include<vector>
 using namespace std;
 
-int main() 
+int main()
 {
 
 /*
@@ -29,11 +29,11 @@ int main()
 // /*incorrect comments // /* */ E1.7
 
    cout << "/*" << endl;  //E1.8
-   cout << /* "*/" */ "/*" */ << endl; //E1.8   
+   cout << /* "*/" */ "/*" */ << endl; //E1.8
  /*
    int sum=0, val=1, x; //if you don't define x, x is random number
    cout << "initial sum is " << sum << ", while val is " << val << endl;
-   while (val <= 10) {   
+   while (val <= 10) {
       cout << "now sum is " << sum << endl;
       sum += val;
       cout << "result sum is " << sum << " when val is " << val << endl;
@@ -58,7 +58,7 @@ int main()
       cout << "now it's at position " << val3 << endl;
       --val3;
    } // E1.10
-   
+
    int val4=5, val5=1;
    cout << "original val4 is " << val4 << "val5 is " << val5 << endl;
    if (val5 >= val4) {
@@ -89,7 +89,7 @@ int main()
 
    for (int val8 = 10; val8 >= 0; --val8)
       cout << "now it's at position " << val8 << endl; //E1.13
-   
+
    int sum5 = 0, value = 4;
    while (cin >> value)
       sum5 += value;
@@ -112,7 +112,7 @@ int main()
          }
       }
       cout << currVal << " occurs " << cnt << " times" << endl;
-      
+
    }
 
    Sales_item book;
@@ -156,7 +156,7 @@ int main()
             cout << Current << "occurs" << cnt << "times" << endl;
             Current = input;
             cnt = 1;
-         } 
+         }
       }
    } //E1.23 E1.24
 
@@ -204,7 +204,7 @@ while (cin >> u >> u2) {
       cout << "correct" << endl;
    } else {
       cout << "wrong" << endl;
-   } 
+   }
 } //E2.4
 
 
@@ -240,7 +240,7 @@ cout << *p <<endl;
 cin >> val;
 cout << val << " " << *p <<endl; //E2.18
 
-pointer vs references: 
+pointer vs references:
 (1)pointer doesn't need to be initialized when its defined;
 (2) pointer is an boject while reference is just an address;
 (3) pointer are not limited to one object while reference has to be limited to one;
@@ -307,8 +307,8 @@ E2.28
 E2.29
 (a) legal int equals to a constent int
 (b) illegal if p3 is initialized, assign a const pointer to int p1
-(c) p1=&ic illegal, p1 is int while ic is const int. 
-(d) illegal: can't re-initialize 
+(c) p1=&ic illegal, p1 is int while ic is const int.
+(d) illegal: can't re-initialize
 (e) can't re-initialize const pointer
 (f) legal if its inside of the declaration, ilegal if its outside of initialization
 
@@ -371,7 +371,7 @@ if (s3 > s4) {
 
 if (s3 < s4) {
    cout << s4 << endl;
-} 
+}
 if (s3=s4) {
    cout << "two strings are equal" << endl;
 }
@@ -437,11 +437,11 @@ for (int n=0; n < phrase.size(); n++){
 	cout << n << endl;
 }
 	cout << phrase << ":is phrase" << endl << newPhrase << ": is newphrase" <<endl;
-	
+
 //E3.11
 The range for loop is legal (note that the statement in {} is commented. If it was not commented we need to think of cases that c value was changed in the statement.)
 c is a reference to a constant character
-   
+
 
 //E2.12
 // (a) legal (b) ilegal, type doesnt match (c)legal
@@ -453,7 +453,7 @@ c is a reference to a constant character
    (d) vector<int> v4{10}; 1 element, value is 10;
    (e) vector<int> v5{10, 42}; 2 elements, values are 10 and 42;
    (f) vector<string> v6{10}; 10 elements, values are empty strings;
-   (g) vector<string> v7{10, "hi"}; 10 elemtns, values are all "hi"; 
+   (g) vector<string> v7{10, "hi"}; 10 elemtns, values are all "hi";
 
 //E3.14
 vector <int> ivec;
@@ -486,7 +486,7 @@ for (auto j : svec2) {
 
 */
 // E3.16
-vector<int> v1; 
+vector<int> v1;
 vector<int> v2 (10);
 vector<int> v3 (10, 42);
 //vector<int> v4 {10};
@@ -501,23 +501,22 @@ vector<int> vs;
 vector<int> :: size_type sz_i;
 vector<string> :: size_type sz_s;
 cout << vi_total.size() << endl;
-/*
+
+
 for (auto i : vi_total) {
    sz_i = i.size();
    vs.push_back(sz_i);
-   //for (auto j : i) {
-      //cout << j << "is in this vector" << endl;
-   //}
+   for (auto j : i) {
+      cout << j << "is in this vector" << endl;
+   }
 }
-show(vs);
+
 for (auto i : vs) {
    cout << i <<endl;
 }
-*/
 
 
 return 0; //return EXIT_SUCCESS
-//return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
-   
-}
+//return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
 
+}
