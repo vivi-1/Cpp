@@ -552,7 +552,7 @@ for (auto &i : ivec3) {
   i = 42;
 }
 
-*/
+
 
 //3.20
 vector<int> ivec3;
@@ -579,6 +579,8 @@ for (int s=0; s< n/2;s++) {
 if (n%2 !=0) {
   cout << ivec3[n/2] << endl;
 }
+
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
