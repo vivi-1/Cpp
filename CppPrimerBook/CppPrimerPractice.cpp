@@ -484,7 +484,7 @@ for (auto j : svec2) {
    cout << j << endl;
 }
 
-*/
+
 // E3.16
 vector<int> v1;
 vector<int> v2 (10);
@@ -515,6 +515,70 @@ for (auto i : vs) {
    cout << i <<endl;
 }
 
+//E3.17
+vector<string> word;
+string values;
+while (cin >> values && values != "end" ) {
+  word.push_back(values);
+}
+
+for (auto &i : word) {
+  for (auto &j : i) {
+    j=toupper(j);
+  }
+}
+
+for (auto n : word) {
+  cout << n << " ";
+}
+
+cout << endl;
+
+//E3.18
+vector<int> ivec(10);
+ivec[0] =42;
+for (auto i : ivec) {
+  cout << i << endl;
+}
+
+//E3.19
+//Method1
+vector <int> ivec1(10, 42);
+//Method2
+vector<int> ivec2{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+//Methods3
+vector<int> ivec3(10);
+for (auto &i : ivec3) {
+  i = 42;
+}
+
+*/
+
+//3.20
+vector<int> ivec3;
+int values;
+while (cin >> values) {
+  ivec3.push_back(values);
+}
+
+for (auto i : ivec3) {
+  cout << i << " ";
+}
+cout << endl;
+
+
+//print sum of adjecent elements
+for (int s=0; s< ivec3.size()-1;s++) {
+  cout << ivec3[s]+ivec3[s+1] << endl;
+}
+int n=ivec3.size();
+for (int s=0; s< n/2;s++) {
+  cout << s << " " << n << " " << n-s-1  << " " << ivec3[s] + ivec3[n-1-s] << endl;
+}
+
+if (n%2 !=0) {
+  cout << ivec3[n/2] << endl;
+}
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
