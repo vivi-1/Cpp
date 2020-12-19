@@ -1,13 +1,13 @@
 /*
 This is CppPrimerPractice for the C++ primer 5th edition
-git config --global user.email wwei6@vt.edu 
+git config --global user.email wwei6@vt.edu
 */
 #include<iostream>
 using namespace std;
 #include <vector>
 
 
-int main() 
+int main()
 {/*E3.2
 string line;
 while (getline (cin, line))
@@ -36,7 +36,7 @@ if (s3 > s4) {
 
 if (s3 < s4) {
    cout << s4 << endl;
-} 
+}
 if (s3=s4) {
    cout << "two strings are equal" << endl;
 }
@@ -103,7 +103,7 @@ for (int n=0; n < phrase.size(); n++){
 	cout << n << endl;
 }
 	cout << phrase << ":is phrase" << endl << newPhrase << ": is newphrase" <<endl;
-	
+
 //E3.11
 The range for loop is legal (note that the statement in {} is commented. If it was not commented we need to think of cases that c value was changed in the statement.)
 c is a reference to a constant character
@@ -118,7 +118,73 @@ c is a reference to a constant character
    (d) 1 element, value is 10;
    (e) 2 elements, values are 10 and 42;
    (f) 10 elements, values are empty strings;
-   (g) 10 elemtns, values are all "hi"; 
+   (g) 10 elemtns, values are all "hi";
+
+	 //E3.17
+	 vector<string> word;
+	 string values;
+	 while (cin >> values && values != "end" ) {
+	   word.push_back(values);
+	 }
+
+	 for (auto &i : word) {
+	   for (auto &j : i) {
+	     j=toupper(j);
+	   }
+	 }
+
+	 for (auto n : word) {
+	   cout << n << " ";
+	 }
+
+	 cout << endl;
+
+	 //E3.18
+	 vector<int> ivec(10);
+	 ivec[0] =42;
+	 for (auto i : ivec) {
+	   cout << i << endl;
+	 }
+
+	 //E3.19
+	 //Method1
+	 vector <int> ivec1(10, 42);
+	 //Method2
+	 vector<int> ivec2{42, 42, 42, 42, 42, 42, 42, 42, 42, 42};
+	 //Methods3
+	 vector<int> ivec3(10);
+	 for (auto &i : ivec3) {
+	   i = 42;
+	 }
+
+
+
+	 //3.20
+	 vector<int> ivec3;
+	 int values;
+	 while (cin >> values) {
+	   ivec3.push_back(values);
+	 }
+
+	 for (auto i : ivec3) {
+	   cout << i << " ";
+	 }
+	 cout << endl;
+
+
+	 //print sum of adjecent elements
+	 for (int s=0; s< ivec3.size()-1;s++) {
+	   cout << ivec3[s]+ivec3[s+1] << endl;
+	 }
+	 int n=ivec3.size();
+	 for (int s=0; s< n/2;s++) {
+	   cout << s << " " << n << " " << n-s-1  << " " << ivec3[s] + ivec3[n-1-s] << endl;
+	 }
+
+	 if (n%2 !=0) {
+	   cout << ivec3[n/2] << endl;
+	 }
+
 */
 
 
@@ -126,6 +192,6 @@ c is a reference to a constant character
 
 
 return 0; //return EXIT_SUCCESS
-//return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully. 
-   
+//return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
+
 }
