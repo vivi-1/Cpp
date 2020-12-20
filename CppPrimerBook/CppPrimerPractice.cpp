@@ -328,7 +328,7 @@ legal
 
 */
 
-
+/*
 int val=10, val1=30;
 
 int *pi = &val;
@@ -340,6 +340,7 @@ val = 20;
 r=5;
 pi = &val1;
 cout << r <<"   " <<"   " << r2 <<"   " << *r2 << "   " << val << endl;
+*/
 
 /*E3.2
 string line;
@@ -579,8 +580,43 @@ for (int s=0; s< n/2;s++) {
 if (n%2 !=0) {
   cout << ivec3[n/2] << endl;
 }
-
 */
+
+//E3.21 size and contents
+vector<int> v1;
+vector<int> v2 (10);
+vector<int> v3 (10, 42);
+//vector<int> v4 {10};
+vector<int> v4 (1,10);
+vector<int> v5{10, 42};
+vector<string> v6 {10};
+vector<string> v7 {10, "hi"};
+
+vector<vector <int> > vi_total{v1,v2,v3,v4,v5};
+vector<vector <string> > vs_total{v6,v7};
+vector<int> vs;
+int vs_i;
+
+// check the size in vi_total;
+for (auto i = vi_total.begin(); i!=vi_total.end(); ++i) {
+  vs_i = (*i).size();
+  vs.push_back(vs_i);
+  for (auto x = (*i).begin(); x!=(*i).end(); ++x) {
+    cout << *x << " ";
+  }
+  cout << endl;
+}
+cout << endl;
+
+for (auto j = vs.cbegin(); j!=vs.cend(); ++j) {
+  cout << *j << " ";
+}
+cout << endl << endl;
+
+
+
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
