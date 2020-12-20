@@ -580,7 +580,6 @@ for (int s=0; s< n/2;s++) {
 if (n%2 !=0) {
   cout << ivec3[n/2] << endl;
 }
-*/
 
 //E3.21 size and contents
 vector<int> v1;
@@ -612,9 +611,22 @@ for (auto j = vs.cbegin(); j!=vs.cend(); ++j) {
   cout << *j << " ";
 }
 cout << endl << endl;
+*/
 
+//E3.22
 
-
+string input;
+vector<string> paragraph;
+while (getline (cin, input) && input!="end") {
+  paragraph.push_back(input);
+  cout << "original input is " << input << endl;
+  for (auto i = input.begin(); i!=input.end() && !input.empty(); ++i) {
+    *i=toupper(*i);
+    cout << *i;
+  }
+  cout<<endl;
+}
+cout << "the output is " << input << endl;
 
 
 
