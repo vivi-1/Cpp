@@ -611,22 +611,51 @@ for (auto j = vs.cbegin(); j!=vs.cend(); ++j) {
   cout << *j << " ";
 }
 cout << endl << endl;
-*/
 
 //E3.22
-
 string input;
 vector<string> paragraph;
+int j=0;
 while (getline (cin, input) && input!="end") {
   paragraph.push_back(input);
-  cout << "original input is " << input << endl;
-  for (auto i = input.begin(); i!=input.end() && !input.empty(); ++i) {
-    *i=toupper(*i);
-    cout << *i;
-  }
-  cout<<endl;
+  j++;
+  cout << "original input of the " << j << " line is: " << input << endl;
 }
-cout << "the output is " << input << endl;
+for (auto vi = paragraph.begin(); vi!=paragraph.end() && !(*vi).empty(); ++vi) {
+ for (auto i: *vi) {
+    i=toupper(i);
+    cout << i;
+  }
+}
+
+
+//E3.23
+vector<int> vi(10);
+int input;
+cout << vi.size() << endl;
+int i=0;
+while (cin >>input) {
+  vi.push_back(input);
+  i++;
+  cout << i << " elements have been added" << endl;
+  if (i == 10) {
+    break;
+    cout << "vector's full now" << endl;
+  }
+}
+
+for (auto j=vi.begin(); j!=vi.end(); ++j) {
+  cout << "original number is " << endl;
+  cout << *j << " ";
+  cout << endl;
+  (*j)*=2;
+  cout << "after changing: " << *j << " ";
+  cout << endl;
+}
+*/
+
+
+
 
 
 

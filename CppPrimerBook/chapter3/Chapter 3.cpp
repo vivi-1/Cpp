@@ -185,7 +185,79 @@ c is a reference to a constant character
 	   cout << ivec3[n/2] << endl;
 	 }
 
-*/
+   //E3.21 size and contents
+   vector<int> v1;
+   vector<int> v2 (10);
+   vector<int> v3 (10, 42);
+   //vector<int> v4 {10};
+   vector<int> v4 (1,10);
+   vector<int> v5{10, 42};
+   vector<string> v6 {10};
+   vector<string> v7 {10, "hi"};
+
+   vector<vector <int> > vi_total{v1,v2,v3,v4,v5};
+   vector<vector <string> > vs_total{v6,v7};
+   vector<int> vs;
+   int vs_i;
+
+   // check the size in vi_total;
+   for (auto i = vi_total.begin(); i!=vi_total.end(); ++i) {
+     vs_i = (*i).size();
+     vs.push_back(vs_i);
+     for (auto x = (*i).begin(); x!=(*i).end(); ++x) {
+       cout << *x << " ";
+     }
+     cout << endl;
+   }
+   cout << endl;
+
+   for (auto j = vs.cbegin(); j!=vs.cend(); ++j) {
+     cout << *j << " ";
+   }
+   cout << endl << endl;
+
+
+   //E3.22
+   string input;
+   vector<string> paragraph;
+   int j=0;
+   while (getline (cin, input) && input!="end") {
+     paragraph.push_back(input);
+     j++;
+     cout << "original input of the " << j << " line is: " << input << endl;
+   }
+   for (auto vi = paragraph.begin(); vi!=paragraph.end() && !(*vi).empty(); ++vi) {
+    for (auto i: *vi) {
+       i=toupper(i);
+       cout << i;
+     }
+   }
+
+
+   //E3.23
+   vector<int> vi(10);
+   int input;
+   cout << vi.size() << endl;
+   int i=0;
+   while (cin >>input) {
+     vi.push_back(input);
+     i++;
+     cout << i << " elements have been added" << endl;
+     if (i == 10) {
+       break;
+       cout << "vector's full now" << endl;
+     }
+   }
+
+   for (auto j=vi.begin(); j!=vi.end(); ++j) {
+     cout << "original number is " << endl;
+     cout << *j << " ";
+     cout << endl;
+     (*j)*=2;
+     cout << "after changing: " << *j << " ";
+     cout << endl;
+   }
+   */
 
 
 
