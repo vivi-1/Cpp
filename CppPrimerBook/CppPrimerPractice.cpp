@@ -556,6 +556,10 @@ for (auto &i : ivec3) {
 
 
 //3.20
+//Read a set of int into vector, print sum of adjecent elements
+//print the sum of 1 and last elements followed by second and second to last
+//and so on.
+
 vector<int> ivec3;
 int values;
 while (cin >> values) {
@@ -652,10 +656,27 @@ for (auto j=vi.begin(); j!=vi.end(); ++j) {
   cout << "after changing: " << *j << " ";
   cout << endl;
 }
+
+
 */
+//E2.24
+vector<int> ivec3;
+int values;
+while (cin >> values) {
+  ivec3.push_back(values);
+}
+cout << "the sum of the adjecent elements are " << endl;
 
+//print sum of adjecent elements
+auto i = ivec3.begin();
+while (i!= ivec3.end()-1) {
+  cout << *i + *(i+1) << " ";
+  cout << endl;
+  i+=1;
+}
 
-
+//print the sum of 1 and last elements followed by second and second to last
+//and so on.
 
 
 
