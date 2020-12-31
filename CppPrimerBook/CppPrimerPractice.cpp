@@ -694,9 +694,15 @@ else cout << *mid + *(mid-1) << endl;
 //E2.25
 vector<unsigned> scores(11,0);
 unsigned grade;
+
+//subscription method
 while (cin >> grade) {
   if (grade <= 100) ++scores[grade/10];
 }
+
+// iterator Method
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
