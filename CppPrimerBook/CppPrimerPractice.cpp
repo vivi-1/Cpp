@@ -657,8 +657,6 @@ for (auto j=vi.begin(); j!=vi.end(); ++j) {
   cout << endl;
 }
 
-
-*/
 //E2.24
 vector<int> ivec3;
 int values;
@@ -691,6 +689,7 @@ while (i2 < mid && j>mid) {
 if (ivec3.size() %2 != 0) cout << endl << "vec has odd number of elements, mid point is " << *mid << endl;
 else cout << *mid + *(mid-1) << endl;
 
+*/
 
 
 return 0; //return EXIT_SUCCESS

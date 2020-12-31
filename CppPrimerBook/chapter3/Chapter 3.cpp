@@ -257,6 +257,39 @@ c is a reference to a constant character
      cout << "after changing: " << *j << " ";
      cout << endl;
    }
+
+   //E2.24
+   vector<int> ivec3;
+   int values;
+   while (cin >> values) {
+     ivec3.push_back(values);
+   }
+   cout << "the sum of the adjecent elements are " << endl;
+
+   //print sum of adjecent elements
+   auto i = ivec3.begin();
+   while (i!= ivec3.end()-1) {
+     cout << *i + *(i+1) << " ";
+     cout << endl;
+     i+=1;
+   }
+
+   //print the sum of first and last elements followed by second and second to last
+   //and so on.
+   auto i2 = ivec3.begin(), j = ivec3.end()-1, mid = ivec3.begin()+(j-i2+1)/2;
+   auto mid2 = ivec3.begin() + (ivec3.end()- ivec3.begin())/2;
+   cout << *mid << " is the mid point while mid2 point is " << *mid2 << endl;
+   cout << "the sum of two ends elements are: " << endl;
+
+   while (i2 < mid && j>mid) {
+     cout << *i2 + *j << " ";
+     i2 += 1;
+     j-=1;
+   }
+
+   if (ivec3.size() %2 != 0) cout << endl << "vec has odd number of elements, mid point is " << *mid << endl;
+   else cout << *mid + *(mid-1) << endl;
+
    */
 
 
