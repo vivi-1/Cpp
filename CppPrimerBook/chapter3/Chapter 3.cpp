@@ -290,6 +290,58 @@ c is a reference to a constant character
    if (ivec3.size() %2 != 0) cout << endl << "vec has odd number of elements, mid point is " << *mid << endl;
    else cout << *mid + *(mid-1) << endl;
 
+
+   //E2.25
+     vector<unsigned> scores(11,0);
+     unsigned grade;
+
+   //subscription method
+     while (cin >> grade) {
+       if (grade <= 100) ++scores[grade/10];
+     }
+
+
+   vector<unsigned> scores(11,0);
+   unsigned grade;
+   // iterator method
+     while (cin >> grade) {
+       cout << "grade/10 is: " << grade/10<<endl;
+       if (grade <=100) {
+         auto i = scores.begin() + grade/10;
+         (*i) += 1;
+         cout << "the position number is: " << *i << endl;
+       }
+
+     }
+
+
+   //E3.26 In the binary search program on page 112, why did we write mid=beg+(end-beg)/2; instead of mid=(beg+end) /2;?
+
+   // We can only apply the subtraction between the two iterators not additions.
+   // beg + end is illegal.
+   //And (end-beg)/2 makes it a difference_type instead of an iterator.
+
+   //E3.27 Assuming txt_size is a function that takes no arguments and returns an int value, which of the following definitions are illegal? Explain why.
+
+   //unsigned buf_size = 1024;
+   //int ia[buf_size];   // illegal, The dimension value must be a constant expression.
+   //int ia[4 * 7 - 14]; // legal, 4*7-14 is a literal
+   //int ia[txt_size()]; // illegal, txt_size() is not a constant expression, it returns a int instead of constant int;
+   //char st[11] = "fundamental";  // illegal, the string's size is 12 and the character array has to have a null position at the end so the dimension of st has to be at least 12.
+
+   //E3.28 What are the values in the following arrays?
+   //string sa[10];
+   //int ia[10];
+
+   //int main() {
+     //string sa2[10];
+     //int ia2[10];
+   //}
+
+   //std::string isn't a build-in type. The initializer will set it empty, so sa and sa2 has 10 empty strings.
+   // int is a build-in  type. ia is not in function body, will be initialized to 0. ia2 is in the function body so its undefined.
+
+  
    */
 
 
