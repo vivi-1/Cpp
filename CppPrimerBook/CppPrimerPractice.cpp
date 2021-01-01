@@ -721,14 +721,25 @@ unsigned grade;
 // beg + end is illegal.
 //And (end-beg)/2 makes it a difference_type instead of an iterator.
 
-//E3.27
-Assuming txt_size is a function that takes no arguments and returns an int value, which of the following definitions are illegal? Explain why.
-unsigned buf_size = 1024;
+//E3.27 Assuming txt_size is a function that takes no arguments and returns an int value, which of the following definitions are illegal? Explain why.
 
-int ia[buf_size];   // illegal, The dimension value must be a constant expression.
-int ia[4 * 7 - 14]; // legal
-int ia[txt_size()]; // illegal, The dimension value must be a constant expression.
-char st[11] = "fundamental";  // illegal, the string's size is 12.
+//unsigned buf_size = 1024;
+//int ia[buf_size];   // illegal, The dimension value must be a constant expression.
+//int ia[4 * 7 - 14]; // legal, 4*7-14 is a literal
+//int ia[txt_size()]; // illegal, txt_size() is not a constant expression, it returns a int instead of constant int;
+//char st[11] = "fundamental";  // illegal, the string's size is 12 and the character array has to have a null position at the end so the dimension of st has to be at least 12.
+
+//E3.28 What are the values in the following arrays?
+//string sa[10];
+//int ia[10];
+
+//int main() {
+  //string sa2[10];
+  //int ia2[10];
+//}
+
+//std::string isn't a build-in type. The initializer will set it empty, so sa and sa2 has 10 empty strings.
+// int is a build-in  type. ia is not in function body, will be initialized to 0. ia2 is in the function body so its undefined.
 
 */
 
