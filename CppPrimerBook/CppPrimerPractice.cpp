@@ -721,6 +721,15 @@ unsigned grade;
 // beg + end is illegal.
 //And (end-beg)/2 makes it a difference_type instead of an iterator.
 
+//E2.27
+Assuming txt_size is a function that takes no arguments and returns an int value, which of the following definitions are illegal? Explain why.
+unsigned buf_size = 1024;
+
+int ia[buf_size];   // illegal, The dimension value must be a constant expression.
+int ia[4 * 7 - 14]; // legal
+int ia[txt_size()]; // illegal, The dimension value must be a constant expression.
+char st[11] = "fundamental";  // illegal, the string's size is 12.
+
 */
 
 
