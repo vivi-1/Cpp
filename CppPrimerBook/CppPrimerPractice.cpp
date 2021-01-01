@@ -715,13 +715,13 @@ unsigned grade;
   }
 
 
-//E2.26 In the binary search program on page 112, why did we write mid=beg+(end-beg)/2; instead of mid=(beg+end) /2;?
+//E3.26 In the binary search program on page 112, why did we write mid=beg+(end-beg)/2; instead of mid=(beg+end) /2;?
 
 // We can only apply the subtraction between the two iterators not additions.
 // beg + end is illegal.
 //And (end-beg)/2 makes it a difference_type instead of an iterator.
 
-//E2.27
+//E3.27
 Assuming txt_size is a function that takes no arguments and returns an int value, which of the following definitions are illegal? Explain why.
 unsigned buf_size = 1024;
 
