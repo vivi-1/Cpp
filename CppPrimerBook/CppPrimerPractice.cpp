@@ -689,18 +689,39 @@ while (i2 < mid && j>mid) {
 if (ivec3.size() %2 != 0) cout << endl << "vec has odd number of elements, mid point is " << *mid << endl;
 else cout << *mid + *(mid-1) << endl;
 
-*/
+
 
 //E2.25
-vector<unsigned> scores(11,0);
-unsigned grade;
+  vector<unsigned> scores(11,0);
+  unsigned grade;
 
 //subscription method
-while (cin >> grade) {
-  if (grade <= 100) ++scores[grade/10];
-}
+  while (cin >> grade) {
+    if (grade <= 100) ++scores[grade/10];
+  }
 
-// iterator Method
+
+vector<unsigned> scores(11,0);
+unsigned grade;
+// iterator method
+  while (cin >> grade) {
+    cout << "grade/10 is: " << grade/10<<endl;
+    if (grade <=100) {
+      auto i = scores.begin() + grade/10;
+      (*i) += 1;
+      cout << "the position number is: " << *i << endl;
+    }
+
+  }
+
+
+//E2.26 In the binary search program on page 112, why did we write mid=beg+(end-beg)/2; instead of mid=(beg+end) /2;?
+
+// We can only apply the subtraction between the two iterators not additions.
+// beg + end is illegal.
+//And (end-beg)/2 makes it a difference_type instead of an iterator.
+
+*/
 
 
 
