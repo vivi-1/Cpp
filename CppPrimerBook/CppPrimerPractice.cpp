@@ -741,6 +741,15 @@ unsigned grade;
 //std::string isn't a build-in type. The initializer will set it empty, so sa and sa2 has 10 empty strings.
 // int is a build-in  type. ia is not in function body, will be initialized to 0. ia2 is in the function body so its undefined.
 
+
+//E3.29 Drawbacks of arrays compared to vectors:
+// Array is less flexible, can't add elements or substract elements;
+//You have to know the dimensions of array you are defining. It has to define from constant expression or constant values
+//It's complicated to define or understand pointers or references of arrays;
+//arrays can't be copied or re-assigned;
+// When defining a character array from a string, need to leave space for null at the end;
+// array runs at compile time while vector at runs time so arrays runs faster than vectors;
+//
 */
 
 
