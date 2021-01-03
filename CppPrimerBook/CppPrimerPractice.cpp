@@ -807,6 +807,10 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
 
 //Exercise 3.33: What would happen if we did not initialize the scores array in
 //the program on page 116?
+// It still will work; it will defualt initialize to 0 if score is a global
+//object (outside of any function); it will be undefined if score is a local
+//object (inside of any function);
+
 
 
 
