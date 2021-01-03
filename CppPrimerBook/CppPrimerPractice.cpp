@@ -760,7 +760,9 @@ unsigned grade;
 	//for (size_t ix = 1; ix <= array_size; ++ix)
   // will trigger buffer overflow; shoudl be: for (size_t ix = 0; ix < array_size; ++ix)
 	//ia[ix] = ix;
-*/
+
+
+
 //E3.31 Write a program to define an array of ten ints. Give each element the
 //same value as its position in the array.
 
@@ -775,17 +777,31 @@ for (size_t ix = 0; ix < 10; ++ix) {
   cout << "arr2 array is " << ix << " " << arr2[ix] << endl;
 }
 
-
-
-
 //E3.32: Copy the array you defined in the previous exercise into another array.
 //Rewrite your program to use vectors.
 int arr3[10];
   for (size_t ix3 = 0; ix3 < 10; ++ix3) {
-    arr3[ix3] == arr2[ix3];
+    arr3[ix3] = arr2[ix3];
     cout << "arr3 array is "<< ix3 << " " << arr3[ix3] << endl;
   }
 
+vector <int> vec1{0,1,2,3,4,5,6,7,8,9};
+vector <int> vec2(10);
+
+int j = 0;
+for (auto i = vec2.begin(); i!=vec2.end(); ++i) {
+  *i = j;
+  cout << j << " " << *i << endl;
+  ++j;
+}
+
+vector<int> vec3 = vec2;
+for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
+  cout << *i << " ";
+  cout << endl;
+}
+
+*/
 
 
 //Exercise 3.33: What would happen if we did not initialize the scores array in
