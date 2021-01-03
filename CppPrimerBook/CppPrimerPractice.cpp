@@ -753,16 +753,24 @@ unsigned grade;
 
 */
 
-//E 3.30: Identify the indexing errors in the following code:
+//E3.30: Identify the indexing errors in the following code:
 
 	//constexpr size_t array_size = 10;
 	//int ia[array_size];
-	//for (size_t ix = 1; ix <= array_size; ++ix) // will trigger buffer overflow; shoudl be: for (size_t ix = 0; ix < array_size; ++ix)
+	//for (size_t ix = 1; ix <= array_size; ++ix)
+  // will trigger buffer overflow; shoudl be: for (size_t ix = 0; ix < array_size; ++ix)
 	//ia[ix] = ix;
 
-// 
+//E3.31 Write a program to define an array of ten ints. Give each element the
+//same value as its position in the array.
 
 
+//E3.32: Copy the array you defined in the previous exercise into another array.
+//Rewrite your program to use vectors.
+
+
+//Exercise 3.33: What would happen if we did not initialize the scores array in
+//the program on page 116?
 
 
 
