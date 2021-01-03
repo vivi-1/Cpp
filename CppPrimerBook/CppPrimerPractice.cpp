@@ -785,6 +785,7 @@ int arr3[10];
     cout << "arr3 array is "<< ix3 << " " << arr3[ix3] << endl;
   }
 
+//Create a vector that has 10 elemetns and each element is their position
 vector <int> vec1{0,1,2,3,4,5,6,7,8,9};
 vector <int> vec2(10);
 
@@ -795,6 +796,7 @@ for (auto i = vec2.begin(); i!=vec2.end(); ++i) {
   ++j;
 }
 
+//Copy the vetor vec2 into vec3.
 vector<int> vec3 = vec2;
 for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
   cout << *i << " ";
@@ -802,7 +804,6 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
 }
 
 */
-
 
 //Exercise 3.33: What would happen if we did not initialize the scores array in
 //the program on page 116?
