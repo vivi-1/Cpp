@@ -805,7 +805,7 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
 
 
 
-//E3.33: What would happen if we did not initialize the scores array in
+// E3.33: What would happen if we did not initialize the scores array in
 //the program on page 116?
 // It still will work; it will defualt initialize to 0 if score is a global
 //object (outside of any function); it will be undefined if score is a local
@@ -818,7 +818,12 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
 // p1 += p2-p1;
 // the meaning of the equations is: find the distance between p2 and p1 and add it
 // to p1, which moves p1 to position p2. It is illegal when p2 is beyond the one past
-// the end
+// the end since the one past the end is the last element pointers can point to;
+
+// E3.35  Using pointers, write a program to set the elements in an
+// array to zero.
+int arr[10] = {0,1,2,3,4,5,6,7,8,9};
+
 
 
 
