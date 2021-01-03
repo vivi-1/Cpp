@@ -750,7 +750,19 @@ unsigned grade;
 // When defining a character array from a string, need to leave space for null at the end;
 // array runs at compile time while vector at runs time so arrays runs faster than vectors;
 //
+
 */
+
+//E 3.30: Identify the indexing errors in the following code:
+
+	//constexpr size_t array_size = 10;
+	//int ia[array_size];
+	//for (size_t ix = 1; ix <= array_size; ++ix) // will trigger buffer overflow; shoudl be: for (size_t ix = 0; ix < array_size; ++ix)
+	//ia[ix] = ix;
+
+// 
+
+
 
 
 
