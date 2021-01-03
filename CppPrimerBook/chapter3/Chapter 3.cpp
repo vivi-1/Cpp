@@ -350,7 +350,14 @@ c is a reference to a constant character
    // array runs at compile time while vector at runs time so arrays runs faster than vectors;
    //
 
-   
+   //E 3.30: Identify the indexing errors in the following code:
+
+   	//constexpr size_t array_size = 10;
+   	//int ia[array_size];
+   	//for (size_t ix = 1; ix <= array_size; ++ix) // will trigger buffer overflow; shoudl be: for (size_t ix = 0; ix < array_size; ++ix)
+   	//ia[ix] = ix;
+    
+
    */
 
 
