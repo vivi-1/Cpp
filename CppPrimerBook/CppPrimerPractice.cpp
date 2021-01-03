@@ -803,13 +803,22 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
   cout << endl;
 }
 
-*/
 
-//Exercise 3.33: What would happen if we did not initialize the scores array in
+
+//E3.33: What would happen if we did not initialize the scores array in
 //the program on page 116?
 // It still will work; it will defualt initialize to 0 if score is a global
 //object (outside of any function); it will be undefined if score is a local
 //object (inside of any function);
+
+*/
+
+// E3.34: Given that p1 and p2 point to elements in the same array, what does the
+// following code do? Are there values of p1 or p2 that make this code illegal?
+// p1 += p2-p1;
+// the meaning of the equations is: find the distance between p2 and p1 and add it
+// to p1, which moves p1 to position p2. It is illegal when p2 is beyond the one past
+// the end
 
 
 
