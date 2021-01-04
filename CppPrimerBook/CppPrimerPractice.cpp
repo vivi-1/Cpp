@@ -811,7 +811,6 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
 //object (outside of any function); it will be undefined if score is a local
 //object (inside of any function);
 
-*/
 
 // E3.34: Given that p1 and p2 point to elements in the same array, what does the
 // following code do? Are there values of p1 or p2 that make this code illegal?
@@ -839,9 +838,28 @@ while (beg != last && *beg>=0) {
   *beg = 0;
   ++beg;
   ++j;
-  cout <<j << " " << *beg << endl;
+  cout <<j << " "  << beg << " " << *beg << endl;
+}
+*/
+
+//Exercise 3.36: Write a program to compare two arrays for equality. Write a
+//similar program to compare two vectors.
+// compare the size of two arrays
+auto n1 = end(arr1) -begin(arr1), n2 = end(arr2) -begin(arr2);
+if (n1 = n2) {
+  while (auto i = 0 && i != n1) {
+    if arr1[i] = arr2[i] cout << "same element at position  " << i << endl;
+    ++i;
+    else {
+      cout << "elements at " << i << " are different" << endl;
+    }
+  }
 }
 
+else cout << "they have different size" << endl;
+
+
+//
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
 
