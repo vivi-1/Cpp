@@ -824,9 +824,23 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
 // array to zero.
 int arr[10] = {0,1,2,3,4,5,6,7,8,9};
 
+//Method 1
+int *p = arr, *e = arr + 10, i = 0; //equals to int *p= &arr[0];
+while (p < e) {
+  *p = 0;
+  cout << i << " " << *p << endl;
+  ++p;
+  ++i;
+}
 
-
-
+//Method 2
+int *beg = begin(arr), *last = end(arr), j=0;
+while (beg != last && *beg>=0) {
+  *beg = 0;
+  ++beg;
+  ++j;
+  cout <<j << " " << *beg << endl;
+}
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
