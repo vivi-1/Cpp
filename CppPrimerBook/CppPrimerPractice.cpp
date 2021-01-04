@@ -844,7 +844,7 @@ while (beg != last && *beg>=0) {
 
 //Exercise 3.36: Write a program to compare two arrays for equality. Write a
 //similar program to compare two vectors.
-// compare the size of two arrays
+// compare the size of two arrays and if they are the same do element comparison
 auto n1 = end(arr1) -begin(arr1), n2 = end(arr2) -begin(arr2);
 if (n1 = n2) {
   while (auto i = 0 && i != n1) {
@@ -859,6 +859,10 @@ if (n1 = n2) {
 
 else cout << "they have different size" << endl;
 
+
+// compare two vectors
+if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
+else cout << "vec1 and vec2 are equal to each other" << endl;
 
 //
 return 0; //return EXIT_SUCCESS
