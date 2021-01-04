@@ -358,8 +358,6 @@ c is a reference to a constant character
    	//ia[ix] = ix;
 
 
-   */
-
     //E3.30: Identify the indexing errors in the following code:
 
     	//constexpr size_t array_size = 10;
@@ -386,7 +384,49 @@ c is a reference to a constant character
     // to p1, which moves p1 to position p2. It is illegal when p2 is beyond the one past
     // the end
 
+    // E3.35  Using pointers, write a program to set the elements in an
+    // array to zero.
+    int arr[10] = {0,1,2,3,4,5,6,7,8,9};
 
+    //Method 1
+    int *p = arr, *e = arr + 10, i = 0; //equals to int *p= &arr[0];
+    while (p < e) {
+      *p = 0;
+      cout << i << " " << *p << endl;
+      ++p;
+      ++i;
+    }
+
+    //Method 2
+    int *beg = begin(arr), *last = end(arr), j=0;
+    while (beg != last && *beg>=0) {
+      *beg = 0;
+      ++beg;
+      ++j;
+      cout <<j << " "  << beg << " " << *beg << endl;
+    }
+
+    //Exercise 3.36: Write a program to compare two arrays for equality. Write a
+    //similar program to compare two vectors.
+    // compare the size of two arrays and if they are the same do element comparison
+    auto n1 = end(arr1) -begin(arr1), n2 = end(arr2) -begin(arr2);
+    if (n1 = n2) {
+      while (auto i = 0 && i != n1) {
+        if arr1[i] = arr2[i] cout << "same element at position  " << i << endl;
+        ++i;
+        else {
+          break;
+          cout << "elements at " << i << " are different" << endl;
+        }
+      }
+    }
+
+    else cout << "they have different size" << endl;
+
+    // compare two vectors
+    if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
+    else cout << "vec1 and vec2 are equal to each other" << endl;
+*/
 
 
 
