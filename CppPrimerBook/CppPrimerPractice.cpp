@@ -851,6 +851,7 @@ if (n1 = n2) {
     if arr1[i] = arr2[i] cout << "same element at position  " << i << endl;
     ++i;
     else {
+      break;
       cout << "elements at " << i << " are different" << endl;
     }
   }
