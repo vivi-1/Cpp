@@ -877,7 +877,7 @@ if (s1 == s2) {
 else cout << "different" << endl;
 
 ////
-char cts1[] = s1 +'\n', cts2[] = s2 +'\n';
+char cts1[] = s1, cts2[] = s2;
 
 if (strcmp(cts1, cts2) == 0) {
   cout << "they are the same" << endl;
