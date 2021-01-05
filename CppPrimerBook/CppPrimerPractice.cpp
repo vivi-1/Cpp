@@ -816,8 +816,7 @@ for (auto i = vec3.begin(); i!=vec3.end(); ++i) {
 // following code do? Are there values of p1 or p2 that make this code illegal?
 // p1 += p2-p1;
 // the meaning of the equations is: find the distance between p2 and p1 and add it
-// to p1, which moves p1 to position p2. It is illegal when p2 is beyond the one past
-// the end since the one past the end is the last element pointers can point to;
+// to p1, which moves p1 to position p2. It is always legal;
 
 // E3.35  Using pointers, write a program to set the elements in an
 // array to zero.
@@ -840,7 +839,6 @@ while (beg != last && *beg>=0) {
   ++j;
   cout <<j << " "  << beg << " " << *beg << endl;
 }
-*/
 
 //Exercise 3.36: Write a program to compare two arrays for equality. Write a
 //similar program to compare two vectors.
@@ -859,12 +857,17 @@ if (n1 = n2) {
 
 else cout << "they have different size" << endl;
 
-
 // compare two vectors
 if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
 else cout << "vec1 and vec2 are equal to each other" << endl;
+*/
 
-//
+
+
+
+
+
+
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
 

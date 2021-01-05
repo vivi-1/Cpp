@@ -381,8 +381,7 @@ c is a reference to a constant character
     // following code do? Are there values of p1 or p2 that make this code illegal?
     // p1 += p2-p1;
     // the meaning of the equations is: find the distance between p2 and p1 and add it
-    // to p1, which moves p1 to position p2. It is illegal when p2 is beyond the one past
-    // the end
+    // to p1, which moves p1 to position p2. It is always legal.
 
     // E3.35  Using pointers, write a program to set the elements in an
     // array to zero.
