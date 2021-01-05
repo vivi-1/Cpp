@@ -845,13 +845,14 @@ while (beg != last && *beg>=0) {
 // compare the size of two arrays and if they are the same do element comparison
 auto n1 = end(arr1) -begin(arr1), n2 = end(arr2) -begin(arr2);
 if (n1 = n2) {
-  while (auto i = 0 && i != n1) {
-    if arr1[i] = arr2[i] cout << "same element at position  " << i << endl;
-    ++i;
+  size_t i = 0;
+  while (i != n1) {
+    if (arr1[i] == arr2[i]) cout << "same element at position  " << i << endl;
     else {
-      break;
       cout << "elements at " << i << " are different" << endl;
+      break;
     }
+    ++i;
   }
 }
 
