@@ -863,8 +863,37 @@ if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
 else cout << "vec1 and vec2 are equal to each other" << endl;
 */
 
+//E3.39
+string s1, s2;
+getline(cin,s1);
+  cout << "s1 is " << s1 << endl;
 
+getline(cin,s2);
+  cout << "s2 is " << s2 << endl;
 
+if (s1 == s2) {
+  cout << "same" << endl;
+}
+else cout << "different" << endl;
+
+////
+char cts1[] = s1 +'\n', cts2[] = s2 +'\n';
+
+if (strcmp(cts1, cts2) == 0) {
+  cout << "they are the same" << endl;
+}
+else {
+  if (strcmp(cts1, cts2) < 0) {
+  cout << "2nd string is bigger than the 1st one" << endl;
+  }
+  else cout << "2nd string is smaller than the 1st one" << endl;
+}
+
+//E3.40
+char cts1[] = s1, cts2 = s2;
+char cts3[];
+strcpy(cts3, cts2);
+strcat(cts3, cts1);
 
 
 
