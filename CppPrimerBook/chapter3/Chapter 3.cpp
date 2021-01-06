@@ -426,6 +426,17 @@ c is a reference to a constant character
     if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
     else cout << "vec1 and vec2 are equal to each other" << endl;
 
+    //E3.37 There's not null in the end, so the program will print what cp is pointing
+     to, one by one (which are "hello") until it finds the null character.
+
+
+    //E3.38 In this section, we noted that it was not only illegal but meaningless
+    //to try to add two pointers. Why would adding two pointers be meaningless?
+    //Because pointers hold the values of the objects that they are pointing to. if
+    // they are pointing to two objects, that means they are holding addresses of two
+    // objects separately. Adding those addresses doesn't make sense.
+
+
     //E3.39
     string s1, s2;
     getline(cin,s1);

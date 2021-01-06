@@ -862,6 +862,16 @@ else cout << "they have different size" << endl;
 if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
 else cout << "vec1 and vec2 are equal to each other" << endl;
 
+//E3.37 There's not null in the end, so the program will print what cp is pointing
+ to, one by one (which are "hello") until it finds the null character.
+
+
+//E3.38 In this section, we noted that it was not only illegal but meaningless
+//to try to add two pointers. Why would adding two pointers be meaningless?
+//Because pointers hold the values of the objects that they are pointing to. if
+// they are pointing to two objects, that means they are holding addresses of two
+// objects separately. Adding those addresses doesn't make sense.
+
 
 //E3.39
 string s1, s2;
@@ -902,7 +912,7 @@ strcpy(cts4, cts2);
 */
 
 
-// E3.41 E3.42 
+// E3.41 E3.42
 
 int arr_int[10] = {1,2,3,4,5,6,7,8,9,10};
 vector <int> vec_int(begin(arr_int), end(arr_int));
@@ -916,6 +926,9 @@ while (i != 10) {
   cout << arr_cp[i] << " ";
   i++;
 }
+
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
