@@ -909,11 +909,10 @@ cout << endl;
 
 strcpy(cts4, cts1);
 strcpy(cts4, cts2);
-*/
+
 
 
 // E3.41 E3.42
-
 int arr_int[10] = {1,2,3,4,5,6,7,8,9,10};
 vector <int> vec_int(begin(arr_int), end(arr_int));
 for (auto i : vec_int) cout << i << endl;
@@ -926,6 +925,56 @@ while (i != 10) {
   cout << arr_cp[i] << " ";
   i++;
 }
+
+
+//E3.43
+constexpr size_t rowCnt = 3, colCnt = 4;
+int ia[rowCnt][colCnt];
+for (size_t i = 0; i != rowCnt; ++i) {
+  for (size_t j = 0; j != colCnt; ++j) {
+    ia[i][j] = i*colCnt + j;
+  }
+}
+
+//range for loop
+for (const auto &row : ia) {
+  for (const auto &col: row) {
+    cout << col <<" ";
+  }
+  cout << endl;
+}
+cout << endl << endl;
+
+//ordinary for loop - subscription
+for (size_t i = 0; i != rowCnt; ++i) {
+  for (size_t j = 0; j != colCnt; ++j) {
+    cout << ia[i][j] << " ";
+  }
+  cout << endl;
+}
+cout << endl << endl;
+
+//ordinary for loop - pointers
+
+for (auto p = ia; p != ia+rowCnt; ++p) {
+  for (auto q = *p; q != *p + colCnt; ++q) {
+    cout << *q << " ";
+  }
+  cout << endl;
+}
+cout << endl << endl;
+
+//ordinary for loop - type alias pointers
+using int_array = int[4];
+typedef int int_array[4];
+for (int_array *p = ia; p != ia+rowCnt; ++p) {
+  for (int *pp = *p; pp != *p+colCnt; ++pp) {
+    cout << *pp << " ";
+  }
+  cout << endl;
+}
+cout << endl << endl;
+*/
 
 
 
