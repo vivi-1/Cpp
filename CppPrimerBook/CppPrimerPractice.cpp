@@ -861,7 +861,7 @@ else cout << "they have different size" << endl;
 // compare two vectors
 if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
 else cout << "vec1 and vec2 are equal to each other" << endl;
-*/
+
 
 //E3.39
 string s1, s2;
@@ -877,7 +877,7 @@ if (s1 == s2) {
 else cout << "different" << endl;
 
 ////
-char cts1[] = s1, cts2[] = s2;
+char cts1[] = "hello my name is kevin", cts2[] = "hello my name is wei";
 
 if (strcmp(cts1, cts2) == 0) {
   cout << "they are the same" << endl;
@@ -889,11 +889,24 @@ else {
   else cout << "2nd string is smaller than the 1st one" << endl;
 }
 
-//E3.40
-char cts1[] = s1, cts2 = s2;
-char cts3[];
+// E3.40
+char cts3[22], cts4[46];
+
 strcpy(cts3, cts2);
 strcat(cts3, cts1);
+for (auto i : cts3) cout << i << " ";
+cout << endl;
+
+strcpy(cts4, cts1);
+strcpy(cts4, cts2);
+*/
+
+
+// E3.41 E3.42
+
+int arr_int[10] = {1,2,3,4,5,6,7,8,9,10};
+vector <int> vec_int(begin(arr_int), end(arr_int));
+for (auto i : vec_int) cout << i << endl;
 
 
 
