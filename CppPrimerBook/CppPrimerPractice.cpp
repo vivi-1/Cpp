@@ -902,14 +902,20 @@ strcpy(cts4, cts2);
 */
 
 
-// E3.41 E3.42
+// E3.41 E3.42 
 
 int arr_int[10] = {1,2,3,4,5,6,7,8,9,10};
 vector <int> vec_int(begin(arr_int), end(arr_int));
 for (auto i : vec_int) cout << i << endl;
+int size_vec = vec_int.size();
 
-
-
+int arr_cp[size_vec];
+int i=0;
+while (i != 10) {
+  arr_cp[i] = vec_int [i];
+  cout << arr_cp[i] << " ";
+  i++;
+}
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.

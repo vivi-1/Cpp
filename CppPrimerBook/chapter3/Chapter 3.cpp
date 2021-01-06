@@ -425,10 +425,61 @@ c is a reference to a constant character
     // compare two vectors
     if vec1 == vac2 cout << "vec1 and vec2 are equal to each other" << endl;
     else cout << "vec1 and vec2 are equal to each other" << endl;
+
+    //E3.39
+    string s1, s2;
+    getline(cin,s1);
+      cout << "s1 is " << s1 << endl;
+
+    getline(cin,s2);
+      cout << "s2 is " << s2 << endl;
+
+    if (s1 == s2) {
+      cout << "same" << endl;
+    }
+    else cout << "different" << endl;
+
+    ////
+    char cts1[] = "hello my name is kevin", cts2[] = "hello my name is wei";
+
+    if (strcmp(cts1, cts2) == 0) {
+      cout << "they are the same" << endl;
+    }
+    else {
+      if (strcmp(cts1, cts2) < 0) {
+      cout << "2nd string is bigger than the 1st one" << endl;
+      }
+      else cout << "2nd string is smaller than the 1st one" << endl;
+    }
+
+
+// E3.40
+char cts3[22], cts4[46];
+
+strcpy(cts3, cts2);
+strcat(cts3, cts1);
+for (auto i : cts3) cout << i << " ";
+cout << endl;
+
+strcpy(cts4, cts1);
+strcpy(cts4, cts2);
+
+
+// E3.41 E3.42
+
+int arr_int[10] = {1,2,3,4,5,6,7,8,9,10};
+vector <int> vec_int(begin(arr_int), end(arr_int));
+for (auto i : vec_int) cout << i << endl;
+int size_vec = vec_int.size();
+
+int arr_cp[size_vec];
+int i=0;
+while (i != 10) {
+  arr_cp[i] = vec_int [i];
+  cout << arr_cp[i] << " ";
+  i++;
+}
 */
-
-
-
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
