@@ -491,7 +491,7 @@ while (i != 10) {
   i++;
 }
 
-//E3.43
+//E3.43 & E3.45
 constexpr size_t rowCnt = 3, colCnt = 4;
 int ia[rowCnt][colCnt];
 for (size_t i = 0; i != rowCnt; ++i) {
@@ -528,6 +528,8 @@ for (auto p = ia; p != ia+rowCnt; ++p) {
 }
 cout << endl << endl;
 
+
+//E3.44
 //ordinary for loop - type alias pointers
 using int_array = int[4];
 typedef int int_array[4];
@@ -538,9 +540,7 @@ for (int_array *p = ia; p != ia+rowCnt; ++p) {
   cout << endl;
 }
 cout << endl << endl;
-
 */
-
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
 
