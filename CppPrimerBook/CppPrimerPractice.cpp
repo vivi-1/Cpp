@@ -979,6 +979,16 @@ cout << endl << endl;
 
 */
 
+//E4.1   multiply and division have higher precedence than addition, so the answer is 105
+
+//E4.2
+// * vec.begin()   =  * (vec.(begin()))
+//"*" as dereference are lower, "." as member selector are the same level with
+//"()" as function call. Due to associativity, the code should be read left to right
+
+// * vec.begin() +1 =  (* (vec.begin())) +1
+//  "+"as adding rvalues, has the lowest precedence. So "+1" is added after dereference.
+
 
 
 
