@@ -990,6 +990,12 @@ cout << endl << endl;
 //  "+"as adding rvalues, has the lowest precedence. So "+1" is added after dereference.
 
 
+//E4.3
+//It is an acceptable trade-off for professional programmers, who want the code
+// to be more effecient, will think through before output things and save time for big program.
+// As beginners, it can be hard to pick up because of lack of thinking, but every coder should develop a
+// great habit for coding just to precent any unexcepted errors.
+
 
 
 return 0; //return EXIT_SUCCESS
