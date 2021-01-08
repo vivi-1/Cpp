@@ -992,9 +992,9 @@ cout << endl << endl;
 
 //E4.3
 //It is an acceptable trade-off for professional programmers, who want the code
-// to be more effecient, will think through before output things and save time for big program.
+// to be more effecient, will think thouroughly before output things and save time for big program.
 // As beginners, it can be hard to pick up because of lack of thinking, but every coder should develop a
-// great habit for coding just to precent any unexcepted errors.
+// great habit for coding just to prevent any unexcepted errors.
 
 
 
