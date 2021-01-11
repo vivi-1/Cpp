@@ -996,6 +996,16 @@ cout << endl << endl;
 // As beginners, it can be hard to pick up because of lack of thinking, but every coder should develop a
 // great habit for coding just to prevent any unexcepted errors.
 
+//E6.1
+// Argument is initializer for parameter. Argument shows when a function is called
+// while parameter is defined when a function is writen. 
+
+
+
+
+
+
+
 
 
 return 0; //return EXIT_SUCCESS
