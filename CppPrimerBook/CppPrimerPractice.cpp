@@ -1032,6 +1032,13 @@ cout << "short_value2: " << short_value2 << endl; // short_value2: 32767
 int int_value    = -2147483648;
 cout << "int_value: " << int_value - 1 << endl; // int_value: 2147483647
 
+//E4.8 The logical && and || operators always evaluate their left operand before the right. Moreover, the right operand is evaluated if and only if the left operand does not determine the result. This strategy is known as short-circuit evaluation.
+
+// logical && : the second operand is evaluated if and only if the left side is true.
+// logical || : the second operand is evaluated if and only if the left side is false
+// equality operators == : undefined.
+
+
 //E4.9
 // if (cp && *cp): if cp is not a null pointer, which means if cp containing a valid address is true, as well as what cp is pointing to is not null character '\0'.
 
@@ -1086,8 +1093,9 @@ else cout << "please make sure that a>b>c>d";
 */
 
 // E4.12  i != j<k  means i != (j<k)
-// (a) if j<k is true, then it will return a bool, true, and transformed into 1 to compare with i, so
+// (a) if j<k is true, then it will return a bool, true, and converts into 1 to compare with i, so
 // in this case, it means i!=1; (b) if j<k is not true, then it will return a bool, true, and transformed into 0 to compare with i, so finally it  means i != 0;
+
 
 
 
