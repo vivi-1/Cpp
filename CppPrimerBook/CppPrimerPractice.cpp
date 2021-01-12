@@ -998,14 +998,23 @@ cout << endl << endl;
 
 //E6.1
 // Argument is initializer for parameter. Argument shows when a function is called
-// while parameter is defined when a function is writen. 
+// while parameter is defined when a function is writen.
 
 
+//E4.4 91
 
+// E4.5
 
+//E4.6
+int number;
+cout << "please enter a number here: " << endl;
+cin >> number;
+if (number%2 == 0) {
+  cout << "even" << endl;
+}
+else cout << "odd" << endl;
 
-
-
+//
 
 
 return 0; //return EXIT_SUCCESS
