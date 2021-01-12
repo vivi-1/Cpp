@@ -977,7 +977,7 @@ for (int_array *p = ia; p != ia+rowCnt; ++p) {
 }
 cout << endl << endl;
 
-*/
+
 
 //E4.1   multiply and division have higher precedence than addition, so the answer is 105
 
@@ -996,14 +996,17 @@ cout << endl << endl;
 // As beginners, it can be hard to pick up because of lack of thinking, but every coder should develop a
 // great habit for coding just to prevent any unexcepted errors.
 
-//E6.1
-// Argument is initializer for parameter. Argument shows when a function is called
-// while parameter is defined when a function is writen.
 
 
-//E4.4 91
 
-// E4.5
+//E4.4 ((12/3) *4) + (5*15) + ((24 % 4)/2) =91
+
+//E4.5
+// (a) -30 * 3 + 21 / 5 = -86;
+// (b) -30 + 3 * 21 / 5 = -18;
+// (c) ((30 / 3) * 21) % 5 = 0;
+// (d) -30 / 3 * 21 % 4 = -2;
+
 
 //E4.6
 int number;
@@ -1014,7 +1017,22 @@ if (number%2 == 0) {
 }
 else cout << "odd" << endl;
 
-//
+
+
+//E4.7 Overflow happens when a value is computed that is outside the range of values the type can represent
+short short_value = 32767; // max value if shorts are 16 bits
+short_value += 1; // this calculation overflows
+cout << "short_value: " << short_value << endl;  //short_value: -32768
+
+
+short short_value2 = -32768;
+short_value2 -= 1;
+cout << "short_value2: " << short_value2 << endl; // short_value2: 32767
+
+int int_value    = -2147483648;
+cout << "int_value: " << int_value - 1 << endl; // int_value: 2147483647
+*/
+
 
 
 return 0; //return EXIT_SUCCESS
