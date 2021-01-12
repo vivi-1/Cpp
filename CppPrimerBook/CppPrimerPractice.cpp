@@ -1031,7 +1031,65 @@ cout << "short_value2: " << short_value2 << endl; // short_value2: 32767
 
 int int_value    = -2147483648;
 cout << "int_value: " << int_value - 1 << endl; // int_value: 2147483647
+
+//E4.9
+// if (cp && *cp): if cp is not a null pointer, which means if cp containing a valid address is true, as well as what cp is pointing to is not null character '\0'.
+
+//E4.10
+int input;
+while (cin >> input && input != 42) {
+  cout << "input is not 42" << '\n';
+}
+
+// E4.11
+// Method1
+int a, b, c, d, temp1,temp2,temp3;
+cout << "please input a: ";
+cin >> a;
+cout << "a is " << a << ", please input b: ";
+while (cin >> temp1) {
+  if (!(a > temp1)) {
+    cout << "a is " << a << " please input b smaller than a please: ";
+  }
+  else {
+    b=temp1;
+    cout << "b is " << b << " please input c: " ;
+    while (cin >> temp2) {
+      if (!(b > temp2)) {
+        cout << "b is " << b << " please input c smaller than b please: ";
+      }
+      else {
+        c=temp2;
+        cout << "c is " << c << " please input d: ";
+        while (cin >> temp3) {
+          if (!(c > temp3)) {
+            cout << "c is " << c << " please input d smaller than c please: ";
+          }
+          else {
+            d=temp3;
+            cout << a <<" " << b << " " << c << " " << d << " " <<endl;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Method2
+int a, b, c, d;
+cin >> a >> b >> c >> d;
+if(a >b && b >c && c>d) {
+  cout << a <<" " << b << " " << c << " " << d << " " <<endl;
+}
+else cout << "please make sure that a>b>c>d";
 */
+
+// E4.12  i != j<k  means i != (j<k)
+// (a) if j<k is true, then it will return a bool, true, and transformed into 1 to compare with i, so
+// in this case, it means i!=1; (b) if j<k is not true, then it will return a bool, true, and transformed into 0 to compare with i, so finally it  means i != 0;
+
+
 
 
 
