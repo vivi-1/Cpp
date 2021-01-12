@@ -1097,9 +1097,13 @@ else cout << "please make sure that a>b>c>d";
 // in this case, it means i!=1; (b) if j<k is not true, then it will return a bool, true, and transformed into 0 to compare with i, so finally it  means i != 0;
 
 
+//E4.13
+//(a) d is 3.0, i is 3
+//(b) d is 3.5 and i is 3
 
+//if (i = 42)  // BUG: i is assigned the value of 42. The result of the statement is always true. Most certainly the intention was i == 42.
 
-
+//E4.16
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
