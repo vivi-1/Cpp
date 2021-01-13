@@ -1101,9 +1101,24 @@ else cout << "please make sure that a>b>c>d";
 //(a) d is 3.0, i is 3
 //(b) d is 3.5 and i is 3
 
-//if (i = 42)  // BUG: i is assigned the value of 42. The result of the statement is always true. Most certainly the intention was i == 42.
+
+//E4.14
+//if (42 = i) gives an error because left-hand operand is rvalue. it is not assignable
+//if (i = 42)  // i is assigned the value of 42. This  statement is always true.
+// if you want to say if i is 42, then it should be written as if (i==42).
+
+//E4.15
+// Because the types of dval, ival and pi are not convertible
+//could be: dval = ival = *pi = 0;
+//or: dval = ival = 0; pi = 0;
+//or: dval=0; ival = 0; pi = 0;
 
 //E4.16
+// (a) if (p = getPtr() != 0)  equals to   if (p = (getPtr() != 0)), the != has higher precedence than =
+// could be if ((p = getPtr()) != 0) meaning if p returned from getPtr is not 0;
+//(b) if (i = 1024) meaning if i=1024 statement is true. if you want to compare
+//i with 1024, it should be if(i == 1024)
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
