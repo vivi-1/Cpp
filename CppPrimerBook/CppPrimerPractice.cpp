@@ -1119,6 +1119,26 @@ else cout << "please make sure that a>b>c>d";
 //(b) if (i = 1024) meaning if i=1024 statement is true. if you want to compare
 //i with 1024, it should be if(i == 1024)
 
+//E4.17 prefix ++i returns a changed value (i+1) as a result, postfix i++ returns
+// a copy of the unchanged value(i) as a result, then plus 1 to it.Both require an lvalue operands. The prefix returns an lvalue and the postfix returns rvalue.
+
+//E4.18 it will skips the first positive value and it will not stop at the last >= 0 value, which means the 1st negative value will be printed in the end.
+
+//E4.19 Given that ptr points to an int, that vec is a vector<int>, and that
+// ival is an int, explain the behavior of each of these expressions. Which,
+// if any, are likely to be incorrect? Why? How might each be corrected?
+
+// (a) ptr != 0 && *ptr++
+//during evaluation, its true that pointer is not null and points to a not empty character, returns the value the ptr points to, and increment ptr
+
+// (b) ival++ && ival meaning return current ival and then increment ival by 1 && ival is still the original value
+// if ival++ is true which means ival is not 0, then evaluate the ival which should also be true. If false, both are false.
+
+// (c) vec[ival++] <= vec[ival]
+// ival++ returns ival, but increment 1 after being evaluated. it will gives an undefined result because ival can't present on both sides of the operand.
+// correction: vec[ival] <= vec[ival+1]; ++ival;
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
