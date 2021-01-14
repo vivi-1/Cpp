@@ -1122,7 +1122,7 @@ else cout << "please make sure that a>b>c>d";
 //E4.17 prefix ++i returns a changed value (i+1) as a result, postfix i++ returns
 // a copy of the unchanged value(i) as a result, then plus 1 to it.Both require an lvalue operands. The prefix returns an lvalue and the postfix returns rvalue.
 
-//E4.18 it will skips the first positive value and it will not stop at the last >= 0 value, which means the 1st negative value will be printed in the end.
+//E4.18 it will skips the first positive value and it will not stop at the last >= 0 value, which means the 1st negative value after the last postive element or the one past the end will be printed in the end.
 
 //E4.19 Given that ptr points to an int, that vec is a vector<int>, and that
 // ival is an int, explain the behavior of each of these expressions. Which,
@@ -1138,6 +1138,26 @@ else cout << "please make sure that a>b>c>d";
 // ival++ returns ival, but increment 1 after being evaluated. it will gives an undefined result because ival can't present on both sides of the operand.
 // correction: vec[ival] <= vec[ival+1]; ++ival;
 
+//E4.21
+vector<int> vi(10);
+int input;
+cout << vi.size() << endl;
+int i=0;
+while (cin >>input) {
+  vi.push_back(input);
+  i++;
+  cout << i << " elements have been added" << endl;
+  if (i == 10) {
+    break;
+  }
+}
+cout << "vector's full now" << endl;
+
+for (auto &i:vi) {
+  cout << i << " ";
+  i=((! i%2) ? (2*i) : (i));
+  cout << i << endl;
+}
 
 
 return 0; //return EXIT_SUCCESS
