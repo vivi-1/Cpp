@@ -1181,7 +1181,7 @@ while (cin >> grade2) {
   else finalgrade2 = "pass" ;
   cout << finalgrade2 << endl;
 }
-*/
+
 //E4.23
 string s = "word";
 string p1 = s + ((s[s.size()-1] == 's') ? " " : "s");
@@ -1189,6 +1189,40 @@ cout << s << " " << p1 << endl;
 
 //E4.24
 //
+
+
+//E4.25
+//'q' has the bit pattern 01110001 (8 bit char) ~'q' << 6 32 bit int
+
+// ~q = 111111111111111111  10001110 000000
+
+//E4.26
+// On 16 bit machine, int minimun size is 2 bytes which is 16bits. On 32 bit machine it can be 2 or 4 bytes which is 16 or 32 bits. So the code behavior will be undefined.
+
+
+//E4.27
+// ul1 = 0000000000000000000000000000111
+// ul2 = 0000000000000000000000001111111
+//(a) ul1 & ul2 = 0000000000000000000000000000111 or 3
+//(b) ul1 | ul2 = 0000000000000000000000001111111 or 7
+//(c) ul1 && ul2  true or 1
+//(d) ul1 || ul2  true or 1
+
+//E4.28
+cout << "bool\t" << sizeof(bool) << endl;
+cout << "char\t" << sizeof(char) << '\n';
+cout << "unsigned char\t" << sizeof(unsigned char) << endl;
+cout << "int\t" << sizeof(int) << '\n';
+cout << "unsigned int\t" << sizeof(unsigned) << endl;
+cout << "double\t"  << sizeof(double) << '\n';
+*/
+
+//E4.29
+
+
+
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
