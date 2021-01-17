@@ -1090,7 +1090,7 @@ if(a >b && b >c && c>d) {
   cout << a <<" " << b << " " << c << " " << d << " " <<endl;
 }
 else cout << "please make sure that a>b>c>d";
-*/
+
 
 // E4.12  i != j<k  means i != (j<k)
 // (a) if j<k is true, then it will return a bool, true, and converts into 1 to compare with i, so
@@ -1139,7 +1139,7 @@ else cout << "please make sure that a>b>c>d";
 // correction: vec[ival] <= vec[ival+1]; ++ival;
 
 //E4.21
-vector<int> vi(10);
+vector<int> vi;
 int input;
 cout << vi.size() << endl;
 int i=0;
@@ -1155,10 +1155,40 @@ cout << "vector's full now" << endl;
 
 for (auto &i:vi) {
   cout << i << " ";
-  i=((! i%2) ? (2*i) : (i));
+  (! (i%2)) ? (i*=2) : (i*=1);
   cout << i << endl;
 }
 
+
+//E4.22
+//Use conditional operators
+int grade21;
+string finalgrade1;
+while (cin >> grade1) {
+  finalgrade1 = (grade1 > 90) ? "high pass"
+                          : (grade1 >60 && grade1 < 70) ? "low pass"
+                          : (grade1 < 60) ? "fail" : "pass";
+  cout << finalgrade1 << endl;
+}
+
+//Use if statements
+int grade2;
+string finalgrade2;
+while (cin >> grade2) {
+  if (grade2 > 90) finalgrade2 = "high pass" ;
+  else if (grade2 > 60 && grade2 <70) finalgrade2 = "low pass" ;
+  else if (grade2 < 60) finalgrade2 = "fail" ;
+  else finalgrade2 = "pass" ;
+  cout << finalgrade2 << endl;
+}
+*/
+//E4.23
+string s = "word";
+string p1 = s + ((s[s.size()-1] == 's') ? " " : "s");
+cout << s << " " << p1 << endl;
+
+//E4.24
+//
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
