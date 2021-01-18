@@ -1207,7 +1207,7 @@ cout << s << " " << p1 << endl;
 //(b) ul1 | ul2 = 0000000000000000000000001111111 or 7
 //(c) ul1 && ul2  true or 1
 //(d) ul1 || ul2  true or 1
-*/
+
 //E4.28
 cout << "bool\t" << sizeof(bool) << endl;
 cout << "char\t" << sizeof(char) << '\n';
@@ -1222,6 +1222,44 @@ cout << "nullptr\t" << sizeof(nullptr) << endl;
 int x[10];   int *p = x;
 cout << sizeof(x)/sizeof(*x) << endl; // 10ints (40bytes)/element size (4bytes) = numbers of elements which is 10;
 cout << sizeof(p)/sizeof(*p) << endl; // size needed to hold a pointer (8bytes)/size needed to hold an int (4bytes);
+
+
+//E4.30
+// (a) sizeof (x) + y or sizeof (x + y) // precedence rank: "sizeof" > "binary +"
+
+// (b) sizeof (p->mem[i]) // precedence rank: "->" = "[]subscription" > "sizeof"
+
+// (c) sizeof (a) < b or sizeof (a < b) // precedence rank: "sizeof" > "less than <"
+
+// (d) sizeof (f()) // precedence rank: "function() " > "sizeof";
+
+int a = 10, b = 20; cout << sizeof (a<b) << endl; cout << sizeof (a+b) << endl;
+
+
+//E4.31 prefix ++ix, --cnt return (ix+1) and (cnt+1) after each of loop is run, while the ix++ and cnt-- return ix and cnt and then increment or decrement;
+
+//E4.32
+constexpr int size = 5; // define the size of an array
+int ia[size] = {1,2,3,4,5}; // define a 5-element array containing 1-5
+for (int *ptr = ia, ix = 0; ix != size && ptr != ia+size; ++ix, ++ptr) {
+  cout << ix << " " << *ptr << " " << ptr << endl;
+  //ptr is pointer to ia, ix is from 0-4, ptr points to position 0-4 in ia, after each loop, +ix,+ptr;
+}
+*/
+
+
+//E4.33 someValue ? ++x, ++y : --x, --y
+//precedence rank: "prefix ++" = "prefix --" > "?: conditional" > ", comma expr"
+//the expression is equal to (someValue ? (++x), (++y) : (--x)), (--y)
+// if someValue is true, ++x and ++y and after increment, --y, so y will not increment at all;
+// if someValue is false, --x, no matter if somevalue is true or false --y all the time
+
+//E4.34
+// (a) if (fval)
+
+// (b) dval = fval + ival;
+
+// (c) dval + ival * cval;
 
 
 
