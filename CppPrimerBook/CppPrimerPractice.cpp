@@ -1272,18 +1272,27 @@ float fval; double dval;
 // (b) fval = ui - ival * 1.0; //ival into double and times 1.0, the rest depends on ui and double size: for example: if unsigned int is bigger than double, the result converted into unsigned int and be substracted by ui. Then the result is converted into float
 // (c) dval = ui * fval; // Conversion depends on the size of unsigned int and float
 // (d) cval = ival + fval + dval; // ival convert into float, addition to fval and convert into double, added to dval, and then convert into int, and convert into char.
-*/
+
+
 //E4.36 Assuming i is an int and d is a double write the expression i *= d so
 // that it does integral, rather than floating-point, multiplication.
 int i = 314;
 double d = 3.1415926;
 cout << i << " " << d << " " << i*d <<" " << i*static_cast<int>(d) << endl;
 
-//E4.37
+//E4.37 int i;  double d;  const string *ps;  char *pc;  void *pv;
+// (a) pv = (void*)ps; pv = const_cast<string*>(ps)
+
+// (b) i = int(*pc); i = static_cast<int>(pc)
+
+// (c) pv = &d; // no need to cast or     pv = static_cast<void*>(&d);
+
+// (d) pc = (char*) pv; pc = reinterpret_cast<char*> pv;
+
 
 //E4.38: Explain the following expression: double slope = static_cast<double>(j/i);
 //if i and j are both int, then j/i will be int, and then converted into double and copied into slope
-
+*/
 
 
 return 0; //return EXIT_SUCCESS
