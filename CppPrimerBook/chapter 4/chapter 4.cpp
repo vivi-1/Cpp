@@ -253,6 +253,75 @@ int main()
   int x[10];   int *p = x;
   cout << sizeof(x)/sizeof(*x) << endl; // 10ints (40bytes)/element size (4bytes) = numbers of elements which is 10;
   cout << sizeof(p)/sizeof(*p) << endl; // size needed to hold a pointer (8bytes)/size needed to hold an int (4bytes);
+
+  //E4.30
+  // (a) sizeof (x) + y or sizeof (x + y) // precedence rank: "sizeof" > "binary +"
+
+  // (b) sizeof (p->mem[i]) // precedence rank: "->" = "[]subscription" > "sizeof"
+
+  // (c) sizeof (a) < b or sizeof (a < b) // precedence rank: "sizeof" > "less than <"
+
+  // (d) sizeof (f()) // precedence rank: "function() " > "sizeof";
+
+  int a = 10, b = 20; cout << sizeof (a<b) << endl; cout << sizeof (a+b) << endl;
+
+
+  //E4.31 prefix ++ix, --cnt return (ix+1) and (cnt+1) after each of loop is run, while the ix++ and cnt-- return ix and cnt and then increment or decrement;
+
+  //E4.32
+  constexpr int size = 5; // define the size of an array
+  int ia[size] = {1,2,3,4,5}; // define a 5-element array containing 1-5
+  for (int *ptr = ia, ix = 0; ix != size && ptr != ia+size; ++ix, ++ptr) {
+    cout << ix << " " << *ptr << " " << ptr << endl;
+    //ptr is pointer to ia, ix is from 0-4, ptr points to position 0-4 in ia, after each loop, +ix,+ptr;
+  }
+
+
+
+  //E4.33 someValue ? ++x, ++y : --x, --y
+  //precedence rank: "prefix ++" = "prefix --" > "?: conditional" > ", comma expr"
+  //the expression is equal to (someValue ? (++x), (++y) : (--x)), (--y)
+  // if someValue is true, ++x and ++y and after increment, --y, so y will not increment at all;
+  // if someValue is false, --x, no matter if somevalue is true or false --y all the time
+
+  //E4.34
+  bool flag; char cval; short sval; unsigned short usval;
+  int ival; unsigned int uival; long lval; unsigned long ulval;
+  float fval; double dval;
+  // (a) if (fval) //fval transform into bool
+  // (b) dval = fval + ival; //ival transform into float and the sum of (fval + ival) will transform into double and add to dval
+  // (c) dval + ival * cval; // cval into int, and (ival * cval) will transform into double and add to dval
+
+
+
+  //E4.35
+  bool flag; char cval; short sval; unsigned short usval;
+  int ival; unsigned int ui; long lval; unsigned long ulval;
+  float fval; double dval;
+  // (a) cval = 'a' + 3; // 'a' is converted into int and add to 3, then the result is converted to char
+  // (b) fval = ui - ival * 1.0; //ival into double and times 1.0, the rest depends on ui and double size: for example: if unsigned int is bigger than double, the result converted into unsigned int and be substracted by ui. Then the result is converted into float
+  // (c) dval = ui * fval; // Conversion depends on the size of unsigned int and float
+  // (d) cval = ival + fval + dval; // ival convert into float, addition to fval and convert into double, added to dval, and then convert into int, and convert into char.
+
+
+  //E4.36 Assuming i is an int and d is a double write the expression i *= d so
+  // that it does integral, rather than floating-point, multiplication.
+  int i = 314;
+  double d = 3.1415926;
+  cout << i << " " << d << " " << i*d <<" " << i*static_cast<int>(d) << endl;
+
+  //E4.37 int i;  double d;  const string *ps;  char *pc;  void *pv;
+  // (a) pv = (void*)ps; pv = const_cast<string*>(ps)
+
+  // (b) i = int(*pc); i = static_cast<int>(pc)
+
+  // (c) pv = &d; // no need to cast or     pv = static_cast<void*>(&d);
+
+  // (d) pc = (char*) pv; pc = reinterpret_cast<char*> pv;
+
+
+  //E4.38: Explain the following expression: double slope = static_cast<double>(j/i);
+  //if i and j are both int, then j/i will be int, and then converted into double and copied into slope
   */
 
 
