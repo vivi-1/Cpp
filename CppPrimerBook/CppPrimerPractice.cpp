@@ -1207,7 +1207,7 @@ cout << s << " " << p1 << endl;
 //(b) ul1 | ul2 = 0000000000000000000000001111111 or 7
 //(c) ul1 && ul2  true or 1
 //(d) ul1 || ul2  true or 1
-
+*/
 //E4.28
 cout << "bool\t" << sizeof(bool) << endl;
 cout << "char\t" << sizeof(char) << '\n';
@@ -1215,11 +1215,13 @@ cout << "unsigned char\t" << sizeof(unsigned char) << endl;
 cout << "int\t" << sizeof(int) << '\n';
 cout << "unsigned int\t" << sizeof(unsigned) << endl;
 cout << "double\t"  << sizeof(double) << '\n';
-*/
+cout << "nullptr\t" << sizeof(nullptr) << endl;
+
 
 //E4.29
-
-
+int x[10];   int *p = x;
+cout << sizeof(x)/sizeof(*x) << endl; // 10ints (40bytes)/element size (4bytes) = numbers of elements which is 10;
+cout << sizeof(p)/sizeof(*p) << endl; // size needed to hold a pointer (8bytes)/size needed to hold an int (4bytes);
 
 
 
