@@ -91,7 +91,6 @@ int main()
                     : (grade %10 > 7) ? cout << scores[grade/10-5] << "+" << endl
                       : cout << scores[grade/10-5] <<endl;
   }
-  */
 
 
   //E5.7 Correct the errors in each of the following code fragments:
