@@ -1290,11 +1290,25 @@ cout << i << " " << d << " " << i*d <<" " << i*static_cast<int>(d) << endl;
 // (d) pc = (char*) pv; pc = reinterpret_cast<char*> pv;
 
 
-//E4.38: Explain the following expression: double slope = static_cast<double>(j/i);
+// E4.38: Explain the following expression: double slope = static_cast<double>(j/i);
 //if i and j are both int, then j/i will be int, and then converted into double and copied into slope
 */
 
-//E5.1
+// E5.1 null statement is an empty statement which is a single semicolon; we can
+// use it where the language requires a statement but the program's logic does not
+// such as when a loop's work can be done within its condition. for example:
+// "while (cin >> s && s != sought) ; "
+
+
+// E5.2 A block contains compound statements which are a sequence of statements
+// (possibly empty) and declarations surounded by a pair of curly braces.
+// A block is a scope.
+
+// E5.3
+
+
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
