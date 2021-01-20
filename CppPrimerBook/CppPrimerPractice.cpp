@@ -1376,7 +1376,7 @@ while (cin >> grade) {
                   : (grade %10 > 7) ? cout << scores[grade/10-5] << "+" << endl
                     : cout << scores[grade/10-5] <<endl;
 }
-*/
+
 
 
 //E5.7 Correct the errors in each of the following code fragments:
@@ -1421,6 +1421,10 @@ while (cin >> grade) {
 // if a given else belongs. This problem is called dangling else. In C++ the
 //ambiguity is resolved by specifying that each else is matched with the
 // closest preceding unmatched if. We can control the execution path with curly braces
+*/
+
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
