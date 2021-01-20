@@ -1384,7 +1384,7 @@ while (cin >> grade) {
 //    ival1 = ival2
 //else ival1 = ival2 = 0;
 
-//should change the indent and add semicolon
+//should change the indentation and add semicolon
 //if (ival1 != ival2)
 //    ival1 = ival2;
 //else ival1 = ival2 = 0;
@@ -1401,7 +1401,7 @@ while (cin >> grade) {
 //    cout << "ival = " << ival << endl;
 // if (!ival)
 //    cout << "ival = 0\n";
-// should change the indent of the second if statement to match the first if statement
+// should change the indentation of the second if statement to match the first if statement
 // should use a else if instead of if to use ival in the scope:
 //if (int ival = get_value())
 //    cout << "ival = " << ival << endl;
@@ -1420,7 +1420,7 @@ while (cin >> grade) {
 // When there are too many if for the else, then the program wouldn't know to Which\
 // if a given else belongs. This problem is called dangling else. In C++ the
 //ambiguity is resolved by specifying that each else is matched with the
-// closest preceding unmatched if.
+// closest preceding unmatched if. We can control the execution path with curly braces
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
