@@ -1424,8 +1424,82 @@ while (cin >> grade) {
 
 
 
+//E5.9 Use if statement to count vowels numbers from input
+string input;
+int cnt_a = 0, cnt_e = 0, cnt_i = 0, cnt_o=0, cnt_u = 0, cnt_other = 0;
+while (getline(cin, input)) {
+  for (auto &i : input) {
+    if (i == 'a') cnt_a += 1;
+    else if (i == 'e') cnt_e += 1;
+    else if (i == 'i') cnt_i += 1;
+    else if (i == 'o') cnt_o += 1;
+    else if (i == 'u') cnt_u += 1;
+    else cnt_other += 1;
+  }
+  cout << cnt_a <<"of a, " << cnt_e << "of e, "<< cnt_i  << "of i, " << cnt_o << "of o, " << cnt_u << "of u, \n";
+}
 
+//E.10
+string input;
+int cnt_a = 0, cnt_e = 0, cnt_i = 0, cnt_o=0, cnt_u = 0, cnt_other = 0;
+while (getline(cin, input) && input != "end") {
+  for (auto &i : input) {
+    switch (i) {
+      case 'a' : case 'A' : ++cnt_a; break;
+      case 'e' : case 'E' : ++cnt_e; break;
+      case 'i' : case 'I' : ++cnt_i; break;
+      case 'o' : case 'O' : ++cnt_o; break;
+      case 'u' : case 'U' : ++cnt_u; break;
+      default: ++cnt_other; break;
+    }
+  }
+  cout << cnt_a <<"of a, " << cnt_e << "of e, "<< cnt_i  << "of i, " << cnt_o << "of o, " << cnt_u << "of u, " << cnt_other << "of other \n";
+}
+
+
+
+//E.11
+string input;
+int cnt_a = 0, cnt_e = 0, cnt_i = 0, cnt_o=0, cnt_u = 0, cnt_other = 0,
+    cnt_blank = 0, cnt_newline = 0, cnt_tab = 0;
+while (getline(cin, input) && input != "end") {
+  for (auto &i : input) {
+    switch (i) {
+      case 'a' : case 'A' : ++cnt_a; break;
+      case 'e' : case 'E' : ++cnt_e; break;
+      case 'i' : case 'I' : ++cnt_i; break;
+      case 'o' : case 'O' : ++cnt_o; break;
+      case 'u' : case 'U' : ++cnt_u; break;
+      case ' ' : ++cnt_blank; break;
+      case '\t' : ++cnt_tab; break;
+      case '\n' : ++cnt_newline; break;
+      default: ++cnt_other; break;
+    }
+  }
+}
+cout << cnt_a <<" of a, " << cnt_e << " of e, "<< cnt_i  << " of i, " << cnt_o
+      << " of o, " << cnt_u << " of u, " << cnt_other << " of other, " << cnt_blank
+      << " of blank spaces, " << cnt_tab << " of tab, " << cnt_newline << " of new lines\n";
 */
+
+//E5.12  counts the number of occurrences of the following two-character sequences: ff, fl, and fi.
+//Method1
+string input;
+int cnt_f = 0;
+while (getline(cin, input) && input != "end") {
+  for (int i = 0; i < input.size(); ++i) {
+    switch (input[i]) {
+      case 'f' : {
+        switch (input[i+1]) {
+          case 'f' :case 'i' : case 'l' : ++cnt_f; break;
+          default : break;}
+      break;}
+      default : break;}
+  }
+}
+cout << cnt_f <<" of ff, fl and fi \n";
+
+//E5.13
 
 
 
