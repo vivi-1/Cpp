@@ -1439,7 +1439,7 @@ while (getline(cin, input)) {
   cout << cnt_a <<"of a, " << cnt_e << "of e, "<< cnt_i  << "of i, " << cnt_o << "of o, " << cnt_u << "of u, \n";
 }
 
-//E.10
+//E5.10
 string input;
 int cnt_a = 0, cnt_e = 0, cnt_i = 0, cnt_o=0, cnt_u = 0, cnt_other = 0;
 while (getline(cin, input) && input != "end") {
@@ -1458,7 +1458,7 @@ while (getline(cin, input) && input != "end") {
 
 
 
-//E.11
+//E5.11
 string input;
 int cnt_a = 0, cnt_e = 0, cnt_i = 0, cnt_o=0, cnt_u = 0, cnt_other = 0,
     cnt_blank = 0, cnt_newline = 0, cnt_tab = 0;
