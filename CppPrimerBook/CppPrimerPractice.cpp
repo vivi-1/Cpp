@@ -1602,6 +1602,19 @@ cout << cnt_f <<" of ff, fl and fi \n";
 //        break;
 //}
 
+
+//E5.14
+vector<string> words;
+string input;
+while (cin >> input) {
+  words.push_back(input);
+  sort(words.begin(), words.end());
+  int cnt = 0;
+  for (auto p = words.begin(); p!= words.end(); ++p) {
+    if (*p = *(p+1)) ++cnt;
+  }
+}
+
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
 
