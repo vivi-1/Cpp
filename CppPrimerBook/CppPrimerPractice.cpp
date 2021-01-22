@@ -1609,9 +1609,12 @@ string input;
 while (cin >> input) {
   words.push_back(input);
   sort(words.begin(), words.end());
-  int cnt = 0;
-  for (auto p = words.begin(); p!= words.end(); ++p) {
-    if (*p = *(p+1)) ++cnt;
+  int cnt = 1;
+  auto p = words.begin();
+  while (p!= words.end()) {
+    if (*p == *(p+1)) { ++cnt; cout << cnt << " of " << *p << '\n';}
+    else { cnt = 1; cout << cnt << " of " << *p << '\n'; }
+    ++p;
   }
 }
 
