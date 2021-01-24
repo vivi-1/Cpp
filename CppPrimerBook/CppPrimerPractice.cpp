@@ -1688,10 +1688,17 @@ while (cin >> input) {
   sort(words.begin(), words.end());
   int cnt = 1;
   auto p = words.begin();
+  cout << "added one word" <<endl;
   while (p!= words.end()) {
-    if (*p == *(p+1)) { ++cnt; cout << cnt << " of " << *p << '\n';}
-    else { cnt = 1; cout << cnt << " of " << *p << '\n'; }
+    if (*p == *(p+1)) {
+      ++cnt;
+      cout << cnt << " of " << *p <<  " lalala"<< '\n';}
+    else {
+      if (*(p-1) == *p) cout << "last of" << endl;
+      else { cnt = 1; cout << cnt << " of " << *p << '\n'; }
+    }
     ++p;
+    cout << "endendnd" << "\n\n\n";
   }
 }
 
