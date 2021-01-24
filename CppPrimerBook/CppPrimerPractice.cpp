@@ -1498,7 +1498,7 @@ while (getline(cin, input) && input != "end") {
   }
 }
 cout << cnt_f <<" of ff, fl and fi \n";
-*/
+
 
 
 //E5.13 Each of the programs in the highlighted text on page 184 contains a
@@ -1617,6 +1617,85 @@ while (cin >> input) {
     ++p;
   }
 }
+
+
+//E5.15 Explain each of the following loops. Correct any problems you detect.
+//(a) for (int ix = 0; ix != sz; ++ix)  { ... }
+//if (ix != sz)
+     // . . .
+//Explaination: ix was defined in for loop and initialized as 0, ix will increment
+//until it is equal to sz. During the for loop, do something while ix increment.
+//Later the code checks if ix doesn't reach sz.
+//error: ix was used out of the scope which should only be used in the for loop
+//Correction:
+//int ix;
+//for (ix = 0; ix != sz; ++ix)  {... }
+//if (ix != sz)
+
+//(b) int ix;
+//for (ix != sz; ++ix) { ... }
+//Explaination: ix was declared and was default initialized to 0 in the begining.
+//Then in the for loop, do something while ix increments until ix reached sz.
+//error: for loop doesn't fit the syntax, it lacks of the initialization statement
+//Correction:
+//int ix;
+//for ( ; ix != sz; ++ix) { ... }
+
+//(c) for (int ix = 0; ix != sz; ++ix, ++ sz)  { ...}
+//Explaination: ix was initialized as 0 and will increment until its equal to
+//sz, which also increments in every for loop.
+//error:sz was not defined or initilized and the for loop never ends since ix
+//will never reach sz
+//Correction:
+//for (int ix = 0, sz = getsize(); ix != sz; ++ix, -- sz)  {...}
+
+
+
+
+//E5.16
+//for loop && while loop
+vector<int> ivec{1,2,3,4,5,6,7,8,9,10};
+for (int j = 0; j<10; ++j) cout << ivec[j] << " " << j << endl;
+cout << "\n\n";
+int i = 0;
+while (i < 10 && i >=0 ) {cout << ivec[i] << " " << i << endl; ++i;}
+
+
+//while loop and for loop
+string line;
+while(getline(cin,line) && line != "end") {
+  cout << line << endl;
+}
+
+
+for (string line2; line2 != "end"; ) {
+  getline(cin, line2);
+  cout << line2 <<endl;
+}
+
+*/
+
+//E5.17  Given two vectors of ints, write a program to determine whether one
+//vector is a prefix of the other. For vectors of unequal length, compare the
+//number of elements of the smaller vector. For example, given the vectors
+//containing 0, 1, 1, and 2 and 0, 1, 1, 2, 3, 5, 8, respectively your program
+//should return true.
+
+vector<string> words;
+string input;
+while (cin >> input) {
+  words.push_back(input);
+  sort(words.begin(), words.end());
+  int cnt = 1;
+  auto p = words.begin();
+  while (p!= words.end()) {
+    if (*p == *(p+1)) { ++cnt; cout << cnt << " of " << *p << '\n';}
+    else { cnt = 1; cout << cnt << " of " << *p << '\n'; }
+    ++p;
+  }
+}
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
