@@ -1611,13 +1611,19 @@ while (cin >> input) {
   sort(words.begin(), words.end());
   int cnt = 1;
   auto p = words.begin();
+  cout << "added one word" <<endl;
   while (p!= words.end()) {
-    if (*p == *(p+1)) { ++cnt; cout << cnt << " of " << *p << '\n';}
-    else { cnt = 1; cout << cnt << " of " << *p << '\n'; }
+    if (*p == *(p+1)) {
+      ++cnt;
+      }
+    else {
+      cout << cnt << " of " << *p << '\n';
+      cnt = 1;
+    }
     ++p;
+    cout << "\n";
   }
 }
-
 
 //E5.15 Explain each of the following loops. Correct any problems you detect.
 //(a) for (int ix = 0; ix != sz; ++ix)  { ... }
@@ -1681,26 +1687,7 @@ for (string line2; line2 != "end"; ) {
 //containing 0, 1, 1, and 2 and 0, 1, 1, 2, 3, 5, 8, respectively your program
 //should return true.
 
-vector<string> words;
-string input;
-while (cin >> input) {
-  words.push_back(input);
-  sort(words.begin(), words.end());
-  int cnt = 1;
-  auto p = words.begin();
-  cout << "added one word" <<endl;
-  while (p!= words.end()) {
-    if (*p == *(p+1)) {
-      ++cnt;
-      cout << cnt << " of " << *p <<  " lalala"<< '\n';}
-    else {
-      if (*(p-1) == *p) cout << "last of" << endl;
-      else { cnt = 1; cout << cnt << " of " << *p << '\n'; }
-    }
-    ++p;
-    cout << "endendnd" << "\n\n\n";
-  }
-}
+
 
 
 
