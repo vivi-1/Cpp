@@ -1797,20 +1797,51 @@ do {
 } while (cin);
 
 
-*/
-
 //E5.20: Write a program to read a sequence of strings from the standard
 //input until either the same word occurs twice in succession or all the words
 //have been read. Use a while loop to read the text one word at a time. Use the
 //break statement to terminate the loop if a word occurs twice in succession.
 //Print the word if it occurs twice in succession, or else print a message saying
 //that no word was repeated.
+vector<string> ivec;
+string input;
+int i = 0;
+while (cin >> input && input != "endofinput") {
+  ivec.push_back(input);
+  ++i;
+  if (ivec[i-1] == ivec[i-2]) break;
+  else continue;
+}
+
 
 //E5.21 Revise the program from the exercise in § 5.5.1 (p. 191)
 //so that it looks only for duplicated words that start with an uppercase letter.
 
+vector<string> ivec;
+string input;
+int i = 0;
+while (cin >> input && input != "endofinput") {
+  ivec.push_back(input);
+  ++i;
+  if (ivec[i-1] == ivec[i-2] && isupper(ivec[i-1].at(0))) {
+    break;
+  }
+  else continue;
+}
+*/
+
+
+
 //E5.22 The last example in this section that jumped back to begin could be better
 //written using a loop. Rewrite the code to eliminate the goto.
+
+  begin:
+    int sz = get_size();
+    if (sz <= 0) {
+          goto begin;
+    }
+
+
 
 
 //E5.23: Write a program that reads two integers from the standard input and
