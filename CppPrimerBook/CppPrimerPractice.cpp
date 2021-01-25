@@ -1740,7 +1740,7 @@ else if (v1.size() > v2.size()) {
 
 else cout << " two vectors have the same size, so one is not a prefix of the other\n\n";
 
-*/
+
 
 //E5.18: Explain each of the following loops. Correct any problems you detect.
 
@@ -1788,6 +1788,16 @@ else cout << " two vectors have the same size, so one is not a prefix of the oth
 
 //E5.19: Write a program that uses a do while loop to repetitively request
 //two strings from the user and report which string is less than the other.
+string s1, s2;
+do {
+  cout << "please input two strings to compare" << endl;
+  cin >> s1 >> s2;
+  if (s1 > s2) cout << s2 << " is the smaller string " << endl;
+  else if (s2 > s1) cout << s1 << " is the smaller string" << endl;
+} while (cin);
+
+
+*/
 
 //E5.20: Write a program to read a sequence of strings from the standard
 //input until either the same word occurs twice in succession or all the words
@@ -1796,7 +1806,7 @@ else cout << " two vectors have the same size, so one is not a prefix of the oth
 //Print the word if it occurs twice in succession, or else print a message saying
 //that no word was repeated.
 
-//E5.21 Exercise 5.21: Revise the program from the exercise in § 5.5.1 (p. 191)
+//E5.21 Revise the program from the exercise in § 5.5.1 (p. 191)
 //so that it looks only for duplicated words that start with an uppercase letter.
 
 //E5.22 The last example in this section that jumped back to begin could be better
