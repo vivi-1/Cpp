@@ -314,7 +314,294 @@ int main()
   //}
 
 
-*/
+  //E5.14
+  vector<string> words;
+  string input;
+  while (cin >> input) {
+    words.push_back(input);
+    sort(words.begin(), words.end());
+    int cnt = 1;
+    auto p = words.begin();
+    cout << "added one word" <<endl;
+    while (p!= words.end()) {
+      if (*p == *(p+1)) {
+        ++cnt;
+        }
+      else {
+        cout << cnt << " of " << *p << '\n';
+        cnt = 1;
+      }
+      ++p;
+      cout << "\n";
+    }
+  }
+
+  //E5.15 Explain each of the following loops. Correct any problems you detect.
+  //(a) for (int ix = 0; ix != sz; ++ix)  { ... }
+  //if (ix != sz)
+       // . . .
+  //Explaination: ix was defined in for loop and initialized as 0, ix will increment
+  //until it is equal to sz. During the for loop, do something while ix increment.
+  //Later the code checks if ix doesn't reach sz.
+  //error: ix was used out of the scope which should only be used in the for loop
+  //Correction:
+  //int ix;
+  //for (ix = 0; ix != sz; ++ix)  {... }
+  //if (ix != sz)
+
+  //(b) int ix;
+  //for (ix != sz; ++ix) { ... }
+  //Explaination: ix was declared and was default initialized to 0 in the begining.
+  //Then in the for loop, do something while ix increments until ix reached sz.
+  //error: for loop doesn't fit the syntax, it lacks of the initialization statement
+  //Correction:
+  //int ix;
+  //for ( ; ix != sz; ++ix) { ... }
+
+  //(c) for (int ix = 0; ix != sz; ++ix, ++ sz)  { ...}
+  //Explaination: ix was initialized as 0 and will increment until its equal to
+  //sz, which also increments in every for loop.
+  //error:sz was not defined or initilized and the for loop never ends since ix
+  //will never reach sz
+  //Correction:
+  //for (int ix = 0, sz = getsize(); ix != sz; ++ix, -- sz)  {...}
+
+
+
+
+  //E5.16
+  //for loop && while loop
+  vector<int> ivec{1,2,3,4,5,6,7,8,9,10};
+  for (int j = 0; j<10; ++j) cout << ivec[j] << " " << j << endl;
+  cout << "\n\n";
+  int i = 0;
+  while (i < 10 && i >=0 ) {cout << ivec[i] << " " << i << endl; ++i;}
+
+
+  //while loop and for loop
+  string line;
+  while(getline(cin,line) && line != "end") {
+    cout << line << endl;
+  }
+
+
+  for (string line2; line2 != "end"; ) {
+    getline(cin, line2);
+    cout << line2 <<endl;
+  }
+
+
+
+  //E5.17  Given two vectors of ints, write a program to determine whether one
+  //vector is a prefix of the other. For vectors of unequal length, compare the
+  //number of elements of the smaller vector. For example, given the vectors
+  //containing 0, 1, 1, and 2 and 0, 1, 1, 2, 3, 5, 8, respectively your program
+  //should return true.
+  vector <int> v1, v2;
+  int int1, int2;
+  cout << "please input for v1: \n";
+  while (cin) {
+    cin >> int1;
+    v1.push_back(int1);
+    if (cin.good()) continue;
+    else {
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+      v1.pop_back();
+      cout << "please input for v2: \n";
+      while (cin >> int2){
+        v2.push_back(int2);
+        if (cin.good()) continue;
+        else break;
+      }
+    }
+  }
+
+  for (auto s1 : v1) {
+    cout << s1 << " ";
+  }
+
+  for (auto s2 : v2) {
+    cout << s2 << " ";
+  }
+  cout <<endl;
+
+  if (v1.size() < v2.size()) {
+    auto i = v1.begin(), j = v2.begin();
+    for (; i != v1.end() && j!= v2.end(); ++i, ++j) {
+      cout << *i <<" i  ";
+      cout << *j << " j ";
+      if ((*i) != (*j)) break;
+      else continue;
+    }
+    cout << *i << endl;
+    if (i == v1.end()) cout << " v1 is prefix for v2\n\n";
+    else cout << " v1 has smaller size than v2 and its not prefix for v2\n\n";
+  }
+
+  else if (v1.size() > v2.size()) {
+    auto i = v1.begin(), j = v2.begin();
+    for (; i != v1.end() && j!= v2.end(); ++i, ++j) {
+      if ((*j) != (*i)) break;
+      else continue;
+    }
+    if (j == v2.end()) cout << " v2 is prefix for v1\n\n";
+    else cout << " v2 has smaller size than v1 and its not prefix for v1\n\n";
+  }
+
+  else cout << " two vectors have the same size, so one is not a prefix of the other\n\n";
+
+
+
+  //E5.18: Explain each of the following loops. Correct any problems you detect.
+
+  //(a) do
+  //    int v1, v2;
+  //    cout << "Please enter two numbers to sum:" ;
+  //    if (cin >> v1 >> v2)
+  //        cout << "Sum is: " << v1 + v2 << endl;
+  //while (cin);
+
+  //Explaination: calculate and print v1+v2 if v1 and v2 are input as integers
+  //Error: missing curly braces
+  //correction:
+  //do {
+  //    int v1, v2;
+  //    cout << "Please enter two numbers to sum:" ;
+  //    if (cin >> v1 >> v2)
+  //        cout << "Sum is: " << v1 + v2 << endl;}
+  //while (cin);
+
+  //(b) do {
+  //    // . . .
+  //} while (int ival = get_response());
+
+  //Explaination: do something while ival is the result from function get_response
+  //Error: you can't define ival in the condition in a do, while loop;
+  //correction:
+  //int ival;
+  //do {
+  //    // . . .
+  //} while (ival = get_response());
+
+
+  //(c) do {
+  //    int ival = get_response();
+  // } while (ival);
+
+  //Explaination: assign whats returned from get_response to ival;
+  //Error: ival was defined in do loop which made it a in scope object;
+  //correction:
+  //int ival;
+  //do {
+  //    ival = get_response();
+  // } while (ival);
+
+  //E5.19: Write a program that uses a do while loop to repetitively request
+  //two strings from the user and report which string is less than the other.
+  string s1, s2;
+  do {
+    cout << "please input two strings to compare" << endl;
+    cin >> s1 >> s2;
+    if (s1 > s2) cout << s2 << " is the smaller string " << endl;
+    else if (s2 > s1) cout << s1 << " is the smaller string" << endl;
+  } while (cin);
+
+
+  //E5.20: Write a program to read a sequence of strings from the standard
+  //input until either the same word occurs twice in succession or all the words
+  //have been read. Use a while loop to read the text one word at a time. Use the
+  //break statement to terminate the loop if a word occurs twice in succession.
+  //Print the word if it occurs twice in succession, or else print a message saying
+  //that no word was repeated.
+  vector<string> ivec;
+  string input;
+  int i = 0;
+  while (cin >> input && input != "endofinput") {
+    ivec.push_back(input);
+    ++i;
+    if (ivec[i-1] == ivec[i-2]) break;
+    else continue;
+  }
+
+
+  //E5.21 Revise the program from the exercise in § 5.5.1 (p. 191)
+  //so that it looks only for duplicated words that start with an uppercase letter.
+
+  vector<string> ivec;
+  string input;
+  int i = 0;
+  while (cin >> input && input != "endofinput") {
+    ivec.push_back(input);
+    ++i;
+    if (ivec[i-1] == ivec[i-2] && isupper(ivec[i-1].at(0))) {
+      break;
+    }
+    else continue;
+  }
+
+
+  //E5.22 The last example in this section that jumped back to begin could be better
+  //written using a loop. Rewrite the code to eliminate the goto.
+  //orinial code:
+    begin:
+      int sz = get_size();
+      if (sz <= 0) {
+            goto begin;
+      }
+
+  //Method1
+  int sz;
+  while (sz <= 0) sz = get_size();
+
+  //Method2
+  int sz;
+  do {
+    sz = get_size()
+  } while(sz <= 0);
+
+  //Methods3
+  int sz;
+  while ((sz = get_size()) <= 0) ; // Null statement
+
+
+  //E5.23: Write a program that reads two integers from the standard input and
+  //prints the result of dividing the first number by the second.
+  int input1, input2;
+  while (cin >> input1 >> input2) cout << "the result is " << input1/input2 << " while the remainder is " << input1%input2 << endl;
+
+  //E5.24: Revise your program to throw an exception if the second number is zero.
+  //Test your program with a zero input to see what happens on your system if
+  //you don’t catch an exception.
+
+  //if there's no exception, it gives error as "zsh: floating point exception"
+  int input1, input2;
+    while (cin >> input1 >> input2) {
+      if (input2 == 0) throw runtime_error("second number can't be 0");
+      else cout << "the result is " << input1/input2 << endl;
+    }
+
+
+
+  //E5.25: Revise your program from the previous exercise to use a try block to
+  //catch the exception. The catch clause should print a message to the user and
+  //ask them to supply a new number and repeat the code inside the try.
+  int input1, input2;
+    while (cin >> input1 >> input2) {
+      try {
+        if (input2 == 0) throw runtime_error("second input can't be 0");
+        else cout << input1/input2 << endl;
+      } catch (runtime_error err) {
+        cout << err.what() << "\ntry to input again? Yes or No" << endl;
+        string input3;
+        cin >> input3;
+        if ( !cin || input3 == "No" || input3 == "NO" || input3 == "no" ) break;
+        else if ( input3 == "yes" || input3 == "YES" || input3 == "Yes" ) continue;
+      }
+    }
+    
+  */
+
 
 
 
