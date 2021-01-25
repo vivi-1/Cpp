@@ -1828,27 +1828,46 @@ while (cin >> input && input != "endofinput") {
   }
   else continue;
 }
-*/
+
 
 
 
 //E5.22 The last example in this section that jumped back to begin could be better
 //written using a loop. Rewrite the code to eliminate the goto.
-
+//orinial code:
   begin:
     int sz = get_size();
     if (sz <= 0) {
           goto begin;
     }
 
+//Method1
+int sz;
+while (sz <= 0) sz = get_size();
 
+//Method2
+int sz;
+do {
+  sz = get_size()
+} while(sz <= 0);
+
+//Methods3
+int sz;
+while ((sz = get_size()) <= 0) ; // Null statement
 
 
 //E5.23: Write a program that reads two integers from the standard input and
 //prints the result of dividing the first number by the second.
+int input1, input2;
+while (cin >> input1 >> input2) cout << "the result is " << input1/input2 << " while the remainder is " << input1%input2 << endl;
+
+*/
+
 
 //E5.24: Revise your program to throw an exception if the second number is zero.
 // Test your program with a zero input to see what happens on your system if you don’t catch an exception.
+
+
 
 //E5.25: Revise your program from the previous exercise to use a try block to
 //catch the exception. The catch clause should print a message to the user and
