@@ -2095,7 +2095,38 @@ int input1, input2;
 
 
 
-//E6.32
+//E6.32 Indicate whether the following function is legal. If so, explain what
+//it does; if not, correct any errors and then explain it.
+
+//int &get(int *arry, int index) { return arry[index]; }
+//int main() {
+//    int ia[10];
+//    for (int i = 0; i != 10; ++i)
+//        get(ia, i) = i;
+//}
+
+
+//E6.33 Write a recursive function to print the contents of a vector.
+
+
+
+//E6.34 What would happen if the stopping condition in factorial were
+
+if (val != 0)
+
+
+//E6.35 In the call to factorial, why did we pass val - 1 rather than val--?
+
+
+
+//E6.36: Write the declaration for a function that returns a reference to an
+//array of ten strings, without using either a trailing return, decltype, or a
+//type alias.
+
+//E6.37: Write three additional declarations for the function in the previous exercise. One should use a type alias, one should use a trailing return, and the third should use decltype. Which form do you prefer and why?
+
+//E6.38: Revise the arrPtr function on to return a reference to the array.
+
 
 
 return 0; //return EXIT_SUCCESS
