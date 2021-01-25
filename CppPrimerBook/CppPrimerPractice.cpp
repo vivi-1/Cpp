@@ -1679,14 +1679,68 @@ for (string line2; line2 != "end"; ) {
   cout << line2 <<endl;
 }
 
-*/
+
 
 //E5.17  Given two vectors of ints, write a program to determine whether one
 //vector is a prefix of the other. For vectors of unequal length, compare the
 //number of elements of the smaller vector. For example, given the vectors
 //containing 0, 1, 1, and 2 and 0, 1, 1, 2, 3, 5, 8, respectively your program
 //should return true.
+vector <int> v1, v2;
+int int1, int2;
+cout << "please input for v1: \n";
+while (cin) {
+  cin >> int1;
+  v1.push_back(int1);
+  if (cin.good()) continue;
+  else {
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    v1.pop_back();
+    cout << "please input for v2: \n";
+    while (cin >> int2){
+      v2.push_back(int2);
+      if (cin.good()) continue;
+      else break;
+    }
+  }
+}
 
+for (auto s1 : v1) {
+  cout << s1 << " ";
+}
+
+for (auto s2 : v2) {
+  cout << s2 << " ";
+}
+cout <<endl;
+
+if (v1.size() < v2.size()) {
+  auto i = v1.begin(), j = v2.begin();
+  for (; i != v1.end() && j!= v2.end(); ++i, ++j) {
+    cout << *i <<" i  ";
+    cout << *j << " j ";
+    if ((*i) != (*j)) break;
+    else continue;
+  }
+  cout << *i << endl;
+  if (i == v1.end()) cout << " v1 is prefix for v2\n\n";
+  else cout << " v1 has smaller size than v2 and its not prefix for v2\n\n";
+}
+
+else if (v1.size() > v2.size()) {
+  auto i = v1.begin(), j = v2.begin();
+  for (; i != v1.end() && j!= v2.end(); ++i, ++j) {
+    if ((*j) != (*i)) break;
+    else continue;
+  }
+  if (j == v2.end()) cout << " v2 is prefix for v1\n\n";
+  else cout << " v2 has smaller size than v1 and its not prefix for v1\n\n";
+}
+
+else cout << " two vectors have the same size, so one is not a prefix of the other\n\n";
+
+*/
 
 //E5.18: Explain each of the following loops. Correct any problems you detect.
 
