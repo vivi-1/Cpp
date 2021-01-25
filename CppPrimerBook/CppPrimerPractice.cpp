@@ -1751,14 +1751,40 @@ else cout << " two vectors have the same size, so one is not a prefix of the oth
 //        cout << "Sum is: " << v1 + v2 << endl;
 //while (cin);
 
+//Explaination: calculate and print v1+v2 if v1 and v2 are input as integers
+//Error: missing curly braces
+//correction:
+//do {
+//    int v1, v2;
+//    cout << "Please enter two numbers to sum:" ;
+//    if (cin >> v1 >> v2)
+//        cout << "Sum is: " << v1 + v2 << endl;}
+//while (cin);
+
 //(b) do {
 //    // . . .
 //} while (int ival = get_response());
+
+//Explaination: do something while ival is the result from function get_response
+//Error: you can't define ival in the condition in a do, while loop;
+//correction:
+//int ival;
+//do {
+//    // . . .
+//} while (ival = get_response());
+
 
 //(c) do {
 //    int ival = get_response();
 // } while (ival);
 
+//Explaination: assign whats returned from get_response to ival;
+//Error: ival was defined in do loop which made it a in scope object;
+//correction:
+//int ival;
+//do {
+//    ival = get_response();
+// } while (ival);
 
 //E5.19: Write a program that uses a do while loop to repetitively request
 //two strings from the user and report which string is less than the other.
