@@ -2034,6 +2034,12 @@ int input1, input2;
 
 
 
+//E6.21 Write a function that takes an int and a pointer to an int and returns
+//the larger of the int value or the value to which the pointer points. What
+//type should you use for the pointer?
+
+//E6.22 Write a function to swap two int pointers.
+
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
 
