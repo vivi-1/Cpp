@@ -2038,7 +2038,65 @@ int input1, input2;
 //the larger of the int value or the value to which the pointer points. What
 //type should you use for the pointer?
 
+
+
 //E6.22 Write a function to swap two int pointers.
+
+
+
+
+//E6.23 Write your own versions of each of the print functions presented in this
+//section. Call each of these functions to print i and j defined as follows:
+//int i = 0, j[2] = {0, 1};
+
+
+
+//E6.24 Explain the behavior of the following function. If there are problems in
+//the code, explain what they are and how you might fix them.
+
+//void print(const int ia[10])
+//{
+//    for (size_t i = 0; i != 10; ++i)
+//        cout << ia[i] << endl;
+//}
+
+
+//E6.25 Write a main function that takes two arguments. Concatenate the supplied
+// arguments and print the resulting string.
+
+
+
+//E6.26 Write a program that accepts the options presented in this section.
+//Print the values of the arguments passed to main.
+
+
+
+//E6.27 Write a function that takes an initializer_list<int> and produces the
+//sum of the elements in the list.
+
+
+
+//E6.28 In the second version of error_msg that has an ErrCode parameter, what
+//is the type of elem in the for loop?
+
+
+
+//E6.29 When you use an initializer_list in a range for would you ever use a
+//reference as the loop control variable? If so, why? If not, why not?
+
+
+
+//E6.30 Compile the version of str_subrange as presented on page 223 to see what
+// your compiler does with the indicated errors.
+
+
+
+//E6.31 When is it valid to return a reference? A reference to const?
+
+
+
+//E6.32
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
