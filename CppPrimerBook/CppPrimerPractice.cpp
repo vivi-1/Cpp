@@ -1830,8 +1830,6 @@ while (cin >> input && input != "endofinput") {
 }
 
 
-
-
 //E5.22 The last example in this section that jumped back to begin could be better
 //written using a loop. Rewrite the code to eliminate the goto.
 //orinial code:
@@ -1861,21 +1859,36 @@ while ((sz = get_size()) <= 0) ; // Null statement
 int input1, input2;
 while (cin >> input1 >> input2) cout << "the result is " << input1/input2 << " while the remainder is " << input1%input2 << endl;
 
-*/
-
-
 //E5.24: Revise your program to throw an exception if the second number is zero.
-// Test your program with a zero input to see what happens on your system if you don’t catch an exception.
+//Test your program with a zero input to see what happens on your system if
+//you don’t catch an exception.
+
+//if there's no exception, it gives error as "zsh: floating point exception"
+int input1, input2;
+  while (cin >> input1 >> input2) {
+    if (input2 == 0) throw runtime_error("second number can't be 0");
+    else cout << "the result is " << input1/input2 << endl;
+  }
 
 
 
 //E5.25: Revise your program from the previous exercise to use a try block to
 //catch the exception. The catch clause should print a message to the user and
 //ask them to supply a new number and repeat the code inside the try.
-
-
-
-
+int input1, input2;
+  while (cin >> input1 >> input2) {
+    try {
+      if (input2 == 0) throw runtime_error("second input can't be 0");
+      else cout << input1/input2 << endl;
+    } catch (runtime_error err) {
+      cout << err.what() << "\ntry to input again? Yes or No" << endl;
+      string input3;
+      cin >> input3;
+      if ( !cin || input3 == "No" || input3 == "NO" || input3 == "no" ) break;
+      else if ( input3 == "yes" || input3 == "YES" || input3 == "Yes" ) continue;
+    }
+  }
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
