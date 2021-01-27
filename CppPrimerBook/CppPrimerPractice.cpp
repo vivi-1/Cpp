@@ -1924,12 +1924,16 @@ int input1, input2;
 //     return s;
 // }
 
+// Wrong, return types don't match
+
 //(b) f2(int i) {...}
+//Wrong, doesnt have a return type before the function
 
 //(c) int calc(int v1, int v1) ... }
+//Wrong, two paramenters can't have the same name, curly braces are not complete
 
 //(d) double square(double x) return x * x;
-
+//Wrong, the function body should be in a block with curly braces
 
 
 //E6.3 Write and test your own version of fact.
