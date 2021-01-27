@@ -7,6 +7,27 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include<vector>
 using namespace std;
 
+
+
+//E6.3 6.4
+int fact(int input) {
+  int temp = 1;
+  while (input > 1) {
+    temp *= input;
+    --input;
+  }
+  return temp;
+}
+
+
+
+//E6.5
+unsigned int abv(signed int input1) {
+  if (input1 < 0) input1 *= (-1);
+  return input1;
+}
+
+
 int main()
 {
 
@@ -1888,7 +1909,7 @@ int input1, input2;
       else if ( input3 == "yes" || input3 == "YES" || input3 == "Yes" ) continue;
     }
   }
-*/
+
 
 //E6.1 What is the difference between a parameter and an argument?
 
@@ -1903,9 +1924,9 @@ int input1, input2;
 //     return s;
 // }
 
-//(b) f2(int i) { /* ... */ }
+//(b) f2(int i) {...}
 
-//(c) int calc(int v1, int v1) /* ... */ }
+//(c) int calc(int v1, int v1) ... }
 
 //(d) double square(double x) return x * x;
 
@@ -1913,18 +1934,28 @@ int input1, input2;
 
 //E6.3 Write and test your own version of fact.
 
-
+int s = fact(5)
 
 
 
 //E6.4: Write a function that interacts with the user, asking for a number and
 //generating the factorial of that number. Call this function from main.
-
+int j;
+while (cin >> j) {
+  int s = fact(j);
+  cout << s <<endl;
+}
 
 
 //E6.5: Write a function to return the absolute value of its argument.
 
+int j;
+while (cin >> j) {
+  int s = abv(j);
+  cout << s <<endl;
+}
 
+*/
 
 
 //E6.6 Explain the differences between a parameter, a local variable, and a
@@ -2112,7 +2143,7 @@ int input1, input2;
 
 //E6.34 What would happen if the stopping condition in factorial were
 
-if (val != 0)
+//if (val != 0)
 
 
 //E6.35 In the call to factorial, why did we pass val - 1 rather than val--?
