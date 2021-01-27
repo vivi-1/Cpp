@@ -1912,9 +1912,10 @@ int input1, input2;
 
 
 //E6.1 What is the difference between a parameter and an argument?
-
-
-
+//Parameter: variable defined in function declaration, seen in the parenthesis
+//behind the function name
+//Arguments:the actual value of the variable you want to pass to the function, it
+//is seen when you call a function
 
 //E6.2  Indicate which of the following functions are in error and why.
 //Suggest how you might correct the problems.
@@ -1959,24 +1960,55 @@ while (cin >> j) {
   cout << s <<endl;
 }
 
-*/
+
 
 
 //E6.6 Explain the differences between a parameter, a local variable, and a
 //local static variable. Give an example of a function in which each might
 //be useful.
 
+//Local variable: Parameters and variables defined inside a function body are referred to as
+//local variables. They are “local” to that function and hide declarations of
+//the same name made in an outer scope.
+
+//Parameter is a local variable. The scope of a parameter is the same as local variable, which is the
+// function body.The lifetime of the parameter starts when the function begins,
+//and ends when the function terminates. It is initialized by the arguments
+//passed to the function.
+
+//A local static variable is a local variable that defined with static keyword.
+//It has a lifetime much longer than usual local variable.The scope of a local
+//static variable is the same as local variable, which is the function body.
+//The lifetime of the local static varible starts when the first time control passes
+// through the variable's definition, and ends when the program terminates.
+//It is initialized if its definition contains an initializer, otherwise, it is
+//value initialized
+
+int count (int i) {
+  static int cnt;
+  ++cnt;
+  int j = 0;
+  if (i == j) return cnt;
+  else return j;
+}
 
 
 
 //E6.7 Write a function that returns 0 when it is first called and then
 //generates numbers in sequence each time it is called again.
-
-
+int count (int i) {
+  static int cnt == 0;
+  if (cnt == 0) return 0;
+  else return cnt;
+  ++cnt;
+}
+*/
 
 
 //E6.8 Write a header file named Chapter6.h that contains declarations for the
 //functions you wrote for the exercises in § 6.1 (p. 205).
+
+
 
 
 //E6.9 Write your own versions of the fact.cc and factMain.cc files. These files
