@@ -1064,7 +1064,6 @@ if (number%2 == 0) {
 else cout << "odd" << endl;
 
 
-
 //E4.7 Overflow happens when a value is computed that is outside the range of values the type can represent
 short short_value = 32767; // max value if shorts are 16 bits
 short_value += 1; // this calculation overflows
