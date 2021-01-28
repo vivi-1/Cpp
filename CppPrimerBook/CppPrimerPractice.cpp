@@ -1071,6 +1071,7 @@ short_value += 1; // this calculation overflows
 cout << "short_value: " << short_value << endl;  //short_value: -32768
 
 
+
 short short_value2 = -32768;
 short_value2 -= 1;
 cout << "short_value2: " << short_value2 << endl; // short_value2: 32767
