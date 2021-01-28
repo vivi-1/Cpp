@@ -2081,7 +2081,8 @@ while (cin >> input5 >> input6) {
 //E6.13 Assuming T is the name of a type, explain the difference between a
 //function declared as void f(T) and void f(T&).
 //void f(T) is passing arguments by value or the function called by value. The value
-//of initializer is copied into the type-T parameter.
+//of initializer is copied into the type-T parameter. Changes to the parameter in
+//function body will not change the argument value.
 //void f(T&) the corresponding argument is passed by reference or the function
 //called by reference. The initializer is a reference or alias for the type-T parameter.
 
@@ -2089,8 +2090,17 @@ while (cin >> input5 >> input6) {
 //E6.14 Give an example of when a parameter should be a reference type.
 //Give an example of when a parameter should not be a reference.
 
+//a parameter should be a reference type:
+//Using References to Avoid Copies: It can be inefficient to copy objects of
+//large class types or large containers. Moreover, some class types (including
+//the IO types) cannot be copied. Functions must use reference parameters to
+//operate on objects of a type that cannot be copied.
 
+//Using Reference Parameters to Return Additional Information: A function can
+//return only a single value. However, sometimes a function has more than one
+//value to return. Reference parameters let us effectively return multiple results.
 
+//a parameter should not be a reference: Changes made to the variable have no effect on the initializer
 
 
 //E6.15 Explain the rationale for the type of each of find_char’s parameters
@@ -2099,6 +2109,21 @@ while (cin >> input5 >> input6) {
 //What would happen if we made s a plain reference? What if we made occurs a
 //reference to const?
 
+//string s should be constant because we don't want to change s later, we find character c
+// in a constant string. occurs is dynamicly changed in the for loop, when counting
+// how many character c is showed up.
+
+//For string &s, it is a reference because string is a large container, we want to use reference
+// to get rid of copying large object.
+
+//For occurs, we want to change the initializer in the argument it passed to the
+//function. So ++occurs in the function statement means the argument will change
+//accordingly. And we want the final value returned by ++occurs
+
+//It's fine make s a plain reference in this case, but its dangerous because
+//there's possibility changing s by accident
+
+//if occurs is a const, then it always is the value when it was initialized at first
 
 
 //E6.16 The following function, although legal, is less useful than it might be.
