@@ -28,6 +28,31 @@ unsigned int abv(signed int input1) {
   return input1;
 }
 
+//E6.10  Write and test your own version of reset that takes a reference.
+void swap(int *num1, int *num2) {
+  cout << "num1 and num2 before swap are " << num1 << " " << num2 << endl;
+  const int temp2 = *num2;
+  const int temp1 = *num1;
+  *num1 = temp2;
+  *num2 = temp1;
+  cout << "num1 and num2 after swap are " << num1 << " " << num2 << endl;
+}
+
+//E6.11  Write and test your own version of reset that takes a reference.
+void reset(char &chr) {
+  chr = 'q';
+}
+
+
+//E6.12
+void swap2(int &num3, int &num4) {
+  const int temp3 = num3;
+  const int temp4 = num4;
+  num3 = temp4;
+  num4 = temp3;
+}
+
+
 
 int main()
 {
@@ -2003,7 +2028,7 @@ int count (int i) {
   else return cnt;
   ++cnt;
 }
-*/
+
 
 
 //E6.8 Write a header file named Chapter6.h that contains declarations for the
@@ -2016,38 +2041,56 @@ int count (int i) {
 //should include your Chapter6.h from the exercises in the previous section.
 //Use these files to understand how your compiler supports separate compilation.
 
+// fact.cc
+//FactMain.cc
 
 
 //E6.10 Using pointers, write a function to swap the values of two ints. Test
 //the function by calling it and printing the swapped values.
-
+int input1, input2;
+while (cin >> input1 >> input2) {
+  cout << "original numbers are: " << input1 << " " << input2 << endl;
+  swap(&input1, &input2);
+  cout << "after swap, they are " << input1 << " " << input2 << endl;
+}
 
 
 
 //E6.11  Write and test your own version of reset that takes a reference.
-
-
+string input;
+while (cin >> input) {
+  reset(input[0]);
+  cout << input[0] << " is the first letter" << endl;
+  cout << input << " is now the string" << endl;
+}
 
 
 //E6.12 Rewrite the program from exercise 6.10 in § 6.2.1 (p. 210) to use
 //references instead of pointers to swap the value of two ints. Which version
 //do you think would be easier to use and why?
 
+int input5, input6;
+while (cin >> input5 >> input6) {
+  cout << " original is " << input5 << " " << input6 << endl;
+  swap2(input5, input6);
+  cout << "after swap it is " << input5 << " " << input6 << endl;
+}
 
-
-
+*/
 
 //E6.13 Assuming T is the name of a type, explain the difference between a
 //function declared as void f(T) and void f(T&).
-
-
-
-
-
+//void f(T) is passing arguments by value or the function called by value. The value
+//of initializer is copied into the type-T parameter.
+//void f(T&) the corresponding argument is passed by reference or the function
+//called by reference. The initializer is a reference or alias for the type-T parameter.
 
 
 //E6.14 Give an example of when a parameter should be a reference type.
 //Give an example of when a parameter should not be a reference.
+
+
+
 
 
 //E6.15 Explain the rationale for the type of each of find_char’s parameters
