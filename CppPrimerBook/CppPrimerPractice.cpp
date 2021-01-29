@@ -52,6 +52,22 @@ void swap2(int &num3, int &num4) {
   num4 = temp3;
 }
 
+//E6.17 Write a function to determine whether a string contains any capital
+//letters. Write a function to change a string to all lowercase. Do the parameters
+//you used in these functions have the same type? If so, why? If not, why not?
+bool is_upper(const string &input) {
+  unsigned int temp = 0;
+  bool result = false;
+  for (auto c : input) {
+    if (c.isupper()) temp += 1;
+  }
+  if (temp != 0) result = true;
+  return result;
+}
+
+void to_lowercase(string &input) {
+  for (auto c : input) c = tolower(c);
+}
 
 
 int main()
@@ -2138,12 +2154,18 @@ while (cin >> input5 >> input6) {
 //letters. Write a function to change a string to all lowercase. Do the parameters
 //you used in these functions have the same type? If so, why? If not, why not?
 bool is_upper(const string &input) {
-  bool result;
-  for (auto c : input) result = c.isupper();
+  unsigned int temp = 0;
+  bool result = false;
+  for (auto c : input) {
+    if (c.isupper()) temp += 1;
+  }
+  if (temp != 0) result = true;
   return result;
 }
 
-
+void to_lowercase(string &input) {
+  for (auto c : input) c = tolower(c);
+}
 
 //E6.18 Write declarations for each of the following functions. When you write
 //these declarations, use the name of the function to indicate what the function does.
