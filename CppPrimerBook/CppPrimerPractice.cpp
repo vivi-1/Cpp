@@ -2130,13 +2130,18 @@ while (cin >> input5 >> input6) {
 //Identify and correct the limitation on this function:
 
 //bool is_empty(string& s) { return s.empty(); }
-
+//correction: bool is_empty(const string& s) { return s.empty(); }
 
 
 
 //E6.17 Write a function to determine whether a string contains any capital
 //letters. Write a function to change a string to all lowercase. Do the parameters
 //you used in these functions have the same type? If so, why? If not, why not?
+bool is_upper(const string &input) {
+  bool result;
+  for (auto c : input) result = c.isupper();
+  return result;
+}
 
 
 
