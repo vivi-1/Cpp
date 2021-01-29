@@ -4,7 +4,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
 #include "Sales_item.h"
-#include "Chapter6.h"
+//#include "Chapter6.h"
 #include<vector>
 using namespace std;
 
@@ -45,7 +45,7 @@ void reset(char &chr) {
 
 
 //E6.12
-void swap2(int &num3, int &num4) {
+void swap2(int& num3, int& num4) {
   const int temp3 = num3;
   const int temp4 = num4;
   num3 = temp4;
@@ -55,11 +55,11 @@ void swap2(int &num3, int &num4) {
 //E6.17 Write a function to determine whether a string contains any capital
 //letters. Write a function to change a string to all lowercase. Do the parameters
 //you used in these functions have the same type? If so, why? If not, why not?
-bool is_upper(const string &input) {
+bool is_upper(const string& input) {
   unsigned int temp = 0;
   bool result = false;
-  for (auto c : input) {
-    if (c.isupper()) temp += 1;
+  for (auto &c : input) {
+    if (isupper(c)) temp += 1;
   }
   if (temp != 0) result = true;
   return result;
@@ -2153,18 +2153,13 @@ while (cin >> input5 >> input6) {
 //E6.17 Write a function to determine whether a string contains any capital
 //letters. Write a function to change a string to all lowercase. Do the parameters
 //you used in these functions have the same type? If so, why? If not, why not?
-bool is_upper(const string &input) {
-  unsigned int temp = 0;
-  bool result = false;
-  for (auto c : input) {
-    if (c.isupper()) temp += 1;
-  }
-  if (temp != 0) result = true;
-  return result;
-}
 
-void to_lowercase(string &input) {
-  for (auto c : input) c = tolower(c);
+string input;
+while (cin >> input) cout << is_upper(input) << endl;
+
+while (cin >> input) {
+  input = to_lowercase (input);
+  cout << input << endl;
 }
 
 //E6.18 Write declarations for each of the following functions. When you write
