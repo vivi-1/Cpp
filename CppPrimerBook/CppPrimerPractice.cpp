@@ -4,7 +4,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
 #include "Sales_item.h"
-//#include "Chapter6.h"
+#include "Chapter6.h"
 #include<vector>
 using namespace std;
 
@@ -65,8 +65,9 @@ bool is_upper(const string& input) {
   return result;
 }
 
-void to_lowercase(string &input) {
-  for (auto c : input) c = tolower(c);
+string to_lcase(string &input) {
+  for (char &c : input) c = tolower(c);
+  return input;
 }
 
 
@@ -2092,7 +2093,7 @@ while (cin >> input5 >> input6) {
   cout << "after swap it is " << input5 << " " << input6 << endl;
 }
 
-*/
+
 
 //E6.13 Assuming T is the name of a type, explain the difference between a
 //function declared as void f(T) and void f(T&).
@@ -2155,12 +2156,16 @@ while (cin >> input5 >> input6) {
 //you used in these functions have the same type? If so, why? If not, why not?
 
 string input;
-while (cin >> input) cout << is_upper(input) << endl;
+while (cin >> input) cout << input << is_upper(input) << endl;
 
-while (cin >> input) {
-  input = to_lowercase (input);
-  cout << input << endl;
+
+string input2;
+while (cin >> input2) {
+  cout << to_lcase (input2) << endl;
 }
+
+*/
+
 
 //E6.18 Write declarations for each of the following functions. When you write
 //these declarations, use the name of the function to indicate what the function does.
