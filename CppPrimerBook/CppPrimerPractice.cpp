@@ -2173,9 +2173,12 @@ while (cin >> input2) {
 //(a) A function named compare that returns a bool and has two parameters that
 //are references to a class named matrix.
 
+//bool compare (matrix& p1, matrix& p2){...}
+
 //(b) A function named change_val that returns a vector<int> iterator and takes
 //two parameters: One is an int and the other is an iterator for a vector<int>.
 
+//vector<int>::interator change_val(int input1, vector<int> :: interator iter1)
 
 //E6.19 Given the following declarations, determine which calls are legal and
 //which are illegal. For those that are illegal, explain why.
@@ -2184,18 +2187,19 @@ while (cin >> input2) {
 //int count(const string &, char);
 //int sum(vector<int>::iterator, vector<int>::iterator, int);
 //vector<int> vec(10);
-//(a) calc(23.4, 55.1);
 
-//(b) count("abcda", 'a');
-
-//(c) calc(66);
-
-//(d) sum(vec.begin(), vec.end(), 3.8);
+//(a) calc(23.4, 55.1); ilegal, the amount of arguments doesn't match with the parameter numbers;
+//(b) count("abcda", 'a'); legal
+//(c) calc(66); legal, 66 will be converted to double
+//(d) sum(vec.begin(), vec.end(), 3.8); legal, 3.8 will be truncated into integer.
 
 
 //E6.20 When should reference parameters be references to const? What happens if
 //we make a parameter a plain reference when it could be a reference to const?
-
+//when you dont want to cahnge the original argument value, just want to calculate
+// the numbers of elelments in the arguments;
+// could accidentally change the original argument by accident when you just want to
+// know the features of the arguments;
 
 
 //E6.21 Write a function that takes an int and a pointer to an int and returns
