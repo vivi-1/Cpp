@@ -78,5 +78,11 @@ void swap_ptr(int*& p1, int*& p2) {
 
 //E6.23
 void print(const int* ptr) {
-  for ( ; ptr != nullptr && (*ptr) != Null; ++ptr) cout << *ptr << endl;
+  if (ptr != nullptr && (*ptr) != '\0') cout << *ptr << endl;
+}
+
+void print (const int (&arr)[2]) {
+  for(auto i : arr) {
+    cout << i << endl;
+  }
 }
