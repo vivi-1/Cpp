@@ -21,8 +21,11 @@ namespace ft
     void to_lowercase(std::string&);
     int compareLarger (const int, const int* const);
 
-  }
+  };
 }
 
 
 #endif
+
+//include guard or a #pragma once directive to ensure that
+//they are not inserted multiple times into a single .cpp file.

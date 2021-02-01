@@ -7,93 +7,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include "Chapter6.h"
 #include<vector>
 using namespace std;
-
-
-
-//E6.3 6.4
-int fact(int input) {
-  int temp = 1;
-  while (input > 1) {
-    temp *= input;
-    --input;
-  }
-  return temp;
-}
-
-
-
-//E6.5
-unsigned int abv(signed int input1) {
-  if (input1 < 0) input1 *= (-1);
-  return input1;
-}
-
-//E6.10  Write and test your own version of reset that takes a reference.
-void swap(int *num1, int *num2) {
-  cout << "num1 and num2 before swap are " << num1 << " " << num2 << endl;
-  const int temp2 = *num2;
-  const int temp1 = *num1;
-  *num1 = temp2;
-  *num2 = temp1;
-  cout << "num1 and num2 after swap are " << num1 << " " << num2 << endl;
-}
-
-//E6.11  Write and test your own version of reset that takes a reference.
-void reset(char &chr) {
-  chr = 'q';
-}
-
-
-//E6.12
-void swap2(int& num3, int& num4) {
-  const int temp3 = num3;
-  const int temp4 = num4;
-  num3 = temp4;
-  num4 = temp3;
-}
-
-//E6.17 Write a function to determine whether a string contains any capital
-//letters. Write a function to change a string to all lowercase. Do the parameters
-//you used in these functions have the same type? If so, why? If not, why not?
-bool is_upper(const string& input) {
-  unsigned int temp = 0;
-  bool result = false;
-  for (auto &c : input) {
-    if (isupper(c)) temp += 1;
-  }
-  if (temp != 0) result = true;
-  return result;
-}
-
-string to_lcase(string &input) {
-  for (char &c : input) c = tolower(c);
-  return input;
-}
-
-
-//E6.21
-int compareLarger (const int input1, const int *const input2) {
-  return (input1 > *input2) ? input1 : (*input2);
-}
-
-//E6.22 Write a function to swap two int pointers.
-void swap_ptr(int*& p1, int*& p2) {
-  int* const temp = p1;
-  p1 = p2;
-  p2 =  temp;
-}
-
-
-//E6.23
-void print(const int* ptr) {
-  if (ptr != nullptr && (*ptr) != '\0') cout << *ptr << endl;
-}
-
-void print (const int (&arr)[2]) {
-  for(auto i : arr) {
-    cout << i << endl;
-  }
-}
+using namespace ft;
 
 
 int main()
@@ -2239,7 +2153,7 @@ int* ptr1 = &i; int* ptr2 = &j;
 swap_ptr(ptr1, ptr2);
 cout << *ptr1 << " " << *ptr2 <<endl;
 
-
+*/
 
 //E6.23 Write your own versions of each of the print functions presented in this
 //section. Call each of these functions to print i and j defined as follows:
@@ -2248,7 +2162,7 @@ print(&i);
 cout << "\n\n\n";
 print(j);
 
-*/
+
 
 //E6.24 Explain the behavior of the following function. If there are problems in
 //the code, explain what they are and how you might fix them.
