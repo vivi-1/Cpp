@@ -67,3 +67,16 @@ void to_lowercase(string &input) {
 int compareLarger (const int input1, const int *const input2) {
   return (input1 > *input2) ? input1 : (*input2);
 }
+
+
+//E6.22 Write a function to swap two int pointers.
+void swap_ptr(int*& p1, int*& p2) {
+  int* const temp = p1;
+  p1 = p2;
+  p2 =  temp;
+}
+
+//E6.23
+void print(const int* ptr) {
+  for ( ; ptr != nullptr && (*ptr) != Null; ++ptr) cout << *ptr << endl;
+}

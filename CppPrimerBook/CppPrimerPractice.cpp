@@ -76,6 +76,26 @@ int compareLarger (const int input1, const int *const input2) {
   return (input1 > *input2) ? input1 : (*input2);
 }
 
+//E6.22 Write a function to swap two int pointers.
+void swap_ptr(int*& p1, int*& p2) {
+  int* const temp = p1;
+  p1 = p2;
+  p2 =  temp;
+}
+
+
+//E6.23
+void print(const int* ptr) {
+  if (ptr != nullptr && (*ptr) != '\0') cout << *ptr << endl;
+}
+
+void print (const int (&arr)[2]) {
+  for(auto i : arr) {
+    cout << i << endl;
+  }
+}
+
+
 int main()
 {
 
@@ -2212,19 +2232,23 @@ while (cin >> input2) {
 int i = 5;
 cout << compareLarger(i=7, &i);
 
-*/
-
 
 //E6.22 Write a function to swap two int pointers.
-
+int i = 9, j = 6;
+int* ptr1 = &i; int* ptr2 = &j;
+swap_ptr(ptr1, ptr2);
+cout << *ptr1 << " " << *ptr2 <<endl;
 
 
 
 //E6.23 Write your own versions of each of the print functions presented in this
 //section. Call each of these functions to print i and j defined as follows:
-//int i = 0, j[2] = {0, 1};
+int i = 0, j[2] = {0, 1};
+print(&i);
+cout << "\n\n\n";
+print(j);
 
-
+*/
 
 //E6.24 Explain the behavior of the following function. If there are problems in
 //the code, explain what they are and how you might fix them.
