@@ -1,6 +1,7 @@
 #ifndef CHAPTER6_H
 #define CHAPTER6_H
 
+
 //E6.3 6.4
 int fact(int);
 
@@ -11,5 +12,6 @@ void reset(char&);
 void swap2(int&, int&);
 bool is_upper(const std::string&);
 void to_lowercase(std::string&);
+int compareLarger (const int, const int* const);
 
 #endif

@@ -71,6 +71,11 @@ string to_lcase(string &input) {
 }
 
 
+//E6.21
+int compareLarger (const int input1, const int *const input2) {
+  return (input1 > *input2) ? input1 : (*input2);
+}
+
 int main()
 {
 
@@ -2164,7 +2169,6 @@ while (cin >> input2) {
   cout << to_lcase (input2) << endl;
 }
 
-*/
 
 
 //E6.18 Write declarations for each of the following functions. When you write
@@ -2205,7 +2209,10 @@ while (cin >> input2) {
 //E6.21 Write a function that takes an int and a pointer to an int and returns
 //the larger of the int value or the value to which the pointer points. What
 //type should you use for the pointer?
+int i = 5;
+cout << compareLarger(i=7, &i);
 
+*/
 
 
 //E6.22 Write a function to swap two int pointers.

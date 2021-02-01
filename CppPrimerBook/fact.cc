@@ -59,3 +59,11 @@ bool is_upper(const string &input) {
 void to_lowercase(string &input) {
   for (auto c : input) c = tolower(c);
 }
+
+
+//E6.21 Write a function that takes an int and a pointer to an int and returns
+//the larger of the int value or the value to which the pointer points. What
+//type should you use for the pointer?
+int compareLarger (const int input1, const int *const input2) {
+  return (input1 > *input2) ? input1 : (*input2);
+}
