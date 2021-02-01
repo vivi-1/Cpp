@@ -2153,7 +2153,7 @@ int* ptr1 = &i; int* ptr2 = &j;
 swap_ptr(ptr1, ptr2);
 cout << *ptr1 << " " << *ptr2 <<endl;
 
-*/
+
 
 //E6.23 Write your own versions of each of the print functions presented in this
 //section. Call each of these functions to print i and j defined as follows:
@@ -2161,6 +2161,12 @@ int i = 0, j[2] = {0, 1};
 print(&i);
 cout << "\n\n\n";
 print(j);
+
+*/
+string s;
+while (getline(cin, s)) {
+  cout << s <<endl;
+}
 
 
 
