@@ -1,6 +1,7 @@
 #include<iostream>
 #include "Chapter6.h"
 using namespace std;
+using namespace ft;
 
 
 
