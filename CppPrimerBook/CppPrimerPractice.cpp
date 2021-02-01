@@ -2327,6 +2327,80 @@ print(j);
 //E6.38: Revise the arrPtr function on to return a reference to the array.
 
 
+//E6.39: Explain the effect of the second declaration in each one of the following
+// sets of declarations. Indicate which, if any, are illegal.
+
+//(a) int calc(int, int);
+//int calc(const int, const int);
+
+//(b) int get();
+//double get();
+
+//(c) int *reset(int *);
+//double *reset(double *);
+
+
+//E6.40: Which, if either, of the following declarations are errors? Why?
+
+//(a) int ff(int a, int b = 0, int c = 0);
+
+//(b) char *init(int ht = 24, int wd, char bckgrnd);
+
+//E6.41: Which, if any, of the following calls are illegal? Why? Which, if any,
+//are legal but unlikely to match the programmer’s intent? Why?
+
+//char *init(int ht, int wd = 80, char bckgrnd = ' ');
+
+//(a) init();
+
+//(b) init(24,10);
+
+//(c) init(14, '*');
+
+//E6.42: Give the second parameter of make_plural (§ 6.3.2, p. 224) a default
+//argument of 's'. Test your program by printing singular and plural versions of
+// the words success and failure.
+
+
+
+
+//E6.43: Which one of the following declarations and definitions would you put
+//in a header? In a source file? Explain why.
+
+//(a) inline bool eq(const BigInt&, const BigInt&) {...}
+
+//(b) void putValues(int *arr, int size);
+
+
+
+//E6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
+
+
+
+//E6.45: Review the programs you’ve written for the earlier exercises and decide
+// whether they should be defined as inline. If so, do so. If not, explain why
+//they should not be inline.
+
+
+
+//E6.46: Would it be possible to define isShorter as a constexpr? If so, do so.
+//If not, explain why not.
+
+
+
+//E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
+//used recursion to print the contents of a vector to conditionally print
+//information about its execution. For example, you might print the size of the
+//vector on each call. Compile and run the program with debugging turned on and
+//again with it turned off.
+
+
+
+//E6.48: Explain what this loop does and whether it is a good use of assert:
+//string s;
+//while (cin >> s && s != sought) { }  // empty body
+//assert(cin);
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
