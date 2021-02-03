@@ -24,7 +24,6 @@ namespace ft
   };
 }
 
-
 #endif
 
 //include guard or a #pragma once directive to ensure that
