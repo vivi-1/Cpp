@@ -2171,8 +2171,6 @@ cout << "\n\n\n";
 print(j);
 
 
-
-
 //E6.24 Explain the behavior of the following function. If there are problems in
 //the code, explain what they are and how you might fix them.
 
@@ -2182,7 +2180,7 @@ print(j);
 //        cout << ia[i] << endl;
 //}
 //correction: void print(const int (&ia)[10])
-*/
+
 
 //E6.25 Write a main function that takes two arguments. Concatenate the supplied
 // arguments and print the resulting string.
@@ -2213,6 +2211,8 @@ cout << test << endl;
 //Depends what scenerio you are in. The initilizer_list only contains constant
 //values, so you can't change the initilizers. If you want to change the object
 //or the object can't be copied to pass to the argument, then you should use reference.
+
+*/
 
 //E6.30 Compile the version of str_subrange as presented on page 223 to see what
 // your compiler does with the indicated errors.
