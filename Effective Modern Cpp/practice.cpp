@@ -10,7 +10,11 @@ using namespace std;
 using namespace ft;
 
 int main() {
-//Chapter 1
+//Chapter 1 Deducing Types
+
+
+
+
 
 //Chapter2
 //Chapter3
