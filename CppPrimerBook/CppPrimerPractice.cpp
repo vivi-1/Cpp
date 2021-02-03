@@ -2210,10 +2210,9 @@ cout << test << endl;
 
 //E6.29 When you use an initializer_list in a range for would you ever use a
 //reference as the loop control variable? If so, why? If not, why not?
-//The initilizer_list only contains constant values, 
-
-
-
+//Depends what scenerio you are in. The initilizer_list only contains constant
+//values, so you can't change the initilizers. If you want to change the object
+//or the object can't be copied to pass to the argument, then you should use reference.
 
 //E6.30 Compile the version of str_subrange as presented on page 223 to see what
 // your compiler does with the indicated errors.
