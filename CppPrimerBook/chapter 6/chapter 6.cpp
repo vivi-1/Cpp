@@ -326,7 +326,7 @@ int main()
   //        cout << ia[i] << endl;
   //}
   //correction: void print(const int (&ia)[10])
-  */
+
 
   //E6.25 Write a main function that takes two arguments. Concatenate the supplied
   // arguments and print the resulting string.
