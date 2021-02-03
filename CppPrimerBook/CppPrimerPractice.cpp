@@ -9,6 +9,14 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 using namespace std;
 using namespace ft;
 
+//E6.27 Write a function that takes an initializer_list<int> and produces the
+//sum of the elements in the list.
+double sum_list(initializer_list<double> lst) {
+  double result;
+  for (auto beg = lst.begin(); beg != lst.end(); ++beg) result += (*beg);
+  return result;
+}
+
 
 int main()
 {
@@ -2162,11 +2170,6 @@ print(&i);
 cout << "\n\n\n";
 print(j);
 
-*/
-string s;
-while (getline(cin, s)) {
-  cout << s <<endl;
-}
 
 
 
@@ -2178,30 +2181,37 @@ while (getline(cin, s)) {
 //    for (size_t i = 0; i != 10; ++i)
 //        cout << ia[i] << endl;
 //}
-
+//correction: void print(const int (&ia)[10])
+*/
 
 //E6.25 Write a main function that takes two arguments. Concatenate the supplied
 // arguments and print the resulting string.
-
-
-
 //E6.26 Write a program that accepts the options presented in this section.
 //Print the values of the arguments passed to main.
 
+//int main(int argc, char *argv[]) {
+//  string s;
+//  for (auto i = 0; i < argc; ++i)
+//  s += argv[i];
+//  cout << s << endl;
+//}
 
 
 //E6.27 Write a function that takes an initializer_list<int> and produces the
 //sum of the elements in the list.
 
-
+double test = sum_list({3.14, 15925, 53, 123.2});
+cout << test << endl;
 
 //E6.28 In the second version of error_msg that has an ErrCode parameter, what
 //is the type of elem in the for loop?
-
+//constant reference to strings
 
 
 //E6.29 When you use an initializer_list in a range for would you ever use a
 //reference as the loop control variable? If so, why? If not, why not?
+//The initilizer_list only contains constant values, 
+
 
 
 

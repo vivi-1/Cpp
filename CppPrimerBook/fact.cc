@@ -87,3 +87,14 @@ void chapter6::print (const int (&arr)[2]) {
     cout << i << endl;
   }
 }
+
+
+//E6.27 Write a function that takes an initializer_list<int> and produces the
+//sum of the elements in the list.
+
+
+double sum_list(initializer_list<double> lst) {
+  double result;
+  for (auto beg = lst.begin(); beg != lst.end(); ++beg) result += (*beg);
+  return result;
+}
