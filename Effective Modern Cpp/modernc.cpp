@@ -3,11 +3,8 @@ This is CppPrimerPractice for the C++ primer 5th edition
 By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
-#include "Sales_item.h"
-#include "Chapter6.h"
 #include<vector>
 using namespace std;
-using namespace ft;
 
 int main() {
 //Chapter 1 Deducing Types
