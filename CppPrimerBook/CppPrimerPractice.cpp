@@ -17,6 +17,13 @@ double sum_list(initializer_list<double> lst) {
   return result;
 }
 
+//E6.33 Write a recursive function to print the contents of a vector.
+void print_vec(vector<string> v, vector<string>::size_type i) {
+  if (i > 0) {
+    cout << v[i-1] << endl;
+    print_vec(v, i-1);
+  }
+}
 
 int main()
 {
@@ -2212,14 +2219,27 @@ cout << test << endl;
 //values, so you can't change the initilizers. If you want to change the object
 //or the object can't be copied to pass to the argument, then you should use reference.
 
-*/
+
 
 //E6.30 Compile the version of str_subrange as presented on page 223 to see what
 // your compiler does with the indicated errors.
-
+//bool str_subrange(const std::string &str1, const std::string &str2)
+//{
+//	if (str1.size() == str2.size())
+//		return str1 == str2;
+//	auto size = (str1.size() < str2.size()) ? str1.size() : str2.size();
+//	for (decltype(size) i = 0; i != size; ++i)
+//		if (str1[i] != str2[i])
+//			return;
+//}
+//error: non-void function 'str_subrange' should return a value
 
 
 //E6.31 When is it valid to return a reference? A reference to const?
+//When the object that the  reference refers to  is not local in the function
+//because it will be erased after the function call ends.
+// when the returned object was not meant to be lvalue which means that
+// we want to change the object afterwards;
 
 
 
@@ -2233,25 +2253,43 @@ cout << test << endl;
 //        get(ia, i) = i;
 //}
 
+//legal, get returns a int& to the element on position index in arry. When the function
+//was called in main, "get" returns refereces to the range from ia[0] to ia[9].
+//
+
 
 //E6.33 Write a recursive function to print the contents of a vector.
 
+vector<string> v = {"kevin", "loves", "Wei"};
+vector<string>::size_type i = v.size();
+print_vec(v, i);
 
+*/
 
 //E6.34 What would happen if the stopping condition in factorial were
 
 //if (val != 0)
-
+// it will multiply 0 in the end which makes the result 0
 
 //E6.35 In the call to factorial, why did we pass val - 1 rather than val--?
-
+// for each val, it will print factorial numbers of val, val-1, val-2....3,2,1.
 
 
 //E6.36: Write the declaration for a function that returns a reference to an
 //array of ten strings, without using either a trailing return, decltype, or a
 //type alias.
 
-//E6.37: Write three additional declarations for the function in the previous exercise. One should use a type alias, one should use a trailing return, and the third should use decltype. Which form do you prefer and why?
+//string (& arr_s10(string arr[10])) [10]
+// string(&arr_s10(string (&arr)[10])) [10]
+
+//E6.37: Write three additional declarations for the function in the previous exercise.
+//One should use a type alias, one should use a trailing return, and the third
+//should use decltype. Which form do you prefer and why?
+
+
+
+
+
 
 //E6.38: Revise the arrPtr function on to return a reference to the array.
 
