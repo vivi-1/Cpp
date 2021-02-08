@@ -2279,19 +2279,28 @@ print_vec(v, i);
 //array of ten strings, without using either a trailing return, decltype, or a
 //type alias.
 
-//string (& arr_s10(string arr[10])) [10]
+// string (& arr_s10(string arr[10])) [10]
 // string(&arr_s10(string (&arr)[10])) [10]
 
 //E6.37: Write three additional declarations for the function in the previous exercise.
 //One should use a type alias, one should use a trailing return, and the third
 //should use decltype. Which form do you prefer and why?
 
-
-
-
-
+//type alias
+//typedef string arrT[10];
+//or (using arrT = string[10];)
+//arrT& func(arrT & arr);
+//trailing return: auto func(arrT& arr) -> string(&)[10];
+//decltype: string arr1[10]; decltype(arr1) & func(arrT arr);
 
 //E6.38: Revise the arrPtr function on to return a reference to the array.
+//int odd[] = {1,3,5,7,9};
+//int even[] = {0,2,4,6,8};
+
+//decltype(odd) &arrPtr(int i)
+//{
+//    return (i % 2) ? odd : even;
+//}
 
 
 //E6.39: Explain the effect of the second declaration in each one of the following
