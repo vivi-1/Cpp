@@ -2308,13 +2308,16 @@ print_vec(v, i);
 
 //(a) int calc(int, int);
 //int calc(const int, const int);
+//illegal
 
 //(b) int get();
 //double get();
+//illegal
+
 
 //(c) int *reset(int *);
 //double *reset(double *);
-
+//legal
 
 //E6.40: Which, if either, of the following declarations are errors? Why?
 
