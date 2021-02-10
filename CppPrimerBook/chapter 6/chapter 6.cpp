@@ -4,7 +4,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
 #include<vector>
-#include "Chapter6.h"
+#include <Chapter6.h>
 using namespace std;
 
 //E6.3 6.4

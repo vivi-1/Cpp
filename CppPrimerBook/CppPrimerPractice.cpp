@@ -25,8 +25,18 @@ void print_vec(vector<string> v, vector<string>::size_type i) {
   }
 }
 
-string make_plural(size_t ctr, const string &word = 's', const string &ending) {
+//E6.42
+string make_plural(size_t ctr, const string &word, const string &ending = "s") {
     return (ctr > 1) ? word + ending : word;}
+
+//E6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
+inline bool isShorter(const string &s1, const string &s2) {
+    return s1.size() < s2.size(); }
+
+//E6.46: Would it be possible to define isShorter as a constexpr? If so, do so.
+//If not, explain why not.
+constexpr bool isShorter2(const string &s1, const string &s2) {
+    return s1.size() < s2.size(); }
 
 int main()
 {
@@ -2267,7 +2277,7 @@ vector<string> v = {"kevin", "loves", "Wei"};
 vector<string>::size_type i = v.size();
 print_vec(v, i);
 
-*/
+
 
 //E6.34 What would happen if the stopping condition in factorial were
 
@@ -2360,31 +2370,44 @@ print_vec(v, i);
 
 //However, if it's a typo and the 3rd parameter instead of the 2nd one was given 's':
 
-
+string word;
+while(cin >> word) {
+  size_t sz = word.length();
+  cout << make_plural(sz, word) <<endl;
+}
 
 //E6.43: Which one of the following declarations and definitions would you put
 //in a header? In a source file? Explain why.
 
 //(a) inline bool eq(const BigInt&, const BigInt&) {...}
+//In header file: inline and constexpr functions normally are defined in header
 
 //(b) void putValues(int *arr, int size);
-
+//the function declaration should be in a header file
 
 
 //E6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
-
-
+//bool isShorter(const string &s1, const string &s2) {
+//    return s1.size() < s2.size(); }
+string s1, s2;
+while (cin >> s1 >> s2) {
+  cout << isShorter(s1, s2) << endl;
+}
 
 //E6.45: Review the programs you’ve written for the earlier exercises and decide
 // whether they should be defined as inline. If so, do so. If not, explain why
 //they should not be inline.
-
+//Those functions with small, simple, one line of return and called multi-times
+//can be modified into inline function. Thus, the run-time overhead of making
+//those functions is removed.
 
 
 //E6.46: Would it be possible to define isShorter as a constexpr? If so, do so.
 //If not, explain why not.
+//It is possible to define isShorter as a constexpr.
+cout << isShorter2("Wang", "Wei") << endl;
 
-
+*/
 
 //E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
 //used recursion to print the contents of a vector to conditionally print
