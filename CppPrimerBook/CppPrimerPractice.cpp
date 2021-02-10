@@ -25,6 +25,9 @@ void print_vec(vector<string> v, vector<string>::size_type i) {
   }
 }
 
+string make_plural(size_t ctr, const string &word = 's', const string &ending) {
+    return (ctr > 1) ? word + ending : word;}
+
 int main()
 {
 
@@ -2322,8 +2325,11 @@ print_vec(v, i);
 //E6.40: Which, if either, of the following declarations are errors? Why?
 
 //(a) int ff(int a, int b = 0, int c = 0);
+//Right
 
 //(b) char *init(int ht = 24, int wd, char bckgrnd);
+//Errors: First parameter was default initialized but the following parameters
+//should be initialized but they were not.
 
 //E6.41: Which, if any, of the following calls are illegal? Why? Which, if any,
 //are legal but unlikely to match the programmer’s intent? Why?
@@ -2331,15 +2337,28 @@ print_vec(v, i);
 //char *init(int ht, int wd = 80, char bckgrnd = ' ');
 
 //(a) init();
+//illegal, the1st parameter ht should be assigned a value
 
 //(b) init(24,10);
+//legal, ht = 24, wd = 10
 
 //(c) init(14, '*');
+//legal, but it's unlikely to match the programmer's intent. So the 2nd argument
+//'*' would be assigned to wd, but since it's a character, it is meant to be assigned
+// to the 3rd parameter bckgrnd.
 
 //E6.42: Give the second parameter of make_plural (§ 6.3.2, p. 224) a default
 //argument of 's'. Test your program by printing singular and plural versions of
 // the words success and failure.
+//string make_plural(size_t ctr, const string &word, const string &ending) {
+//    return (ctr > 1) ? word + ending : word;}
 
+//if the second parameter which is "word" was given 's' as a default argument:
+//error: reference to type 'const std::__1::string' (aka 'const basic_string<char,
+//char_traits, allocator >') could not bind to an rvalue of type 'char'
+//string make_plural(size_t ctr, const string &word = 's', const string &ending) {
+
+//However, if it's a typo and the 3rd parameter instead of the 2nd one was given 's':
 
 
 
