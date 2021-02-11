@@ -2450,8 +2450,57 @@ print_vec (b,e);
 */
 
 
-//E6.48
+//E6.49: What is a candidate function? What is a viable function?
+//Candidate function is a list of functions that have the same name as the called
+//function and for which a declaration is visible at the point of the call.
+//To be viable, a function must have the same number of parameters as there are
+//arguments in the call, and the type of each argument must match—or be
+//convertible to—the type of its corresponding parameter.
 
+//E6.50: Given the declarations for f from page 242, list the viable functions,
+//if any for each of the following calls. Indicate which function is the best
+//match, or if the call is illegal whether there is no match or why the call is
+//ambiguous.
+
+//(a) f(2.56, 42)
+//it is ambiguous because both void f(double, double = 3.14) and void f(int, int)
+//are viable but both of them need a convert to be best matches
+
+//(b) f(42)
+//void f(int) is the best match
+
+//(c) f(42, 0)
+//void f(int, int) is the best match
+
+//(d) f(2.56, 3.14)
+//void f(double, double = 3.14) is the best match
+
+//E6.51: Write all four versions of f. Each function should print a distinguishing message. Check your answers for the previous exercise. If your answers were incorrect, study this section until you understand why your answers were wrong.
+
+
+//E6.52: Given the following declarations,
+//void manip(int, int);
+//double dobj;
+
+//what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
+
+//(a) manip('a', 'z');
+
+//(b) manip(55.4, dobj);
+
+//E6.53: Explain the effect of the second declaration in each one of the following sets of declarations. Indicate which, if any, are illegal.
+
+//(a) int calc(int&, int&);
+
+//int calc(const int&, const int&);
+
+//(b) int calc(char*, char*);
+
+//int calc(const char*, const char*);
+
+//(c) int calc(char*, char*);
+
+//int calc(char* const, char* const);
 
 
 return 0; //return EXIT_SUCCESS
