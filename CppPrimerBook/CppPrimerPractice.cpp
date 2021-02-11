@@ -38,9 +38,26 @@ inline bool isShorter(const string &s1, const string &s2) {
 constexpr bool isShorter2(const string &s1, const string &s2) {
     return s1.size() < s2.size(); }
 
+//E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
+//used recursion to print the contents of a vector to conditionally print
+//information about its execution. For example, you might print the size of the
+//vector on each call. Compile and run the program with debugging turned on and
+//again with it turned off.
+/*
+void print_vec(vector<string>::iterator beg, vector<string>::iterator end) {
+    int i = 0;
+    #ifndef NDEBUG
+    cout << ": vector size is " << end-beg << endl;
+    #endif
+    while(beg != end) cout << *beg << endl;
+    print_vec(beg+1, end);
+    cout << "vector size is " << i << endl;
+}
+
+*/
+
 int main()
 {
-
 /*
    cout << "enter two numbers:" << endl << "First number: ";
    int v1, v2;
@@ -2407,7 +2424,7 @@ while (cin >> s1 >> s2) {
 //It is possible to define isShorter as a constexpr.
 cout << isShorter2("Wang", "Wei") << endl;
 
-*/
+
 
 //E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
 //used recursion to print the contents of a vector to conditionally print
@@ -2416,11 +2433,25 @@ cout << isShorter2("Wang", "Wei") << endl;
 //again with it turned off.
 
 
+vector<string> v = {"Wei", "Wang", "Kevin", "Yu"};
+vector<string>:: iterator b= v.begin();
+vector<string>:: iterator e= v.end();
+print_vec (b,e);
+
 
 //E6.48: Explain what this loop does and whether it is a good use of assert:
 //string s;
 //while (cin >> s && s != sought) { }  // empty body
 //assert(cin);
+
+//It is not a good use of assert because cin is always valid; it's better to change
+//the statement as follows:
+//while (cin >> s && assert(s != sought)) { }  // empty body
+*/
+
+
+//E6.48
+
 
 
 return 0; //return EXIT_SUCCESS
