@@ -56,6 +56,25 @@ void print_vec(vector<string>::iterator beg, vector<string>::iterator end) {
 
 */
 
+
+//E6.51
+void f(int i) {
+  cout << "int" << i << endl;
+}
+
+void f(double i) {
+  cout << "double" << i << endl;
+}
+
+void f(int i, int j) {
+  cout << "int int" << i << " " << j << endl;
+}
+
+void f(double i, double j = 3.14) {
+  cout << "double double" << i << " " << j << endl;
+}
+
+
 int main()
 {
 /*
@@ -2447,7 +2466,7 @@ print_vec (b,e);
 //It is not a good use of assert because cin is always valid; it's better to change
 //the statement as follows:
 //while (cin >> s && assert(s != sought)) { }  // empty body
-*/
+
 
 
 //E6.49: What is a candidate function? What is a viable function?
@@ -2475,32 +2494,47 @@ print_vec (b,e);
 //(d) f(2.56, 3.14)
 //void f(double, double = 3.14) is the best match
 
-//E6.51: Write all four versions of f. Each function should print a distinguishing message. Check your answers for the previous exercise. If your answers were incorrect, study this section until you understand why your answers were wrong.
+//E6.51: Write all four versions of f. Each function should print a
+//distinguishing message. Check your answers for the previous exercise. If your
+// answers were incorrect, study this section until you understand why your
+//answers were wrong.
 
+//f(2.56, 42); //ambigous
+
+f(42);
+
+f(42, 0);
+
+f(2.56, 3.14);
+
+*/
 
 //E6.52: Given the following declarations,
 //void manip(int, int);
 //double dobj;
-
 //what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
 
 //(a) manip('a', 'z');
+//Promotion from char to int, and then an exact match
 
 //(b) manip(55.4, dobj);
+//Arithmetic convertion from double to int
 
-//E6.53: Explain the effect of the second declaration in each one of the following sets of declarations. Indicate which, if any, are illegal.
+//E6.53: Explain the effect of the second declaration in each one of the
+//following sets of declarations. Indicate which, if any, are illegal.
 
 //(a) int calc(int&, int&);
-
 //int calc(const int&, const int&);
+//legal
 
 //(b) int calc(char*, char*);
-
 //int calc(const char*, const char*);
+//legal
 
 //(c) int calc(char*, char*);
-
 //int calc(char* const, char* const);
+//illegal; ambiguous call, because top-leval constness will be discarded
+
 
 
 return 0; //return EXIT_SUCCESS
