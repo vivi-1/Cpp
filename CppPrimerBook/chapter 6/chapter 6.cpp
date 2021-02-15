@@ -46,6 +46,121 @@ void swap2(int &num3, int &num4) {
   num4 = temp3;
 }
 
+//E6.17 Write a function to determine whether a string contains any capital
+//letters. Write a function to change a string to all lowercase. Do the parameters
+//you used in these functions have the same type? If so, why? If not, why not?
+bool chapter6::is_upper(const string& input) {
+  unsigned int temp = 0;
+  bool result = false;
+  for (auto &c : input) {
+    if (isupper(c)) temp += 1;
+  }
+  if (temp != 0) result = true;
+  return result;
+}
+
+string chapter6::to_lcase(string &input) {
+  for (char &c : input) c = tolower(c);
+  return input;
+}
+
+
+//E6.21
+int chapter6::compareLarger (const int input1, const int *const input2) {
+  return (input1 > *input2) ? input1 : (*input2);
+}
+
+//E6.22 Write a function to swap two int pointers.
+void chapter6::swap_ptr(int*& p1, int*& p2) {
+  int* const temp = p1;
+  p1 = p2;
+  p2 =  temp;
+}
+
+
+//E6.23
+void chapter6::print(const int* ptr) {
+  if (ptr != nullptr && (*ptr) != '\0') cout << *ptr << endl;
+}
+
+void chapter6::print (const int (&arr)[2]) {
+  for(auto i : arr) {
+    cout << i << endl;
+  }
+}
+
+
+//E6.27 Write a function that takes an initializer_list<int> and produces the
+//sum of the elements in the list.
+double sum_list(initializer_list<double> lst) {
+  double result;
+  for (auto beg = lst.begin(); beg != lst.end(); ++beg) result += (*beg);
+  return result;
+}
+
+//E6.33 Write a recursive function to print the contents of a vector.
+void print_vec(vector<string> v, vector<string>::size_type i) {
+  if (i > 0) {
+    cout << v[i-1] << endl;
+    print_vec(v, i-1);
+  }
+}
+
+//E6.42
+string make_plural(size_t ctr, const string &word, const string &ending = "s") {
+    return (ctr > 1) ? word + ending : word;}
+
+//E6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
+inline bool isShorter(const string &s1, const string &s2) {
+    return s1.size() < s2.size(); }
+
+//E6.46: Would it be possible to define isShorter as a constexpr? If so, do so.
+//If not, explain why not.
+constexpr bool isShorter2(const string &s1, const string &s2) {
+    return s1.size() < s2.size(); }
+
+//E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
+//used recursion to print the contents of a vector to conditionally print
+//information about its execution. For example, you might print the size of the
+//vector on each call. Compile and run the program with debugging turned on and
+//again with it turned off.
+
+void print_vec(vector<string>::iterator beg, vector<string>::iterator end) {
+    #ifndef NDEBUG
+    assert(cout << ": vector size is " << end-beg << endl);
+    #endif
+    if(beg != end) {
+      cout << *beg << endl;
+      print_vec(beg+1, end);
+    }
+}
+
+
+
+
+//E6.51
+void f(int i) {
+  cout << "int" << i << endl;
+}
+
+void f(double i) {
+  cout << "double" << i << endl;
+}
+
+void f(int i, int j) {
+  cout << "int int" << i << " " << j << endl;
+}
+
+void f(double i, double j = 3.14) {
+  cout << "double double" << i << " " << j << endl;
+}
+
+//E6.55
+int ad(int i, int j) { return (i+j);}
+int st(int i, int j) { return (i-j);}
+int mp(int i, int j) { return (i*j);}
+int dv(int i, int j) { return (i/j);}
+
 
 int main()
 {/*
@@ -361,8 +476,305 @@ int main()
 
 
 
-*/
+  //E6.30 Compile the version of str_subrange as presented on page 223 to see what
+  // your compiler does with the indicated errors.
+  //bool str_subrange(const std::string &str1, const std::string &str2)
+  //{
+  //	if (str1.size() == str2.size())
+  //		return str1 == str2;
+  //	auto size = (str1.size() < str2.size()) ? str1.size() : str2.size();
+  //	for (decltype(size) i = 0; i != size; ++i)
+  //		if (str1[i] != str2[i])
+  //			return;
+  //}
+  //error: non-void function 'str_subrange' should return a value
 
+
+  //E6.31 When is it valid to return a reference? A reference to const?
+  //When the object that the  reference refers to  is not local in the function
+  //because it will be erased after the function call ends.
+  // when the returned object was not meant to be lvalue which means that
+  // we want to change the object afterwards;
+
+
+
+  //E6.32 Indicate whether the following function is legal. If so, explain what
+  //it does; if not, correct any errors and then explain it.
+
+  //int &get(int *arry, int index) { return arry[index]; }
+  //int main() {
+  //    int ia[10];
+  //    for (int i = 0; i != 10; ++i)
+  //        get(ia, i) = i;
+  //}
+
+  //legal, get returns a int& to the element on position index in arry. When the function
+  //was called in main, "get" returns refereces to the range from ia[0] to ia[9].
+  //
+
+
+  //E6.33 Write a recursive function to print the contents of a vector.
+
+  vector<string> v = {"kevin", "loves", "Wei"};
+  vector<string>::size_type i = v.size();
+  print_vec(v, i);
+
+
+
+  //E6.34 What would happen if the stopping condition in factorial were
+
+  //if (val != 0)
+  // it will multiply 0 in the end which makes the result 0
+
+  //E6.35 In the call to factorial, why did we pass val - 1 rather than val--?
+  // for each val, it will print factorial numbers of val, val-1, val-2....3,2,1.
+
+
+  //E6.36: Write the declaration for a function that returns a reference to an
+  //array of ten strings, without using either a trailing return, decltype, or a
+  //type alias.
+
+  // string (& arr_s10(string arr[10])) [10]
+  // string(&arr_s10(string (&arr)[10])) [10]
+
+  //E6.37: Write three additional declarations for the function in the previous exercise.
+  //One should use a type alias, one should use a trailing return, and the third
+  //should use decltype. Which form do you prefer and why?
+
+  //type alias
+  //typedef string arrT[10];
+  //or (using arrT = string[10];)
+  //arrT& func(arrT & arr);
+  //trailing return: auto func(arrT& arr) -> string(&)[10];
+  //decltype: string arr1[10]; decltype(arr1) & func(arrT arr);
+
+  //E6.38: Revise the arrPtr function on to return a reference to the array.
+  //int odd[] = {1,3,5,7,9};
+  //int even[] = {0,2,4,6,8};
+
+  //decltype(odd) &arrPtr(int i)
+  //{
+  //    return (i % 2) ? odd : even;
+  //}
+
+
+  //E6.39: Explain the effect of the second declaration in each one of the following
+  // sets of declarations. Indicate which, if any, are illegal.
+
+  //(a) int calc(int, int);
+  //int calc(const int, const int);
+  //illegal
+
+  //(b) int get();
+  //double get();
+  //illegal
+
+
+  //(c) int *reset(int *);
+  //double *reset(double *);
+  //legal
+
+  //E6.40: Which, if either, of the following declarations are errors? Why?
+
+  //(a) int ff(int a, int b = 0, int c = 0);
+  //Right
+
+  //(b) char *init(int ht = 24, int wd, char bckgrnd);
+  //Errors: First parameter was default initialized but the following parameters
+  //should be initialized but they were not.
+
+  //E6.41: Which, if any, of the following calls are illegal? Why? Which, if any,
+  //are legal but unlikely to match the programmer’s intent? Why?
+
+  //char *init(int ht, int wd = 80, char bckgrnd = ' ');
+
+  //(a) init();
+  //illegal, the1st parameter ht should be assigned a value
+
+  //(b) init(24,10);
+  //legal, ht = 24, wd = 10
+
+  //(c) init(14, '*');
+  //legal, but it's unlikely to match the programmer's intent. So the 2nd argument
+  //'*' would be assigned to wd, but since it's a character, it is meant to be assigned
+  // to the 3rd parameter bckgrnd.
+
+  //E6.42: Give the second parameter of make_plural (§ 6.3.2, p. 224) a default
+  //argument of 's'. Test your program by printing singular and plural versions of
+  // the words success and failure.
+  //string make_plural(size_t ctr, const string &word, const string &ending) {
+  //    return (ctr > 1) ? word + ending : word;}
+
+  //if the second parameter which is "word" was given 's' as a default argument:
+  //error: reference to type 'const std::__1::string' (aka 'const basic_string<char,
+  //char_traits, allocator >') could not bind to an rvalue of type 'char'
+  //string make_plural(size_t ctr, const string &word = 's', const string &ending) {
+
+  //However, if it's a typo and the 3rd parameter instead of the 2nd one was given 's':
+
+  string word;
+  while(cin >> word) {
+    size_t sz = word.length();
+    cout << make_plural(sz, word) <<endl;
+  }
+
+  //E6.43: Which one of the following declarations and definitions would you put
+  //in a header? In a source file? Explain why.
+
+  //(a) inline bool eq(const BigInt&, const BigInt&) {...}
+  //In header file: inline and constexpr functions normally are defined in header
+
+  //(b) void putValues(int *arr, int size);
+  //the function declaration should be in a header file
+
+
+  //E6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
+  //bool isShorter(const string &s1, const string &s2) {
+  //    return s1.size() < s2.size(); }
+  string s1, s2;
+  while (cin >> s1 >> s2) {
+    cout << isShorter(s1, s2) << endl;
+  }
+
+  //E6.45: Review the programs you’ve written for the earlier exercises and decide
+  // whether they should be defined as inline. If so, do so. If not, explain why
+  //they should not be inline.
+  //Those functions with small, simple, one line of return and called multi-times
+  //can be modified into inline function. Thus, the run-time overhead of making
+  //those functions is removed.
+
+
+  //E6.46: Would it be possible to define isShorter as a constexpr? If so, do so.
+  //If not, explain why not.
+  //It is possible to define isShorter as a constexpr.
+  cout << isShorter2("Wang", "Wei") << endl;
+
+
+
+  //E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
+  //used recursion to print the contents of a vector to conditionally print
+  //information about its execution. For example, you might print the size of the
+  //vector on each call. Compile and run the program with debugging turned on and
+  //again with it turned off.
+
+
+  vector<string> v = {"Wei", "Wang", "Kevin", "Yu"};
+  vector<string>:: iterator b= v.begin();
+  vector<string>:: iterator e= v.end();
+  print_vec (b,e);
+
+
+  //E6.48: Explain what this loop does and whether it is a good use of assert:
+  //string s;
+  //while (cin >> s && s != sought) { }  // empty body
+  //assert(cin);
+
+  //It is not a good use of assert because cin is always valid; it's better to change
+  //the statement as follows:
+  //while (cin >> s && assert(s != sought)) { }  // empty body
+
+
+
+  //E6.49: What is a candidate function? What is a viable function?
+  //Candidate function is a list of functions that have the same name as the called
+  //function and for which a declaration is visible at the point of the call.
+  //To be viable, a function must have the same number of parameters as there are
+  //arguments in the call, and the type of each argument must match—or be
+  //convertible to—the type of its corresponding parameter.
+
+  //E6.50: Given the declarations for f from page 242, list the viable functions,
+  //if any for each of the following calls. Indicate which function is the best
+  //match, or if the call is illegal whether there is no match or why the call is
+  //ambiguous.
+
+  //(a) f(2.56, 42)
+  //it is ambiguous because both void f(double, double = 3.14) and void f(int, int)
+  //are viable but both of them need a convert to be best matches
+
+  //(b) f(42)
+  //void f(int) is the best match
+
+  //(c) f(42, 0)
+  //void f(int, int) is the best match
+
+  //(d) f(2.56, 3.14)
+  //void f(double, double = 3.14) is the best match
+
+  //E6.51: Write all four versions of f. Each function should print a
+  //distinguishing message. Check your answers for the previous exercise. If your
+  // answers were incorrect, study this section until you understand why your
+  //answers were wrong.
+
+  //f(2.56, 42); //ambigous
+
+  f(42);
+
+  f(42, 0);
+
+  f(2.56, 3.14);
+
+
+
+  //E6.52: Given the following declarations,
+  //void manip(int, int);
+  //double dobj;
+  //what is the rank (§ 6.6.1, p. 245) of each conversion in the following calls?
+
+  //(a) manip('a', 'z');
+  //Promotion from char to int, and then an exact match
+
+  //(b) manip(55.4, dobj);
+  //Arithmetic convertion from double to int
+
+  //E6.53: Explain the effect of the second declaration in each one of the
+  //following sets of declarations. Indicate which, if any, are illegal.
+
+  //(a) int calc(int&, int&);
+  //int calc(const int&, const int&);
+  //legal
+
+  //(b) int calc(char*, char*);
+  //int calc(const char*, const char*);
+  //legal
+
+  //(c) int calc(char*, char*);
+  //int calc(char* const, char* const);
+  //illegal; ambiguous call, because top-leval constness will be discarded
+
+  //E6.54: Write a declaration for a function that takes two int parameters and
+  //returns an int, and declare a vector whose elements have this function pointer
+  //type.
+  // int f(int i, int j)
+  //decltype(f) *pf(); vector<pf> v1;
+  //Or: typedef int(*pf) (int i, int j); vector<pf> v1;
+  //Or: typedef decltype(f) *pf; vector<pf> v1;
+  //Or: Using pf = int(*)(int, int); vector<pf> v1;
+  //Or: Using f = int(int, int);  vector<*f> v1;
+
+
+  ///E6.55: Write four functions that add, subtract, multiply, and divide two int
+  //values. Store pointers to these functions in your vector from the previous
+  //exercise.
+  using pf = int(*)(int, int);
+  vector<pf> funcpt1 {ad, st, mp, dv};
+  vector<pf> funcpt2 {&ad, &st, &mp, &dv};
+
+
+
+  ///E6.56: Call each element in the vector and print their result.
+  for  (auto f : funcpt1) cout << f(8, 5) << " ";
+  cout <<"\n\n";
+  for  (auto f : funcpt2) cout << f(10, 4) << " ";
+  cout << "\n\n";
+
+
+
+  vector<string> v = {"Wei", "Wang", "Kevin", "Yu"};
+  vector<string>:: iterator b= v.begin();
+  vector<string>:: iterator e= v.end();
+  print_vec (b,e);
+
+  */
 
 
 

@@ -98,3 +98,41 @@ double sum_list(initializer_list<double> lst) {
   for (auto beg = lst.begin(); beg != lst.end(); ++beg) result += (*beg);
   return result;
 }
+
+
+//E6.33 Write a recursive function to print the contents of a vector.
+void print_vec(vector<string> v, vector<string>::size_type i) {
+  if (i > 0) {
+    cout << v[i-1] << endl;
+    print_vec(v, i-1);
+  }
+}
+
+//E6.42
+string make_plural(size_t ctr, const string &word, const string &ending = "s") {
+    return (ctr > 1) ? word + ending : word;}
+
+//E6.44: Rewrite the isShorter function from § 6.2.2 (p. 211) to be inline.
+inline bool isShorter(const string &s1, const string &s2) {
+    return s1.size() < s2.size(); }
+
+//E6.46: Would it be possible to define isShorter as a constexpr? If so, do so.
+//If not, explain why not.
+constexpr bool isShorter2(const string &s1, const string &s2) {
+    return s1.size() < s2.size(); }
+
+//E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
+//used recursion to print the contents of a vector to conditionally print
+//information about its execution. For example, you might print the size of the
+//vector on each call. Compile and run the program with debugging turned on and
+//again with it turned off.
+
+void print_vec(vector<string>::iterator beg, vector<string>::iterator end) {
+    #ifndef NDEBUG
+    assert(cout << ": vector size is " << end-beg << endl);
+    #endif
+    if(beg != end) {
+      cout << *beg << endl;
+      print_vec(beg+1, end);
+    }
+}
