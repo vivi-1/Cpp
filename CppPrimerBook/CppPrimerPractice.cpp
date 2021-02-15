@@ -2641,20 +2641,12 @@ using pf = int(*)(int, int);
 vector<pf> funcpt1 {ad, st, mp, dv};
 vector<pf> funcpt2 {&ad, &st, &mp, &dv};
 
-
-
 ///E6.56: Call each element in the vector and print their result.
 for  (auto f : funcpt1) cout << f(8, 5) << " ";
 cout <<"\n\n";
 for  (auto f : funcpt2) cout << f(10, 4) << " ";
 cout << "\n\n";
 
-
-
-vector<string> v = {"Wei", "Wang", "Kevin", "Yu"};
-vector<string>:: iterator b= v.begin();
-vector<string>:: iterator e= v.end();
-print_vec (b,e);
 
 */
 

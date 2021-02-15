@@ -767,13 +767,6 @@ int main()
   for  (auto f : funcpt2) cout << f(10, 4) << " ";
   cout << "\n\n";
 
-
-
-  vector<string> v = {"Wei", "Wang", "Kevin", "Yu"};
-  vector<string>:: iterator b= v.begin();
-  vector<string>:: iterator e= v.end();
-  print_vec (b,e);
-
   */
 
 
