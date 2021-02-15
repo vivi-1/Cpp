@@ -74,6 +74,12 @@ void f(double i, double j = 3.14) {
   cout << "double double" << i << " " << j << endl;
 }
 
+//E6.55
+int ad(int i, int j) { return (i+j);}
+int st(int i, int j) { return (i-j);}
+int mp(int i, int j) { return (i*j);}
+int dv(int i, int j) { return (i/j);}
+
 
 int main()
 {
@@ -2507,7 +2513,7 @@ f(42, 0);
 
 f(2.56, 3.14);
 
-*/
+
 
 //E6.52: Given the following declarations,
 //void manip(int, int);
@@ -2534,6 +2540,34 @@ f(2.56, 3.14);
 //(c) int calc(char*, char*);
 //int calc(char* const, char* const);
 //illegal; ambiguous call, because top-leval constness will be discarded
+
+//E6.54: Write a declaration for a function that takes two int parameters and
+//returns an int, and declare a vector whose elements have this function pointer
+//type.
+// int f(int i, int j)
+//decltype(f) *pf(); vector<pf> v1;
+//Or: typedef int(*pf) (int i, int j); vector<pf> v1;
+//Or: typedef decltype(f) *pf; vector<pf> v1;
+//Or: Using pf = int(*)(int, int); vector<pf> v1;
+//Or: Using f = int(int, int);  vector<*f> v1;
+
+
+///E6.55: Write four functions that add, subtract, multiply, and divide two int
+//values. Store pointers to these functions in your vector from the previous
+//exercise.
+using pf = int(*)(int, int);
+vector<pf> funcpt1 {ad, st, mp, dv};
+vector<pf> funcpt2 {&ad, &st, &mp, &dv};
+
+
+
+///E6.56: Call each element in the vector and print their result.
+for  (auto f : funcpt1) cout << f(8, 5) << " ";
+cout <<"\n\n";
+for  (auto f : funcpt2) cout << f(10, 4) << " ";
+cout << "\n\n";
+
+*/
 
 
 
