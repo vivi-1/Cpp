@@ -9,6 +9,14 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 using namespace std;
 using namespace ft;
 
+//E2.40 Write your own version of the Sales_data class.
+struct Sales_data {
+  string fruit;
+  unsigned unit = 0;
+  double revenue = 0.0;
+  double totalSale = 0.0;
+};
+
 //E6.3 6.4
 int fact(int input) {
   int temp = 1;
@@ -481,6 +489,18 @@ legal
 
 
 */
+
+//E2.39 Compile the following program to see what happens when you forget the
+//semicolon after a class definition. Remember the message for future reference.
+//error: expected ';' after struct
+
+//E2.40 Write your own version of the Sales_data class.
+// struct Sales_data {
+//   string fruit;
+//   unsigned unit = 0;
+//   double revenue = 0.0;
+//   double totalSale = 0.0;
+// };
 
 
 
