@@ -10,7 +10,12 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 using namespace std;
 
 //E2.40 Write your own version of the Sales_data class.
-//Please see my sales_item.h
+struct Sales_data1 {
+  string name;
+  unsigned unit = 0;
+  double price = 0.0;
+  double revenue = 0.0;
+};
 
 //E6.3 6.4
 int fact(int input) {
@@ -494,24 +499,24 @@ legal
 //error: expected ';' after struct
 
 //E2.40 Write your own version of the Sales_data class.
-// struct Sales_data {
-//   string fruit;
+// struct Sales_data1 {
+//   string name;
 //   unsigned unit = 0;
+//   double price = 0.0;
 //   double revenue = 0.0;
-//   double totalSale = 0.0;
 // };
 
 //E2.41 Use your Sales_data class to rewrite the exercises in § 1.5.1 (p. 22),
 //§ 1.5.2 (p. 24), Eand § 1.6 (p. 25) (which are E1.20-25). For now, you should
 //define your Sales_data class in the same file as your main function.
 //replacing E1.20:
-Sales_data itemx;
+Sales_data1 itemx;
 while (cin >> itemx.name >> itemx.unit >> itemx.price) {
   itemx.revenue = itemx.price * itemx.unit;
   cout << itemx.name << " " << itemx.unit << " " << itemx.revenue << endl;
 }
 //replacing E1.21:
-Sales_data item1, item2;
+Sales_data1 item1, item2;
 cin >> item1.name >> item1.unit >> item1.price >> item2.name >> item2.unit >> item2.price;
 if (item1.name == item2.name) {
   item1.revenue = item1.price * item1.unit;
@@ -521,7 +526,7 @@ if (item1.name == item2.name) {
 }
 else cout << "two input names have to be the same" << endl;
 //replacing E1.22:
-Sales_data sum7, temp6;
+Sales_data1 sum7, temp6;
 cin >>  sum7.name >> sum7.unit >> sum7.price;
 while (cin >> temp6.name >> temp6.unit >> temp6.price) {
   if (temp6.name == sum7.name){
@@ -535,7 +540,7 @@ while (cin >> temp6.name >> temp6.unit >> temp6.price) {
     return -1;}
 }
 //replacing E1.23:
-Sales_data Current1, item3;
+Sales_data1 Current1, item3;
 if (cin >> Current1.name >> Current1.unit >> Current1.price) {
    int cnt = 1;
    while (cin >> item3.name >> item3.unit >> item3.price) {
@@ -558,15 +563,32 @@ Sales_data item4;
 while (cin >> item4) {
   item4.print_s();
 }
-*/
 
-//replacing E1.21:
+
+//replacing E1.21 & E1.22:
 Sales_data item5, item6;
 while (cin >> item5 >> item6) {
   item5.sameaddTwo(item6).print_s();
 }
 
-//replacing E1.22:
+
+//replacing E1.23:
+Sales_data Current2, item7;
+if (cin >> Current2) {
+   int cnt = 1;
+   while (cin >> item7) {
+      if (item7.bookNo == Current2.bookNo) {
+         ++cnt;
+         cout << Current2.bookNo << "occurs" << cnt << "times" << endl;
+      }
+      else {
+         Current2 = item7;
+         cnt = 1;
+         cout << Current2.bookNo << "occurs" << cnt << "times" << endl;
+      }
+   }
+}
+*/
 
 
 /*

@@ -9,6 +9,7 @@ struct Sales_data {
     unsigned units_sold = 0;
     unsigned total_units_sold = 0;
     double price = 0.0;
+    double avprice = 0.0;
     double revenue = 0.0;
     double total_revenue = 0.0;
     Sales_data sameaddTwo(Sales_data item1);
@@ -25,9 +26,10 @@ istream& operator>>(std::istream& in, Sales_data& s) {
 Sales_data Sales_data::sameaddTwo(Sales_data item1) {
   Sales_data total;
   if (item1.bookNo == bookNo){
-    total.price = price;
+    total.bookNo = bookNo;
     total.total_units_sold = item1.units_sold + units_sold;
     total.total_revenue = item1.revenue + revenue;
+    total.avprice = total.total_revenue / total.total_units_sold;
     return total;
   }
   else {
@@ -37,7 +39,7 @@ Sales_data Sales_data::sameaddTwo(Sales_data item1) {
 }
 
 void Sales_data::print_s() {
-  cout << bookNo << " " << units_sold << " " << price << " " << revenue;
+  cout << bookNo << " " << units_sold << " " << price << " "  << avprice << " " << revenue;
   cout << " " << total_units_sold << " " << total_revenue << endl;
 }
 
