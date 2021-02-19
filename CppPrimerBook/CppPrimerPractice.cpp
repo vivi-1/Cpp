@@ -18,8 +18,8 @@ struct Sales_data {
 };
 
 //E2.41 Use your Sales_data class to rewrite the exercises in § 1.5.1 (p. 22),
-//§ 1.5.2 (p. 24), and § 1.6 (p. 25). For now, you should define your Sales_data
-//class in the same file as your main function.
+//§ 1.5.2 (p. 24), Eand § 1.6 (p. 25) (which are E1.20-25). For now, you should
+//define your Sales_data class in the same file as your main function.
 
 
 
