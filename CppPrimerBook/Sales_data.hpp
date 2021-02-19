@@ -12,8 +12,18 @@ struct Sales_data {
     double revenue = 0.0;
     double total_revenue = 0.0;
     Sales_data sum_sale_sameBookNo(Sales_data item1, Sales_data item2);
-    void Print();
+    void print_s();
 };
+
+istream& operator>>(std::istream& in, Sales_data& s) {
+  in >> s.bookNo >> s.units_sold >> s.price;
+  // check that the inputs succeeded
+  if (in)
+    s.revenue = s.units_sold * s.price;
+  else
+    s = Sales_data();  // input failed: reset object to default state
+  return in;
+}
 
 Sales_data Sales_data::sum_sale_sameBookNo(Sales_data item1, Sales_data item2) {
   Sales_data total;
