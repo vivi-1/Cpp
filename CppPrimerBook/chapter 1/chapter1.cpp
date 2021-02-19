@@ -37,7 +37,7 @@ int main(){
    cout << "result is " << sum << endl;
    cout << x << endl;  // x is random integer
 
-// E1.9
+//E1.9
    int sum2 = 0, val2 = 50;
    while (val2 <= 100) {
       sum2 +=val2;
@@ -48,14 +48,14 @@ int main(){
    << endl;
 
 
-// E1.10
+//E1.10
    int val3=10;
    while (val3 >= 0) {
       cout << "now it's at position " << val3 << endl;
       --val3;
    }
 
-// E1.11
+//E1.11
    int val4=5, val5=1;
    cout << "original val4 is " << val4 << "val5 is " << val5 << endl;
    if (val5 >= val4) {
@@ -85,6 +85,7 @@ int main(){
    for (int val7 = 50; val7 <= 100; ++val7)
       sum4 += val7;
    cout << sum4 << endl;
+
 //E1.14
    for (int val8 = 10; val8 >= 0; --val8)
       cout << "now it's at position " << val8 << endl;
@@ -93,6 +94,7 @@ int main(){
    while (cin >> value)
       sum5 += value;
       cout << sum5 << endl;
+
 //E1.16
    int sum6 = 0, value1=2;
    while (cin>>value1)
@@ -111,13 +113,15 @@ int main(){
          }
       }
       cout << currVal << " occurs " << cnt << " times" << endl;
-
    }
 
-//E1.20
+//E1.20  http://www.informit.com/title/0321714113 contains a copy of
+//Sales_item.h in the Chapter 1 code directory. Copy that file to your working
+//directory. Use it to write a program that reads a set of book sales
+//transactions, writing each transaction to the standard output.
    Sales_item book;
-   cin >> book;
-   cout << book << endl;
+   while (cin >> book) cout << book << endl;
+
 //E1.21 Write a program that reads two Sales_item objects that have the same
 //ISBN and produces their sum.
    Sales_item ob1, ob2;

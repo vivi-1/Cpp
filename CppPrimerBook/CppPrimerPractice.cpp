@@ -7,21 +7,15 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 //#include "Chapter6.h"
 #include<vector>
 using namespace std;
-//using namespace ft;
 
 //E2.40 Write your own version of the Sales_data class.
 struct Sales_data {
-  string fruit;
+  string name;
   unsigned unit = 0;
   double revenue = 0.0;
+  double price = 0.0;
   double totalSale = 0.0;
 };
-
-//E2.41 Use your Sales_data class to rewrite the exercises in § 1.5.1 (p. 22),
-//§ 1.5.2 (p. 24), Eand § 1.6 (p. 25) (which are E1.20-25). For now, you should
-//define your Sales_data class in the same file as your main function.
-
-
 
 //E6.3 6.4
 int fact(int input) {
@@ -32,8 +26,6 @@ int fact(int input) {
   }
   return temp;
 }
-
-
 
 //E6.5
 unsigned int abv(signed int input1) {
@@ -427,12 +419,11 @@ int *p1 = &i;
 cout << *p1 << endl;
 cout << i << endl;
 
-
 //if (p) means if the pointer p is not null.
-//if (*p) means if the object pointed by the pointer is not false (which means the object is not null or zero etc.).
+//if (*p) means if the object pointed by the pointer is not false (which means
+//the object is not null or zero etc.).
 
 // the value of a pointer, the value of the object the pointer points
-
 
 
 int i =10;
@@ -493,7 +484,6 @@ v2 top-level const   v1 has no const
 p1, v1, r1 no const
 p2 low level, p3 both low and top, r2 is a reference only low
 
-
 //E2.31
 legal, when copied into r1 which is a int, the v2 doesn't change
    illegal, low level const doesn't match
@@ -502,7 +492,7 @@ legal, can convert int to const int
 legal
 
 
-*/
+
 
 //E2.39 Compile the following program to see what happens when you forget the
 //semicolon after a class definition. Remember the message for future reference.
@@ -516,7 +506,55 @@ legal
 //   double totalSale = 0.0;
 // };
 
-
+//E2.41 Use your Sales_data class to rewrite the exercises in § 1.5.1 (p. 22),
+//§ 1.5.2 (p. 24), Eand § 1.6 (p. 25) (which are E1.20-25). For now, you should
+//define your Sales_data class in the same file as your main function.
+//replacing E1.20:
+Sales_data itemx;
+while (cin >> itemx.name >> itemx.unit >> itemx.price) {
+  itemx.revenue = itemx.price * itemx.unit;
+  cout << itemx.name << " " << itemx.unit << " " << itemx.revenue << endl;
+}
+//replacing E1.21:
+Sales_data item1, item2;
+cin >> item1.name >> item1.unit >> item1.price >> item2.name >> item2.unit >> item2.price;
+if (item1.name == item2.name) {
+  item1.revenue = item1.price * item1.unit;
+  item2.revenue = item2.price * item2.unit;
+  cout << item1.name << " " << item1.unit + item2.unit << " "
+    << item1.revenue + item2.revenue << endl;
+}
+else cout << "two input names have to be the same" << endl;
+//replacing E1.22:
+Sales_data sum7, temp6;
+cin >>  sum7.name >> sum7.unit >> sum7.price;
+while (cin >> temp6.name >> temp6.unit >> temp6.price) {
+  if (temp6.name == sum7.name){
+    temp6.revenue = temp6.price * temp6.unit;
+    sum7.revenue = sum7.price * sum7.unit;
+    sum7.unit += temp6.unit;
+    sum7.revenue += temp6.revenue;
+    cout << sum7.name << " " << sum7.unit << " " << sum7.revenue << endl;}
+  else {
+    cerr << "inputs have to have the same ISBN\n";
+    return -1;}
+}
+//replacing E1.23:
+Sales_data Current1, item3;
+if (cin >> Current1.name >> Current1.unit >> Current1.price) {
+   int cnt = 1;
+   while (cin >> item3.name >> item3.unit >> item3.price) {
+      if (item3.name == Current.name) {
+         ++cnt;
+      }
+      else {
+         cout << Current << "occurs" << cnt << "times" << endl;
+         Current.name = item3.name;
+         cnt = 1;
+      }
+   }
+}
+*/
 
 /*
 int val=10, val1=30;
