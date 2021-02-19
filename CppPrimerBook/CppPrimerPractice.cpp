@@ -555,6 +555,10 @@ if (cin >> Current1.name >> Current1.unit >> Current1.price) {
    }
 }
 */
+//E2.42 Write your own version of the Sales_data.h header and use it to rewrite
+//the exercise from § 2.6.2 (p. 76) which is E2.41
+//Please also see Sales_data.h file
+
 
 /*
 int val=10, val1=30;
