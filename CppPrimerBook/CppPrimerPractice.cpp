@@ -549,16 +549,24 @@ if (cin >> Current1.name >> Current1.unit >> Current1.price) {
       }
    }
 }
-*/
+
 //E2.42 Write your own version of the Sales_data.h header and use it to rewrite
 //the exercise from § 2.6.2 (p. 76) which is E2.41
 //Please also see Sales_data.h file
 //replacing E1.20:
 Sales_data item4;
-while (cin >> item4.bookNo >> item4.units_sold >> item4.price) {
+while (cin >> item4) {
   item4.print_s();
 }
+*/
 
+//replacing E1.21:
+Sales_data item5, item6;
+while (cin >> item5 >> item6) {
+  item5.sameaddTwo(item6).print_s();
+}
+
+//replacing E1.22:
 
 
 /*
