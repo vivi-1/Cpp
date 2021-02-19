@@ -4,18 +4,13 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
 #include "Sales_item.h"
+#include "Sales_data.hpp"
 //#include "Chapter6.h"
 #include<vector>
 using namespace std;
 
 //E2.40 Write your own version of the Sales_data class.
-struct Sales_data {
-  string name;
-  unsigned unit = 0;
-  double revenue = 0.0;
-  double price = 0.0;
-  double totalSale = 0.0;
-};
+//Please see my sales_item.h
 
 //E6.3 6.4
 int fact(int input) {
@@ -558,6 +553,12 @@ if (cin >> Current1.name >> Current1.unit >> Current1.price) {
 //E2.42 Write your own version of the Sales_data.h header and use it to rewrite
 //the exercise from § 2.6.2 (p. 76) which is E2.41
 //Please also see Sales_data.h file
+//replacing E1.20:
+Sales_data item4;
+while (cin >> item4.bookNo >> item4.units_sold >> item4.price) {
+  item4.print_s();
+}
+
 
 
 /*
