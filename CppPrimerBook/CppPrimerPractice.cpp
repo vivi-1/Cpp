@@ -4,10 +4,10 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
 #include "Sales_item.h"
-#include "Chapter6.h"
+//#include "Chapter6.h"
 #include<vector>
 using namespace std;
-using namespace ft;
+//using namespace ft;
 
 //E2.40 Write your own version of the Sales_data class.
 struct Sales_data {
@@ -16,6 +16,12 @@ struct Sales_data {
   double revenue = 0.0;
   double totalSale = 0.0;
 };
+
+//E2.41 Use your Sales_data class to rewrite the exercises in § 1.5.1 (p. 22),
+//§ 1.5.2 (p. 24), and § 1.6 (p. 25). For now, you should define your Sales_data
+//class in the same file as your main function.
+
+
 
 //E6.3 6.4
 int fact(int input) {
@@ -59,7 +65,7 @@ void swap2(int &num3, int &num4) {
 //E6.17 Write a function to determine whether a string contains any capital
 //letters. Write a function to change a string to all lowercase. Do the parameters
 //you used in these functions have the same type? If so, why? If not, why not?
-bool chapter6::is_upper(const string& input) {
+bool is_upper(const string& input) {
   unsigned int temp = 0;
   bool result = false;
   for (auto &c : input) {
@@ -69,19 +75,19 @@ bool chapter6::is_upper(const string& input) {
   return result;
 }
 
-string chapter6::to_lcase(string &input) {
+string to_lcase(string &input) {
   for (char &c : input) c = tolower(c);
   return input;
 }
 
 
 //E6.21
-int chapter6::compareLarger (const int input1, const int *const input2) {
+int compareLarger (const int input1, const int *const input2) {
   return (input1 > *input2) ? input1 : (*input2);
 }
 
 //E6.22 Write a function to swap two int pointers.
-void chapter6::swap_ptr(int*& p1, int*& p2) {
+void swap_ptr(int*& p1, int*& p2) {
   int* const temp = p1;
   p1 = p2;
   p2 =  temp;
@@ -89,11 +95,11 @@ void chapter6::swap_ptr(int*& p1, int*& p2) {
 
 
 //E6.23
-void chapter6::print(const int* ptr) {
+void print(const int* ptr) {
   if (ptr != nullptr && (*ptr) != '\0') cout << *ptr << endl;
 }
 
-void chapter6::print (const int (&arr)[2]) {
+void print (const int (&arr)[2]) {
   for(auto i : arr) {
     cout << i << endl;
   }
@@ -172,8 +178,8 @@ int dv(int i, int j) { return (i/j);}
 
 
 int main()
-{
-/*
+{/*
+//E1.5
    cout << "enter two numbers:" << endl << "First number: ";
    int v1, v2;
    cin>>v1;
@@ -186,12 +192,13 @@ int main()
    cout << " and ";
    cout << v2;
    cout << " is ";
-   cout << v1*v2 << endl; //E1.5
+   cout << v1*v2 << endl;
 */
 // /*incorrect comments // /* */ E1.7
 
-   cout << "/*" << endl;  //E1.8
-   cout << /* "*/" */ "/*" */ << endl; //E1.8
+//E1.8
+   cout << "/*" << endl;
+   cout << /* "*/" */ "/*" */ << endl;
  /*
    int sum=0, val=1, x; //if you don't define x, x is random number
    cout << "initial sum is " << sum << ", while val is " << val << endl;
@@ -205,22 +212,25 @@ int main()
    cout << "result is " << sum << endl;
    cout << x << endl;  // x is random integer
 
+// E1.9
    int sum2 = 0, val2 = 50;
    while (val2 <= 100) {
       sum2 +=val2;
       ++val2;
    }
    cout << "sum from 50 to 100 is " << sum2 << endl;
-   cout << "The correct answer is " << 150*51*0.5 << "please check it out" << endl;  // E1.9
+   cout << "The correct answer is " << 150*51*0.5 << "please check it out"
+   << endl;
 
 
-
+// E1.10
    int val3=10;
    while (val3 >= 0) {
       cout << "now it's at position " << val3 << endl;
       --val3;
-   } // E1.10
+   }
 
+// E1.11
    int val4=5, val5=1;
    cout << "original val4 is " << val4 << "val5 is " << val5 << endl;
    if (val5 >= val4) {
@@ -237,30 +247,32 @@ int main()
          ++result;
          cout << "now its " << result << endl;
       }
-   }  // E1.11
+   }
 
+//E1.12
    int sum3 = 0;
    for (int val6 = -100; val6 <=100; ++val6)
       sum3 += val6;
-   cout << sum3 << endl;  //E1.12
+   cout << sum3 << endl;
 
+//E1.13
    int sum4 = 0;
    for (int val7 = 50; val7 <= 100; ++val7)
       sum4 += val7;
-   cout << sum4 << endl; //E1.13
-
+   cout << sum4 << endl;
+//E1.14
    for (int val8 = 10; val8 >= 0; --val8)
-      cout << "now it's at position " << val8 << endl; //E1.13
+      cout << "now it's at position " << val8 << endl;
 
    int sum5 = 0, value = 4;
    while (cin >> value)
       sum5 += value;
       cout << sum5 << endl;
-
+//E1.16
    int sum6 = 0, value1=2;
    while (cin>>value1)
       sum6 += value1;
-      cout << sum6 << endl;  //E1.16
+      cout << sum6 << endl;
 
    int currVal = 0, val9 = 0;
    if (cin >> currVal) {
@@ -277,36 +289,36 @@ int main()
 
    }
 
+//E1.20
    Sales_item book;
    cin >> book;
-   cout << book << endl; //E1.20
+   cout << book << endl;
+//E1.21 Write a program that reads two Sales_item objects that have the same
+//ISBN and produces their sum.
+   Sales_item ob1, ob2;
+   cin >> ob1 >> ob2;
+   if (ob1.isbn() == ob2.isbn()) cout << ob1 + ob2 << endl;
+   else {
+     cerr << "inputs have to have the same ISBN\n";
+     return -1;}
 
-   Sales_item item1, item2;
-   cin >> item1 >> item2;
-   cout << item1 +item2 << endl; //E1.21
-
-   Sales_item item1, item2, item3, item4;
-   cin >> item1 >> item2 >> item3 >> item4;
-   cout << item1 + item2 + item3 +item4 << endl; // E1.22
-
-
-   Sales_item item1, item2;
-   cin >> item1 >> item2;
-   if (item1.isbn() == item2.isbn()) {
-      cout << item1 + item2 << endl;
-      cout << item1.isbn() << endl;
-      return 0;}
-   else{
-      cout << "data must refer to same ISBN" << endl;
-      cout << item1.isbn() << endl;
-      return -1;
+//E1.22 Write a program that reads several transactions for the same ISBN.
+//Write the sum of all the transactions that were read.
+   Sales_item sum, temp5;
+   cin >> sum;
+   while (cin >> temp5) {
+     if (temp5.isbn() == sum.isbn()){
+       sum += temp5;
+       cout << sum << endl;}
+     else {
+       cerr << "inputs have to have the same ISBN\n";
+       return -1;}
    }
-   }
 
-   Sales_item item1, item2, item3;
-   cin >> item1 >> item2 >> item3;
-   cout << item1.isbn() << item1.bookNo() << endl;
-
+//E1.23 Write a program that reads several transactions and counts how many
+//transactions occur for each ISBN.
+//E1.24 Test the previous program by giving multiple transactions representing
+//multiple ISBNs. The records for each ISBN should be grouped together.
    Sales_item Current, input;
    if (cin >> Current) {
       int cnt = 1;
@@ -320,8 +332,10 @@ int main()
             cnt = 1;
          }
       }
-   } //E1.23 E1.24
+   }
 
+//E1.25 Using the Sales_item.h header from the Web site, compile and execute
+//the bookstore program presented in this section.
    Sales_item total;
    if (cin >> total) {
       Sales_item trans;
@@ -338,7 +352,7 @@ int main()
    else {
       cerr << "no data?!" << endl;
       return -1;
-   }  //E1.25
+   }
 
 
 // E2.1 short <= int <= long <= long long; unsigned >=0  signed can be negative or positive; float is shown in one word (32bits, 4 bytes), double in two words (64bits, 8bytes)
