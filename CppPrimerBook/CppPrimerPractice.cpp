@@ -564,13 +564,11 @@ while (cin >> item4) {
   item4.print_s();
 }
 
-
 //replacing E1.21 & E1.22:
 Sales_data item5, item6;
 while (cin >> item5 >> item6) {
   item5.sameaddTwo(item6).print_s();
 }
-
 
 //replacing E1.23:
 Sales_data Current2, item7;
