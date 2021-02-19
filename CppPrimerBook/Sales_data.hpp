@@ -1,3 +1,4 @@
+//This file was written by Wei Wang, github: https://github.com/vivi-1
 #ifndef SALES_DATA_HPP
 #define SALES_DATA_HPP
 
