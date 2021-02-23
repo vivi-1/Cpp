@@ -28,9 +28,13 @@ Sales_data Sales_data::sameaddTwo(Sales_data item1) {
   Sales_data total;
   if (item1.bookNo == bookNo){
     total.bookNo = bookNo;
+    total.units_sold = item1.units_sold;
+    total.price = item1.price;
+    total.revenue = item1.revenue;
     total.total_units_sold = item1.units_sold + units_sold;
     total.total_revenue = item1.revenue + revenue;
     total.avprice = total.total_revenue / total.total_units_sold;
+
     return total;
   }
   else {

@@ -2759,23 +2759,24 @@ cout << "\n\n";
 
 //E7.1: Write a version of the transaction-processing program from § 1.6 (p. 24)
 //using the Sales_data class you defined for the exercises in § 2.6.1 (p. 72).
-// Sales_item total;
-//if (std::cin >> total) {
-//  Sales_item trans;
-//  while (std::cin >> trans) {
-//    if (total.isbn() == trans.isbn())
-//      total += trans;
-//    else {
-//      std::cout << total << std::endl;
-//      total = trans;
-    // }
-//    }
-//  std::cout << total << std::endl;
-//  }
-//else {
-//  std::cerr << "No data?!" << std::endl;
-//  return -1;  // indicate failure
-//}
+Sales_data total;
+if (cin >> total) {
+ Sales_data trans;
+ while (cin >> trans) {
+   if (total.bookNo== trans.bookNo) {
+     total = total.sameaddTwo(trans);
+     cout << "add two" << endl;
+   }
+   else {
+     total = trans;
+    }
+    total.print_s();
+   }
+ }
+else {
+ cerr << "No data?!" << endl;
+ return -1;  // indicate failure
+}
 
 
 return 0; //return EXIT_SUCCESS
