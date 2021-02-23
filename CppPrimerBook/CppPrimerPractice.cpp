@@ -2795,16 +2795,48 @@ else {
 //They should be const so that they don't modify the data members that are returned
 
 //E7.6 Define your own versions of the add, read, and print functions.
-//Please see the functions add, read and print in Person.hpp
+// istream &read(istream&is, Sales_data&object) {
+//   is >> object.bookNo >> object.units_sold >> object.price;
+//   return is;
+// }
+// ostream &print(ostream &os, const Sales_data &item) {
+//   os << item.isbn() << " " << item.units_sold << " "<< item.revenue << " "
+//       << item.avgprice;
+//   return os;
+// }
+// Sales_data add(Sales_data item1, Sales_data item2) {
+//   Sales_data total = item2;
+//   if (item1.isbn() == item2.isbn()){
+//     total = item2.sameaddTwo(item1);
+//   }
+//   return total;
+// }
 
 //E7.7: Rewrite the transaction-processing program you wrote for the exercises
 //in § 7.1.2 (p. 260) to use these new functions.
+Sales_data item8;
+if (read(cin, item8)) {
+  Sales_data item9;
+  while (read(cin, item8)) {
+    if (item8.isbn() == item9.isbn()) {
+      item8 = add(item8, item9);
+    }
+    else {
+      print(cout, item8);
+      item8 = item9;}
+    print(cout, item8);
+  }
+}
+else cerr << "No data input\n";
+
 
 //E7.8: Why does read define its Sales_data parameter as a plain reference and
 //print define its parameter as a reference to const?
 
 //E7.9: Add operations to read and print Person objects to the code you wrote
 //for the exercises in § 7.1.2 (p. 260).
+//Please see the functions add, read and print in Person.hpp
+
 
 //E7.10: What does the condition in the following if statement do?
 

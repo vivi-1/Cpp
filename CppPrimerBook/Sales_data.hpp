@@ -18,12 +18,12 @@ struct Sales_data {
     void print_s();
 };
 
-istream& operator>>(std::istream& in, Sales_data& s) {
-  in >> s.bookNo >> s.units_sold >> s.price;
-  if (in) s.revenue = s.units_sold * s.price;
-  else s = Sales_data();
-  return in;
-}
+// istream& operator>>(istream& in, Sales_data& s) {
+//   in >> s.bookNo >> s.units_sold >> s.price;
+//   if (in) s.revenue = s.units_sold * s.price;
+//   else s = Sales_data();
+//   return in;
+// }
 
 Sales_data Sales_data::sameaddTwo(Sales_data item1) {
   Sales_data total;
@@ -43,10 +43,28 @@ Sales_data Sales_data::sameaddTwo(Sales_data item1) {
     return total;
   }
 }
+istream& read(istream& is, Sales_data& item) {
+  is >> item.bookNo >> item.units_sold >> item.price;
+  item.revenue = item.price * item.units_sold;
+  return is;
+}
+
+Sales_data add(Sales_data item1, Sales_data item2) {
+  Sales_data total = item2;
+  if (item1.isbn() == item2.isbn()){
+    total = item2.sameaddTwo(item1);
+  }
+  return total;
+}
 
 void Sales_data::print_s() {
   cout << bookNo << " " << units_sold << " " << price << " "  << avprice << " " << revenue;
   cout << " " << total_units_sold << " " << total_revenue << endl;
+}
+
+ostream &print(ostream &os, const Sales_data &item) {
+  os << item.isbn() << " " << item.units_sold << " "<< item.revenue << " " << item.avprice;
+  return os;
 }
 
 
