@@ -2790,10 +2790,27 @@ else {
 //will incrementally add features to this class.
 //Please see Person.hpp
 
-
-
 //E7.5 Provide operations in your Person class to return the name and address.
 //Should these functions be const? Explain your choice.
+//They should be const so that they don't modify the data members that are returned
+
+//E7.6 Define your own versions of the add, read, and print functions.
+//Please see the functions add, read and print in Person.hpp
+
+//E7.7: Rewrite the transaction-processing program you wrote for the exercises
+//in § 7.1.2 (p. 260) to use these new functions.
+
+//E7.8: Why does read define its Sales_data parameter as a plain reference and
+//print define its parameter as a reference to const?
+
+//E7.9: Add operations to read and print Person objects to the code you wrote
+//for the exercises in § 7.1.2 (p. 260).
+
+//E7.10: What does the condition in the following if statement do?
+
+//if (read(read(cin, data1), data2))
+
+
 
 
 return 0; //return EXIT_SUCCESS
