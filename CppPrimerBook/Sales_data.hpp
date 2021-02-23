@@ -13,6 +13,7 @@ struct Sales_data {
     double avprice = 0.0;
     double revenue = 0.0;
     double total_revenue = 0.0;
+    string isbn() const {return bookNo;};
     Sales_data sameaddTwo(Sales_data item1);
     void print_s();
 };

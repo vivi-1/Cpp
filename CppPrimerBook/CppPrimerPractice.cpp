@@ -2755,15 +2755,13 @@ for  (auto f : funcpt2) cout << f(10, 4) << " ";
 cout << "\n\n";
 
 
-*/
-
 //E7.1: Write a version of the transaction-processing program from § 1.6 (p. 24)
 //using the Sales_data class you defined for the exercises in § 2.6.1 (p. 72).
 Sales_data total;
 if (cin >> total) {
  Sales_data trans;
  while (cin >> trans) {
-   if (total.bookNo== trans.bookNo) {
+   if (total.isbn()== trans.isbn()) {
      total = total.sameaddTwo(trans);
      cout << "add two" << endl;
    }
@@ -2777,6 +2775,25 @@ else {
  cerr << "No data?!" << endl;
  return -1;  // indicate failure
 }
+*/
+
+//E7.2 Add the combine and isbn members to the Sales_data class you wrote for
+//the exercises in § 2.6.2 (p. 76).
+//Answer:Please see Sales_data.hpp
+
+//E7.3 Revise your transaction-processing program from § 7.1.1 (p. 256) to
+//use these members.
+//Answer: Please see the answer from E7.1
+
+//E7.4 Write a class named Person that represents the name and address of a
+//person. Use a string to hold each of these elements. Subsequent exercises
+//will incrementally add features to this class.
+//Please see Person.hpp
+
+
+
+//E7.5 Provide operations in your Person class to return the name and address.
+//Should these functions be const? Explain your choice.
 
 
 return 0; //return EXIT_SUCCESS
