@@ -16,4 +16,4 @@ struct Person {
 ostream &print(ostream&, const Person&);
 istream &read(istream&, Person&);
 
-#endif // SALES_DATA_HPP
+#endif //PERSON_HPP
