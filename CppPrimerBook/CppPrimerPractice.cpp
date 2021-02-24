@@ -2829,10 +2829,9 @@ else cerr << "No data input\n";
 //E7.9: Add operations to read and print Person objects to the code you wrote
 //for the exercises in § 7.1.2 (p. 260).
 //Please see the functions add, read and print in Person.hpp
-*/
+
 
 //E7.10: What does the condition in the following if statement do?
-
 //if (read(read(cin, data1), data2))
 //read takes a reference to their respective IO class types.
 //The IO classes are types that cannot be copied, so we may only pass them by
@@ -2841,7 +2840,7 @@ else cerr << "No data input\n";
 //sdt::istream &secondStep = read(firstStep, data2);
 //if (secondStep == True) meaning that if istream takes two data: data1 and data2
 
-
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
