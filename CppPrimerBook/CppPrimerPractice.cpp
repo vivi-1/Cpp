@@ -2836,10 +2836,10 @@ else cerr << "No data input\n";
 //if (read(read(cin, data1), data2))
 //read takes a reference to their respective IO class types.
 //The IO classes are types that cannot be copied, so we may only pass them by
-//reference. 
+//reference.
 //std::istream &firstStep = read(cin, data1);
 //sdt::istream &secondStep = read(firstStep, data2);
-//if (secondStep == True)
+//if (secondStep == True) meaning that if istream takes two data: data1 and data2
 
 
 
