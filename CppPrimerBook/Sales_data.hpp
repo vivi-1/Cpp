@@ -35,7 +35,6 @@ Sales_data Sales_data::sameaddTwo(Sales_data item1) {
     total.total_units_sold = item1.units_sold + units_sold;
     total.total_revenue = item1.revenue + revenue;
     total.avprice = total.total_revenue / total.total_units_sold;
-
     return total;
   }
   else {
@@ -46,6 +45,9 @@ Sales_data Sales_data::sameaddTwo(Sales_data item1) {
 istream& read(istream& is, Sales_data& item) {
   is >> item.bookNo >> item.units_sold >> item.price;
   item.revenue = item.price * item.units_sold;
+  item.total_units_sold = item.units_sold;
+  item.total_revenue = item.revenue;
+  item.avprice =  item.total_revenue / item.total_units_sold;
   return is;
 }
 
@@ -63,7 +65,9 @@ void Sales_data::print_s() {
 }
 
 ostream &print(ostream &os, const Sales_data &item) {
-  os << item.isbn() << " " << item.units_sold << " "<< item.revenue << " " << item.avprice;
+  os << item.isbn() << " " << item.units_sold << " "<< item.revenue << " "
+      << item.avprice << " " << item.total_units_sold
+        << " " << item.total_revenue << endl;
   return os;
 }
 

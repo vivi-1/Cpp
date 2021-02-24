@@ -2759,15 +2759,10 @@ cout << "\n\n";
 //using the Sales_data class you defined for the exercises in § 2.6.1 (p. 72).
 Sales_data total;
 if (cin >> total) {
- Sales_data trans;
- while (cin >> trans) {
-   if (total.isbn()== trans.isbn()) {
-     total = total.sameaddTwo(trans);
-     cout << "add two" << endl;
-   }
-   else {
-     total = trans;
-    }
+  Sales_data trans;
+  while (cin >> trans) {
+    if (total.isbn()== trans.isbn()) total = total.sameaddTwo(trans);
+    else total = trans;
     total.print_s();
    }
  }
@@ -2775,7 +2770,7 @@ else {
  cerr << "No data?!" << endl;
  return -1;  // indicate failure
 }
-*/
+
 
 //E7.2 Add the combine and isbn members to the Sales_data class you wrote for
 //the exercises in § 2.6.2 (p. 76).
@@ -2817,18 +2812,14 @@ else {
 Sales_data item8;
 if (read(cin, item8)) {
   Sales_data item9;
-  while (read(cin, item8)) {
-    if (item8.isbn() == item9.isbn()) {
-      item8 = add(item8, item9);
-    }
-    else {
-      print(cout, item8);
-      item8 = item9;}
+  while (read(cin, item9)) {
+    if (item8.isbn() == item9.isbn()) item8 = add(item8, item9);
+    else item8 = item9;
     print(cout, item8);
   }
 }
 else cerr << "No data input\n";
-
+*/
 
 //E7.8: Why does read define its Sales_data parameter as a plain reference and
 //print define its parameter as a reference to const?
