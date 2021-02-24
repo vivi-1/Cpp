@@ -2819,20 +2819,27 @@ if (read(cin, item8)) {
   }
 }
 else cerr << "No data input\n";
-*/
+
 
 //E7.8: Why does read define its Sales_data parameter as a plain reference and
 //print define its parameter as a reference to const?
+//When reading: Sales_data item parameter is modified whenever an input is read.
+//When printing:Sales_data item should not be modified, we just want to access the member values
 
 //E7.9: Add operations to read and print Person objects to the code you wrote
 //for the exercises in § 7.1.2 (p. 260).
 //Please see the functions add, read and print in Person.hpp
-
+*/
 
 //E7.10: What does the condition in the following if statement do?
 
 //if (read(read(cin, data1), data2))
-
+//read takes a reference to their respective IO class types.
+//The IO classes are types that cannot be copied, so we may only pass them by
+//reference. 
+//std::istream &firstStep = read(cin, data1);
+//sdt::istream &secondStep = read(firstStep, data2);
+//if (secondStep == True)
 
 
 
