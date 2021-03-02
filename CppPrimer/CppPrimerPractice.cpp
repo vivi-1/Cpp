@@ -2874,7 +2874,41 @@ else {
 
 //E7.15: Add appropriate constructors to your Person class.
 //Please see Person.hpp
+
+
+//E7.16 What, if any, are the constraints on where and how often an access
+//specifier may appear inside a class definition? What kinds of members should
+//be defined after a public specifier? What kinds should be private?
+//Access specifiers are used to enforce encapsulation: members under public specifier
+//are accessible to all parts of the programs and they define the interface to the class.
+//Members under private specifier are accessible to the member functions of the class
+//but are not accessible to code that uses the class. The private section hide the
+//implementation
+//A class can have zero or multiple access specifiers, no restriction of how often
+//access specifiers appear.
+
+//E7.17 What, if any, are the differences between using class or struct?
+//Default access levals of class and struct are different. Class has private
+//default access while struct has public acess.
+
+//E7.18 What is encapsulation? Why is it useful?
+//encapsulation is to hide the implementations or the private members and make
+//those members only accessible to the member functions of the class.
+//The users won't be able to access to the implementation, or don't need to know how
+//the class works. And users won't be able to accidentally change the values of
+//class members.
+
+//E7.19  Indicate which members of your Person class you would declare as public
+//and which you would declare as private. Explain your choice.
+//I would make those class data members private: name, address and population
+//I would make those member functions and constructors public: readname (), readaddress()
+//Person() = default;
+//Person(const string &n, const string &a, const unsigned int &p) : name(n), address(a), population(p){}
+//Person(istream&);
+
 */
+
+
 
 
 return 0; //return EXIT_SUCCESS
