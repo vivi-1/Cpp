@@ -2867,7 +2867,6 @@ else {
  cerr << "No data?!" << endl;
  return -1;  // indicate failure
 }
-*/
 
 //E7.14: Write a version of the default constructor that explicitly initializes
 //the members to the values we have provided as in-class initializers.
@@ -2875,6 +2874,8 @@ else {
 
 //E7.15: Add appropriate constructors to your Person class.
 //Please see Person.hpp
+*/
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
