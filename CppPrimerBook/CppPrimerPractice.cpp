@@ -2847,16 +2847,34 @@ Sales_data item12(cin);
 print(cout,item10);
 print(cout,item11);
 print(cout,item12);
+
+
+//E7.12: Move the definition of the Sales_data constructor that takes an istream
+// into the body of the Sales_data class.
+//Please see Sales_data.hpp
+
+//E7.13: Rewrite the program from page 255 (E7.1)to use the istream constructor.
+Sales_data total(cin);
+if (cin) {
+  Sales_data trans;
+  while (read(cin, trans)) {
+    if (total.isbn()== trans.isbn()) total = total.sameaddTwo(trans);
+    else total = trans;
+    total.print_s();
+   }
+ }
+else {
+ cerr << "No data?!" << endl;
+ return -1;  // indicate failure
+}
 */
 
-//E7.12: Move the definition of the Sales_data constructor that takes an istream into the body of the Sales_data class.
-
-//E7.13: Rewrite the program from page 255 to use the istream constructor.
-
-//E7.14: Write a version of the default constructor that explicitly initializes the members to the values we have provided as in-class initializers.
+//E7.14: Write a version of the default constructor that explicitly initializes
+//the members to the values we have provided as in-class initializers.
+//Please see Sales_data.hpp
 
 //E7.15: Add appropriate constructors to your Person class.
-
+//Please see Person.hpp
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.

@@ -6,19 +6,33 @@
 using namespace std;
 
 struct Person {
-  private:
+  //constructors:
+  Person() = default;
+  Person(const string &n, const string &a, const unsigned int &p) : name(n), address(a), population(p){}
+  Person(istream&);
+
+  //Class data members
   string name;
   string address;
-  unsigned int population = 0;
-  public:
+  unsigned int population = 1;
+
+  //class function members
   string readname () const {return name;};
   string readaddress() const{return address;};
-}
+  istream& read(istream&is, Person&object);
 
-istream &read(istream&is, Person&object) {
+};
+
+
+istream& read(istream&is, Person&object) {
   is >> object.name >> object.address;
   return is;
 }
+
+Person::Person(istream& is) {
+  read(is, *this);
+}
+
 ostream &print(ostream &os, const Person &object) {
   os << object.readname() << " " << object.readaddress();
   return os;
@@ -26,7 +40,7 @@ ostream &print(ostream &os, const Person &object) {
 
 Person add(Person object1, Person object2) {
   Person combineInfo;
-  if (object1.name == object2.name && object1.address == object2.address)
+  if (object1.readname() == object2.readname() && object1.readaddress() == object2.readaddress())
       combineInfo.population = object1.population + object2.population;
   return combineInfo;
 }

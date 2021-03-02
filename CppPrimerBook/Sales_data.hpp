@@ -4,12 +4,14 @@
 
 #include <iostream>
 using namespace std;
-
+struct Sales_data;
+istream& read(istream& is, Sales_data& item);//read should be declared before use
 struct Sales_data {
     Sales_data () = default;
     Sales_data (const string &s) : bookNo(s){}
     Sales_data (const string &s, unsigned u, double r) : bookNo(s), units_sold(u), price(r), revenue(u*r){}
-    Sales_data (istream &);
+    Sales_data () : bookNo(" "), units_sold(0), price(0.0), revenue(0.0){}
+    Sales_data(istream &is) {read(is, *this);}
     string bookNo;
     unsigned units_sold = 0;
     unsigned total_units_sold = 0;
@@ -65,7 +67,7 @@ Sales_data add(Sales_data item1, Sales_data item2) {
   return total;
 }
 
-Sales_data::Sales_data(istream &is) {read(is, *this);}
+
 
 
 void Sales_data::print_s() {
