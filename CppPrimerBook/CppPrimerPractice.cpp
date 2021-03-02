@@ -2830,7 +2830,6 @@ else cerr << "No data input\n";
 //for the exercises in § 7.1.2 (p. 260).
 //Please see the functions add, read and print in Person.hpp
 
-
 //E7.10: What does the condition in the following if statement do?
 //if (read(read(cin, data1), data2))
 //read takes a reference to their respective IO class types.
@@ -2840,7 +2839,24 @@ else cerr << "No data input\n";
 //sdt::istream &secondStep = read(firstStep, data2);
 //if (secondStep == True) meaning that if istream takes two data: data1 and data2
 
+//E7.11 Add constructors to your Sales_data class and write a program to use
+//each of the constructors.
+Sales_data item10;
+Sales_data item11("kiwi", 4, 5);
+Sales_data item12(cin);
+print(cout,item10);
+print(cout,item11);
+print(cout,item12);
 */
+
+//E7.12: Move the definition of the Sales_data constructor that takes an istream into the body of the Sales_data class.
+
+//E7.13: Rewrite the program from page 255 to use the istream constructor.
+
+//E7.14: Write a version of the default constructor that explicitly initializes the members to the values we have provided as in-class initializers.
+
+//E7.15: Add appropriate constructors to your Person class.
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.

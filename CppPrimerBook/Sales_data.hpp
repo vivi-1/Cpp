@@ -6,6 +6,10 @@
 using namespace std;
 
 struct Sales_data {
+    Sales_data () = default;
+    Sales_data (const string &s) : bookNo(s){}
+    Sales_data (const string &s, unsigned u, double r) : bookNo(s), units_sold(u), price(r), revenue(u*r){}
+    Sales_data (istream &);
     string bookNo;
     unsigned units_sold = 0;
     unsigned total_units_sold = 0;
@@ -18,12 +22,13 @@ struct Sales_data {
     void print_s();
 };
 
-// istream& operator>>(istream& in, Sales_data& s) {
-//   in >> s.bookNo >> s.units_sold >> s.price;
-//   if (in) s.revenue = s.units_sold * s.price;
-//   else s = Sales_data();
-//   return in;
-// }
+
+istream& operator>>(istream& in, Sales_data& s) {
+  in >> s.bookNo >> s.units_sold >> s.price;
+  if (in) s.revenue = s.units_sold * s.price;
+  else s = Sales_data();
+  return in;
+}
 
 Sales_data Sales_data::sameaddTwo(Sales_data item1) {
   Sales_data total;
@@ -42,6 +47,7 @@ Sales_data Sales_data::sameaddTwo(Sales_data item1) {
     return total;
   }
 }
+
 istream& read(istream& is, Sales_data& item) {
   is >> item.bookNo >> item.units_sold >> item.price;
   item.revenue = item.price * item.units_sold;
@@ -58,6 +64,9 @@ Sales_data add(Sales_data item1, Sales_data item2) {
   }
   return total;
 }
+
+Sales_data::Sales_data(istream &is) {read(is, *this);}
+
 
 void Sales_data::print_s() {
   cout << bookNo << " " << units_sold << " " << price << " "  << avprice << " " << revenue;
