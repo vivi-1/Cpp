@@ -32,7 +32,7 @@ private:
 };
 
 inline
-screen & screen::move(pos r, pos c){
+screen &screen::move(pos r, pos c){
   pos row = r*width;
   cursor = row + c;
   return *this;
@@ -43,12 +43,12 @@ char screen::get(pos r, pos c) const{
   return contents[row+c];
 }
 
-inline screen & screen::set(char c){
+inline screen&  screen::set(char c){
   contents[cursor] = c;
   return *this;
 }
 
-inline screen &screen::set(pos r, pos col, char ch){
+inline screen& screen::set(pos r, pos col, char ch){
   contents[r*width + col] = ch;
   return *this;
 }

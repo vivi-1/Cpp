@@ -2954,11 +2954,33 @@ cout << "\n";
 
 //E7.28 What would happen in the previous exercise if the return type of move,
 //set, and display was Screen rather than Screen&?
-//It will return a copy of *this instead of the object.
-*/
-//E7.29 Revise your Screen class so that move, set, and display functions return Screen and check your prediction from the previous exercise.
+//myScreen.move(4,0).set('#').display(cout);
+//Move function will return a temporary copy of *this instead of passing a reference to
+//the object to set. So set # will only be added to the temporary copy instead of
+//the originial myScreen object. So when myScreen.display was called, it doesn't have
+//the expected "#" in the output.
 
-//E7.30 It is legal but redundant to refer to members through the this pointer. Discuss the pros and cons of explicitly using the this pointer to access members.
+
+//E7.29 Revise your Screen class so that move, set, and display functions return
+// Screen and check your prediction from the previous exercise.
+// screen myScreen(5, 5, 'X');
+// myScreen.move(4,0).set('#').display(cout);
+// cout << "\n";
+// myScreen.display(cout);
+// cout << "\n";
+// XXXXXXXXXXXXXXXXXXXX#XXXX
+// XXXXXXXXXXXXXXXXXXXXXXXXX
+*/
+
+//E7.30 It is legal but redundant to refer to members through the this pointer.
+//Discuss the pros and cons of explicitly using the this pointer to access members.
+//Pros: an explicit "this" can reminds the class user that class members are
+//being accessed and changed through a pointer. So if there's additional use of
+//the changed return value, the return value has to be a reference
+
+//E7.31 Define a pair of classes X and Y, in which X has a pointer to Y, and Y
+//has an object of type X.
+//Please check XY.hpp
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
