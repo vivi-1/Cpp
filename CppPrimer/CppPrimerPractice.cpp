@@ -5,7 +5,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include<iostream>
 #include "Sales_item.h"
 #include "Sales_data.hpp"
-//#include "Chapter6.h"
+#include "screen.hpp"
 #include<vector>
 using namespace std;
 
@@ -2920,7 +2920,6 @@ else {
 
 //E7.22 Update your Person class to hide its implementation.
 //Please check Person.hpp
-*/
 
 //E7.23 Write your own version of the Screen class.
 //Please see screen.hpp
@@ -2944,6 +2943,22 @@ else {
 //E7.26 Define Sales_data::avg_price as an inline function.
 //Please see screen.hpp
 
+//E7.27 Add the move, set, and display operations to your version of Screen.
+//Test your class by executing the following code:
+//Please see screen.hpp
+screen myScreen(5, 5, 'X');
+myScreen.move(4,0).set('#').display(cout);
+cout << "\n";
+myScreen.display(cout);
+cout << "\n";
+
+//E7.28 What would happen in the previous exercise if the return type of move,
+//set, and display was Screen rather than Screen&?
+//It will return a copy of *this instead of the object.
+*/
+//E7.29 Revise your Screen class so that move, set, and display functions return Screen and check your prediction from the previous exercise.
+
+//E7.30 It is legal but redundant to refer to members through the this pointer. Discuss the pros and cons of explicitly using the this pointer to access members.
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
