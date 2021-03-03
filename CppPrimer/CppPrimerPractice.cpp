@@ -2906,7 +2906,6 @@ else {
 //Person(const string &n, const string &a, const unsigned int &p) : name(n), address(a), population(p){}
 //Person(istream&);
 
-*/
 //E7.20 When are friends useful? Discuss the pros and cons of using friends.
 //It is useful when a function or class is in the interface of a class but not a class member,
 //and the function or class needs to access the class members.
@@ -2921,6 +2920,8 @@ else {
 
 //E7.22 Update your Person class to hide its implementation.
 //Please check Person.hpp
+*/
+
 
 
 return 0; //return EXIT_SUCCESS
