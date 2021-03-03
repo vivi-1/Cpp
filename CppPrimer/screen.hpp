@@ -6,6 +6,7 @@
 using namespace std;
 
 class screen {
+  friend class Window_mgr;
 public:
   typedef string::size_type pos;
   //constructors

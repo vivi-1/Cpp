@@ -2970,7 +2970,6 @@ cout << "\n";
 // cout << "\n";
 // XXXXXXXXXXXXXXXXXXXX#XXXX
 // XXXXXXXXXXXXXXXXXXXXXXXXX
-*/
 
 //E7.30 It is legal but redundant to refer to members through the this pointer.
 //Discuss the pros and cons of explicitly using the this pointer to access members.
@@ -2981,6 +2980,8 @@ cout << "\n";
 //E7.31 Define a pair of classes X and Y, in which X has a pointer to Y, and Y
 //has an object of type X.
 //Please check XY.hpp
+*/
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
