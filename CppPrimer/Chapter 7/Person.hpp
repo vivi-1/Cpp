@@ -5,22 +5,25 @@
 #include <iostream>
 using namespace std;
 
-struct Person {
-  //constructors:
-  Person() = default;
-  Person(const string &n, const string &a, const unsigned int &p) : name(n), address(a), population(p){}
-  Person(istream&);
+class Person {
+  public://constructors:
+    Person() = default;
+    Person(const string &n, const string &a, const unsigned int &p) : name(n), address(a), population(p){}
+    Person(istream&);
 
-  //Class data members
-  string name;
-  string address;
-  unsigned int population = 1;
+  private://Class data members
+    string name;
+    string address;
+    unsigned int population = 1;
 
-  //class function members
-  string readname () const {return name;};
-  string readaddress() const{return address;};
-  istream& read(istream&is, Person&object);
+  public://class function members
+    string readname () const {return name;};
+    string readaddress() const{return address;};
+    istream& read(istream&is, Person&object);
 
+  friend istream& read(istream&is, Person&object);
+  friend ostream &print(ostream &os, const Person &object);
+  friend Person add(Person object1, Person object2);
 };
 
 

@@ -2907,8 +2907,20 @@ else {
 //Person(istream&);
 
 */
+//E7.20 When are friends useful? Discuss the pros and cons of using friends.
+//It is useful when a function or class is in the interface of a class but not a class member,
+//and the function or class needs to access the class members.
+//Pro: Non-class function members can access to class members
+//Cons: If the implementation changes, the friends may need to change too.
 
+//E7.21 Update your Sales_data class to hide its implementation. The programs
+//you’ve written to use Sales_data operations should still continue to work.
+// Recompile those programs with your new class definition to verify that they
+//still work.
+//Please see Sales_data.hpp
 
+//E7.22 Update your Person class to hide its implementation.
+//Please check Person.hpp
 
 
 return 0; //return EXIT_SUCCESS

@@ -7,11 +7,17 @@ using namespace std;
 struct Sales_data;
 istream& read(istream& is, Sales_data& item);//read should be declared before use
 struct Sales_data {
+  friend istream& operator>>(istream& in, Sales_data& s);
+  friend istream& read(istream& is, Sales_data& item);
+  friend ostream &print(ostream &os, const Sales_data &item);
+
     Sales_data () = default;
     Sales_data (const string &s) : bookNo(s){}
     Sales_data (const string &s, unsigned u, double r) : bookNo(s), units_sold(u), price(r), revenue(u*r){}
-    Sales_data () : bookNo(" "), units_sold(0), price(0.0), revenue(0.0){}
+    //Sales_data () : bookNo(" "), units_sold(0), price(0.0), revenue(0.0){}//E7.14
     Sales_data(istream &is) {read(is, *this);}
+
+  private:
     string bookNo;
     unsigned units_sold = 0;
     unsigned total_units_sold = 0;
@@ -19,6 +25,7 @@ struct Sales_data {
     double avprice = 0.0;
     double revenue = 0.0;
     double total_revenue = 0.0;
+  public:
     string isbn() const {return bookNo;};
     Sales_data sameaddTwo(Sales_data item1);
     void print_s();
@@ -66,9 +73,6 @@ Sales_data add(Sales_data item1, Sales_data item2) {
   }
   return total;
 }
-
-
-
 
 void Sales_data::print_s() {
   cout << bookNo << " " << units_sold << " " << price << " "  << avprice << " " << revenue;
