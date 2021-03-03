@@ -2922,6 +2922,27 @@ else {
 //Please check Person.hpp
 */
 
+//E7.23 Write your own version of the Screen class.
+//Please see screen.hpp
+
+//E7.24 Give your Screen class three constructors: a default constructor; a
+//constructor that takes values for height and width and initializes the contents
+//to hold the given number of blanks; and a constructor that takes values for
+//height, width, and a character to use as the contents of the screen.
+//Please see screen.hpp
+
+//E7.25 Can Screen safely rely on the default versions of copy and assignment?
+//If so, why? If not, why not?
+//We can, because there are only some cases that we can't rely on synthesizd default constructor:
+//(1)objects of built-in or compound type (such as arrays and pointers) that are
+//defined inside a block have undefined value when they are default initialized
+//(2) For example, if a class has a member that has a class type, and that class
+// doesn’t have a default constructor, then the compiler can’t initialize that
+//member.
+//screen only uses std::string, so it doesn't belong to the two scenerio above.
+
+//E7.26 Define Sales_data::avg_price as an inline function.
+//Please see screen.hpp
 
 
 return 0; //return EXIT_SUCCESS

@@ -29,6 +29,7 @@ struct Sales_data {
     string isbn() const {return bookNo;};
     Sales_data sameaddTwo(Sales_data item1);
     void print_s();
+    double av_price() {return avprice;};
 };
 
 

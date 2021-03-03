@@ -10,6 +10,7 @@ public:
   typedef string::size_type pos;
   //constructors
   screen() = default;
+  screen(pos ht, pos wd) : height(ht), width(wd), contents(ht*wd, ' '){}
   screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht*wd, c){}
   //class member functions
   char get() const {return contents[cursor];}
