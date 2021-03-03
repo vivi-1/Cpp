@@ -2979,7 +2979,11 @@ cout << "\n";
 
 //E7.31 Define a pair of classes X and Y, in which X has a pointer to Y, and Y
 //has an object of type X.
-//Please check XY.hpp
+//Please see XY.hpp
+
+//E7.32 Define your own versions of Screen and Window_mgr in which clear is a
+//member of Window_mgr and a friend of Screen.
+//Please check Window_mgr.hpp
 */
 
 

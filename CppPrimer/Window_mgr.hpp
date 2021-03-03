@@ -1,4 +1,3 @@
-//This file was written by Wei Wang, github: https://github.com/vivi-1
 #ifndef WINDOW_MGR_HPP
 #define WINDOW_MGR_HPP
 
