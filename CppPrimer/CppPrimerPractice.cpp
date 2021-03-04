@@ -2984,8 +2984,15 @@ cout << "\n";
 //E7.32 Define your own versions of Screen and Window_mgr in which clear is a
 //member of Window_mgr and a friend of Screen.
 //Please check Window_mgr.hpp
-*/
 
+//E7.33 What would happen if we gave Screen a size member defined as follows?
+//Fix any problems you identify.
+
+//pos Screen::size() const {return height * width;}
+//Problem: return type is seen before class name, even when it is inside of the
+//class scope. the reuturn type "pos" needs to have class name in front of it. Correction:
+//Screen::pos Screen::size() const {return height * width;}
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
