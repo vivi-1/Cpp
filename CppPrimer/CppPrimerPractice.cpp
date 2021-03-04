@@ -2990,9 +2990,50 @@ cout << "\n";
 
 //pos Screen::size() const {return height * width;}
 //Problem: return type is seen before class name, even when it is inside of the
-//class scope. the reuturn type "pos" needs to have class name in front of it. Correction:
+//class scope, it appears outside of the class scope.So the reuturn type "pos"
+//needs to have class name in front of it. Correction:
 //Screen::pos Screen::size() const {return height * width;}
 */
+
+//E7.34 What would happen if we put the typedef of pos in the Screen class on
+//page 285 as the last line in the class?
+//it would throw an error "unknown type name pos" when its using pos as parameter types
+
+//E7.35 Exercise 7.35: Explain the following code, indicating which definition
+//of Type or initVal is used for each use of those names. Say how you would fix
+//any errors.
+//With errors:
+// typedef string Type;
+// Type initVal();
+// class Exercise {
+// public:
+//     typedef double Type;  //Error:can't re-define typename Type
+//     Type setVal(Type);//string Type for both return type and parametr type
+//     Type initVal(); //string Type
+// private:
+//     int val;
+// };
+// Type //string Type Exercise::setVal(Type parm)//double Type {
+//     val = parm + initVal(); //Excercise::initval
+//     return val;
+// }
+
+//Correction:
+// typedef string Type_s;
+// Type initVal();
+// class Exercise {
+// public:
+//     typedef double Type_d;
+//     Type_d setVal(Type_d);
+//     Type_d initVal();
+// private:
+//     int val;
+// };
+// Excercise::Type_d Exercise::setVal(Type_d parm) {
+//     val = parm + initVal();
+//     return val;
+// }
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
