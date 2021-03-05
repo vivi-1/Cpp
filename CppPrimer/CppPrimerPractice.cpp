@@ -3034,6 +3034,50 @@ cout << "\n";
 //     return val;
 // }
 
+//E7.36 The following initializer is in error. Identify and fix the problem.
+// struct X {
+//     X (int i, int j): base(i), rem(base % j) { }
+//     int rem, base;
+// };
+//rem was declared (and default initialized) before base, however, base is
+//needed when "initializing" rem in the initiliazation list. Correction:
+// struct X {
+//     X (int i, int j): base(i), rem(i % j) { }
+//     int base, rem;
+// };
+
+
+//E7.37 Using the version of Sales_data from this section, determine which
+//constructor is used to initialize each of the following variables and list the
+// values of the data members in each object:
+// Sales_data first_item(cin);
+////Constructor used:Sales_data(istream &is) {read(is, *this);} whatever cin takes
+// int main() {
+//     Sales_data next;
+////Constructor used: Sales_data () = default; all members are in class initialized
+//     Sales_data last("9-999-99999-9");
+////Constructor used: Sales_data (const string &s) : bookNo(s){};
+////bookNo is "9-999-99999-9" while other members are in class initialized
+// }
+
+//E7.38 We might want to supply cin as a default argument to the constructor
+//that takes an istream&. Write the constructor declaration that uses cin as a
+//default argument.
+//Sales_data(istream &is = cin) {read(is, *this);}
+
+//E7.39 Would it be legal for both the constructor that takes a string and the
+//one that takes an istream& to have default arguments? If not, why not?
+//No, it will cause ambigous behaviors
+
+//E7.40 Choose one of the following abstractions (or an abstraction of your own
+//choosing). Determine what data are needed in the class. Provide an appropriate
+// set of constructors. Explain your decisions.
+//(c) Employee
+//Employee(string n = " "):name(n) { }
+//Employee(string n, unsigned int p, string a):name(n),phoneNo(p), address(a)
+//Employee(istream &is) {read(is, *this);}
+
+//E7.41 
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
