@@ -6,6 +6,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include "Sales_item.h"
 #include "Sales_data.hpp"
 #include "screen.hpp"
+#include "Delegating_SalesData.hpp"
 #include<vector>
 using namespace std;
 
@@ -3077,9 +3078,37 @@ cout << "\n";
 //Employee(string n, unsigned int p, string a):name(n),phoneNo(p), address(a)
 //Employee(istream &is) {read(is, *this);}
 
-//E7.41 
+//E7.41 Rewrite your own version of the Sales_data class to use delegating
+//constructors. Add a statement to the body of each of the constructors that
+//prints a message whenever it is executed. Write declarations to construct a
+//Sales_data object in every way possible. Study the output until you are certain
+//you understand the order of execution among delegating constructors.
+//Please check my Delegating_SalesData.hpp to check the delegating constructors
+//Below is the code for checking the outputs:
+Delegating_SalesData item15("kiwi", 5, 10.0);
+cout << "next\n";
+Delegating_SalesData item13;
+cout << "next\n";
+Delegating_SalesData item14("kiwi");
+cout << "next\n";
+Delegating_SalesData item16(cin);
+cout << "next\n";
+//delegated constructor function body first and then delegating constructor
+//function body second
+
+//E7.42 For the class you wrote for exercise 7.40 in § 7.5.1 (p. 291), decide
+//whether any of the constructors might use delegation. If so, write the delegating
+// constructor(s) for your class. If not, look at the list of abstractions and
+//choose one that you think would use a delegating constructor. Write the class
+//definition for that abstraction.
+
+
+
+
 
 return 0; //return EXIT_SUCCESS
-//return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
+//return(0) is basically used to tell the machine that program executed
+//successfully.And any other number other than 0(like -1,1,2 etc..) indicate
+//that program doesnt executed successfully.
 
 }
