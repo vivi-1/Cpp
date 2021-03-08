@@ -2994,7 +2994,6 @@ cout << "\n";
 //class scope, it appears outside of the class scope.So the reuturn type "pos"
 //needs to have class name in front of it. Correction:
 //Screen::pos Screen::size() const {return height * width;}
-*/
 
 //E7.34 What would happen if we put the typedef of pos in the Screen class on
 //page 285 as the last line in the class?
@@ -3074,8 +3073,9 @@ cout << "\n";
 //choosing). Determine what data are needed in the class. Provide an appropriate
 // set of constructors. Explain your decisions.
 //(c) Employee
+//Emplyment() = default;
 //Employee(string n = " "):name(n) { }
-//Employee(string n, unsigned int p, string a):name(n),phoneNo(p), address(a)
+//Employee(string n, unsigned int p, string a):name(n),phoneNo(p), address(a){}
 //Employee(istream &is) {read(is, *this);}
 
 //E7.41 Rewrite your own version of the Sales_data class to use delegating
@@ -3101,10 +3101,14 @@ cout << "next\n";
 // constructor(s) for your class. If not, look at the list of abstractions and
 //choose one that you think would use a delegating constructor. Write the class
 //definition for that abstraction.
+// Delegating version:
+//(c) Employee
+//Employee(string n, unsigned int p, string a):name(n),phoneNo(p), address(a){}
+//Employee(string n = " "):Employee(n, 0, " ") {}
+//Employee():Employee(" ", 0, " ") {}
+//Employee(istream &is):Employee(){read(is, *this);}
 
-
-
-
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
