@@ -3108,7 +3108,47 @@ cout << "next\n";
 //Employee():Employee(" ", 0, " ") {}
 //Employee(istream &is):Employee(){read(is, *this);}
 
+//E7.43 Assume we have a class named NoDefault that has a constructor that takes
+// an int, but has no default constructor. Define a class C that has a member of
+// type NoDefault. Define the default constructor for C.
+//class NoDefault {
+// public:
+//  NoDefault (int i) : member1(i){}
+// private:
+//  int member1;
+// };
+//
+//class C {
+// public:
+//  C(NoDefault j) : member2(j){}
+//  C() : C(0) {}
+// private:
+//  NoDefault member2;
+// };
+
+//E7.44 Is the following declaration legal? If not, why not?
+//vector<NoDefault> vec(10);
+//illegal.Because the elements in vec can't be default initialized;
+
+//E7.45 What if we defined the vector in the previous execercise to hold objects
+// of type C?
+//It will become legal and 10 vec elements will be default initialized into 0
+//using the constructor: C() : C(0) {} delegating C(NoDefault j) : member2(j){}
+
+
+//E7.46 Which, if any, of the following statements are untrue? Why?
+//(a) A class must provide at least one constructor.
+//False: compiler will generate a synthesizd default constructor
+//(b) A default constructor is a constructor with an empty parameter list.
+//True
+//(c) If there are no meaningful default values for a class, the class should not
+//provide a default constructor.
+//False: meaningfulness is not a neccessity for default values for a class.
+//(d) If a class does not define a default constructor, the compiler generates one
+//that initializes each data member to the default value of its associated type.
+//True
 */
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
