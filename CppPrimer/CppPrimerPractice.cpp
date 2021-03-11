@@ -3199,11 +3199,21 @@ cout << "next\n";
 //It list initialized a temp Sales_data with bookNo "978-0590353403", units_sold 25
 //price 15.99 into revenue and then it is copied into Sales_data item.
 //Revenue should be price*units_sold, so the last initializer should be 25*15.99.
-*/
 
 //E7.53: Define your own version of Debug.
 constexpr Debug io_sub(false, true, false);
 io_sub.print_error();
+
+//E7.54: Should the members of Debug that begin with set_ be declared as
+//constexpr? If not, why not?
+//It shouldn't; In C++11, if its constexpr, it is implicitly const which means that
+//the funciton can't change data members inside the class.
+
+
+//E7.55 Is the Data class from § 7.5.5 (p. 298) a literal class? If not, why
+//not? If so, explain why it is literal.
+//It's not literal class. It is an aggregate class but its data members are not literal types.
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
