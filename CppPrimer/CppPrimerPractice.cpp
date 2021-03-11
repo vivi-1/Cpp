@@ -7,6 +7,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include "Sales_data.hpp"
 #include "screen.hpp"
 #include "Delegating_SalesData.hpp"
+#include "Chapter7_Debug.hpp"
 #include<vector>
 using namespace std;
 
@@ -3191,7 +3192,18 @@ cout << "next\n";
 //vector<int> vec = 10.(if it's implicit) then the 10 could be the size of the vec or
 //it could be the element in the vector.
 //For a string: string s("abcd") or string s = "abcd" don't make any confusion.
+
+//E7.52: Using our first version of Sales_data from § 2.6.1 (p. 72), explain the
+// following initialization. Identify and fix any problems.
+//Sales_data item = {"978-0590353403", 25, 15.99};
+//It list initialized a temp Sales_data with bookNo "978-0590353403", units_sold 25
+//price 15.99 into revenue and then it is copied into Sales_data item.
+//Revenue should be price*units_sold, so the last initializer should be 25*15.99.
 */
+
+//E7.53: Define your own version of Debug.
+constexpr Debug io_sub(false, true, false);
+io_sub.print_error();
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
