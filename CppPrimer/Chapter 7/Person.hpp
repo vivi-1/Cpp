@@ -9,7 +9,7 @@ class Person {
   public://constructors:
     Person() = default;
     Person(const string &n, const string &a, const unsigned int &p) : name(n), address(a), population(p){}
-    Person(istream&);
+    explicit Person(istream&);
 
   private://Class data members
     string name;

@@ -3147,8 +3147,51 @@ cout << "next\n";
 //(d) If a class does not define a default constructor, the compiler generates one
 //that initializes each data member to the default value of its associated type.
 //True
-*/
 
+//E7.47: Explain whether the Sales_data constructor that takes a string should
+//be explicit. What are the benefits of making the constructor explicit? What
+//are the drawbacks?
+
+//E7.48: Assuming the Sales_data constructors are not explicit, what operations
+//happen during the following definitions
+// string null_isbn("9-999-99999-9");
+// Sales_data item1(null_isbn);
+// Sales_data item2("9-999-99999-9");
+//What happens if the Sales_data constructors are explicit?
+//When Sales_data constructors are not explicit:
+//string literal "9-999-99999-9" will be converted to library string.
+//item1 will be initiliazed by the constructor:
+//Sales_item(const std::string &book): bookNo(book) { }
+//item2 argument "9-999-99999-9" will be converted to a string and will be stored
+// in a temperory string object which will be passed to the constructor:
+//Sales_item(const std::string &book): bookNo(book) { }
+//When Sales_data constructors are explicit:
+//For item2, the string literal will be implicitly transformed into library string
+//However,Item1 or item2 can't do copy initilization such as:Sales_data item2 = "9-999-99999-9";
+
+//E7.49: For each of the three following declarations of combine, explain what
+//happens if we call i.combine(s), where i is a Sales_data and s is a string:
+// (a) Sales_data &combine(Sales_data);
+//s will be implicitly converted into Sales_data through string constructor
+//and saved in temp which will pass to combine
+// (b) Sales_data &combine(Sales_data&);
+//s will be implicitly converted into Sales_data through string constructor
+//and saved in a reference to it which will pass to combine
+// (c) Sales_data &combine(const Sales_data&) const;
+//const function can't modify the object passed to it. So i can't be converted
+//into Sales_data so it will give an error
+
+//E7.50: Determine whether any of your Person class constructors should be
+//explicit.
+//Person(istream&); should be explicit so that we don't use copy initilization
+
+//E7.51: Why do you think vector defines its single-argument constructor as
+//explicit, but string does not?
+//Explicit  constructor can't allow copy initilization. Imagine an initilization scenario.
+//vector<int> vec = 10.(if it's implicit) then the 10 could be the size of the vec or
+//it could be the element in the vector.
+//For a string: string s("abcd") or string s = "abcd" don't make any confusion.
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
