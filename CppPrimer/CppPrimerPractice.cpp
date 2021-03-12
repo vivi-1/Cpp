@@ -3209,11 +3209,53 @@ io_sub.print_error();
 //It shouldn't; In C++11, if its constexpr, it is implicitly const which means that
 //the funciton can't change data members inside the class.
 
-
 //E7.55 Is the Data class from § 7.5.5 (p. 298) a literal class? If not, why
 //not? If so, explain why it is literal.
-//It's not literal class. It is an aggregate class but its data members are not literal types.
+//It's not literal class. It is an aggregate class but its data members are not
+//literal types.
 */
+//E7.56: What is a static class member? What are the advantages of static
+// members? How do they differ from ordinary members?
+//Static class member is associated with the class not with any object in the class.
+//it is part of the class and all the class objects share the same static class member.
+//Differences:
+//1.it can't have in-class initilization except for cibst of literal type
+//or a constexpr of literal type.
+//2. It has to be defined outside of the class.
+//3. It can be used as a default argument for a member function.
+
+//E7.57: Write your own version of the Account class.
+//Please see my CHAPTER7_ACCOUNT_HPP
+
+//E7.58: Which, if any, of the following static data member declarations and
+//definitions are errors? Explain why.
+
+// // example.h
+// class Example {
+// public:
+//     static double rate = 6.5;
+//     //error:non-const static data member must be initialized out of line
+//     static const int vecSize = 20;
+//     static vector<double> vec(vecSize);
+//     //error:non-const static data member must be initialized out of the class
+// };
+// // example.C
+// #include "example.h"
+// double Example::rate;
+// vector<double> Example::vec;
+//Correction:
+// // example.h
+// class Example {
+// public:
+//     static double rate;
+//     static const int vecSize = 20;
+//     static vector<double> vec;
+// };
+// // example.C
+// #include "example.h"
+// double Example::rate = 6.5;
+// vector<double> Example::vec(Example::vecSize);
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
