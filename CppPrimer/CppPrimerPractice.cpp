@@ -144,9 +144,6 @@ void print_vec(vector<string>::iterator beg, vector<string>::iterator end) {
     }
 }
 
-
-
-
 //E6.51
 void f(int i) {
   cout << "int" << i << endl;
@@ -169,6 +166,19 @@ int ad(int i, int j) { return (i+j);}
 int st(int i, int j) { return (i-j);}
 int mp(int i, int j) { return (i*j);}
 int dv(int i, int j) { return (i/j);}
+
+//E8.1: Write a function that takes and returns an istream&. The function should
+//read the stream until it hits end-of-file. The function should print what it
+//reads to the standard output. Reset the stream so that it is valid before
+//returning the stream.
+istream& read_until_eof(istream& is) {
+  string result;
+  while(!is.eof() && is >> result) {
+    cout << is;
+  }
+  is.clear();
+  return is;
+}
 
 
 int main()
@@ -3213,7 +3223,7 @@ io_sub.print_error();
 //not? If so, explain why it is literal.
 //It's not literal class. It is an aggregate class but its data members are not
 //literal types.
-*/
+
 //E7.56: What is a static class member? What are the advantages of static
 // members? How do they differ from ordinary members?
 //Static class member is associated with the class not with any object in the class.
@@ -3256,6 +3266,31 @@ io_sub.print_error();
 // double Example::rate = 6.5;
 // vector<double> Example::vec(Example::vecSize);
 
+//E8.1: Write a function that takes and returns an istream&. The function should
+//read the stream until it hits end-of-file. The function should print what it
+//reads to the standard output. Reset the stream so that it is valid before
+//returning the stream.
+// istream& read_until_eof(istream& is) {
+//  string result;
+//   while(!item.eof() && is >> result) {
+//     cout << item;
+//   }
+//   is.clear();
+//   return is;
+// }
+
+//E8.2: Test your function by calling it, passing cin as an argument.
+istream& is = read_until_eof(cin);
+cout << is.rdstate() << endl;
+
+//E8.3: What causes the following while to terminate?
+// while (cin >> i) /*  ...    */
+
+//eofbit: reaching end of file, in this case, reaching the end of whats passed into cin;
+//failbit: a recoverable error such as read a character when numeric data was expected;
+// in this case, input was different type with i;
+//badbit:system-level failure, such as an unrecoverable read or write error
+*/
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
