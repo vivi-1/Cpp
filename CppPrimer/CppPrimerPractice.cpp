@@ -13,6 +13,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 using namespace std;
 
 
+
 //E2.40 Write your own version of the Sales_data class.
 struct Sales_data1 {
   string name;
