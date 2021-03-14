@@ -3,6 +3,7 @@ This is CppPrimerPractice for the C++ primer 5th edition
 By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
+#include<fstream>
 #include "Sales_item.h"
 #include "Sales_data.hpp"
 #include "screen.hpp"
@@ -10,6 +11,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include "Chapter7_Debug.hpp"
 #include<vector>
 using namespace std;
+
 
 //E2.40 Write your own version of the Sales_data class.
 struct Sales_data1 {
@@ -180,6 +182,35 @@ istream& read_until_eof(istream& is) {
   return is;
 }
 
+//E8.4
+vector<string> read_line_into_vector(const string filename) {
+  ifstream in(filename, ios::in);
+  vector<string> result;
+  if (in) {
+    string temp;
+    while (getline(in,temp)) result.push_back(temp);
+  }
+  else{
+  cerr << "error in opening file: " << filename << endl;
+  exit(EXIT_FAILURE);
+  }
+  return result;
+}
+
+//E8.5
+vector<string> read_word_into_vector(const string filename) {
+  ifstream in(filename, ios::in);
+  vector<string> result;
+  if (in) {
+    string temp;
+    while (in >> temp) result.push_back(temp);
+  }
+  else{
+  cerr << "error in opening file: " << filename << endl;
+  exit(EXIT_FAILURE);
+  }
+  return result;
+}
 
 int main()
 {/*
@@ -3284,13 +3315,55 @@ istream& is = read_until_eof(cin);
 cout << is.rdstate() << endl;
 
 //E8.3: What causes the following while to terminate?
-// while (cin >> i) /*  ...    */
+// while (cin >> i)
 
 //eofbit: reaching end of file, in this case, reaching the end of whats passed into cin;
 //failbit: a recoverable error such as read a character when numeric data was expected;
 // in this case, input was different type with i;
 //badbit:system-level failure, such as an unrecoverable read or write error
+
+string k;
+while (cin >> k) cout << k << endl;
 */
+//E8.4: Write a function to open a file for input and read its contents into a
+//vector of strings, storing each line as a separate element in the vector.
+// vector<string> read_line_into_vector(const string filename) {
+//   ifstream in(filename);
+//   vector<string> result;
+//   if (in) {
+//     string temp;
+//     while (getline(in,temp)) result.push_back(temp);
+//   }
+//   else{
+//   cerr << "error in opening file: " << filename << endl;
+//   exit(EXIT_FAILURE);
+//   }
+//   return result;
+// }
+vector<string> test = read_line_into_vector("test.txt");
+for (auto i : test) cout << i << "\n";
+
+//E8.5: Rewrite the previous program to store each word in a separate element.
+// vector<string> read_word_into_vector(const string filename) {
+//   ifstream in(filename);
+//   vector<string> result;
+//   if (in) {
+//     string temp;
+//     while (in >> temp) result.push_back(temp);
+//   }
+//   else{
+//   cerr << "error in opening file" << filename << endl;
+//   exit(EXIT_FAILURE);
+//   }
+//   return result;
+// }
+
+
+//E8.6: Rewrite the bookstore program from § 7.1.1 (p. 256) to read its
+//transactions from a file. Pass the name of the file as an argument to
+//main (§ 6.2.5, p. 218).
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
