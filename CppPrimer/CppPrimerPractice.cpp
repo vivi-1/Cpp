@@ -3340,8 +3340,10 @@ while (cin >> k) cout << k << endl;
 //   }
 //   return result;
 // }
+
 vector<string> test = read_line_into_vector("test.txt");
 for (auto i : test) cout << i << "\n";
+
 
 //E8.5: Rewrite the previous program to store each word in a separate element.
 // vector<string> read_word_into_vector(const string filename) {
@@ -3357,7 +3359,6 @@ for (auto i : test) cout << i << "\n";
 //   }
 //   return result;
 // }
-
 
 //E8.6: Rewrite the bookstore program from § 7.1.1 (p. 256) to read its
 //transactions from a file. Pass the name of the file as an argument to
