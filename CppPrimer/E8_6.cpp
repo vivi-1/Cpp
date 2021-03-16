@@ -3,11 +3,12 @@
 //main (§ 6.2.5, p. 218).
 #include <iostream>
 #include <fstream>
+#include <cstring>
 using namespace std;
 #include "Sales_data.hpp"
 
 int main(int argc, char **argv) {
-  if ((argc - 1)!=1) {
+  if (argc == 1) {
     cerr << "Wrong usage\n";
     return -1;
   }
