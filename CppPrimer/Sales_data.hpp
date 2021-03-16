@@ -13,7 +13,8 @@ struct Sales_data {
 
     Sales_data () = default;
     Sales_data (const string &s) : bookNo(s){}
-    Sales_data (const string &s, unsigned u, double r) : bookNo(s), units_sold(u), price(r), revenue(u*r){}
+    Sales_data (const string &s, unsigned u, double r) : 
+    bookNo(s), units_sold(u), price(r), revenue(u*r){}
     //Sales_data () : bookNo(" "), units_sold(0), price(0.0), revenue(0.0){}//E7.14
     Sales_data(istream &is) {read(is, *this);}
 
