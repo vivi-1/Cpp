@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
   ofstream output(argv[1]);
   ifstream input (argv[2]);
   if (argc == 1 || argc == 2) {
-    cerr << "Wrong input, has to have two parameters, including the excutable file and input and output files\n";
+    cerr << "Wrong input, has to have three parameters, including the excutable file and input and output files\n";
     return -1;
   }
   if(!input) {
@@ -27,15 +27,19 @@ int main(int argc, char **argv) {
   if(input >> total) {
     Sales_data temp;
     while (input >> temp) {
-      if (temp.isbn() == total.isbn()) {
-        total.sameaddTwo(temp);
-        output << total;
+      if (total.isbn() == temp.isbn()){
+        total = total.sameaddTwo(temp);
       }
       else {
-        output << total;
+        cout << "changing\n";
+        print(output, total);
         total = temp;
       }
     }
+  }
+  else {
+    cerr << "No data in the input file?!\n";
+    return -3;
   }
   return 0;
 }

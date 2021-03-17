@@ -1,4 +1,4 @@
-Wei 2 5
-Wei 7 8
-Kevin 1 2 
-hahahaha
+Wei 2 5.0
+Wei 7 8 6.0
+Kevin 1 2 4.0
+hahahaha 2 1 2.0
