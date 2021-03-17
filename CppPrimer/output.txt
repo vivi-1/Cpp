@@ -1,0 +1,6 @@
+format: ISBN, total units_sold, total revenue, average price
+Wei most recent data:  9 66 7.33333
+format: ISBN, total units_sold, total revenue, average price
+Kevin most recent data:  1 2 0
+format: ISBN, total units_sold, total revenue, average price
+hahahaha most recent data:  2 2 0

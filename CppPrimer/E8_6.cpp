@@ -17,29 +17,26 @@ int main(int argc, char **argv) {
     cerr << "Arguments should be more than one\n";
     return -1;
   }
+
   ifstream input(argv[1]);
   if(!input) {
     cerr << "can't open file " << string(argv[1]) << endl;
     return -2;
   }
+
   Sales_data total;
   if(input >> total){
     Sales_data temp;
-    print(cout, total);
-    print(cout, temp);
     while (input >> temp){
-      print(cout, temp);
       if (total.isbn() == temp.isbn()){
-        cout << total.isbn() << endl;
-        total = total.sameaddTwo(temp);
-        cout << "sameadd\n";
+        total.sameaddTwo(temp);
       }
       else {
-        cout << "different print: ";
         print(cout, total);
         total = temp;
       }
     }
+    print(cout, total);
   }
   else {
     cerr << "No data inpput?!\n";
