@@ -2,8 +2,8 @@
 //transactions from a file. Pass the name of the file as an argument to
 //main (§ 6.2.5, p. 218).
 //
-// g++ was used as a compiler on OS Mac BigSur, using test.txt as parameter that
-//passed to argv.
+// g++ was used as a compiler on OS Mac BigSur, the excutable file is default to be
+//a.out, I'm using test.txt as parameter that is passed to argv.
 
 #include <iostream>
 #include <fstream>
