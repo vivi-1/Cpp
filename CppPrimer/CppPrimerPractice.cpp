@@ -213,6 +213,7 @@ vector<string> read_word_into_vector(const string filename) {
   return result;
 }
 
+//E8.6
 int main()
 {/*
 //E1.5
@@ -3366,6 +3367,14 @@ for (auto i : test) cout << i << "\n";
 //main (§ 6.2.5, p. 218).
 //Please see my E8_6.cpp
 
+//E8.7: Revise the bookstore program from the previous section to write its
+//output to a file. Pass the name of that file as a second argument to main.
+
+
+
+//E8.8: Revise the program from the previous exercise to append its output to
+//its given file. Run the program on the same output file at least twice to
+//ensure that the data are preserved.
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
