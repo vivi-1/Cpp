@@ -2,7 +2,7 @@
 //output to a file. Pass the name of that file as a second argument to main.
 
 // g++ was used as a compiler on OS Mac BigSur, the excutable file is default to be
-//a.out, I'm using test.txt and output.txt as parameter that is passed to argv.
+//a.out, I'm using test.txt and output.txt as parameters that are passed to argv.
 
 #include <iostream>
 #include <fstream>

@@ -213,7 +213,7 @@ vector<string> read_word_into_vector(const string filename) {
   return result;
 }
 
-//E8.6
+
 int main()
 {/*
 //E1.5
@@ -3369,7 +3369,7 @@ for (auto i : test) cout << i << "\n";
 
 //E8.7: Revise the bookstore program from the previous section to write its
 //output to a file. Pass the name of that file as a second argument to main.
-
+//please check my E8_7.cpp
 
 
 //E8.8: Revise the program from the previous exercise to append its output to
