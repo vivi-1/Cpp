@@ -25,22 +25,16 @@ int main(int argc, char **argv) {
   }
   Sales_data total;
   if(input >> total) {
-    print(cout,total);
     Sales_data temp;
     while (input >> temp) {
-      print(cout, temp);
       if (temp.isbn() == total.isbn()){
-        cout << "same add two: ";
         total.sameaddTwo(temp);
-        print(cout, total);
       }
       else {
-        cout << "changing\n";
         print(output, total);
         total = temp;
       }
     }
-    print(output, total);
   }
   else {
     cerr << "No data in the input file?!\n";
