@@ -8,12 +8,13 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <sstream>
 using namespace std;
 #include "Sales_data.hpp"
 
 int main(int argc, char **argv) {
   if (argc == 1) {
-    cerr << "Wrong usage\n";
+    cerr << "Arguments should be more than one\n";
     return -1;
   }
   ifstream input(argv[1]);
@@ -24,11 +25,17 @@ int main(int argc, char **argv) {
   Sales_data total;
   if(input >> total){
     Sales_data temp;
+    print(cout, total);
+    print(cout, temp);
     while (input >> temp){
+      print(cout, temp);
       if (total.isbn() == temp.isbn()){
-        total.sameaddTwo(temp);
+        cout << total.isbn() << endl;
+        total = total.sameaddTwo(temp);
+        cout << "sameadd\n";
       }
       else {
+        cout << "different print: ";
         print(cout, total);
         total = temp;
       }

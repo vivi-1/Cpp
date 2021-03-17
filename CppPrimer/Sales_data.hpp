@@ -3,14 +3,25 @@
 #define SALES_DATA_HPP
 
 #include <iostream>
+#include <sstream>
+#include <fstream>
+using std::ifstream;
+using std::ofstream;
 using namespace std;
 struct Sales_data;
+istream& operator>>(istream& in, Sales_data& s);
+ostream& operator<<(ostream& out, Sales_data& s);
 istream& read(istream& is, Sales_data& item);//read should be declared before use
+ifstream& read(ifstream& is, Sales_data& item);
+ostream& print(ostream &os, const Sales_data &item);
+
+
 struct Sales_data {
   friend istream& operator>>(istream& in, Sales_data& s);
   friend ostream& operator<<(ostream& out, Sales_data& s);
   friend istream& read(istream& is, Sales_data& item);
-  friend ostream &print(ostream &os, const Sales_data &item);
+  friend ifstream& read(ifstream& is, Sales_data& item);
+  friend ostream& print(ostream &os, const Sales_data &item);
 
     Sales_data () = default;
     Sales_data (const string &s) : bookNo(s){}
@@ -50,24 +61,30 @@ ostream& operator<<(ostream& out, Sales_data& s) {
 }
 
 Sales_data Sales_data::sameaddTwo(Sales_data item1) {
-  Sales_data total;
   if (item1.bookNo == bookNo){
-    total.bookNo = bookNo;
-    total.units_sold = item1.units_sold;
-    total.price = item1.price;
-    total.revenue = item1.revenue;
-    total.total_units_sold = item1.units_sold + units_sold;
-    total.total_revenue = item1.revenue + revenue;
-    total.avprice = total.total_revenue / total.total_units_sold;
-    return total;
+    units_sold = item1.units_sold;
+    price = item1.price;
+    revenue = item1.revenue;
+    total_units_sold = item1.units_sold + units_sold;
+    total_revenue = item1.revenue + revenue;
+    avprice = total_revenue / total_units_sold;
   }
   else {
     cout << "BookNo should be the same\n";
-    return total;
   }
+  return *this;
 }
 
 istream& read(istream& is, Sales_data& item) {
+  is >> item.bookNo >> item.units_sold >> item.price;
+  item.revenue = item.price * item.units_sold;
+  item.total_units_sold = item.units_sold;
+  item.total_revenue = item.revenue;
+  item.avprice =  item.total_revenue / item.total_units_sold;
+  return is;
+}
+
+ifstream& read(ifstream& is, Sales_data& item) {
   is >> item.bookNo >> item.units_sold >> item.price;
   item.revenue = item.price * item.units_sold;
   item.total_units_sold = item.units_sold;
