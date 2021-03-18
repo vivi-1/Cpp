@@ -4,12 +4,18 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
 #include<iostream>
 #include<fstream>
+#include <sstream>
+using std::istream;
+using std::ostream;
+using std::istringstream;
+
 #include "Sales_item.h"
 #include "Sales_data.hpp"
 #include "screen.hpp"
 #include "Delegating_SalesData.hpp"
 #include "Chapter7_Debug.hpp"
 #include<vector>
+
 using namespace std;
 
 
@@ -177,8 +183,17 @@ int dv(int i, int j) { return (i/j);}
 istream& read_until_eof(istream& is) {
   string result;
   while(!is.eof() && is >> result) {
-    cout << is;
+    cout << result << " ";
   }
+  cout << endl;
+  is.clear();
+  return is;
+}
+
+istream& read_until_eof_line(istream& is) {
+  string result;
+  while (getline(is, result)) cout << result << " ";
+  cout << endl;
   is.clear();
   return is;
 }
@@ -213,9 +228,27 @@ vector<string> read_word_into_vector(const string filename) {
   return result;
 }
 
+//E8.10: Write a program to store each line from a file in a vector<string>.
+//Now use an istringstream to read each element from the vector a word at a time.
+vector<string> read_sstream_into_vector(ifstream& filename) {
+  vector<string> result;
+  if(filename) {
+    string line, word;
+    while (getline(filename, line)) {
+      istringstream str(line);
+      while (str >> word) {
+        result.push_back(word);
+        cout << word << " ";
+     }
+     cout << endl;
+    }
+      cout << "eof\n";
+  }
+  return result;
+}
 
-int main()
-{/*
+
+int main() {/*
 //E1.5
    cout << "enter two numbers:" << endl << "First number: ";
    int v1, v2;
@@ -3326,7 +3359,7 @@ cout << is.rdstate() << endl;
 
 string k;
 while (cin >> k) cout << k << endl;
-*/
+
 //E8.4: Write a function to open a file for input and read its contents into a
 //vector of strings, storing each line as a separate element in the vector.
 // vector<string> read_line_into_vector(const string filename) {
@@ -3371,10 +3404,108 @@ for (auto i : test) cout << i << "\n";
 //output to a file. Pass the name of that file as a second argument to main.
 //please check my E8_7.cpp
 
-
 //E8.8: Revise the program from the previous exercise to append its output to
 //its given file. Run the program on the same output file at least twice to
 //ensure that the data are preserved.
+//please check my E8_8.cpp
+
+//E8.9: Use the function you wrote for the first exercise in § 8.1.2 (E8.1)
+//(p. 314) to print the contents of an istringstream object.
+// istream& read_until_eof(istream& is) {
+//   string result;
+//   while(!is.eof() && is >> result) {
+//     cout << result << " ";
+//   }
+//   is.clear();
+//   return is;
+// }
+istringstream iss("isstring print");
+read_until_eof(iss);
+
+//E8.10: Write a program to store each line from a file in a vector<string>.
+//Now use an istringstream to read each element from the vector a word at a time.
+// vector<string> read_sstream_into_vector(ifstream& filename) {
+//   vector<string> result;
+//   if(filename) {
+//     string line, word;
+//     while (getline(filename, line)) {
+//       istringstream str(line);
+//       while (str >> word) {
+//         result.push_back(word);
+//         cout << word << " ";
+//      }
+//      cout << endl;
+//     }
+//       cout << "eof\n";
+//   }
+//   return result;
+// }
+
+fstream createFile("test.txt");
+createFile << "Wei 2 5.0\nWei 7 8.0\nKevin 1 2.0\nhahahaha 2 1.0" << endl;
+createFile.close();
+ifstream input("test.txt");
+read_sstream_into_vector(input);
+*/
+//E8.11: The program in this section defined its istringstream object inside the
+//outer while loop. What changes would you need to make if record were defined
+//outside that loop? Rewrite the program, moving the definition of record outside
+// the while, and see whether you thought of all the changes that are needed.
+//Orginal:
+// string line, word;
+// vector<PersonInfo> people;
+// while (getline(cin, line)) {
+//     PersonInfo info;
+//     istringstream record(line);
+//     record >> info.name;
+//     while (record >> word)
+//         info.phones.push_back(word);
+//     people.push_back(info);
+// }
+//My edit:
+// string line, word;
+// vector<PersonInfo> people;
+// istringstream record;
+// while (getline(cin, line)) {
+//     record.str(line);
+//     PersonInfo info;
+//     record >> info.name;
+//     while (record >> word)
+//         info.phones.push_back(word);
+//     people.push_back(info);
+// }
+
+//E8.12: Why didn’t we use in-class initializers in PersonInfo?
+//It is an aggregate class:"An aggregate is a simple collection of
+//data that does not have any invariants the class would have to guarantee.
+//Since there is no invariant and thus all combinations of possible values of
+//the member make sense, there is no point in making them private since there
+//is nothing to protect."
+//All of its data members are public
+//It does not define any constructors
+//It has no in-class initializers (§ 2.6.1, p. 73)
+//It has no base classes or virtual functions,
+
+//E8.13 Rewrite the phone number program from this section to read from a named
+// file rather than from cin.
+// for (const auto &entry : people) {
+//     ostringstream formatted, badNums;
+//     for (const auto &nums : entry.phones) {
+//         if (!valid(nums)) {
+//             badNums << " " << nums;
+//         } else
+//             formatted << " " << format(nums);
+//     }
+//     if (badNums.str().empty())
+//         os << entry.name << " "
+//            << formatted.str() << endl;
+//     else
+//         cerr << "input error: " << entry.name
+//              << " invalid number(s) " << badNums.str() << endl;
+// }
+
+//E8.14: Why did we declare entry and nums as const auto &?
+//We don't want to risk changing the original data in People, so we make it const;
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
