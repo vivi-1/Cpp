@@ -23,7 +23,6 @@ public:
 		is >> *this;
 	}
 
-public:
 	// Operations on Sales_item objects
 	// Member binary operator: left-hand operand bound to implicit this pointer
 	Sales_item& operator+=(const Sales_item&);
