@@ -5,6 +5,7 @@ using std::istream;
 using std::ostream;
 using std::istringstream;
 #include "Sales_data.hpp"
+#include "PersonInfo.hpp"
 #include<vector>
 using namespace std;
 //E8.1: Write a function that takes and returns an istream&. The function should
@@ -210,17 +211,17 @@ read_sstream_into_vector(input);
 //     people.push_back(info);
 // }
 //My edit:
-// string line, word;
-// vector<PersonInfo> people;
-// istringstream record;
-// while (getline(cin, line)) {
-//     record.str(line);
-//     PersonInfo info;
-//     record >> info.name;
-//     while (record >> word)
-//         info.phones.push_back(word);
-//     people.push_back(info);
-// }
+string line, word;
+vector<PersonInfo> people;
+istringstream record;
+while (getline(cin, line)) {
+    record.str(line);
+    PersonInfo info;
+    record >> info.name;
+    while (record >> word)
+        info.phones.push_back(word);
+    people.push_back(info);
+}
 
 //E8.12: Why didn’t we use in-class initializers in PersonInfo?
 //It is an aggregate class:"An aggregate is a simple collection of
@@ -235,21 +236,32 @@ read_sstream_into_vector(input);
 
 //E8.13 Rewrite the phone number program from this section to read from a named
 // file rather than from cin.
-// for (const auto &entry : people) {
-//     ostringstream formatted, badNums;
-//     for (const auto &nums : entry.phones) {
-//         if (!valid(nums)) {
-//             badNums << " " << nums;
-//         } else
-//             formatted << " " << format(nums);
-//     }
-//     if (badNums.str().empty())
-//         os << entry.name << " "
-//            << formatted.str() << endl;
-//     else
-//         cerr << "input error: " << entry.name
-//              << " invalid number(s) " << badNums.str() << endl;
-// }
+vector<PersonInfo> people1;
+ifstream input1("test.txt");
+string line1, word1;
+while (getline(input1, line1)) {
+    PersonInfo info;
+    istringstream record(line1);
+    record >> info.name;
+    while (record >> word1)
+        info.phones.push_back(word1);
+    people1.push_back(info);
+}
+for (const auto &entry : people1) {
+    ostringstream formatted, badNums;
+    for (const auto &nums : entry.phones) {
+        if (!valid(nums)) {
+            badNums << " " << nums;
+        } else
+            formatted << " " << format(nums);
+    }
+    if (badNums.str().empty())
+        cout << entry.name << " "
+           << formatted.str() << endl;
+    else
+        cerr << "input error: " << entry.name
+             << " invalid number(s) " << badNums.str() << endl;
+}
 
 //E8.14: Why did we declare entry and nums as const auto &?
 //We don't want to risk changing the original data in People, so we make it const;

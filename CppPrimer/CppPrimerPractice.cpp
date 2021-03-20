@@ -8,12 +8,14 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 using std::istream;
 using std::ostream;
 using std::istringstream;
+using std::ostringstream;
 
 #include "Sales_item.h"
 #include "Sales_data.hpp"
 #include "screen.hpp"
 #include "Delegating_SalesData.hpp"
 #include "Chapter7_Debug.hpp"
+#include "PersonInfo.hpp"
 #include<vector>
 
 using namespace std;
@@ -3446,7 +3448,7 @@ createFile << "Wei 2 5.0\nWei 7 8.0\nKevin 1 2.0\nhahahaha 2 1.0" << endl;
 createFile.close();
 ifstream input("test.txt");
 read_sstream_into_vector(input);
-*/
+
 //E8.11: The program in this section defined its istringstream object inside the
 //outer while loop. What changes would you need to make if record were defined
 //outside that loop? Rewrite the program, moving the definition of record outside
@@ -3488,24 +3490,38 @@ read_sstream_into_vector(input);
 
 //E8.13 Rewrite the phone number program from this section to read from a named
 // file rather than from cin.
-// for (const auto &entry : people) {
-//     ostringstream formatted, badNums;
-//     for (const auto &nums : entry.phones) {
-//         if (!valid(nums)) {
-//             badNums << " " << nums;
-//         } else
-//             formatted << " " << format(nums);
-//     }
-//     if (badNums.str().empty())
-//         os << entry.name << " "
-//            << formatted.str() << endl;
-//     else
-//         cerr << "input error: " << entry.name
-//              << " invalid number(s) " << badNums.str() << endl;
-// }
+vector<PersonInfo> people;
+ifstream input("test.txt");
+string line, word;
+while (getline(input, line)) {
+    PersonInfo info;
+    istringstream record(line);
+    record >> info.name;
+    while (record >> word)
+        info.phones.push_back(word);
+    people.push_back(info);
+}
+for (const auto &entry : people) {
+    ostringstream formatted, badNums;
+    for (const auto &nums : entry.phones) {
+        if (!valid(nums)) {
+            badNums << " " << nums;
+        } else
+            formatted << " " << format(nums);
+    }
+    if (badNums.str().empty())
+        cout << entry.name << " "
+           << formatted.str() << endl;
+    else
+        cerr << "input error: " << entry.name
+             << " invalid number(s) " << badNums.str() << endl;
+}
 
 //E8.14: Why did we declare entry and nums as const auto &?
 //We don't want to risk changing the original data in People, so we make it const;
+*/
+
+
 
 return 0; //return EXIT_SUCCESS
 //return(0) is basically used to tell the machine that program executed
