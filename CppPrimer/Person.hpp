@@ -17,6 +17,7 @@ class Person {
     unsigned int population = 1;
 
   public://class function members
+
     string readname () const {return name;};
     string readaddress() const{return address;};
     istream& read(istream&is, Person&object);
