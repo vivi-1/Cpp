@@ -2,7 +2,10 @@
 This is CppPrimerPractice for the C++ primer 5th edition
 By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
+#include<list>
+#include<deque>
 
+using namespace std;
 
 int main(){
 //E9.1 Which is the most appropriate—a vector, a deque, or a list—for the
@@ -18,6 +21,9 @@ int main(){
 //(c) Read an unknown number of integers from a file. Sort the numbers and then
 //print them to standard output.
 //vector
+
+//E9.2 Define a list that holds elements that are deques that hold ints.
+list <deque<int>> list1;
 
 
   return 0;
