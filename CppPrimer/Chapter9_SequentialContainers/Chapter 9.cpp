@@ -76,8 +76,11 @@ cout << *itr(vec1, 1) << endl;
 // while (iter1 != iter2)
 
 //E9.7 What type should be used as the index into a vector of ints?
+//vector<int>::size_type
 
 //E9.8 What type should be used to read elements in a list of strings? To write them?
+//list<string>::const_iterator
+//llist<string>::iterator
 
   return 0;
 }
