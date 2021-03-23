@@ -82,5 +82,46 @@ cout << *itr(vec1, 1) << endl;
 //list<string>::const_iterator
 //llist<string>::iterator
 
+//E9.9 What is the difference between the begin and cbegin functions?
+//begin returns an iterator type while cbegin returns a const_iteractor type
+//Use cbegin when write access is not needed.
+
+//E9.10 What are the types of the following four objects?
+// vector<int> v1;
+//vector<int>
+// const vector<int> v2;
+//const vector<int>
+// auto it1 = v1.begin(), it2 = v2.begin();
+//vector<int>::iterator
+// auto it3 = v1.cbegin(), it4 = v2.cbegin();
+//vector<int>::const_iterator
+
+//E9.11 Show an example of each of the six ways to create and initialize a
+//vector. Explain what values each vector contains.
+//vector<int> v = {1,2,3,4,5}
+//vector<int> v1(v)
+//vector<int> v2(v.begin(), v.end())
+//vector<int> v3 (v.cbegin()+2, v.cend()-1)
+//vector<int> v3(10, 1)
+//vector<int> v4(10)
+
+//E9.12 Explain the differences between the constructor that takes a container
+//to copy and the constructor that takes two iterators.
+//When using a copy constructor to initialize an object, the object type must
+//match the original container. When taking two iterators as parameters, the types
+//don't need to match
+
+//E9.13: How would you initialize a vector<double> from a list<int>? From a
+//vector<int>? Write code to check your answers.
+list<int> li={1,2,3,4,5};
+vector<int> vi={2,4,6,8};
+vector<double> vd(li.begin(), li.end());
+vector<double> vd1(vi.cbegin(), vi.cend());
+for (auto i : vd) cout << i << " ";
+cout << endl;
+for (auto i : vd1) cout << i << " ";
+cout << endl;
+
+
   return 0;
 }
