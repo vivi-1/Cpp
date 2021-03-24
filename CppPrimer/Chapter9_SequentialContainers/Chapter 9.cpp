@@ -31,6 +31,14 @@ vector<int>::iterator itr(vector<int> vec, int object) {
   exit(EXIT_FAILURE);
 }
 
+//E9.14 Write a program to assign the elements from a list of char* pointers to
+//C-style character strings to a vector of strings.
+vector<string> c_to_str_vec(list<char*> cstring){
+  vector<string> result;
+  result.assign(cstring.cbegin(), cstring.cend());
+  return result;
+}
+
 int main(){
 //E9.1 Which is the most appropriate—a vector, a deque, or a list—for the
 //following program tasks? Explain the rationale for your choice. If there is
@@ -121,6 +129,14 @@ for (auto i : vd) cout << i << " ";
 cout << endl;
 for (auto i : vd1) cout << i << " ";
 cout << endl;
+
+//E9.14 Write a program to assign the elements from a list of char* pointers to
+//C-style character strings to a vector of strings.
+list<char*> li1 = {"wei", "kevin", "Yu"};
+vector<string> vi1 = c_to_str_vec(li1);
+for (auto i : vi1) cout << i << endl;
+
+
 
 
   return 0;
