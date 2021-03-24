@@ -136,7 +136,15 @@ list<char*> li1 = {"wei", "kevin", "Yu"};
 vector<string> vi1 = c_to_str_vec(li1);
 for (auto i : vi1) cout << i << endl;
 
+//E9.15 Write a program to determine whether two vector<int>s are equal.
 
+//E9.16 Repeat the previous program, but compare elements in a list<int> to a
+//vector<int>.
+
+//E9.17 Assuming c1 and c2 are containers, what (if any) constraints does the
+//following usage place on the types of c1 and c2?
+
+if (c1 < c2)
 
 
   return 0;
