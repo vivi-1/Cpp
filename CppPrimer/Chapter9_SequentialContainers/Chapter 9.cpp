@@ -33,10 +33,27 @@ vector<int>::iterator itr(vector<int> vec, int object) {
 
 //E9.14 Write a program to assign the elements from a list of char* pointers to
 //C-style character strings to a vector of strings.
-vector<string> c_to_str_vec(list<char*> cstring){
+vector<string> c_to_str_vec(list<char const*> cstring){
   vector<string> result;
   result.assign(cstring.cbegin(), cstring.cend());
   return result;
+}
+
+//E9.15 Write a program to determine whether two vector<int>s are equal.
+bool if_equal(vector<int> v1, vector<int> v2){
+  return v1==v2;
+}
+
+//E9.16 Repeat the previous program, but compare elements in a list<int> to a
+//vector<int>.
+bool if_equal(vector<int> v1, list<int> l1){
+  if (v1.size()!= l1.size()) return false;
+  else {
+    for (pair<vector<int>::iterator, list<int>::iterator> i(v1.begin(),l1.begin()); i.first != v1.end() &&i.second != l1.end(); ++i.first, ++i.second) {
+      if ((*i.first)!= (*i.second)) return false;
+    }
+  }
+  return true;
 }
 
 int main(){
@@ -132,20 +149,32 @@ cout << endl;
 
 //E9.14 Write a program to assign the elements from a list of char* pointers to
 //C-style character strings to a vector of strings.
-list<char*> li1 = {"wei", "kevin", "Yu"};
+list<char const*> li1 = {"wei", "kevin", "Yu"};
 vector<string> vi1 = c_to_str_vec(li1);
 for (auto i : vi1) cout << i << endl;
 
 //E9.15 Write a program to determine whether two vector<int>s are equal.
+//Please check E9.15 outside of the scope
+vector <int> v5 = {1,2,3,4,5};
+vector <int> v6 = {1,2,3,4,5};
+vector <int> v7 = {1,2,3,5};
+if(if_equal(v5,v6)) cout << "true\n";
+if(!if_equal(v7,v6)) cout << "true\n";
 
 //E9.16 Repeat the previous program, but compare elements in a list<int> to a
 //vector<int>.
+//Please check E9.16 outside of the scope
+list<int> li2= {1,2,3,7};
+list<int> li3= {1,2,3,4,5};
+if (!if_equal(v5,li2)) cout << "true\n";
+if (if_equal(v5,li3)) cout << "true\n";
 
 //E9.17 Assuming c1 and c2 are containers, what (if any) constraints does the
 //following usage place on the types of c1 and c2?
-
-if (c1 < c2)
-
+//if (c1 < c2)
+//operand "<" can not be used on unordered associative containers;
+//operand "<" can not be used on class members that didn't define "<"
+// c1 and c2 have to be the same container holding the same type elements
 
   return 0;
 }
