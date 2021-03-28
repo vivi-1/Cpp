@@ -178,25 +178,72 @@ if (if_equal(v5,li3)) cout << "true\n";
 
 //E9.18 Write a program to read a sequence of strings from the standard input
 //into a deque. Use iterators to write a loop to print the elements in the deque.
-
+// string word;
+// deque<string> d1;
+// while (cin >> word) {
+//   d1.push_back(word);
+//   for (auto i : d1){
+//     cout << i << " ";
+//   }
+//   cout << endl;
+// }
 
 //E9.19 Rewrite the program from the previous exercise to use a list. List the
 //changes you needed to make.
+// string word2;
+// list<string> l2;
+// while (cin >> word2) {
+//   l2.push_front(word2); //push_front for list
+//   for (auto i : l2){
+//     cout << i << " ";
+//   }
+//   cout << endl;
+// }
 
 //E9.20 Write a program to copy elements from a list<int> into two deques. The
 //even-valued elements should go into one deque and the odd ones into the other.
+list<int> l3 = {1,2,3,4,5,6,7,8,9,10};
+deque<int> odd, even;
+for (auto i = l3.begin(); i!=l3.end(); i++){
+  if((*i)%2) odd.push_back(*i);
+  else even.push_back(*i);
+}
+for (auto i : odd) cout << i << " ";
+cout << endl;
+for (auto i : even) cout << i << " ";
+cout << endl;
 
 //E9.21 Explain how the loop from page 345 that used the return from insert to
 //add elements to a list would work if we inserted into a vector instead.
+// vector<string> vec;
+// auto iter = vec.begin();
+// while (cin >> word)
+//    iter = vec.insert(iter, word);
+//Before the loop, iter was initilized to vec.begin(). The first call to insert takes
+//string we read and puts it in front of the element denoted by iter. The value
+//returned by insert is an iterator referring to this new element. We assign that
+//iterator to iter and repear the while, reading another word. As long as there are words to
+//insert, each trip through the while inserts a new element ahead of iter and reassigns
+//to iter the location of the newly inserted element.
 
 //E9.22 Assuming iv is a vector of ints, what is wrong with the following
 //program? How might you correct the problem(s)?
-
 // vector<int>::iterator iter = iv.begin(),
 //                       mid= iv.begin() + iv.size()/2;
 // while (iter != mid)
 //     if (*iter == some_val)
 //         iv.insert(iter, 2 * some_val);
-
+//Problem: iter != mid is always true. Because iter and mid are always changing since
+//insert always re-locate iv.begin() to the newly inserted element.
+//Correction:
+// vector<int> iv = {0,1,2,3,4,5,6,7,8,9};
+// int some_val = 2;
+// vector<int>::iterator iter = iv.begin();
+// auto mid= iv.begin() + iv.size()/2;
+// while (iter != mid) {
+//     if (*iter == some_val) iv.insert(iter, 2 * some_val);
+//     mid = iv.begin() + iv.size()/2;
+//     iter++;
+// }
   return 0;
 }
