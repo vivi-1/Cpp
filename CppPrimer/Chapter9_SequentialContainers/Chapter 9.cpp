@@ -258,14 +258,46 @@ cout << v3.at(0) << " " << v3[0] << " " << v3.front() << " " << *v3.begin() << e
 //E9.25 In the program on page 349 that erased a range of elements, what happens
 // if elem1 and elem2 are equal? What if elem2 or both elem1 and elem2 are the
 //off-the-end iterator?
-
+//if elem1==elem2, nothing is deleted
+//if elem2 is the off the end iterator, it will delete elements from elem1 till the end;
+//if elem1&2 are the off the end iterators, then nothing is deleted
 
 //E9.26 Using the following definition of ia, copy ia into a vector and into a
 //list. Use the single-iterator form of erase to remove the elements with odd
 //values from your list and the even values from your vector.
+int ia[] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 55, 89 };
+vector<int> vec4;
+vec4.insert(vec4.end(), begin(ia), end(ia));
+list<int> list2;
+for (auto i : vec4) {
+  list2.push_back(i);
+}
+cout << endl;
+for (auto i = vec4.begin(); i!=vec4.end(); ) {
+  if (!(*i%2)) vec4.erase(i);
+  else ++i;
+}
 
-//int ia[] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 55, 89 };
+for (auto i = list2.begin(); i!=list2.end(); ){
+  if (*i%2) list2.erase(i);
+  else ++i;
+}
+
+for (auto i : vec4) {
+  cout << i << " ";
+}
+
+cout << endl;
+
+for (auto i : list2) {
+  cout << i << " ";
+}
+
+cout << endl;
 
 
-  return 0;
+
+
+
+return 0;
 }
