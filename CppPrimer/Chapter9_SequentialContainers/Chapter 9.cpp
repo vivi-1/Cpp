@@ -255,7 +255,16 @@ cout << endl;
 vector<int> v3 = {0,1,2,3,4};
 cout << v3.at(0) << " " << v3[0] << " " << v3.front() << " " << *v3.begin() << endl;
 
-//E9.25 
+//E9.25 In the program on page 349 that erased a range of elements, what happens
+// if elem1 and elem2 are equal? What if elem2 or both elem1 and elem2 are the
+//off-the-end iterator?
+
+
+//E9.26 Using the following definition of ia, copy ia into a vector and into a
+//list. Use the single-iterator form of erase to remove the elements with odd
+//values from your list and the even values from your vector.
+
+//int ia[] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 55, 89 };
 
 
   return 0;
