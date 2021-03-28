@@ -245,5 +245,18 @@ cout << endl;
 //     mid = iv.begin() + iv.size()/2;
 //     iter++;
 // }
+
+//E9.23 In the first program in this section on page 346, what would the values
+//of val, val2, val3, and val4 be if c.size() is 1?
+//val = val2 = val3 = val4 = c[0]
+
+//E9.24 Write a program that fetches the first element in a vector using at, the
+//subscript operator, front, and begin. Test your program on an empty vector.
+vector<int> v3 = {0,1,2,3,4};
+cout << v3.at(0) << " " << v3[0] << " " << v3.front() << " " << *v3.begin() << endl;
+
+//E9.25 
+
+
   return 0;
 }
