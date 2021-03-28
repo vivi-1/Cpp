@@ -273,7 +273,8 @@ for (auto i : vec4) {
   list2.push_back(i);
 }
 cout << endl;
-for (auto i = vec4.begin(); i!=vec4.end(); ) {
+auto i = vec4.begin();
+while (i!=vec4.end()) {
   if (!(*i%2)) vec4.erase(i);
   else ++i;
 }
@@ -283,19 +284,23 @@ for (auto i = list2.begin(); i!=list2.end(); ){
   else ++i;
 }
 
-for (auto i : vec4) {
+for (const auto& i : vec4) {
   cout << i << " ";
 }
 
 cout << endl;
 
-for (auto i : list2) {
+for (const auto& i : list2) {
   cout << i << " ";
 }
 
 cout << endl;
 
+//E9.27
 
+//E9.28
+
+//E9.29
 
 
 
