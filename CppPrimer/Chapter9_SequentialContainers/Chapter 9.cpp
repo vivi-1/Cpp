@@ -337,8 +337,14 @@ cout << endl;
 //insert the second string at the end of the list.
 //Please see the function defined outside of the scope
 
-//E9.29
+//E9.29 Given that vec holds 25 elements, what does vec.resize(100) do? What if
+//we next wrote vec.resize(10)?
+// it adds 75 elements at the bacl of vec and then delete the last 80 elements
 
+//E9.30 What, if any, restrictions does using the version of resize that takes a
+// single argument place on the element type?
+// it should have a initialized value or if its a class type, it should have a default
+//constructor if no initialzer is provided
 
 
 return 0;
