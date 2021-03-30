@@ -61,6 +61,19 @@ bool if_equal(vector<int> v1, list<int> l1){
 //string arguments. The function should find the first string and insert the
 //second immediately following the first. If the first string is not found, then
 //insert the second string at the end of the list.
+void find_replace(forward_list<string> flist, string s1, string s2) {
+  auto prev = flist.before_begin();
+  auto curr = flist.begin();
+  while (curr != flist.end()) {
+    if ((*curr)== s1) {
+      flist.erase_after(prev);
+      flist.insert_after(prev, s2);
+    }
+    else {
+      prev = curr++;
+    }
+  }
+}
 
 
 int main(){
