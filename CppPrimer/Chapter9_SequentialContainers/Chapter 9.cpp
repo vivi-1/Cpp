@@ -335,7 +335,7 @@ cout << endl;
 //string arguments. The function should find the first string and insert the
 //second immediately following the first. If the first string is not found, then
 //insert the second string at the end of the list.
-
+//Please see the function defined outside of the scope
 
 //E9.29
 
