@@ -346,6 +346,29 @@ cout << endl;
 // it should have a initialized value or if its a class type, it should have a default
 //constructor if no initialzer is provided
 
+//E9.31 The program on page 354 to remove even-valued elements and duplicate
+//odd ones will not work on a list or forward_list. Why? Revise the program so
+//that it works on these types as well.
+
+//E9.32 In the program onpage 354 would it be legal to write the call to insert
+//as follows? If not, why not?
+
+// iter = vi.insert(iter, *iter++);
+//
+//E9.33 In the final example in this section what would happen if we did not
+//assign the result of insert to begin? Write a program that omits this assignment
+// to see if your expectation was correct.
+//
+//E9.34 Assuming vi is a container of ints that includes even and odd values,
+//predict the behavior of the following loop. After you’ve analyzed this loop,
+// write a program to test whether your expectations were correct.
+//
+// iter = vi.begin();
+// while (iter != vi.end())
+//     if (*iter % 2)
+//         iter = vi.insert(iter, *iter);
+//     ++iter;
+
 
 return 0;
 }
