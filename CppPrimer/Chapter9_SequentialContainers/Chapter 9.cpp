@@ -315,21 +315,24 @@ cout << v3.at(0) << " " << v3[0] << " " << v3.front() << " " << *v3.begin() << e
 //
 // cout << endl;
 
-//E9.27 Write a program to find and remove the odd-valued elements in a forward_list<int>.
-forward_list<int> flist = {0,1,2,3,4,5,6,7,8,9};
-auto prev = flist.before_begin();
-auto curr = flist.begin();
-while (curr != flist.end()) {
-  if (*curr%2) curr = flist.erase_after(prev);
-  else {
-    prev = curr;
-    curr++;
-  }
-}
-for (auto i = flist.begin(); i != flist.end(); i++) {
-  cout << *curr << " ";
-}
-cout << endl;
+//E9.27 Write a program to find and remove the odd-valued elements in a
+//forward_list<int>.
+// forward_list<int> flist = {0,1,2,3,4,5,6,7,8,9};
+// auto prev = flist.before_begin();
+// auto curr = flist.begin();
+// while (curr != flist.end()) {
+//   if (*curr%2) {
+//     curr = flist.erase_after(prev);
+//   }
+//   else {
+//     prev = curr;
+//     curr++;
+//   }
+// }
+// for (auto i = flist.begin(); i != flist.end(); i++) {
+//   cout << *curr << " ";
+// }
+// cout << endl;
 
 //E9.28 Write a function that takes a forward_list<string> and two additional
 //string arguments. The function should find the first string and insert the
@@ -349,6 +352,18 @@ cout << endl;
 //E9.31 The program on page 354 to remove even-valued elements and duplicate
 //odd ones will not work on a list or forward_list. Why? Revise the program so
 //that it works on these types as well.
+//the iter+=2 can't be used because these oerations iterators for list are not defiend in list
+//// silly loop to remove even-valued elements and insert a duplicate of odd-valued elements
+list<int> vi2 = {0,1,2,3,4,5,6,7,8,9};
+auto iter = vi2.begin();
+while (iter != vi2.end()) {
+    if (*iter % 2) {
+        iter = vi2.insert(iter, *iter);
+        iter++;
+        iter++;
+    } else
+        iter = vi2.erase(iter);
+}
 
 //E9.32 In the program onpage 354 would it be legal to write the call to insert
 //as follows? If not, why not?
