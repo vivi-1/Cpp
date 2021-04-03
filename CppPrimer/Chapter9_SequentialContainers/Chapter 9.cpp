@@ -364,12 +364,31 @@ while (iter != vi2.end()) {
     } else
         iter = vi2.erase(iter);
 }
+for (auto i : vi2) cout << i << " ";
+cout << endl;
+
+forward_list<int> flist = {0,1,2,3,4,5,6,7,8,9};
+auto prev = flist.before_begin();
+auto curr = flist.begin();
+while (curr != flist.end()) {
+    if (*curr % 2) {
+        curr = flist.insert_after(prev, *curr);
+        prev = curr++;
+        prev++;
+        curr++;
+    } else
+        curr = flist.erase_after(prev);
+        prev = curr;
+}
+for (auto i : flist) cout << i << " ";
+cout << endl;
 
 //E9.32 In the program onpage 354 would it be legal to write the call to insert
 //as follows? If not, why not?
-
 // iter = vi.insert(iter, *iter++);
-//
+//It is illegal because the order of evaluation is unspecified. iter could be
+//iter or iter+1 depending on the compilers preference.
+
 //E9.33 In the final example in this section what would happen if we did not
 //assign the result of insert to begin? Write a program that omits this assignment
 // to see if your expectation was correct.
