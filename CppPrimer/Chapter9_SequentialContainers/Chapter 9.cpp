@@ -367,21 +367,21 @@ while (iter != vi2.end()) {
 for (auto i : vi2) cout << i << " ";
 cout << endl;
 
-forward_list<int> flist = {0,1,2,3,4,5,6,7,8,9};
-auto prev = flist.before_begin();
-auto curr = flist.begin();
-while (curr != flist.end()) {
-    if (*curr % 2) {
-        curr = flist.insert_after(prev, *curr);
-        prev = curr++;
-        prev++;
-        curr++;
-    } else
-        curr = flist.erase_after(prev);
-        prev = curr;
-}
-for (auto i : flist) cout << i << " ";
-cout << endl;
+// forward_list<int> flist = {0,1,2,3,4,5,6,7,8,9};
+// auto prev = flist.before_begin();
+// auto curr = flist.begin();
+// while (curr != flist.end()) {
+//     if (*curr % 2) {
+//         curr = flist.insert_after(prev, *curr);
+//         prev = curr++;
+//         prev++;
+//         curr++;
+//     } else
+//         curr = flist.erase_after(prev);
+//         prev = curr;
+// }
+// for (auto i : flist) cout << i << " ";
+// cout << endl;
 
 //E9.32 In the program onpage 354 would it be legal to write the call to insert
 //as follows? If not, why not?
@@ -392,17 +392,29 @@ cout << endl;
 //E9.33 In the final example in this section what would happen if we did not
 //assign the result of insert to begin? Write a program that omits this assignment
 // to see if your expectation was correct.
-//
+//the begin will become invalid. we have to update begin after the insertion
+// cout << v3.capacity() << endl;
+// v3.reserve(10);
+// cout << v3.capacity() << endl;
+// auto begin = v3.begin(), end = v3.end();
+// while (begin != end) {
+//   ++begin;
+//   begin = v3.insert(begin, 42);
+//   //v3.insert(begin, 42);
+//   ++begin;
+// }
+// for (auto i : v3) cout << "v3: " << i << " ";
+// cout << endl;
+
 //E9.34 Assuming vi is a container of ints that includes even and odd values,
 //predict the behavior of the following loop. After you’ve analyzed this loop,
 // write a program to test whether your expectations were correct.
-//
 // iter = vi.begin();
 // while (iter != vi.end())
 //     if (*iter % 2)
 //         iter = vi.insert(iter, *iter);
 //     ++iter;
-
+// The loop will keep adding the first odd number iter came across.
 
 return 0;
 }
