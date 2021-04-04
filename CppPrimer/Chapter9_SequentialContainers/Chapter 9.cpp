@@ -452,6 +452,20 @@ cout << v2.size() << " " << v2.capacity() << endl; // 2 2
 //likely capacity after it is resized? What if it reads 512? 1,000? 1,048?
 //Since my library grows capacity one by one, result will be: 384; 768; 1500; 1572;
 
+//E9.41 Write a program that initializes a string from a vector<char>.
+vector<char> s1 = {'H', 'e', 'l', 'l', 'o', ' ', 'K', 'e', 'v', 'i', 'n'};
+string s2(s1.begin(), s1.end());
+string s3(&s1[0], s1.size());
+cout << s2 << '\n';
+cout << s3 << endl;
+
+//E9.42 Given that you want to read a character at a time into a string, and you
+// know that you need to read at least 100 characters, how might you improve the
+// performance of your program?
+// We can roughly estimate how much memory do we need ie. how many chars do we need
+// to read into the string. And based on the estimation, we can reserve sufficient
+// space for a string to hold the chars.
+
 
 return 0;
 }
