@@ -414,7 +414,44 @@ cout << endl;
 //     if (*iter % 2)
 //         iter = vi.insert(iter, *iter);
 //     ++iter;
-// The loop will keep adding the first odd number iter came across.
+// The loop will keep adding the first odd number that iter came across.
+
+//E9.35 Explain the difference between a vector’s capacity and its size.
+//Vector's capacity is how many elements a vector can hold before it needs to be
+//re-allocated
+//Vector's size is how many elements the vector currently has
+
+//E9.36 Can a container have a capacity less than its size?
+//It can't have a capacity less than its size. Once its size reach its capacity,
+// the vector will be re-allocated and capacity will be enlarged.
+
+//E9.37 Why don’t list or array have a capacity member?
+//A list does not need sequential location to hold the elements.
+//An array size was fixed when its initialized.
+
+//E9.38 Write a program to explore how vectors grow in the library you use.
+vector<int> v2;
+cout << v2.size() << " " << v2.capacity() << endl; //0 0
+v2.push_back(0);
+cout << v2.size() << " " << v2.capacity() << endl; // 1 1
+v2.push_back(1);
+cout << v2.size() << " " << v2.capacity() << endl; // 2 2
+//Grow 1 by 1
+
+//E9.39 Explain what the following program fragment does:
+// vector<string> svec;
+// svec.reserve(1024);
+// string word;
+// while (cin >> word)
+//         svec.push_back(word);
+// svec.resize(svec.size()+svec.size()/2);
+//svec reserves memories for 1024 elements. input string word and add word to svec.
+//After adding input is done, add half-the-size number of 0 (default initilizer) in the end.
+
+//E9.40 If the program in the previous exercise reads 256 words, what is its
+//likely capacity after it is resized? What if it reads 512? 1,000? 1,048?
+//Since my library grows capacity one by one, result will be: 384; 768; 1500; 1572;
+
 
 return 0;
 }
