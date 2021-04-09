@@ -7,6 +7,7 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include<forward_list>
 #include<deque>
 #include<vector>
+#include<string>
 using namespace std;
 
 //E9.4 Write a function that takes a pair of iterators to a vector<int> and an
@@ -73,6 +74,32 @@ void find_replace(forward_list<string> flist, string s1, string s2) {
       prev = curr++;
     }
   }
+}
+
+//E9.43 Write a function that takes three strings, s, oldVal, and newVal. Using
+//iterators, and the insert and erase functions replace all instances of oldVal
+//that appear in s by newVal. Test your function by using it to replace common
+//abbreviations, such as “tho” by “though” and “thru” by “through”.
+string& replace_old(string& s, const string& oldVal, const string& newVal){
+  for (auto i = s.begin(); i != s.end()-oldVal.size(); i++) {
+    if(oldVal == string{i, i+oldVal.size()}) {
+      i = s.erase(i, i+oldVal.size());
+      i = s.insert(i, newVal.begin(), newVal.end());
+      i += oldVal.size();
+    }
+  }
+  return s;
+}
+
+//E9.44: Rewrite the previous function using an index and replace.
+string& replace_old_val(string& s, const string& oldVal, const string& newVal) {
+  for (size_t i = 0; i != s.size() - oldVal.size(); i++) {
+    if (s.substr(i, oldVal.size()) == oldVal){
+      s.replace(i, oldVal.size(), newVal);
+      i+=oldVal.size();
+    }
+  }
+  return s;
 }
 
 int main(){
@@ -466,7 +493,30 @@ cout << s3 << endl;
 // to read into the string. And based on the estimation, we can reserve sufficient
 // space for a string to hold the chars.
 
-//E9.43
+//E9.43 Write a function that takes three strings, s, oldVal, and newVal. Using
+//iterators, and the insert and erase functions replace all instances of oldVal
+//that appear in s by newVal. Test your function by using it to replace common
+//abbreviations, such as “tho” by “though” and “thru” by “through”.
+string s ("thru the door no pass tho any way go thru the window.");
+replace_old(s, "thru", "through");
+replace_old(s, "tho", "though");
+cout << s << endl;
+
+//E9.44: Rewrite the previous function using an index and replace.
+string s4 ("thru the door no pass tho any way go thru the window.");
+replace_old_val(s4, "tho", "though");
+replace_old_val(s4, "thru", "through");
+cout << s4 << endl;
+
+
+//E9.45: Write a funtion that takes a string representing a name and two
+//other strings representing a prefix, such as “Mr.” or “Ms.” and a suffix, such
+// as “Jr.” or “III”. Using iterators and the insert and append functions,
+//generate and return a new string with the suffix and prefix added to the given
+// name.
+
+//E9.46: Rewrite the previous exercise using a position and length to manage the
+// strings. This time use only the insert function.
 
 
 
