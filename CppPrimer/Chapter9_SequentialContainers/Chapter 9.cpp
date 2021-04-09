@@ -102,6 +102,13 @@ string& replace_old_val(string& s, const string& oldVal, const string& newVal) {
   return s;
 }
 
+//E9.45: Write a funtion that takes a string representing a name and two
+//other strings representing a prefix, such as “Mr.” or “Ms.” and a suffix, such
+// as “Jr.” or “III”. Using iterators and the insert and append functions,
+//generate and return a new string with the suffix and prefix added to the given
+// name.
+
+
 int main(){
 //E9.1 Which is the most appropriate—a vector, a deque, or a list—for the
 //following program tasks? Explain the rationale for your choice. If there is
@@ -514,6 +521,7 @@ cout << s4 << endl;
 // as “Jr.” or “III”. Using iterators and the insert and append functions,
 //generate and return a new string with the suffix and prefix added to the given
 // name.
+
 
 //E9.46: Rewrite the previous exercise using a position and length to manage the
 // strings. This time use only the insert function.
