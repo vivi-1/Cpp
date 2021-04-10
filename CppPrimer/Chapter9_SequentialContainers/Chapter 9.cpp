@@ -107,6 +107,19 @@ string& replace_old_val(string& s, const string& oldVal, const string& newVal) {
 // as “Jr.” or “III”. Using iterators and the insert and append functions,
 //generate and return a new string with the suffix and prefix added to the given
 // name.
+string& add_suffix_prefix(string& name, const string& prefix, const string& suffix) {
+  name.insert(name.begin(),prefix.begin(), prefix.end());
+  name.append(suffix.begin(), suffix.end());
+  return name;
+}
+
+//E9.46: Rewrite the previous exercise using a position and length to manage the
+// strings. This time use only the insert function.
+string& add_suffix_prefix_2(string& name, const string& prefix, const string& suffix) {
+  name.insert(0, prefix, 0, prefix.size());
+  name.insert(name.size(),suffix, 0, suffix.size());
+  return name;
+}
 
 
 int main(){
@@ -515,17 +528,18 @@ replace_old_val(s4, "tho", "though");
 replace_old_val(s4, "thru", "through");
 cout << s4 << endl;
 
-
 //E9.45: Write a funtion that takes a string representing a name and two
-//other strings representing a prefix, such as “Mr.” or “Ms.” and a suffix, such
+// other strings representing a prefix, such as “Mr.” or “Ms.” and a suffix, such
 // as “Jr.” or “III”. Using iterators and the insert and append functions,
-//generate and return a new string with the suffix and prefix added to the given
-// name.
-
+// generate and return a new string with the suffix and prefix added to the given
+//name.
+string name = "Kevin", prefix = "Mr.", suffix = "Jr.";
+cout << add_suffix_prefix(name, prefix, suffix) << endl;
 
 //E9.46: Rewrite the previous exercise using a position and length to manage the
 // strings. This time use only the insert function.
-
+name = "Kevin";
+cout << add_suffix_prefix_2(name, prefix, suffix) << endl;
 
 
 return 0;
