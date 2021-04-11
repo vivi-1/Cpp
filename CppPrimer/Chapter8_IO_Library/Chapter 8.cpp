@@ -54,8 +54,8 @@ vector<string> read_word_into_vector(const string filename) {
     while (in >> temp) result.push_back(temp);
   }
   else{
-  cerr << "error in opening file: " << filename << endl;
-  exit(EXIT_FAILURE);
+    cerr << "error in opening file: " << filename << endl;
+    exit(EXIT_FAILURE);
   }
   return result;
 }

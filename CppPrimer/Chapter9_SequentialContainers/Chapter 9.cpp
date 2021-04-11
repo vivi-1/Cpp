@@ -9,6 +9,9 @@ By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 #include<vector>
 #include<string>
 using namespace std;
+#include<fstream>
+using std::istream;
+using std::ostream;
 
 //E9.4 Write a function that takes a pair of iterators to a vector<int> and an
 //int value. Look for that value in the range and return a bool indicating whether
@@ -570,15 +573,31 @@ string numbers("012345678");
 find_numberic_character("ab2c3d7R4E6");
 find_numberic_character2("ab2c3d7R4E6");
 
-//E9.48 Given the definitions of name and numbers on page 365, what does numbers.
-//find(name) return?
-
+//E9.48 Given the definitions of name and numbers on page 365, what does
+//numbers.find(name) return?
+//string::npos
 
 //E9.49 A letter has an ascender if, as with d or f, part of the letter extends
 //above the middle of the line. A letter has a descender if, as with p or g, part
 // of the letter extends below the line. Write a program that reads a file
 //containing words and reports the longest word that contains neither ascenders
 //nor descenders.
+ofstream createFile("Chapter9.txt");
+createFile << "asdfhjkgjk lkuyuiiu asa usam kevinyu WeiWana sdfhjioij kjhdfgahsfg acemn amn " << endl;
+createFile.close();
+ifstream sample("Chapter9.txt");
+string exclude("bdfghijklpqty"), read, result1;
+string::size_type count = 0;
+if(sample){
+  while (sample >> read) {
+    if(read.find_first_of(exclude) == string::npos && read.size() > count) {
+      count = read.size();
+      result1 = read;
+    }
+  }
+  cout << "the largest is " << result1 << " which is " << count << "-character long.\n";
+}
+
 
 
 return 0;
