@@ -121,6 +121,28 @@ string& add_suffix_prefix_2(string& name, const string& prefix, const string& su
   return name;
 }
 
+//E9.47 Write a program that finds each numeric character and then each alphabetic
+//character in the string "ab2c3d7R4E6". Write two versions of the program. The
+//first should use find_first_of, and the second find_first_not_of.
+void find_numberic_character (const string& input) {
+  string numbers("0123456789");
+  string::size_type pos = 0;
+  while (pos != string::npos && pos!=input.size()) {
+    if (pos == input.find_first_of(numbers, pos)) cout << "Found number at index: " << pos << " element is: " << input[pos] << endl;
+    else cout << "Found character at index: " << pos << " element is: " << input[pos] << endl;
+    ++pos;
+  }
+}
+
+void find_numberic_character2 (const string& input) {
+  string numbers("0123456789");
+  string::size_type pos = 0;
+  while (pos != string::npos && pos!=input.size()) {
+    if (pos == input.find_first_not_of(numbers, pos)) cout << "Found character at index: " << pos << " element is: " << input[pos] << endl;
+    else cout << "Found number at index: " << pos << " element is: " << input[pos] << endl;
+    ++pos;
+  }
+}
 
 int main(){
 //E9.1 Which is the most appropriate—a vector, a deque, or a list—for the
@@ -540,6 +562,23 @@ cout << add_suffix_prefix(name, prefix, suffix) << endl;
 // strings. This time use only the insert function.
 name = "Kevin";
 cout << add_suffix_prefix_2(name, prefix, suffix) << endl;
+
+//E9.47 Write a program that finds each numeric character and then each alphabetic
+//character in the string "ab2c3d7R4E6". Write two versions of the program. The
+//first should use find_first_of, and the second find_first_not_of.
+string numbers("012345678");
+find_numberic_character("ab2c3d7R4E6");
+find_numberic_character2("ab2c3d7R4E6");
+
+//E9.48 Given the definitions of name and numbers on page 365, what does numbers.
+//find(name) return?
+
+
+//E9.49 A letter has an ascender if, as with d or f, part of the letter extends
+//above the middle of the line. A letter has a descender if, as with p or g, part
+// of the letter extends below the line. Write a program that reads a file
+//containing words and reports the longest word that contains neither ascenders
+//nor descenders.
 
 
 return 0;
