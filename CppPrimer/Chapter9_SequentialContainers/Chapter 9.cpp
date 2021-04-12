@@ -13,6 +13,7 @@ using namespace std;
 using std::istream;
 using std::ostream;
 #include"String_Date.hpp"
+#include<stack>
 
 //E9.4 Write a function that takes a pair of iterators to a vector<int> and an
 //int value. Look for that value in the range and return a bool indicating whether
@@ -628,6 +629,36 @@ String_Date sd3("Janaury 1, 2021");
 sd1.print();
 sd2.print();
 sd3.print();
+
+//E9.52 Use a stack to process parenthesized expressions. When you see an open
+//parenthesis, note that it was seen. When you see a close parenthesis after an
+//open parenthesis, pop elements down to and including the open parenthesis off
+//the stack. push a value onto the stack to indicate that a parenthesized
+//expression was replaced.
+stack<char> input2;
+string epr ("Hi this is Wei (Wang)");
+bool open_parenthesis_seen = false;
+int i = 0;
+while(i != epr.length() && epr[i]!=')') {
+  input2.push(epr[i]);
+  if (epr[i]=='(') {
+    cout << "open parenthesis is seen\n";
+    open_parenthesis_seen = true;
+  }
+  ++i;
+}
+if (epr[i]==')') {
+  while(input2.top()!= '(') {
+    input2.pop();
+  }
+    cout << input2.top() << endl;
+    input2.pop();
+    cout << input2.top() << endl;
+    input2.push('0');
+}
+
+cout << input2.top() << endl;
+
 
 return 0;
 }
