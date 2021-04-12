@@ -1,6 +1,6 @@
 #include<iostream>
 #include<fstream>
-#include <sstream>
+#include<sstream>
 using std::istream;
 using std::ostream;
 using std::istringstream;
