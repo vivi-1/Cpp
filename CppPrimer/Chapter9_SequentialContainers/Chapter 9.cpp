@@ -12,6 +12,7 @@ using namespace std;
 #include<fstream>
 using std::istream;
 using std::ostream;
+#include"String_Date.hpp"
 
 //E9.4 Write a function that takes a pair of iterators to a vector<int> and an
 //int value. Look for that value in the range and return a bool indicating whether
@@ -621,7 +622,12 @@ cout << result_d << endl;
 //and day. Write a constructor that takes a string representing a date. Your
 //constructor should handle a variety of date formats, such as January 1, 1900,
 //1/1/1900, Jan 1, 1900, and so on.
-
+String_Date sd1("Jan 1, 2021");
+String_Date sd2("1/1/2021");
+String_Date sd3("Janaury 1, 2021");
+sd1.print();
+sd2.print();
+sd3.print();
 
 return 0;
 }
