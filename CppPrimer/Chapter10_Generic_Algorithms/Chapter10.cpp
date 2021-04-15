@@ -3,6 +3,7 @@
 #include<vector>
 #include<list>
 #include<sstream>
+#include<numeric>
 using namespace std;
 
 int main(){
@@ -25,6 +26,20 @@ while(cin >> input) {
 int search_val = 0;
 cout << search_val << " is present for " <<  count(vec.cbegin(), vec.cend(),search_val) << " times\n";
 cout << search_val << " is present for " << count(list.begin(), list.end(), to_string(search_val)) << " times\n";
+
+//E10.3 Use accumulate to sum the elements in a vector<int>.
+vector<int> v = {1,3,5,2,4,6};
+int sum = accumulate(v.cbegin(), v.cend(), 0);
+cout << sum << endl;
+
+//E10.4 Assuming v is a vector<double>, what, if anything, is wrong with calling
+//accumulate(v.cbegin(), v.cend(), 0)?
+// The final result from accumulation will be added to integer 0 which is a truncated version of final result
+
+//E10.5 In the call to equal on rosters, what would happen if both rosters held
+//C-style strings, rather than library strings?
+//"==" on c-type strings only compare pointers not the contents. So its comparing if two
+//pointers to the C-strs are the same.
 
 
 
