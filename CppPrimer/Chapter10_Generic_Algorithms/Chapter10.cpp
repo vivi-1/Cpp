@@ -30,6 +30,17 @@ bool compareIsbn(const Sales_data& s1, const Sales_data& s2) {
   return s1.isbn().size() < s2.isbn().size();
 }
 
+//E10.13 The library defines an algorithm named partition that takes a predicate
+// and partitions the container so that values for which the predicate is true
+//appear in the first part and those for which the predicate is false appear in
+//the second part. The algorithm returns an iterator just past the last element
+//for which the predicate returned true. Write a function that takes a string
+//and returns a bool indicating whether the string has five characters or more.
+// Use that function to partition words. Print the elements that have five or
+//more characters.
+bool isBiggerThanFive(const string& s) {
+  return s.size() >= 5;
+}
 
 int main(){
 //E10.1 The algorithm header defines a function named count that, like find,
@@ -105,7 +116,7 @@ cout << endl;
 //E10.9 Implement your own version of elimDups. Test your program by printing
 //the vector after you read the input, after the call to unique, and after the
 //call to erase.
-vector<string> vec1 = {"Kevin", "Yu", "Wei", "Wang", "Kevin", "Wei", "Kev"};
+vector<string> vec1 = {"Kevin", "Yu", "Wei", "Wang", "Kevin", "Wei", "Kev", "NorthCarolina"};
 elimDups(vec1);
 for (const auto& i : vec1) cout << i << " ";
 cout << endl;
@@ -124,7 +135,7 @@ cout << endl;
 //E10.12 Write a function named compareIsbn that compares the isbn() members of
 // two Sales_data objects. Use that function to sort a vector that holds
 //Sales_data objects.
-Sales_data sd1("a12345"), sd2("ab12347"), sd3("abc17892"), sd4("l"), sd5("c12345");
+Sales_data sd1("a12345"), sd2("ab12347"), sd3("abc17892"), sd4("a"), sd5("c12345");
 vector<Sales_data> vec2{sd1, sd2, sd3, sd4, sd5};
 stable_sort(vec2.begin(), vec2.end(), compareIsbn);
 for (const auto& i : vec2) print(cout,i);
@@ -138,6 +149,12 @@ cout << endl;
 //and returns a bool indicating whether the string has five characters or more.
 // Use that function to partition words. Print the elements that have five or
 //more characters.
+vector<string> vec3 = {"Kevin", "Yu", "Wei", "Wang", "Kevin", "Wei", "Kev", "NorthCarolina"};
+auto iter = partition(vec3.begin(), vec3.end(), isBiggerThanFive);
+for(auto i = vec3.begin(); i!=iter; ++i) cout << *i << " ";
+cout <<  endl;
+for (auto i = iter; i!=vec3.end(); ++i) cout << *i << " ";
+cout <<  endl;
 
 return 0;
 }
