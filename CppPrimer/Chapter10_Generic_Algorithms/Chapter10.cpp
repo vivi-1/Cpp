@@ -6,6 +6,15 @@
 #include<numeric>
 using namespace std;
 
+//E10.9 Implement your own version of elimDups. Test your program by printing
+//the vector after you read the input, after the call to unique, and after the
+//call to erase.
+void elimDups(vector<string> &words) {
+  sort(words.begin(), words.end());
+  auto iter = unique(words.begin(), words.end());
+  words.erase(iter, words.end());
+}
+
 int main(){
 //E10.1 The algorithm header defines a function named count that, like find,
 //takes a pair of iterators and a value. count returns a count of how often that
@@ -76,6 +85,18 @@ cout << endl;
 //which they operate. Why doesn’t the use of back_inserter invalidate this claim?
 //This function is defined in iterator header instead of algorithm header.
 //The function was achieved by calling push_back function which is the container's operation.
+
+//E10.9 Implement your own version of elimDups. Test your program by printing
+//the vector after you read the input, after the call to unique, and after the
+//call to erase.
+vector<string> vec1 = {"Kevin", "Yu", "Wei", "Wang", "Kevin", "Wei"};
+elimDups(vec1);
+for (auto i : vec1) cout << i << " ";
+cout << endl;
+
+//E10.10 Why do you think the algorithms don’t change the size of containers?
+//library algorithm operate on the iterators instead of the containers, they can't
+//directly add or remove elements;
 
 return 0;
 }
