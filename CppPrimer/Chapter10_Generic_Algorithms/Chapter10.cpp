@@ -41,7 +41,41 @@ cout << sum << endl;
 //"==" on c-type strings only compare pointers not the contents. So its comparing if two
 //pointers to the C-strs are the same.
 
+//E10.6 Using fill_n, write a program to set a sequence of int values to 0.
+fill_n(vec.begin(), vec.size(), 0);
+for (auto i : vec) cout << i << " ";
+cout << endl;
 
+//E10.7 Determine if there are any errors in the following programs and, if so,
+//correct the error(s):
+// (a)
+// vector<int> vec;
+// list<int> lst;
+// int i;
+// while (cin >> i) lst.push_back(i);
+// copy(lst.cbegin(), lst.cend(), vec.begin());
+// vec should be at least as many elements as lst
+//Correction(1):
+// list<int> lst;
+// int i;
+// while (cin >> i) lst.push_back(i);
+// vector<int> vec(lst.size());
+// copy(lst.cbegin(), lst.cend(), vec.begin());
+//Correction(2): copy(lst.cbegin(), lst.cend(), back_inserter(vec));
+
+// (b)
+// vector<int> vec;
+//  vec.reserve(10); // reserve is covered in § 9.4 (p. 356)
+//  fill_n(vec.begin(), 10, 0);
+//reserve only make room for 10 int elements for vec but didn't change the number of elements
+//Correction:
+// vector<int> vec(10);
+// fill_n(vec.begin(), 10, 0);
+
+//E10.8 We said that algorithms do not change the size of the containers over
+//which they operate. Why doesn’t the use of back_inserter invalidate this claim?
+//This function is defined in iterator header instead of algorithm header.
+//The function was achieved by calling push_back function which is the container's operation.
 
 return 0;
 }
