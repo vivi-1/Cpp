@@ -156,5 +156,23 @@ cout <<  endl;
 for (auto i = iter; i!=vec3.end(); ++i) cout << *i << " ";
 cout <<  endl;
 
+//E10.14 Write a lambda that takes two ints and returns their sum.
+auto f = [](const int a, const int b)->int{return a+b;};
+cout << f(1,2) << endl;
+//E10.15 Write a lambda that captures an int from its enclosing function and
+//takes an int parameter. The lambda should return the sum of the captured int
+//and the int parameter.
+
+//E10.16 Write your own version of the biggies function using lambdas.
+
+//E10.17 Rewrite exercise 10.12 from § 10.3.1 (p. 387) to use a lambda in the
+//call to sort instead of the compareIsbn function.
+
+//E10.18 Rewrite biggies to use partition instead of find_if. We described the
+//partition algorithm in exercise 10.13 in § 10.3.1 (p. 387).
+
+//E10.19 Rewrite the previous exercise to use stable_partition, which like
+//stable_sort maintains the original element order in the paritioned sequence.
+
 return 0;
 }
