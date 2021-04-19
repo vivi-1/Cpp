@@ -42,6 +42,21 @@ bool isBiggerThanFive(const string& s) {
   return s.size() >= 5;
 }
 
+//E10.16 Write your own version of the biggies function using lambdas.
+string make_plural(size_t ctr, const string & word, const string& ending){
+  return(ctr>1) ? word+ending : word;
+}
+
+void biggies(vector<string>& words, vector<string>::size_type sz){
+  elimDups(words);
+  stable_sort(words.begin(), words.end(), [](const string&s1, const string&s2){return s1.size()<s2.size();});
+  auto wc = find_if(words.begin(), words.end(), [sz](const string& s){return s.size()>sz;});
+  auto count = words.end()-wc;
+  cout << count << " " << make_plural(count, "word", "s") << " of length" << sz << " or longer\n";
+  for_each(wc, words.end(), [](const string&s){cout << s << " ";});
+  cout << endl;
+}
+
 int main(){
 //E10.1 The algorithm header defines a function named count that, like find,
 //takes a pair of iterators and a value. count returns a count of how often that
@@ -157,19 +172,29 @@ for (auto i = iter; i!=vec3.end(); ++i) cout << *i << " ";
 cout <<  endl;
 
 //E10.14 Write a lambda that takes two ints and returns their sum.
-auto f = [](const int a, const int b)->int{return a+b;};
+auto f = [](const int a, const int b){return a+b;};
 cout << f(1,2) << endl;
+
 //E10.15 Write a lambda that captures an int from its enclosing function and
 //takes an int parameter. The lambda should return the sum of the captured int
 //and the int parameter.
+int b = 10;
+auto f2 = [b](const int a){return a+b;};
+cout << f2(1) << endl;
 
 //E10.16 Write your own version of the biggies function using lambdas.
+//Please check the function outside of the int main scope
 
 //E10.17 Rewrite exercise 10.12 from § 10.3.1 (p. 387) to use a lambda in the
 //call to sort instead of the compareIsbn function.
+vector<Sales_data> vec4{sd1, sd2, sd3, sd4, sd5};
+stable_sort(vec4.begin(), vec4.end(), [](const Sales_data& s1, const Sales_data& s2){return s1.isbn().size() < s2.isbn().size();});
+for (const auto& i : vec4) print(cout,i);
+cout << endl;
 
 //E10.18 Rewrite biggies to use partition instead of find_if. We described the
 //partition algorithm in exercise 10.13 in § 10.3.1 (p. 387).
+
 
 //E10.19 Rewrite the previous exercise to use stable_partition, which like
 //stable_sort maintains the original element order in the paritioned sequence.
