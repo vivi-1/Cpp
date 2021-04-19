@@ -57,6 +57,30 @@ void biggies(vector<string>& words, vector<string>::size_type sz){
   cout << endl;
 }
 
+//E10.18 Rewrite biggies to use partition instead of find_if. We described the
+//partition algorithm in exercise 10.13 in § 10.3.1 (p. 387).
+void biggies_partition(vector<string>& words, vector<string>::size_type sz){
+  elimDups(words);
+  stable_sort(words.begin(), words.end(), [](const string&s1, const string&s2){return s1.size()<s2.size();});
+  auto iter = partition(words.begin(), words.end(), [sz](const string& s){return s.size()>sz;});
+  auto count = words.end()-iter;
+  cout << count << " " << make_plural(count, "word", "s") << " of length" << sz << " or longer\n";
+  for_each(iter, words.end(), [](const string&s){cout << s << " ";});
+  cout << endl;
+}
+
+//E10.19 Rewrite the previous exercise to use stable_partition, which like
+//stable_sort maintains the original element order in the paritioned sequence.
+void biggies_stable_partition(vector<string>& words, vector<string>::size_type sz){
+  elimDups(words);
+  stable_sort(words.begin(), words.end(), [](const string&s1, const string&s2){return s1.size()<s2.size();});
+  auto iter = stable_partition(words.begin(), words.end(), [sz](const string& s){return s.size()>sz;});
+  auto count = words.end()-iter;
+  cout << count << " " << make_plural(count, "word", "s") << " of length" << sz << " or longer\n";
+  for_each(iter, words.end(), [](const string&s){cout << s << " ";});
+  cout << endl;
+}
+
 int main(){
 //E10.1 The algorithm header defines a function named count that, like find,
 //takes a pair of iterators and a value. count returns a count of how often that
@@ -194,10 +218,11 @@ cout << endl;
 
 //E10.18 Rewrite biggies to use partition instead of find_if. We described the
 //partition algorithm in exercise 10.13 in § 10.3.1 (p. 387).
-
+////Please check the function outside of the int main scope
 
 //E10.19 Rewrite the previous exercise to use stable_partition, which like
 //stable_sort maintains the original element order in the paritioned sequence.
+
 
 return 0;
 }
