@@ -248,7 +248,11 @@ biggies_countif(vec5, sz, cout);
 //variable until it reaches 0. Once the variable is 0 additional calls should no
 // longer decrement the variable. The lambda should return a bool that indicates
 //whether the captured variable is 0.
-
+int var = 6;
+auto result = [&var]()->bool {return var == 0? var:--var;};
+cout << var << endl;
+while(result()) cout << var << " ";
+cout << var << endl;
 
 return 0;
 }
