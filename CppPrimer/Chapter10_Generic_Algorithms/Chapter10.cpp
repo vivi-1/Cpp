@@ -81,6 +81,17 @@ void biggies_stable_partition(vector<string>& words, vector<string>::size_type s
   cout << endl;
 }
 
+//E10.20 The library defines an algorithm named count_if. Like find_if, this
+//function takes a pair of iterators denoting an input range and a predicate
+//that it applies to each element in the given range. count_if returns a count
+//of how often the predicate is true. Use count_if to rewrite the portion of our
+// program that counted how many words are greater than length 6.
+void biggies_countif(vector<string>& words, vector<string>::size_type sz, ostream&os = cout){
+  auto count = count_if(words.begin(), words.end(), [=](const string& s){return s.size()>sz;});
+  cout << count << " " << make_plural(count, "word", "s") << " of length" << sz << " or longer\n";
+  cout << endl;
+}
+
 int main(){
 //E10.1 The algorithm header defines a function named count that, like find,
 //takes a pair of iterators and a value. count returns a count of how often that
@@ -222,6 +233,21 @@ cout << endl;
 
 //E10.19 Rewrite the previous exercise to use stable_partition, which like
 //stable_sort maintains the original element order in the paritioned sequence.
+//Please check the function outside of the int main scope
+
+//E10.20 The library defines an algorithm named count_if. Like find_if, this
+//function takes a pair of iterators denoting an input range and a predicate
+//that it applies to each element in the given range. count_if returns a count
+//of how often the predicate is true. Use count_if to rewrite the portion of our
+// program that counted how many words are greater than length 6.
+vector<string> vec5 = {"Kevin", "Yu", "Wei", "Wang", "Kevin", "Wei", "Kev", "NorthCarolina"};
+vector<string>::size_type sz = 6;
+biggies_countif(vec5, sz, cout);
+
+//E10.21 Write a lambda that captures a local int variable and decrements that
+//variable until it reaches 0. Once the variable is 0 additional calls should no
+// longer decrement the variable. The lambda should return a bool that indicates
+//whether the captured variable is 0.
 
 
 return 0;
