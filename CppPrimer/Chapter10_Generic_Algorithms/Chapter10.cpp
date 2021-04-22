@@ -5,6 +5,7 @@
 #include<sstream>
 #include<numeric>
 using namespace std;
+using namespace placeholders;
 #include"Sales_data.hpp"
 
 //E10.9 Implement your own version of elimDups. Test your program by printing
@@ -88,6 +89,17 @@ void biggies_stable_partition(vector<string>& words, vector<string>::size_type s
 // program that counted how many words are greater than length 6.
 void biggies_countif(vector<string>& words, vector<string>::size_type sz, ostream&os = cout){
   auto count = count_if(words.begin(), words.end(), [=](const string& s){return s.size()>sz;});
+  cout << count << " " << make_plural(count, "word", "s") << " of length" << sz << " or longer\n";
+  cout << endl;
+}
+
+//E10.22 Rewrite the program to count words of size 6 or less using functions in
+//place of the lambdas.
+bool check_size(const string& s, string::size_type sz) {
+  return s.size() > sz;
+}
+void biggies_countif_function(vector<string>& words, vector<string>::size_type sz, ostream&os = cout){
+  auto count = count_if(words.begin(), words.end(), bind(check_size, _1, sz));
   cout << count << " " << make_plural(count, "word", "s") << " of length" << sz << " or longer\n";
   cout << endl;
 }
@@ -243,6 +255,9 @@ cout << endl;
 vector<string> vec5 = {"Kevin", "Yu", "Wei", "Wang", "Kevin", "Wei", "Kev", "NorthCarolina"};
 vector<string>::size_type sz = 6;
 biggies_countif(vec5, sz, cout);
+//E10.22 Rewrite the program to count words of size 6 or less using functions in
+//place of the lambdas.
+biggies_countif_function(vec5, sz, cout);
 
 //E10.21 Write a lambda that captures a local int variable and decrements that
 //variable until it reaches 0. Once the variable is 0 additional calls should no
@@ -253,6 +268,16 @@ auto result = [&var]()->bool {return var == 0? var:--var;};
 cout << var << endl;
 while(result()) cout << var << " ";
 cout << var << endl;
+
+//E10.23 How many arguments does bind take?
+//takes +1 argument than the argument number of the original function that it calls
+
+//E10.24 Use bind and check_size to find the first element in a vector of ints
+//that has a value greater than the length of a specified string value.
+
+
+//E10.25 In the exercises for § 10.3.2 (p. 392) you wrote a version of biggies
+//that uses partition. Rewrite that function to use check_size and bind.
 
 return 0;
 }
