@@ -263,7 +263,7 @@ cout << endl;
 
 //E10.18 Rewrite biggies to use partition instead of find_if. We described the
 //partition algorithm in exercise 10.13 in § 10.3.1 (p. 387).
-////Please check the function outside of the int main scope
+//Please check the function outside of the int main scope
 
 //E10.19 Rewrite the previous exercise to use stable_partition, which like
 //stable_sort maintains the original element order in the paritioned sequence.
@@ -301,6 +301,7 @@ cout << find_biggie(vec6, "Kevin") << endl;
 
 //E10.25 In the exercises for § 10.3.2 (p. 392) you wrote a version of biggies
 //that uses partition. Rewrite that function to use check_size and bind.
+//Please check the function outside of the int main scope
 
 
 return 0;
