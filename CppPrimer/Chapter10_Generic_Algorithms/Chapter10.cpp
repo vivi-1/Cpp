@@ -104,6 +104,28 @@ void biggies_countif_function(vector<string>& words, vector<string>::size_type s
   cout << endl;
 }
 
+//E10.24 Use bind and check_size to find the first element in a vector of ints
+//that has a value greater than the length of a specified string value.
+int find_biggie(vector<int> vec, const string& s){
+  auto checki = bind(check_size, s, _1);
+  for (auto i : vec) {
+    if(!checki(i)) return i;
+  }
+}
+
+//E10.25 In the exercises for § 10.3.2 (p. 392) you wrote a version of biggies
+//that uses partition. Rewrite that function to use check_size and bind.
+void biggies_partition_bind(vector<string>& words, vector<string>::size_type sz){
+  elimDups(words);
+  stable_sort(words.begin(), words.end(), [](const string&s1, const string&s2){return s1.size()<s2.size();});
+  auto iter = partition(words.begin(), words.end(), bind(check_size, _1, sz));
+  auto count = words.end()-iter;
+  cout << count << " " << make_plural(count, "word", "s") << " of length" << sz << " or longer\n";
+  for_each(iter, words.end(), [](const string&s){cout << s << " ";});
+  cout << endl;
+}
+
+
 int main(){
 //E10.1 The algorithm header defines a function named count that, like find,
 //takes a pair of iterators and a value. count returns a count of how often that
@@ -270,14 +292,16 @@ while(result()) cout << var << " ";
 cout << var << endl;
 
 //E10.23 How many arguments does bind take?
-//takes +1 argument than the argument number of the original function that it calls
+//It takes +1 argument than the argument number of the original function that it calls
 
 //E10.24 Use bind and check_size to find the first element in a vector of ints
 //that has a value greater than the length of a specified string value.
-
+vector<int> vec6 = {1,2,3,4,8,5,6,7,8,9};
+cout << find_biggie(vec6, "Kevin") << endl;
 
 //E10.25 In the exercises for § 10.3.2 (p. 392) you wrote a version of biggies
 //that uses partition. Rewrite that function to use check_size and bind.
+
 
 return 0;
 }
