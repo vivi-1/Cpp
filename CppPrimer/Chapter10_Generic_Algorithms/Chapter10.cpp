@@ -4,6 +4,7 @@
 #include<list>
 #include<sstream>
 #include<numeric>
+#include<iterator>
 using namespace std;
 using namespace placeholders;
 #include"Sales_data.hpp"
@@ -108,9 +109,11 @@ void biggies_countif_function(vector<string>& words, vector<string>::size_type s
 //that has a value greater than the length of a specified string value.
 int find_biggie(vector<int> vec, const string& s){
   auto checki = bind(check_size, s, _1);
-  for (auto i : vec) {
-    if(!checki(i)) return i;
+  int result;
+  for (int i : vec) {
+    if(!checki(i)) result = i;
   }
+  return result;
 }
 
 //E10.25 In the exercises for § 10.3.2 (p. 392) you wrote a version of biggies
@@ -329,6 +332,17 @@ cout << find_biggie(vec6, "Kevin") << endl;
 //respectivly to add elements to these containers. Predict how the output
 //sequence varies by the kind of inserter and verify your predictions by running
 //your programs.
+// vector<int> vec7 = {1,2,3,4,5,6,7,8,9};
+// vector<int> vec8, vec9, vec10;
+// copy(vec7.cbegin(), vec7.cend(), front_inserter(vec8));//9,8,7,6,5,4,3,2,1
+// copy(vec7.cbegin(), vec7.cend(), back_inserter(vec9)); //1,2,3,4,5,6,7,8,9
+// copy(vec7.cbegin(), vec7.cend(), inserter(vec10, vec10.end()));//1,2,3,4,5,6,7,8,9
+// for(auto i : vec8) cout << i << " ";
+// cout << endl;
+// for(auto i : vec9) cout << i << " ";
+// cout << endl;
+// for(auto i : vec10) cout << i << " ";
+// cout << endl;
 
 
 return 0;
