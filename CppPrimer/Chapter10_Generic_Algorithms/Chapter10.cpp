@@ -125,6 +125,17 @@ void biggies_partition_bind(vector<string>& words, vector<string>::size_type sz)
   cout << endl;
 }
 
+//E10.27 In addition to unique (§ 10.2.3, p. 384), the library defines function
+//named unique_copy that takes a third iterator denoting a destination into which
+//to copy the unique elements. Write a program that uses unique_copy to copy the
+// unique elements from a vector into an initially empty list.
+list<int> cp(vector<int> vec){
+  list<int> list;
+  sort(vec.begin(), vec.end());
+  unique_copy(vec.begin(), vec.end(), inserter(list, list.begin()));
+  return list;
+}
+
 
 int main(){
 //E10.1 The algorithm header defines a function named count that, like find,
@@ -302,6 +313,22 @@ cout << find_biggie(vec6, "Kevin") << endl;
 //E10.25 In the exercises for § 10.3.2 (p. 392) you wrote a version of biggies
 //that uses partition. Rewrite that function to use check_size and bind.
 //Please check the function outside of the int main scope
+
+//E10.26 Explain the differences among the three kinds of insert iterators.
+//inserter insert at the iterator position using insert(t, iter),  front_inserter
+// inserts at the front of the container using push_front and back_inserter
+//inserts at the end of the container using push_back
+
+//E10.27 In addition to unique (§ 10.2.3, p. 384), the library defines function
+//named unique_copy that takes a third iterator denoting a destination into which
+//to copy the unique elements. Write a program that uses unique_copy to copy the
+// unique elements from a vector into an initially empty list.
+
+//E10.28 Copy a vector that holds the values from 1 to 9 inclusive, into three
+//other containers. Use an inserter, a back_inserter, and a front_inserter,
+//respectivly to add elements to these containers. Predict how the output
+//sequence varies by the kind of inserter and verify your predictions by running
+//your programs.
 
 
 return 0;
