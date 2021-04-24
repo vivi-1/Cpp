@@ -1,4 +1,5 @@
 #include<iostream>
+#include<fstream>
 #include<algorithm>
 #include<vector>
 #include<list>
@@ -141,6 +142,7 @@ list<int> cp(vector<int> vec){
 
 
 int main(){
+/*
 //E10.1 The algorithm header defines a function named count that, like find,
 //takes a pair of iterators and a value. count returns a count of how often that
 //value appears. Read a sequence of ints into a vector and print the count of
@@ -343,7 +345,39 @@ cout << find_biggie(vec6, "Kevin") << endl;
 // cout << endl;
 // for(auto i : vec10) cout << i << " ";
 // cout << endl;
+*/
 
+//E10.29 Write a program using stream iterators to read a text file into a vector
+// of strings.
+ifstream txt("test.txt");
+istream_iterator<string> test_iter(txt), eof;
+vector<string> vec11 (test_iter, eof);
+for(auto i :vec11) cout << i << " ";
+
+//E10.30 Use stream iterators, sort, and copy to read a sequence of integers
+//from the standard input, sort them, and then write them back to the standard output.
+istream_iterator<int> in_iter(cin), eof2;
+ostream_iterator<int> out_iter(cout, " ");
+vector<int> vec12(in_iter, eof2);
+sort(vec12.begin(), vec12.end());
+copy(vec12.begin(), vec12.end(), out_iter);
+cout << endl;
+
+//E10.31 Update the program from the previous exercise so that it prints
+//only the unique elements. Your program should use unqiue_copy (§ 10.4.1, p. 403).
+unique_copy(vec12.begin(), vec12.end(), out_iter);
+
+//E10.32 Rewrite the bookstore problem from § 1.6 (p. 24) using a vector to hold
+// the transactions and various algorithms to do the processing. Use sort with
+//your compareIsbn function from § 10.3.1 (p. 387) to arrange the transactions
+//in order, and then use find and accumulate to do the sum.
+
+
+//E10.33 Write a program that takes the names of an input file and two output
+//files. The input file should hold integers. Using an istream_iterator read the
+// input file. Using ostream_iterators, write the odd numbers into the first
+//output file. Each value should be followed by a space. Write the even numbers
+//into the second file. Each of these values should be placed on a separate line.
 
 return 0;
 }
