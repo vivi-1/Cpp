@@ -367,12 +367,12 @@ cout << endl;
 //E10.31 Update the program from the previous exercise so that it prints
 //only the unique elements. Your program should use unqiue_copy (§ 10.4.1, p. 403).
 unique_copy(vec12.begin(), vec12.end(), out_iter);
-*/
+
 //E10.32 Rewrite the bookstore problem from § 1.6 (p. 24) using a vector to hold
 //the transactions and various algorithms to do the processing. Use sort with
 //your compareIsbn function from § 10.3.1 (p. 387) to arrange the transactions
 //in order, and then use find and accumulate to do the sum.
-
+*/
 istream_iterator<Sales_item> Sale_iter(cin), eof3;
 vector<Sales_item> vec13(Sale_iter, eof3);
 
@@ -381,10 +381,9 @@ auto i = vec13.begin();
 while(i != vec13.end()) {
   cout << i->isbn() << "hah" << endl;
   auto start = find(vec13.begin(), vec13.end(), *i);
-  auto end = find_if_not(vec13.begin(), vec13.end(), [&i](const Sales_item& s){return s.isbn()== i->isbn();});
-  cout << accumulate(start, end, Sales_item(i->isbn())) << endl;
+  auto end = find_if_not(i, vec13.end(), [&i](const Sales_item& s){return s.isbn()== i->isbn();});
+  cout << accumulate(start+1, end, *i) << endl;
   i = end;
-  cout << i->isbn() << endl;
 }
 
 
