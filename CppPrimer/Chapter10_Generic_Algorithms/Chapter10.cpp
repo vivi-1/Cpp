@@ -9,6 +9,7 @@
 using namespace std;
 using namespace placeholders;
 #include"Sales_data.hpp"
+#include"Sales_item.h"
 
 //E10.9 Implement your own version of elimDups. Test your program by printing
 //the vector after you read the input, after the call to unique, and after the
@@ -139,6 +140,7 @@ list<int> cp(vector<int> vec){
   unique_copy(vec.begin(), vec.end(), inserter(list, list.begin()));
   return list;
 }
+
 
 
 int main(){
@@ -345,7 +347,6 @@ cout << find_biggie(vec6, "Kevin") << endl;
 // cout << endl;
 // for(auto i : vec10) cout << i << " ";
 // cout << endl;
-*/
 
 //E10.29 Write a program using stream iterators to read a text file into a vector
 // of strings.
@@ -366,22 +367,31 @@ cout << endl;
 //E10.31 Update the program from the previous exercise so that it prints
 //only the unique elements. Your program should use unqiue_copy (§ 10.4.1, p. 403).
 unique_copy(vec12.begin(), vec12.end(), out_iter);
-
+*/
 //E10.32 Rewrite the bookstore problem from § 1.6 (p. 24) using a vector to hold
-// the transactions and various algorithms to do the processing. Use sort with
+//the transactions and various algorithms to do the processing. Use sort with
 //your compareIsbn function from § 10.3.1 (p. 387) to arrange the transactions
 //in order, and then use find and accumulate to do the sum.
 
+istream_iterator<Sales_item> Sale_iter(cin), eof3;
+vector<Sales_item> vec13(Sale_iter, eof3);
+for(auto i : vec13) cout << i << " ";
+sort(vec13.begin(), vec13.end(), [](const Sales_item&s1, const Sales_item&s2){return s1.isbn() <= s2.isbn();});
+Sales_item total = *vec13.begin();
+for(auto i = vec13.begin(); i != vec13.end(); i++) {
+  auto start = find(vec13.begin(), vec13.end(), *i);
+  auto end =  ((i+1)!= vec13.end()) ? find(vec13.begin(), vec13.end(), *(i+1)) : vec13.end();
+  cout << accumulate(start, end, Sales_item(start->isbn())) << endl;
+}
 
-<<<<<<< HEAD
+
+
 //E10.33 Write a program that takes the names of an input file and two output
 //files. The input file should hold integers. Using an istream_iterator read the
 // input file. Using ostream_iterators, write the odd numbers into the first
 //output file. Each value should be followed by a space. Write the even numbers
 //into the second file. Each of these values should be placed on a separate line.
-=======
-//E10.29
->>>>>>> f2eb37f9ea69dae702d3fd354deeb1cbfa065117
+//Please see the file E10_33.cpp
 
 return 0;
 }
