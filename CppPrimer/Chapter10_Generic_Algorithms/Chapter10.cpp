@@ -372,7 +372,7 @@ unique_copy(vec12.begin(), vec12.end(), out_iter);
 //the transactions and various algorithms to do the processing. Use sort with
 //your compareIsbn function from § 10.3.1 (p. 387) to arrange the transactions
 //in order, and then use find and accumulate to do the sum.
-*/
+
 istream_iterator<Sales_item> Sale_iter(cin), eof3;
 vector<Sales_item> vec13(Sale_iter, eof3);
 
@@ -385,7 +385,7 @@ while(i != vec13.end()) {
   cout << accumulate(start+1, end, *i) << endl;
   i = end;
 }
-
+*/
 
 
 
