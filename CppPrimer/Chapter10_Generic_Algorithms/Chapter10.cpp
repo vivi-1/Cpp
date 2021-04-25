@@ -379,6 +379,7 @@ vector<Sales_item> vec13(Sale_iter, eof3);
 sort(vec13.begin(), vec13.end(), [](const Sales_item& s1, const Sales_item& s2){return s1.isbn() <= s2.isbn();});
 auto i = vec13.begin();
 while(i != vec13.end()) {
+  cout << i->isbn() << "hah" << endl;
   auto start = find(vec13.begin(), vec13.end(), *i);
   auto end = find_if_not(vec13.begin(), vec13.end(), [i](const Sales_item& s){return s.isbn()== i->isbn();});
   cout << accumulate(start, end, Sales_item(i->isbn())) << endl;
