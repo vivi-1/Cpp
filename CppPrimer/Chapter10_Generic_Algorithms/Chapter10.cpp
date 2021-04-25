@@ -381,7 +381,7 @@ auto i = vec13.begin();
 while(i != vec13.end()) {
   cout << i->isbn() << "hah" << endl;
   auto start = find(vec13.begin(), vec13.end(), *i);
-  auto end = find_if_not(vec13.begin(), vec13.end(), [i](const Sales_item& s){return s.isbn()== i->isbn();});
+  auto end = find_if_not(vec13.begin(), vec13.end(), [&i](const Sales_item& s){return s.isbn()== i->isbn();});
   cout << accumulate(start, end, Sales_item(i->isbn())) << endl;
   i = end;
   cout << i->isbn() << endl;
