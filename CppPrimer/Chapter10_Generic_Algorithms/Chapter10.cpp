@@ -375,14 +375,17 @@ unique_copy(vec12.begin(), vec12.end(), out_iter);
 
 istream_iterator<Sales_item> Sale_iter(cin), eof3;
 vector<Sales_item> vec13(Sale_iter, eof3);
-for(auto i : vec13) cout << i << " ";
-sort(vec13.begin(), vec13.end(), [](const Sales_item&s1, const Sales_item&s2){return s1.isbn() <= s2.isbn();});
-Sales_item total = *vec13.begin();
-for(auto i = vec13.begin(); i != vec13.end(); i++) {
+
+sort(vec13.begin(), vec13.end(), [](const Sales_item& s1, const Sales_item& s2){return s1.isbn() <= s2.isbn();});
+auto i = vec13.begin();
+while(i != vec13.end()) {
   auto start = find(vec13.begin(), vec13.end(), *i);
-  auto end =  ((i+1)!= vec13.end()) ? find(vec13.begin(), vec13.end(), *(i+1)) : vec13.end();
-  cout << accumulate(start, end, Sales_item(start->isbn())) << endl;
+  auto end = find_if_not(vec13.begin(), vec13.end(), [i](const Sales_item& s){return s.isbn()== i->isbn();});
+  cout << accumulate(start, end, Sales_item(i->isbn())) << endl;
+  i = end;
+  cout << i->isbn() << endl;
 }
+
 
 
 
