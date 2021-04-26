@@ -23,8 +23,10 @@ int main(int argc, char* argv[]){
   }
 
   else{
-    istream_iterator<int> iter(input), eof;
-    while(iter!=eof) (*iter%2) ? print(output_odd, *iter++) : print(output_even, *iter++);
+    istream_iterator<int> iter_in(input), eof;
+    ostream_iterator<int> iter_odd(output_odd);
+    ostream_iterator<int> iter_even(output_even);
+    while(iter_in!=eof) (*iter_in%2) ? iter_odd =  *iter_in++ : iter_even = *iter_in++;
   }
 
 return 0;
