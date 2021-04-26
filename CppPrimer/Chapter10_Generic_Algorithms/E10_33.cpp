@@ -3,6 +3,8 @@
 // input file. Using ostream_iterators, write the odd numbers into the first
 //output file. Each value should be followed by a space. Write the even numbers
 //into the second file. Each of these values should be placed on a separate line.
+//g++ as compiler
+
 #include <iostream>
 #include <fstream>
 #include <cstring>
