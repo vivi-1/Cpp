@@ -385,7 +385,6 @@ while(i != vec13.end()) {
   cout << accumulate(start+1, end, *i) << endl;
   i = end;
 }
-*/
 
 //E10.33 Write a program that takes the names of an input file and two output
 //files. The input file should hold integers. Using an istream_iterator read the
@@ -394,6 +393,21 @@ while(i != vec13.end()) {
 //into the second file. Each of these values should be placed on a separate line.
 //Please see the file E10_33.cpp
 
+//E10.34 Use reverse_iterators to print a vector in reverse order.
+vector<string> vec14{"Kevin", "Yu", "Wei", "Wang", "NC"};
+for(auto i = vec14.crbegin(); i != vec14.crend(); ++i) cout << *i << " ";
+cout << endl;
+
+//E10.35 Now print the elements in reverse order using ordinary iterators.
+vector<string> vec15{"Kevin", "Yu", "Wei", "Wang", "NC"};
+for(auto i = vec15.cend() - 1; i >= vec15.cbegin(); --i) cout << *i << " ";
+cout << endl;
+*/
+//E10.36 Use find to find the last element in a list of ints with value 0.
+
+
+//E10.37 Given a vector that has ten elements, copy the elements from positions
+//3 through 7 in reverse order to a list.
 
 return 0;
 }
