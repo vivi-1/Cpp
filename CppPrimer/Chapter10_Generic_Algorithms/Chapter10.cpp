@@ -426,9 +426,16 @@ cout << endl;
 //random access iterators: =, >, <, +, -, +=, *(iter+n)
 
 //E10.39 What kind of iterator does a list have? What about a vector?
+//Iterators for array, deque, string, and vector are random-access iterators,
+//Vector has random access iterator, forward_list has forward iterator, (bidirectional) list
+//has bidirectional Iterators
 
 //E10.40 What kinds of iterators do you think copy requires? What about reverse
 //or unique?
+//copy(input_iter, input_iter, output_iter)
+//reverse(bidirectional iter)
+//unique(forward iter)
+
 
 
 return 0;
