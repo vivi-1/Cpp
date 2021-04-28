@@ -418,6 +418,17 @@ copy(vec16.crbegin()+3, vec16.crbegin()+8, back_inserter(list2));
 for(auto i : list2) cout << i << " ";
 cout << endl;
 */
+//E10.38 List the five iterator categories and the operations that each supports.
+//input interator: read ++, *, ->, *it++
+//output iterators: write ++, *, assignment
+//forward iterators:read write ++, *, ->, *it++, assignment
+//bidirectional iterators: read write, ++, --, *, ->, *it++, *it--, assignment
+//random access iterators: =, >, <, +, -, +=, *(iter+n)
+
+//E10.39 What kind of iterator does a list have? What about a vector?
+
+//E10.40 What kinds of iterators do you think copy requires? What about reverse
+//or unique?
 
 
 return 0;
