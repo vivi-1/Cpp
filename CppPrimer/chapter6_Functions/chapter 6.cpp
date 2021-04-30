@@ -2,6 +2,7 @@
 This is CppPrimerPractice for the C++ primer 5th edition
 By Wei Wang, link: https://github.com/vivi-1/Cpp.git
 */
+
 #include<iostream>
 #include<vector>
 #include "Chapter6.h"
