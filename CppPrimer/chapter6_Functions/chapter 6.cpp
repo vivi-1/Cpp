@@ -18,8 +18,6 @@ int fact(int input) {
   return temp;
 }
 
-
-
 //E6.5
 unsigned int abv(signed int input1) {
   if (input1 < 0) input1 *= (-1);
@@ -90,7 +88,6 @@ void chapter6::print (const int (&arr)[2]) {
   }
 }
 
-
 //E6.27 Write a function that takes an initializer_list<int> and produces the
 //sum of the elements in the list.
 double sum_list(initializer_list<double> lst) {
@@ -125,7 +122,6 @@ constexpr bool isShorter2(const string &s1, const string &s2) {
 //information about its execution. For example, you might print the size of the
 //vector on each call. Compile and run the program with debugging turned on and
 //again with it turned off.
-
 void print_vec(vector<string>::iterator beg, vector<string>::iterator end) {
     #ifndef NDEBUG
     assert(cout << ": vector size is " << end-beg << endl);
@@ -135,9 +131,6 @@ void print_vec(vector<string>::iterator beg, vector<string>::iterator end) {
       print_vec(beg+1, end);
     }
 }
-
-
-
 
 //E6.51
 void f(int i) {
@@ -201,7 +194,6 @@ int main()
   }
 
   //E6.5: Write a function to return the absolute value of its argument.
-
   int j;
   while (cin >> j) {
     int s = abv(j);
