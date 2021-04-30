@@ -162,7 +162,6 @@ int st(int i, int j) { return (i-j);}
 int mp(int i, int j) { return (i*j);}
 int dv(int i, int j) { return (i/j);}
 
-
 int main()
 {/*
   //E6.1 What is the difference between a parameter and an argument?
@@ -190,12 +189,8 @@ int main()
   //(d) double square(double x) return x * x;
   //Wrong, the function body should be in a block with curly braces
 
-
   //E6.3 Write and test your own version of fact.
-
   int s = fact(5)
-
-
 
   //E6.4: Write a function that interacts with the user, asking for a number and
   //generating the factorial of that number. Call this function from main.
@@ -205,7 +200,6 @@ int main()
     cout << s <<endl;
   }
 
-
   //E6.5: Write a function to return the absolute value of its argument.
 
   int j;
@@ -213,9 +207,6 @@ int main()
     int s = abv(j);
     cout << s <<endl;
   }
-
-
-
 
   //E6.6 Explain the differences between a parameter, a local variable, and a
   //local static variable. Give an example of a function in which each might
@@ -246,8 +237,6 @@ int main()
     else return j;
   }
 
-
-
   //E6.7 Write a function that returns 0 when it is first called and then
   //generates numbers in sequence each time it is called again.
   int count (int i) {
@@ -259,17 +248,13 @@ int main()
 
   //E6.8 Write a header file named Chapter6.h that contains declarations for the
   //functions you wrote for the exercises in § 6.1 (p. 205).
-
-
-
+  //Please check Chapter6.h
 
   //E6.9 Write your own versions of the fact.cc and factMain.cc files. These files
   //should include your Chapter6.h from the exercises in the previous section.
   //Use these files to understand how your compiler supports separate compilation.
-
   // fact.cc
   //FactMain.cc
-
 
   //E6.10 Using pointers, write a function to swap the values of two ints. Test
   //the function by calling it and printing the swapped values.
@@ -280,8 +265,6 @@ int main()
     cout << "after swap, they are " << input1 << " " << input2 << endl;
   }
 
-
-
   //E6.11  Write and test your own version of reset that takes a reference.
   string input;
   while (cin >> input) {
@@ -289,7 +272,6 @@ int main()
     cout << input[0] << " is the first letter" << endl;
     cout << input << " is now the string" << endl;
   }
-
 
   //E6.12 Rewrite the program from exercise 6.10 in § 6.2.1 (p. 210) to use
   //references instead of pointers to swap the value of two ints. Which version
@@ -302,8 +284,6 @@ int main()
     cout << "after swap it is " << input5 << " " << input6 << endl;
   }
 
-
-
   //E6.13 Assuming T is the name of a type, explain the difference between a
   //function declared as void f(T) and void f(T&).
   //void f(T) is passing arguments by value or the function called by value. The value
@@ -311,7 +291,6 @@ int main()
   //function body will not change the argument value.
   //void f(T&) the corresponding argument is passed by reference or the function
   //called by reference. The initializer is a reference or alias for the type-T parameter.
-
 
   //E6.14 Give an example of when a parameter should be a reference type.
   //Give an example of when a parameter should not be a reference.
@@ -327,7 +306,6 @@ int main()
   //value to return. Reference parameters let us effectively return multiple results.
 
   //a parameter should not be a reference: Changes made to the variable have no effect on the initializer
-
 
   //E6.15 Explain the rationale for the type of each of find_char’s parameters
   //In particular, why is s a reference to const but occurs is a plain reference?
@@ -357,8 +335,6 @@ int main()
   //bool is_empty(string& s) { return s.empty(); }
   //correction: bool is_empty(const string& s) { return s.empty(); }
 
-
-
   //E6.17 Write a function to determine whether a string contains any capital
   //letters. Write a function to change a string to all lowercase. Do the parameters
   //you used in these functions have the same type? If so, why? If not, why not?
@@ -371,8 +347,6 @@ int main()
   while (cin >> input2) {
     cout << to_lcase (input2) << endl;
   }
-
-
 
   //E6.18 Write declarations for each of the following functions. When you write
   //these declarations, use the name of the function to indicate what the function does.
@@ -400,7 +374,6 @@ int main()
   //(c) calc(66); legal, 66 will be converted to double
   //(d) sum(vec.begin(), vec.end(), 3.8); legal, 3.8 will be truncated into integer.
 
-
   //E6.20 When should reference parameters be references to const? What happens if
   //we make a parameter a plain reference when it could be a reference to const?
   //when you dont want to cahnge the original argument value, just want to calculate
@@ -408,13 +381,11 @@ int main()
   // could accidentally change the original argument by accident when you just want to
   // know the features of the arguments;
 
-
   //E6.21 Write a function that takes an int and a pointer to an int and returns
   //the larger of the int value or the value to which the pointer points. What
   //type should you use for the pointer?
   int i = 5;
   cout << compareLarger(i=7, &i);
-
 
   //E6.22 Write a function to swap two int pointers.
   int i = 9, j = 6;
@@ -422,17 +393,12 @@ int main()
   swap_ptr(ptr1, ptr2);
   cout << *ptr1 << " " << *ptr2 <<endl;
 
-
-
   //E6.23 Write your own versions of each of the print functions presented in this
   //section. Call each of these functions to print i and j defined as follows:
   int i = 0, j[2] = {0, 1};
   print(&i);
   cout << "\n\n\n";
   print(j);
-
-
-
 
   //E6.24 Explain the behavior of the following function. If there are problems in
   //the code, explain what they are and how you might fix them.
@@ -443,7 +409,6 @@ int main()
   //        cout << ia[i] << endl;
   //}
   //correction: void print(const int (&ia)[10])
-
 
   //E6.25 Write a main function that takes two arguments. Concatenate the supplied
   // arguments and print the resulting string.
@@ -457,7 +422,6 @@ int main()
   //  cout << s << endl;
   //}
 
-
   //E6.27 Write a function that takes an initializer_list<int> and produces the
   //sum of the elements in the list.
 
@@ -468,14 +432,11 @@ int main()
   //is the type of elem in the for loop?
   //constant reference to strings
 
-
   //E6.29 When you use an initializer_list in a range for would you ever use a
   //reference as the loop control variable? If so, why? If not, why not?
   //Depends what scenerio you are in. The initilizer_list only contains constant
   //values, so you can't change the initilizers. If you want to change the object
   //or the object can't be copied to pass to the argument, then you should use reference.
-
-
 
   //E6.30 Compile the version of str_subrange as presented on page 223 to see what
   // your compiler does with the indicated errors.
@@ -489,7 +450,6 @@ int main()
   //			return;
   //}
   //error: non-void function 'str_subrange' should return a value
-
 
   //E6.31 When is it valid to return a reference? A reference to const?
   //When the object that the  reference refers to  is not local in the function
@@ -558,7 +518,6 @@ int main()
   //    return (i % 2) ? odd : even;
   //}
 
-
   //E6.39: Explain the effect of the second declaration in each one of the following
   // sets of declarations. Indicate which, if any, are illegal.
 
@@ -569,7 +528,6 @@ int main()
   //(b) int get();
   //double get();
   //illegal
-
 
   //(c) int *reset(int *);
   //double *reset(double *);
@@ -650,15 +608,11 @@ int main()
   //It is possible to define isShorter as a constexpr.
   cout << isShorter2("Wang", "Wei") << endl;
 
-
-
   //E6.47: Revise the program you wrote in the exercises in § 6.3.2 (p. 228) that
   //used recursion to print the contents of a vector to conditionally print
   //information about its execution. For example, you might print the size of the
   //vector on each call. Compile and run the program with debugging turned on and
   //again with it turned off.
-
-
   vector<string> v = {"Wei", "Wang", "Kevin", "Yu"};
   vector<string>:: iterator b= v.begin();
   vector<string>:: iterator e= v.end();
@@ -669,11 +623,9 @@ int main()
   //string s;
   //while (cin >> s && s != sought) { }  // empty body
   //assert(cin);
-
   //It is not a good use of assert because cin is always valid; it's better to change
   //the statement as follows:
   //while (cin >> s && assert(s != sought)) { }  // empty body
-
 
 
   //E6.49: What is a candidate function? What is a viable function?
@@ -714,8 +666,6 @@ int main()
 
   f(2.56, 3.14);
 
-
-
   //E6.52: Given the following declarations,
   //void manip(int, int);
   //double dobj;
@@ -752,15 +702,12 @@ int main()
   //Or: Using pf = int(*)(int, int); vector<pf> v1;
   //Or: Using f = int(int, int);  vector<*f> v1;
 
-
   ///E6.55: Write four functions that add, subtract, multiply, and divide two int
   //values. Store pointers to these functions in your vector from the previous
   //exercise.
   using pf = int(*)(int, int);
   vector<pf> funcpt1 {ad, st, mp, dv};
   vector<pf> funcpt2 {&ad, &st, &mp, &dv};
-
-
 
   ///E6.56: Call each element in the vector and print their result.
   for  (auto f : funcpt1) cout << f(8, 5) << " ";
@@ -769,9 +716,6 @@ int main()
   cout << "\n\n";
 
   */
-
-
-
 
   return 0; //return EXIT_SUCCESS
   //return(0) is basically used to tell the machine that program executed successfully.And any other number other than 0(like -1,1,2 etc..) indicate that program doesnt executed successfully.
