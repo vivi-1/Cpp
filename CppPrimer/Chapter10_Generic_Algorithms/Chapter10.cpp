@@ -141,10 +141,14 @@ list<int> cp(vector<int> vec){
   return list;
 }
 
-
+//E10.42 Reimplement the program that eliminated duplicate words that we wrote
+//in § 10.2.3 (p. 383) to use a list instead of a vector.
+void elimDups(list<string> &words) {
+  words.sort();
+  words.unique();
+}
 
 int main(){
-/*
 //E10.1 The algorithm header defines a function named count that, like find,
 //takes a pair of iterators and a value. count returns a count of how often that
 //value appears. Read a sequence of ints into a vector and print the count of
@@ -417,7 +421,7 @@ list<int> list2;
 copy(vec16.crbegin()+3, vec16.crbegin()+8, back_inserter(list2));
 for(auto i : list2) cout << i << " ";
 cout << endl;
-*/
+
 //E10.38 List the five iterator categories and the operations that each supports.
 //input interator: read ++, *, ->, *it++
 //output iterators: write ++, *, assignment
@@ -447,8 +451,12 @@ cout << endl;
 //replace_copy_if(beg, end, dest, pred, new_val);
 //if element match the predicate, copy new_val into the container that dest points to.
 
-//E10.42
-
+//E10.42 Reimplement the program that eliminated duplicate words that we wrote
+//in § 10.2.3 (p. 383) to use a list instead of a vector.
+list<string> list3 = {"Kevin", "Yu", "Wei", "Wang", "Kevin", "Wei", "Kev", "NorthCarolina"};
+elimDups(list3);
+for(auto i : list3) cout << i << " ";
+cout << endl;
 
 return 0;
 }
