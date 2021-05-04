@@ -1,6 +1,8 @@
 #include<iostream>
 #include<map>
 #include<set>
+#include<string>
+#include<vector>
 using namespace std;
 
 int main() {
@@ -30,7 +32,21 @@ for (const auto &i : words_count) cout << i.first << " occurs " << i.second << (
 
 //E11.4 Extend your program to ignore case and punctuation. For example,
 //“example.” “example,” and “Example” should all increment the same counter.
-
+// map<string, size_t> words_count2;
+// set<string> exclude2 = {"A", "An", "And", "The", "Or", "a", "an", "and", "the", "or"};
+// string word2;
+// while (cin >> word2 && word2 != "end") {
+//   cout << word2 << endl;
+//   for(auto i = 0; i != word2.length(); i++) {
+//     cout << word2[i] << i << endl;
+//     if (isupper(word2[i])) word2[i] = tolower(word2[i]);
+//     if (ispunct(word2[i])) cout << "punc\n"; word2 = word2.erase(i, 1);
+//   }
+//   cout << word2 << endl;
+//   if (exclude2.find(word2) == exclude2.end()) ++words_count2[word2];
+// }
+// for (const auto &i : words_count2) cout << i.first << " occurs " << i.second << ((i.second > 1) ? " times\n" : " time\n");
+//
 
 return 0;
 }
