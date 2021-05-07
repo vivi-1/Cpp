@@ -6,6 +6,7 @@
 using namespace std;
 
 int main() {
+/*
 //E11.1 Describe the differences between a map and a vector.
 //(1) Map is an associative containcer while vector is a sequential container.
 //(2) Map contains keys and values while vector only contains values.
@@ -90,6 +91,9 @@ while (cin >> word3 && word3 != "end")
     ++words_count3[word3];
 for (const auto &i : words_count3) cout << i.first << " occurs " << i.second << ((i.second > 1) ? " times\n" : " time\n");
 
+*/
+
+//E11.9
 
 return 0;
 }
