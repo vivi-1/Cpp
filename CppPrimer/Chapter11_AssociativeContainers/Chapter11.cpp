@@ -48,5 +48,40 @@ for (const auto &i : words_count) cout << i.first << " occurs " << i.second << (
 // for (const auto &i : words_count2) cout << i.first << " occurs " << i.second << ((i.second > 1) ? " times\n" : " time\n");
 //
 
+//E11.5 Explain the difference between a map and a set. When might you use one
+//or the other?
+//A set can only have keys and map has{key, value}
+//a set can be used when we need to store the keys and cross-comparison with map to add values to the keys counts
+//a map can be used in a dictionary
+
+//E11.6 Explain the difference between a set and a list. When might you use one
+//or the other?
+//A set is an associative container and can't have duplicate keys
+// while list is a sequential container and can have replicated elements
+//A list is serached in O(N) and set is O(log(N))
+
+//E11.7 Define a map for which the key is the family’s last name and the value
+//is a vector of the children’s names. Write code to add new families and to add
+//new children to an existing family.
+map<string, vector<string>> family;
+string name_to_add1 = "Yu";
+string name_to_add2 = "Wang";
+string member_to_add1 = "Wei Wang";
+string member_to_add2 = "Kevin Yu";
+family[name_to_add1];
+family[name_to_add1].push_back(member_to_add1);
+family[name_to_add2];
+family[name_to_add2].push_back(member_to_add2);
+
+for(auto i : family) {
+  cout << i.first << ": ";
+  for(auto j : i.second) cout << j << " ";
+  cout << endl;
+}
+
+//E11.8 Write a program that stores the excluded words in a vector instead of in
+//a set. What are the advantages to using a set?
+
+
 return 0;
 }
