@@ -81,6 +81,14 @@ for(auto i : family) {
 
 //E11.8 Write a program that stores the excluded words in a vector instead of in
 //a set. What are the advantages to using a set?
+//faster to search for a value in a set than in a vector
+vector<string> exclude_vec = {"A", "An", "And", "The", "Or", "a", "an", "and", "the", "or"};
+map<string, size_t> words_count3;
+string word3;
+while (cin >> word3 && word3 != "end")
+  if(find(exclude_vec.begin(), exclude_vec.end(), word3) == exclude_vec.end())
+    ++words_count3[word3];
+for (const auto &i : words_count3) cout << i.first << " occurs " << i.second << ((i.second > 1) ? " times\n" : " time\n");
 
 
 return 0;
