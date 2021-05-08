@@ -93,7 +93,18 @@ for (const auto &i : words_count3) cout << i.first << " occurs " << i.second << 
 
 */
 
-//E11.9
+//E11.9 Define a map that associates words with a list of line numbers on which
+//the word might occur.
+map<string, list<int>> word_line;
+
+//E11.10 Could we define a map from vector<int>::iterator to int? What about from
+// list<int>::iterator to int? In each case, if not, why not?
+//yes to vector<int>::iterator to int
+//no to list<int>::iterator to int: the elements in a list is stored not continuously
+//so the 
+
+//E11.11 Redefine bookstore without using decltype.
+
 
 return 0;
 }
