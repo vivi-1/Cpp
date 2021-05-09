@@ -101,7 +101,9 @@ map<string, list<int>> word_line;
 // list<int>::iterator to int? In each case, if not, why not?
 //yes to vector<int>::iterator to int
 //no to list<int>::iterator to int: the elements in a list is stored not continuously
-//so the 
+//so the
+
+
 
 //E11.11 Redefine bookstore without using decltype.
 
