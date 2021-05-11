@@ -3,6 +3,7 @@
 #include<set>
 #include<string>
 #include<vector>
+#include"Sales_item.h"
 using namespace std;
 
 int main() {
@@ -91,22 +92,20 @@ while (cin >> word3 && word3 != "end")
     ++words_count3[word3];
 for (const auto &i : words_count3) cout << i.first << " occurs " << i.second << ((i.second > 1) ? " times\n" : " time\n");
 
-*/
-
 //E11.9 Define a map that associates words with a list of line numbers on which
 //the word might occur.
 map<string, list<int>> word_line;
+*/
 
 //E11.10 Could we define a map from vector<int>::iterator to int? What about from
 // list<int>::iterator to int? In each case, if not, why not?
 //yes to vector<int>::iterator to int
 //no to list<int>::iterator to int: the elements in a list is stored not continuously
-//so the
-
-
+//so the list<int>::iterator can't be int
 
 //E11.11 Redefine bookstore without using decltype.
-
+using replace = bool (*)(Sales_item const&, Sales_item const&);
+multiset<Sales_item, replace)> bookstore(compareIsbn);
 
 return 0;
 }
