@@ -95,7 +95,6 @@ for (const auto &i : words_count3) cout << i.first << " occurs " << i.second << 
 //E11.9 Define a map that associates words with a list of line numbers on which
 //the word might occur.
 map<string, list<int>> word_line;
-*/
 
 //E11.10 Could we define a map from vector<int>::iterator to int? What about from
 // list<int>::iterator to int? In each case, if not, why not?
@@ -106,8 +105,8 @@ map<string, list<int>> word_line;
 //E11.11 Redefine bookstore without using decltype.
 using replace = bool (*)(Sales_item const&, Sales_item const&);
 multiset<Sales_item, replace)> bookstore(compareIsbn);
-
-
+*/
+//E11.12
 
 return 0;
 }
