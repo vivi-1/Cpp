@@ -3,6 +3,8 @@
 #include<set>
 #include<string>
 #include<vector>
+#include<utility>
+#include <chrono>
 #include"Sales_item.h"
 using namespace std;
 
@@ -105,8 +107,57 @@ map<string, list<int>> word_line;
 //E11.11 Redefine bookstore without using decltype.
 using replace = bool (*)(Sales_item const&, Sales_item const&);
 multiset<Sales_item, replace)> bookstore(compareIsbn);
+
+//E11.12 Write a program to read a sequence of strings and ints, storing each
+//into a pair. Store the pairs in a vector.
+string s;
+int i;
+vector<pair<string, int>> vec;
+while(cin >> s >> i) {
+  pair<string, int> random{s, i};
+  vec.push_back(random);
+  for(auto i : vec) {
+    cout << i.first << " " << i.second;
+  }
+  cout << endl;
+}
+
+//E11.13 There are at least three ways to create the pairs in the program for
+//the previous exercise. Write three versions of that program, creating the pairs
+//in each way. Explain which form you think is easiest to write and understand,
+//and why.
+string s1 = "Kevin";
+int i1 = 1;
+pair<string, int> random1 = make_pair(s1, i1);
+pair<string, int> random2 = {s1, i1};
+pair<string, int> random3;
+random3.first = s1;
+random3.second = i1;
+
+//E11.14 Extend the map of children to their family name that you wrote for the
+//exercises in § 11.2.1 (p. 424) by having the vector store a pair that holds a
+//child’s name and birthday.
+map<string, vector<pair<string, string>>> family;
+string name_to_add1 = "Yu";
+string name_to_add2 = "Wang";
+pair<string, string> member_to_add1 = {"Kevin", "May/12/2021"};
+pair<string, string> member_to_add2 = {"Wei", "April/12/2021"};
+family[name_to_add1];
+family[name_to_add1].push_back(member_to_add1);
+family[name_to_add2];
+family[name_to_add2].push_back(member_to_add2);
+
+for(auto i : family) {
+  cout << i.first << ": ";
+  for (auto j : i.second) {
+    cout << j.first << " " << j.second << " ";
+    cout << endl;
+  }
+  cout << endl;
+}
 */
-//E11.12
+
+//E11.15
 
 return 0;
 }
