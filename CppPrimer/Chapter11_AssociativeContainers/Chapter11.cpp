@@ -184,10 +184,12 @@ cout << m1->first << " " << m1->second << endl;
 
 //E11.18 Write the type of map_it from the loop on page 430 without using auto
 //or decltype.
+//map<string, int>::iterator map_it = word_count.cbegin();
 
 //E11.19 Define a variable that you initialize by calling begin() on the multiset
 // named bookstore from § 11.2.2 (p. 425). Write the variable’s type without
 //using auto or decltype.
+
 
 return 0;
 }
