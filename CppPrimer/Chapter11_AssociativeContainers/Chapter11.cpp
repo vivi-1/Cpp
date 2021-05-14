@@ -204,18 +204,37 @@ while (cin >> word4 && word4 != "end"){
   if(!insert1.second) ++insert1.first->second;
 }
 for (const auto &i : words_count4) cout << i.first << " occurs " << i.second << ((i.second > 1) ? " times\n" : " time\n");
-*/
+
 //E11.21 Assuming word_count is a map from string to size_t and word is a string,
 // explain the following loop:
 // while (cin >> word)
 //   ++word_count.insert({word, 0}).first->second;
+//precedence: left to right, "." = "->" > Prefix "++"
+//increment the values (the counts) of "word"
 
 //E11.22 Given a map<string, vector<int>>, write the types used as an argument
 //and as the return value for the version of insert that inserts one element.
+//pair<string, vector<int>> element1;
+//pair<map<string, vector<int>::iterator>, bool>
 
 //E11.23 Rewrite the map that stored vectors of children’s names with a
 //key that is the family last name for the exercises in § 11.2.1 (p. 424) to use
 // a multimap.
+multimap<string, vector<string>> family1;
+string lastname;
+while (cin >> lastname && lastname != "end"){
+  string childname;
+  vector<string>children;
+  while(cin >> childname && childname != "end") children.push_back(childname);
+  cout << "Another last name to be input:\n";
+  family1.insert({lastname, children});
+}
+for(auto i : family1) {
+  cout << i.first << ": ";
+  for(auto j : i.second) cout << j << " ";
+  cout << endl;
+}
+*/
 
 return 0;
 }
