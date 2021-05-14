@@ -166,10 +166,10 @@ for(auto i : family) {
 //element.
 map<string, int> map_assign;
 map_assign["Kevin"] = 1;
-map<string, int>::iterator m1 = map_assign.begin();
+map<string, size_t>::iterator m1 = map_assign.begin();
 m1->second = 2;
 cout << m1->first << " " << m1->second << endl;
-*/
+
 //E11.17 Assuming c is a multiset of strings and v is a vector of strings,
 //explain the following calls. Indicate whether each call is legal:
 // copy(v.begin(), v.end(), inserter(c, c.end()));
@@ -193,7 +193,29 @@ using compare = bool (*)(const Sales_data &s1, const Sales_data &s2);
 multiset<Sales_data, decltype(compare)*> bookstore(compareIsbn);
 multiset<Sales_data>::iterator = bookstore.begin();
 
-//E11.20
+//E11.20 Rewrite the word-counting program from § 11.1 (p. 421) to use insert
+//instead of subscripting. Which program do you think is easier to write and
+//read? Explain your reasoning.
+vector<string> exclude_vec1 = {"A", "An", "And", "The", "Or", "a", "an", "and", "the", "or"};
+map<string, size_t> words_count4;
+string word4;
+while (cin >> word4 && word4 != "end"){
+  auto insert1 = words_count4.insert({word4, 1});
+  if(!insert1.second) ++insert1.first->second;
+}
+for (const auto &i : words_count4) cout << i.first << " occurs " << i.second << ((i.second > 1) ? " times\n" : " time\n");
+*/
+//E11.21 Assuming word_count is a map from string to size_t and word is a string,
+// explain the following loop:
+// while (cin >> word)
+//   ++word_count.insert({word, 0}).first->second;
+
+//E11.22 Given a map<string, vector<int>>, write the types used as an argument
+//and as the return value for the version of insert that inserts one element.
+
+//E11.23 Rewrite the map that stored vectors of children’s names with a
+//key that is the family last name for the exercises in § 11.2.1 (p. 424) to use
+// a multimap.
 
 return 0;
 }
