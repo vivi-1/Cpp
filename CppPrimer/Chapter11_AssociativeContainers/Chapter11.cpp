@@ -5,6 +5,7 @@
 #include<vector>
 #include<utility>
 #include <chrono>
+#include <typeinfo>
 #include"Sales_item.h"
 using namespace std;
 
@@ -235,6 +236,32 @@ for(auto i : family1) {
   cout << endl;
 }
 */
+//E11.24 What does the following program do?
+// map<int, int> m;
+// m[0] = 1;
+//declare a map m, and if there's no "0" as a key in m, then insert an
+//element with key "0" and value initialized to 0, and then the newly inserted
+//element was fetched and the value changed to 1
+
+//E11.25 Contrast the following program with the one in the previous exercise
+// vector<int> v;
+// v[0] = 1;
+//For a sequential container, the subscription doesn't insert a new element if
+// the subscript element can't be found. So in this case, v[0] doesn't exist and
+//can't be inserted
+
+//E11.26 What type can be used to subscript a map? What type does the subscript
+//operator return? Give a concrete example—that is, define a map and then write
+//the types that can be used to subscript the map and the type that would be
+//returned from the subscript operator.
+//key_type
+//map<key_type, mapped_type>::mapped_type
+
+map<string, int> words_count5 = {{"Kevin", 1},{"Wei", 2},{"Yu", 3}, {"Wang", 4}};
+map<string, int>::key_type subscript = "Wei";
+cout << words_count5[subscript] << "\n"
+        << typeid(words_count5[subscript]).name() << endl;
+
 
 //E11.27 What kinds of problems would you use count to solve? When might you use
 // find instead?
