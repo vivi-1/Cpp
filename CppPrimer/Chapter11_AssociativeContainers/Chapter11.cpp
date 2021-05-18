@@ -235,7 +235,7 @@ for(auto i : family1) {
   for(auto j : i.second) cout << j << " ";
   cout << endl;
 }
-*/
+
 //E11.24 What does the following program do?
 // map<int, int> m;
 // m[0] = 1;
@@ -262,26 +262,56 @@ map<string, int>::key_type subscript = "Wei";
 cout << words_count5[subscript] << "\n"
         << typeid(words_count5[subscript]).name() << endl;
 
-
 //E11.27 What kinds of problems would you use count to solve? When might you use
 // find instead?
+//Using count: Count how many instances there are with a key in a multiset or multimap
+//Using find: Find if a key exist, doesn't need to traverse the whole container.
+//find is more applicable to set or map that only has unique keys
 
 //E11.28 Define and initialize a variable to hold the result of calling find on
 //a map from string to vector of int.
+multimap<string, vector<int>> authors1 = {{"Kevin", {1,2,3,4,5}}, {"Wei", {0,5, 6, 7, 8}}, {"Kevin", {7,2,3,4,5}}};
+multimap<string, vector<int>>::iterator iter = authors1.find("Kevin");
+cout << iter->second[0] << endl;
 
 //E11.29 What do upper_bound, lower_bound, and equal_range return when you pass
 //them a key that is not in the container?
+//upper_bound = lower_bound: returns an iterator where an element with the key
+// can be inserted
+//equal_range returns a pair {c.end(), c.end()}
 
 //E11.30 Explain the meaning of the operand pos.first->second used in the output
-// expression of the final program in this section.
+//expression of the final program in this section.
+//pos.first is initially an iterator points to the first position where the
+//key=search_item and increment until the one past the element with the same key.
+//pos.first->second is the value of the element that has the key as serach_item
 
 //E11.31 Write a program that defines a multimap of authors and their works. Use
-// find to find an element in the multimap and erase that element. Be sure your
-// program works correctly if the element you look for is not in the map.
-
+//find to find an element in the multimap and erase that element. Be sure your
+//program works correctly if the element you look for is not in the map.
 //E11.32 Using the multimap from the previous exercise, write a program to print
-// the list of authors and their works alphabetically.
-
+//the list of authors and their works alphabetically.
+multimap<string, string> authors2 = {{"vivi", "cpp primer"}, {"Kevin", "Sony headset"}, {"Kevin", "love letter"}, {"Wei", "sleep pad"}, {"Kevin", "skiing trip"}};
+auto iter = authors2.find("Kevin");
+auto count = authors2.count("Kevin");
+string to_erase= "love letter";
+// while(count){
+//   if (iter->second == to_erase) authors2.erase(iter);
+//   ++iter;
+//   --count;
+// }
+// for(auto i : authors2){
+//   cout << i.first << ": " << i.second << endl;
+// }
+multiset<string> values1;
+map<string, multiset<string>> order_map;
+for(auto i : authors2) order_map[i.first].insert(i.second);
+for(auto i : order_map){
+  cout << i.first << endl;
+  for (auto j : i.second) cout << j << ", ";
+  cout << endl;
+}
+*/
 
 return 0;
 }
