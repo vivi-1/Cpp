@@ -236,5 +236,24 @@ for(auto i : family1) {
 }
 */
 
+//E11.27 What kinds of problems would you use count to solve? When might you use
+// find instead?
+
+//E11.28 Define and initialize a variable to hold the result of calling find on
+//a map from string to vector of int.
+
+//E11.29 What do upper_bound, lower_bound, and equal_range return when you pass
+//them a key that is not in the container?
+
+//E11.30 Explain the meaning of the operand pos.first->second used in the output
+// expression of the final program in this section.
+
+//E11.31 Write a program that defines a multimap of authors and their works. Use
+// find to find an element in the multimap and erase that element. Be sure your
+// program works correctly if the element you look for is not in the map.
+
+//E11.32 Using the multimap from the previous exercise, write a program to print
+// the list of authors and their works alphabetically.
+
 return 0;
 }
