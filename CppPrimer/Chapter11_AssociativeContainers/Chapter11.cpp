@@ -6,8 +6,27 @@
 #include<utility>
 #include <chrono>
 #include <typeinfo>
+#include<istringstream>
+#include<ifstream>
 #include"Sales_item.h"
 using namespace std;
+
+//E11.33
+void word_transform(ifstream &mao_file, ifstream& input){
+  auto trans_map = buildMap(map_file);
+  string text;
+  while(getline(input, text)){
+    istringstream stream(text);
+    string word;
+    bool firstword = true;
+    while(stream >> word){
+      if(firstword) firstword = false;
+      else cout<<" ";
+      cout << transform(word, trans_map);
+    }
+    cout << endl;
+  }
+}
 
 int main() {
 /*
@@ -312,6 +331,8 @@ for(auto i : order_map){
   cout << endl;
 }
 */
+
+
 
 return 0;
 }
