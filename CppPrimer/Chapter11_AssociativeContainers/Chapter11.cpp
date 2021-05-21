@@ -6,13 +6,13 @@
 #include<utility>
 #include <chrono>
 #include <typeinfo>
-#include<istringstream>
-#include<ifstream>
+#include<fstream>
 #include"Sales_item.h"
 using namespace std;
 
 //E11.33
-void word_transform(ifstream &mao_file, ifstream& input){
+
+void word_transform(ifstream &map_file, ifstream& input){
   auto trans_map = buildMap(map_file);
   string text;
   while(getline(input, text)){
