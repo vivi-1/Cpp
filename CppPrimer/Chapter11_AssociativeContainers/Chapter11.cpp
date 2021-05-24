@@ -8,6 +8,7 @@
 #include <typeinfo>
 #include<fstream>
 #include"Sales_item.h"
+#include <sstream>
 using namespace std;
 
 //E11.33
