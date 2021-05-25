@@ -357,7 +357,9 @@ for(auto i : order_map){
 //E11.35 In buildMap, what effect, if any, would there be from rewriting
 //     trans_map[key] = value.substr(1);
 // as trans_map.insert({key, value.substr(1)})?
-
+// if there are many values with the same key, the first one will update the values
+// as value.substr(1) for the key, and the second will not insert the new value
+//but return an iterator to this existing element  
 
 //E11.36 Our program does no checking on the validity of either input file. In
 //particular, it assumes that the rules in the transformation file are all
