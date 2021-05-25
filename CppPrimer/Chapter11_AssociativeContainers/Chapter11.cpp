@@ -350,7 +350,20 @@ for(auto i : order_map){
   cout << endl;
 }
 */
+//E11.34 What would happen if we used the subscript operator instead of find in
+//the transform function?
+//if the key doesn't exist, an element with the key was inserted with value initilizatioin
 
+//E11.35 In buildMap, what effect, if any, would there be from rewriting
+//     trans_map[key] = value.substr(1);
+// as trans_map.insert({key, value.substr(1)})?
+
+
+//E11.36 Our program does no checking on the validity of either input file. In
+//particular, it assumes that the rules in the transformation file are all
+//sensible. What would happen if a line in that file has a key, one space, and
+//then the end of the line? Predict the behavior and then check it against your
+//version of the program.
 
 
 return 0;
