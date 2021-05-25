@@ -349,7 +349,7 @@ for(auto i : order_map){
   for (auto j : i.second) cout << j << ", ";
   cout << endl;
 }
-*/
+
 //E11.34 What would happen if we used the subscript operator instead of find in
 //the transform function?
 //if the key doesn't exist, an element with the key was inserted with value initilizatioin
@@ -359,14 +359,17 @@ for(auto i : order_map){
 // as trans_map.insert({key, value.substr(1)})?
 // if there are many values with the same key, the first one will update the values
 // as value.substr(1) for the key, and the second will not insert the new value
-//but return an iterator to this existing element  
+//but return an iterator to this existing element
 
 //E11.36 Our program does no checking on the validity of either input file. In
 //particular, it assumes that the rules in the transformation file are all
 //sensible. What would happen if a line in that file has a key, one space, and
 //then the end of the line? Predict the behavior and then check it against your
 //version of the program.
-
+//buildMap will get the key as a key, and empty string as a value. Since value.size() > 1
+//is false, it will throw a runtime_error and will not add the key into the transformtion map.
+*/
+//E11.37
 
 return 0;
 }
