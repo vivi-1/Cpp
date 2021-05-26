@@ -374,6 +374,7 @@ for(auto i : order_map){
 //version?
 //Search and insertion of an element takes up O(1) time in an unordered while the
 // ordered one takes up O(logN).
+//Hash functions make it faster if the key is strings
 
 //E11.38 Rewrite the word-counting (§ 11.1, p. 421) and word-transformation
 //(§ 11.3.6, p. 440) programs to use an unordered_map.
