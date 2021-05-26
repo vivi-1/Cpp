@@ -369,7 +369,14 @@ for(auto i : order_map){
 //buildMap will get the key as a key, and empty string as a value. Since value.size() > 1
 //is false, it will throw a runtime_error and will not add the key into the transformtion map.
 */
-//E11.37
+//E11.37 What are the advantages of an unordered container as compared to the
+//ordered version of that container? What are the advantages of the ordered
+//version?
+//Search and insertion of an element takes up O(1) time in an unordered while the
+// ordered one takes up O(logN).
+
+//E11.38 Rewrite the word-counting (§ 11.1, p. 421) and word-transformation
+//(§ 11.3.6, p. 440) programs to use an unordered_map.
 
 
 
