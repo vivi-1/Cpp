@@ -92,7 +92,7 @@ void word_transformC(ifstream &map_file, ifstream &input){
 }
 
 int main() {
-/*
+
 //E11.1 Describe the differences between a map and a vector.
 //(1) Map is an associative containcer while vector is a sequential container.
 //(2) Map contains keys and values while vector only contains values.
@@ -412,7 +412,7 @@ for(auto i : order_map){
 //version of the program.
 //buildMap will get the key as a key, and empty string as a value. Since value.size() > 1
 //is false, it will throw a runtime_error and will not add the key into the transformtion map.
-*/
+
 //E11.37 What are the advantages of an unordered container as compared to the
 //ordered version of that container? What are the advantages of the ordered
 //version?
@@ -421,8 +421,6 @@ for(auto i : order_map){
 //Search and insertion of an element takes up O(1) time in an unordered while the
 // ordered one takes up O(logN).
 //Hash functions make it faster if the key is strings.
-
-
 
 
 return 0;
