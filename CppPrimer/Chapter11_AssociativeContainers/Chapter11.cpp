@@ -76,7 +76,6 @@ void word_transformC(ifstream &map_file, ifstream &input){
       trans_map[key] = value.substr(1);
     else
       throw runtime_error("no rule for" + key);
-
   string text;
   while (getline(input, text)) {
     istringstream stream(text);
