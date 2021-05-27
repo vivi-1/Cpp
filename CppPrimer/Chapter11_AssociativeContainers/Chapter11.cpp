@@ -372,13 +372,39 @@ for(auto i : order_map){
 //E11.37 What are the advantages of an unordered container as compared to the
 //ordered version of that container? What are the advantages of the ordered
 //version?
+//An unordered container is most useful when we have a key type for which there's
+//no obvious ordering relationship among the elements.
 //Search and insertion of an element takes up O(1) time in an unordered while the
 // ordered one takes up O(logN).
-//Hash functions make it faster if the key is strings
+//Hash functions make it faster if the key is strings.
 
 //E11.38 Rewrite the word-counting (§ 11.1, p. 421) and word-transformation
 //(§ 11.3.6, p. 440) programs to use an unordered_map.
+void word_count6(){
+  string word;
+  unordered_map <string, size_t> word_count;
+  while (cin >> word) ++word_count[word];
+  for (const auto &w : word_count)
+    cout <<  w.first << " occurs " << w.second
+         << ((w.second > 1) ? " times" : " time") << endl;
+}
 
+void word_transform(ifstream &map_file, ifstream &input){
+  auto trans_map = buildMap(map_file);
+  string text;
+  while (getline(input, text)) {
+    istringstream stream(text);
+    string word;
+    bool firstword = true;
+    while (stream >> word) {
+    if (firstword) firstword = false;
+    else
+      cout << " ";
+      cout << transform(word, trans_map);
+    }
+    cout << endl;
+  }
+}
 
 
 return 0;
