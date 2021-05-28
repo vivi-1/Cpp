@@ -422,6 +422,5 @@ for(auto i : order_map){
 // ordered one takes up O(logN).
 //Hash functions make it faster if the key is strings.
 
-
 return 0;
 }
