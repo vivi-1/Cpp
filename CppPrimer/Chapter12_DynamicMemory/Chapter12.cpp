@@ -12,10 +12,12 @@ int main() {
   //     b1 = b2;
   //     b2.push_back("about");
   // }
-// b1: 4 b2: 4
+// b1: 4 b2: destroyed
 
 //E12.2 Write your own version of the StrBlob class including the const versions
 //of front and back.
+
+
 
 //E12.3 Does this class need const versions of push_back and pop_back? If so,
 //add them. If not, why aren’t they needed?
