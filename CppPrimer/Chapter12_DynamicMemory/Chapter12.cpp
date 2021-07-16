@@ -16,7 +16,7 @@ int main() {
 
 //E12.2 Write your own version of the StrBlob class including the const versions
 //of front and back.
-
+//Please cehck StrBlob.h
 
 
 //E12.3 Does this class need const versions of push_back and pop_back? If so,
