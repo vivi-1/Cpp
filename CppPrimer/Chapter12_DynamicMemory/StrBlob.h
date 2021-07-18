@@ -10,10 +10,11 @@ class StrBlob {
 public:
   typedef vector<string>::size_type size_type;
 
+  //constructor
   StrBlob ();
   StrBlob (initializer_list<string> il);
 
-
+  //in class function
   size_type size() const {return data->size();}
   bool empty() const {return data->empty();}
   void push_back(const string&t) {return data->push_back(t);}
@@ -22,7 +23,7 @@ public:
   string& front();
   string& back();
 
-private:
+private:// private function and class member
   shared_ptr<vector<string>> data;
   void check(size_type i, const string &msg) const;
 
